@@ -1,5 +1,4 @@
 /build/
-/ImportedClasses/
 *.war
 .metadata/
 
