@@ -1,0 +1,556 @@
+
+/* this contain the font type and size of font in td fields*/
+TD{
+	/*FONT-SIZE: 15px;*/
+	font-size:11px; 
+	/*FONT-FAMILY: 'MS Sans Serif', Arial, Helvetica, 'sans-serif'*/
+	/*font-family: Lucida Grande,Lucida Sans,Arial,sans-serif;*/
+	font-family: Trebuchet MS;
+}
+
+/* this class #DDEAFF; E9E9E9provide the background  for data part */
+
+/* this class is used to display combo header rows. */	/* CHANGES MADE BY RAHUL ON 24TH AUG,07*/
+TD.TDCOMBOHEADER
+{	
+	/*background-Color:#FFB365;*/
+	/*background-color:#318ABD;*/
+	background-color:#FFF;
+	background-attachment: scroll;
+	background-repeat: no-repeat;
+	background-position: left top;
+	height:16px;
+	/*font-size:13px;*/
+	font-size:11px; 
+	font-style: normal;
+	line-height: normal;
+	font-weight: bold;
+	font-variant: normal;
+	/*	font-family: "Trebuchet MS";*/
+	font-family: Lucida Grande,Lucida Sans,Arial,sans-serif;
+	/* color:#653232;*/
+	/*color:white;*/
+	color:#004573;
+	text-align:right;
+	text-transform: capitalize;
+}
+
+/* this class is used for search row. */
+TD.TDSEARCH{
+	/* background-color:#FFEBD5; */
+	background-Color:#f1f6f6;
+	height:11px;
+	font-family:Trebuchet MS;
+	font-size:11px;
+	font-weight: bold;
+	/* color:#653232; */
+	color:#004573;	
+}
+
+/* this class is for the header & footer rows. */
+TD.TDHEADER{
+	/*background-image: url('../../../hisglobal/images/LightStrip.png');
+	background-color: #CCCCCC;*/
+	
+	/*background: #1277b5; /* Old browsers */
+	/*background: -moz-linear-gradient(top,  #135d8c 0%, #1277b5 0%, #1277b5 32%, #135d8c 100%); /* FF3.6+ */
+	/*background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#135d8c), color-stop(0%,#1277b5), color-stop(32%,#1277b5), color-stop(100%,#135d8c)); /* Chrome,Safari4+ */
+	/*background: -webkit-linear-gradient(top,  #135d8c 0%,#1277b5 0%,#1277b5 32%,#135d8c 100%); /* Chrome10+,Safari5.1+ */
+	/*background: -o-linear-gradient(top,  #135d8c 0%,#1277b5 0%,#1277b5 32%,#135d8c 100%); /* Opera 11.10+ */
+	/*background: -ms-linear-gradient(top,  #135d8c 0%,#1277b5 0%,#1277b5 32%,#135d8c 100%); /* IE10+ */
+	/*background: linear-gradient(to bottom,  #135d8c 0%,#1277b5 0%,#1277b5 32%,#135d8c 100%); /* W3C */
+	/*filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1277b5', endColorstr='#135d8c',GradientType=0 ); /* IE6-9 */
+	
+	background: linear-gradient(135deg, #A1C1EA 0%, #A1C1EA 100%) repeat scroll 0% 0% transparent;
+	height:23px;
+	color: white;
+	text-transform: capitalize;
+	font-family: Verdana;
+	font-size: 13px;
+	font-style: normal;
+	line-height: 14pt;
+	font-weight: bold;
+	font-variant: normal
+	
+	
+	
+	
+}
+
+/*Row data*/
+TR.rowfont {
+	/*background-color:#E7EBEF;;*/
+	background-Color:#FFF;
+	height:16px;
+	font-size:13px;
+	font-weight: Normal;
+	font-family: "Trebuchet MS";
+	color:#004573;
+	text-align:left;
+	border-color:#FFFFFF;
+}
+/*Row data*/
+TR.rowfont:nth-child(odd) {
+	/*background-color:#E7EBEF;;*/
+	background-Color:#FFF;
+	height:16px;
+	font-size:13px;
+	font-weight: Normal;
+	font-family: "Trebuchet MS";
+	color:#004573;
+	text-align:left;
+	border-color:#FFFFFF;
+}
+/*Row data*/
+TR.rowfont:nth-child(even) {
+	/*background-color:#E7EBEF;;*/
+	background-Color:#E0EBEB;
+	height:16px;
+	font-size:13px;
+	font-weight: Normal;
+	font-family: "Trebuchet MS";
+	color:#004573;
+	text-align:left;
+	border-color:#FFFFFF;
+}
+
+
+/*Row data -- when user defined condition matched*/
+TR.rowfontmatch {
+	height:16px;
+	font-size:13px;
+	font-weight: Normal;
+	font-family: "Trebuchet MS";
+	color:#004573;
+	text-align:left;
+	border-color:#FFFFFF;
+}
+
+/*This class is used for column header*/
+TD.TDFONTHEAD  {
+	background-color:#e0ebeb;	
+	height:16px;
+	font-family:Trebuchet MS;
+	font-size:13px;
+	font-weight: bold;
+	color:#004573;
+	text-align:left;
+}
+/*This class is used for column header*/
+TR.TRFONTHEAD  {
+	/*background-color:#e0ebeb;*/
+	background-color:#A5C8F5;
+	height:16px;
+	/*font-size:13px;*/
+	font-size:11px;
+	/*font-family: Trebuchet MS;*/
+	font-family: Lucida Grande,Lucida Sans,Arial,sans-serif;
+	font-weight: bold;
+	color:#004573;
+	text-align:left;
+}
+
+/* this class used in transaction name */ 
+TD.MASTERNAME {
+	height:10px;
+	font-size:15px;
+	font-family: "Trebuchet MS";
+	font-weight: bold;
+	color:#990000;
+	text-align:left;
+}
+
+/* this class used in on mouse out  */
+TR.ONMOUSEOUT1 {
+	/*background-Color:#E7EBEF;*/
+	background-Color:#FFF;
+	height:16px;
+	/*font-size:13px;*/
+	font-size:11px;
+	font-weight: Normal;
+	/*font-family: Trebuchet MS;*/
+	font-family: Lucida Grande,Lucida Sans,Arial,sans-serif;
+	color:#004573;
+	text-align:left;
+	border-color:#FFFFFF;
+}
+/* this class used in on mouse out  */
+TR.ONMOUSEOUT1:nth-child(odd) {
+	/*background-Color:#E7EBEF;*/
+	background-Color:#FFF;
+	height:16px;
+	/*font-size:13px;*/
+	font-size:11px;
+	font-weight: Normal;
+	/*font-family: Trebuchet MS;*/
+	font-family: Lucida Grande,Lucida Sans,Arial,sans-serif;
+	color:#004573;
+	text-align:left;
+	border-color:#FFFFFF;
+}
+/* this class used in on mouse out  */
+TR.ONMOUSEOUT1:nth-child(even) {
+	/*background-Color:#E7EBEF;*/
+	background-Color:#E0EBEB;
+	height:16px;
+	/*font-size:13px;*/
+	font-size:11px;
+	font-weight: Normal;
+	/*font-family: Trebuchet MS;*/
+	font-family: Lucida Grande,Lucida Sans,Arial,sans-serif;
+	color:#004573;
+	text-align:left;
+	border-color:#FFFFFF;
+}
+.style_x {
+	font-family: Arial;	
+}
+.style_x:nth-child(odd){
+	background-color: #F1F6F6;
+	}
+.style_x:nth-child(even){
+	background-color: #E0EBEB;
+	}
+	
+
+/* this class used in on mouse over  */
+TR.ONMOUSEOVER1 {
+	/* background-Color:#FFB365;*/
+	/*background-Color:#f1f6f6;*/
+	background-Color:#A4CCEA;
+	height:16px;
+	/*font-size:13px;*/
+	font-size:11px;
+	/*font-family: Trebuchet MS;*/
+	font-family: Lucida Grande,Lucida Sans,Arial,sans-serif;
+	color:#004573;
+	text-align:left;
+}
+/* this class used in on Selected records  */
+TR.ONSELECTYELLOW {
+	/* background-Color:#FFB365;*/
+	/*background-Color:#f1f6f6;*/
+	background-Color:#FBEC88;
+	height:16px;
+	/*font-size:13px;*/
+	font-size:11px;
+	font-style: italic;
+	/*font-family: Trebuchet MS;*/
+	font-family: Lucida Grande,Lucida Sans,Arial,sans-serif;
+	color:#004573;
+	text-align:left;
+}
+
+
+/*This class is used for header & footer in view page*/
+TD.VIEWTOPHEADER {
+	background-image: url('../../../hisglobal/images/LightStrip.png');
+	background-color: #CCCCCC;
+	height:23px;
+	color: #005B88;
+	text-transform: capitalize;
+	font-family: Verdana;
+	font-size: 13px;
+	font-style: normal;
+	line-height: 14pt;
+	font-variant: normal
+	
+}
+
+/*This class is used for control in view page*/
+td.tdfont  {
+	background-Color:#F1ECE2;
+	height:16;
+	color:#333333;
+	text-align:left;
+	text-transform: capitalize;
+	font-family: "Trebuchet MS";
+	font-size: 13px;
+	font-style: normal;
+	line-height: normal;
+	font-variant: normal;
+
+}
+
+/* this class used in view page for label */
+
+TD.TDFONTVIEW {
+	background-color:#FFEBD5;
+	height:16;
+	font-family: "Trebuchet MS";
+	font-size:13px;
+	color:#333333;
+	text-align:right;
+	font-weight: bold;
+	background-image: url('none');
+}
+
+/* this class used in on SELECTED BLOCK
+*/
+TD.SELECTEDBLOCKNOCOLOR {
+	background-Color:white;
+	height:20px;
+	font-size:13px;
+	font-family: verdana;
+	color:red;
+	text-align:left;
+}
+
+TD.NEXTPREVIOUSCOLOR {
+	height:20px;
+	font-size:14px;
+	font-family: Verdana;
+	color:green;
+	text-align:right;
+}	
+
+/* this class #0073E6 used in combo background color and font color */
+TD.TDFONTCOMBO {
+	
+	background-Color:#005680;
+	height:20px;
+	font-size:14px;
+	font-family:verdana;
+	color:white;
+	text-align:right;
+}
+
+/* this class used to set background color below the data */
+TD.TDFONTLOWERHEADER {
+	
+	background-Color:#00ff00;
+	height:20px;
+	font-size:14px;
+	font-family: verdana;
+	color:white;
+	text-align:right;
+}
+
+TD.TDFONTSEARCH{
+	
+	background-Color:#00ff00;
+	height:15px;
+	font-size:12px;
+	font-family: verdana;
+	color:green;
+	text-align:left;
+}
+/*Hedaer/Footer Note*/
+TD.TDNOTES{
+	font-size:13px;
+	font-family: verdana;
+	color:white;
+	text-align:left;
+}
+
+.CB1 {
+	font-family: Verdana;
+	font-size: 12px;
+	font-style: normal;
+	text-decoration: none;
+	height:20px;
+	width: 120px;
+	border: 1px solid #7B9EBD;	
+}
+.CB2 {
+	font-family: Verdana;
+	font-size: 12px;
+	font-style: normal;
+	text-decoration: none;
+	height:20px;
+	width: 150px;
+}
+
+.SEARCHCOMBO {
+	font-family: Verdana;
+	font-size: 12px;
+	font-style: normal;
+	text-decoration: none;
+	height:20px;
+	width: 150px;
+}
+
+.TEXTBOX1
+{
+	color:black;
+	TEXT-DECORATION: none;
+	height:20px;
+	border:0px;
+	width:150px;
+	font-family:Verdana;
+	font-size:10;
+	text-align:left;
+}
+.TEXTBOX2
+{
+	color:black;
+	TEXT-DECORATION: none;
+	height:19px;
+	width:40px;
+	font-family:Verdana;
+	font-size:10;
+	text-align:left;
+}
+.TEXTBOX3
+{
+	color:black;
+	TEXT-DECORATION: none;
+	height:19px;
+	width:50px;
+	font-family:Verdana;
+	font-size:10;
+	text-align:left;
+}
+
+
+.TEXTBOX_SMALL
+{
+	color:black;
+	TEXT-DECORATION: none;
+	height:19px;
+	width:100px;
+	font-family:Verdana;
+	font-size:10;
+	text-align:left;
+}
+
+
+
+.TEXTSMALL
+{
+	color:black;
+	TEXT-DECORATION: none;
+	height:1px;
+	width:1px;
+	font-family:Verdana;
+	font-size:1;
+	text-align:left;
+}
+
+/* table width is defined for add and modify pages. */
+.TABLEWIDTH {	
+	width: 95%;	
+}
+.rounded {
+    position: relative;
+    border-radius: 8px;
+    box-shadow: 0px 2px 3px #666;
+    border: 1px solid #C0C0C0;
+    vertical-align: top;
+}
+.dataDiv
+{
+	position: relative;
+	left: 0px;
+	top: 0px;
+	padding: 0px;
+}
+.ShadedTitleTagImage 
+{
+    background: linear-gradient(135deg, #1277B5 0%, #A1C1EA 100%) repeat scroll 0% 0% transparent;
+    color: #FFF;
+}
+.TitleTagFontStyle {
+    color: #FFF;
+    font-family: Verdana;
+    font-size: 11px;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: bold;
+    line-height: 14pt;
+}
+#doctorDeskHeader {
+    line-height: 16px;
+    font-weight: bold;
+    font-family: arial;
+    font-size: 14px;
+    color: #FFF;
+    padding-top: 1px;
+    text-align: center;
+    vertical-align: middle;
+    padding-left: 6px;
+}
+.wrapper 
+{
+    background-color: #F1F6F6;
+    margin: auto;
+}
+.innerBigboxVerySmallIcon {
+    width: 35px;
+    height: 35px;
+    padding-top: 2px;
+    margin-bottom: 2px;
+    text-align: center;
+    cursor: pointer;
+}
+/* for label field of table's TD. It contains font type, font color, font size and background color */
+.DIVLABEL 
+{
+	/*background-color:#FFEBD5;*/
+	/*background-color:#e0ebeb; */
+	background-Color:#f1f6f6;	
+	/*font-family: Verdana, Arial, Helvetica, sans-serif;*/
+	font-family: Lucida Grande,Lucida Sans,Arial,sans-serif;
+	font-size:11px;
+	/*color:#333333;*/
+	color:#013157;
+	text-align:left;
+	font-weight: bold;
+	background-image: url('none');
+}
+.DIVLABELENABLE 
+{
+	/*background-color:#FFEBD5;*/
+	/*background-color:#e0ebeb; */
+	background-Color:#f1f6f6;	
+	/*font-family: Verdana, Arial, Helvetica, sans-serif;*/
+	font-family: Lucida Grande,Lucida Sans,Arial,sans-serif;
+	font-size:10px;
+	/*color:#333333;*/
+	color:#013157;
+	text-align:left;
+	font-weight: bold;
+	background-image: url('none');
+}
+.DIVLABELDISABLE
+{
+	/*background-color:#FFEBD5;*/
+	/*background-color:#e0ebeb; */
+	background-Color:#f1f6f6;	
+	/*font-family: Verdana, Arial, Helvetica, sans-serif;*/
+	font-family: Lucida Grande,Lucida Sans,Arial,sans-serif;
+	font-size:10px;
+	/*color:#333333;*/
+	color:#808080;
+	text-align:left;
+	font-weight: bold;
+	background-image: url('none');
+}
+
+.icon-imageVerySmallIcon 
+{
+    height: 30px;
+    width: 30px;
+    margin-bottom: 0px;
+    vertical-align: middle;
+    cursor: pointer;
+}
+
+.SEARCH
+{
+    height: 18px;
+    width: 18px;
+    margin-bottom: 0px;
+    margin-top: 0px;
+    vertical-align: middle;
+}
+.SEACRHBY
+{
+    margin-bottom: 0px;
+    margin-top: 0px;
+    vertical-align: middle;
+    position: relative;
+    /*border-radius: 1px;
+    box-shadow: 0px 2px 3px #666;
+    border: 1px solid #C0C0C0;*/    
+}

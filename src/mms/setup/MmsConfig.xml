@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<mmsConfig xmlns="http://www.cdacnoida.in/his/MmsConfig">
+    <mmsIssueProcess>
+        <issueMode>1</issueMode>
+        <lastIssuePatientStaffInDays>6</lastIssuePatientStaffInDays>
+        <lastIssueEmployeeInDays>4</lastIssueEmployeeInDays>
+        <onlineIssueDetailsInDays>0</onlineIssueDetailsInDays>
+        <autoReturnRequest>5</autoReturnRequest>
+        <strDemandActivePrd>1</strDemandActivePrd>
+    </mmsIssueProcess>
+    <mmsConfigGerneral>
+        <committeeFilePath>C:/FileUpload</committeeFilePath>
+        <committeeFilePathLin>/optFileUpload</committeeFilePathLin>
+        <committeeFilePathWin>C:/MMSFileUpLoad</committeeFilePathWin>
+        <costRequired>0</costRequired>
+        <indianDeliveryTime>12</indianDeliveryTime>
+        <importedDeliveryTime>30</importedDeliveryTime>
+        <residualCostAuction>252529.00</residualCostAuction>
+        <strConfigIssueRate>0</strConfigIssueRate>
+        <strCountryCode>101</strCountryCode>
+        <strStateCode>72</strStateCode>
+         <strContractValue>72</strContractValue>
+          <strStampPaperAmt>72</strStampPaperAmt>
+    
+        
+    </mmsConfigGerneral>
+</mmsConfig>
+

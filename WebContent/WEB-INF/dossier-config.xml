@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<struts-config>
+
+	<form-beans>
+    	<form-bean name="DossierRequisitionBean" type="dossier.transaction.controller.fb.DossierRequisitionFB"></form-bean>
+    	<form-bean name="DossierDeskBean" type="dossier.transaction.controller.fb.DossierDeskTransFB"></form-bean>
+    	<form-bean name="mmsBean" type="dossier.global.controller.MmsFB"></form-bean>	  
+    	<form-bean name="lpIssueDeskTransBean" type="dossier.transaction.controller.fb.LPIssueDeskTransFB"> </form-bean>
+    	
+    	<!--  Dossier Master Page Beans -->
+    	<form-bean name="DossierMasterBean" type="dossier.masters.controller.fb.DossierMstFB"></form-bean>	
+    	<form-bean name="DossierItemMasterBean" type="dossier.masters.controller.fb.DossierItemMstFB"></form-bean>
+    	<form-bean name="DossierItemBrandMasterBean" type="dossier.masters.controller.fb.DossierItemBrandMstFB"></form-bean>
+    	<form-bean name="DossierSettlementBean" type="dossier.transaction.controller.fb.DossierSettlementFB"></form-bean>
+    	
+    	<form-bean name="ipdBean" type="ipd.IpdFB"></form-bean>
+   </form-beans>
+   
+
+	<action-mappings>
+	
+		<action path="/transaction/DossierRequisitionCNT"
+			type="dossier.transaction.controller.action.DossierRequisitionCNT"
+			name="DossierRequisitionBean" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="NEW"
+				path="/transaction/Dossier_Requisition.jsp" />
+				<forward name="GO"
+				path="/transaction/dossier_trans_go.jsp" />
+				<forward name="GOOPD"
+				path="/transaction/dossier_trans_goipd.jsp" />
+
+		</action>
+		
+		<action path="/transaction/DossierSettlementCNT"
+			type="dossier.transaction.controller.action.DossierSettlementCNT"
+			name="DossierSettlementBean" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="NEW"
+				path="/transaction/Dossier_Settlement.jsp" />
+				<forward name="GO"
+				path="/transaction/dossier_settlement_trans_go.jsp" />
+
+		</action>
+		
+			<action path="/transaction/DossierDeskTransCNT"
+			type="dossier.transaction.controller.action.DossierDeskTransCNT"
+			name="DossierDeskBean" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="reportPage"
+				path="/reports/HelpDeskRpt.jsp" />
+				<forward name="return"
+				path="/transaction/add_Dossier_ReturnRequestTrans.jsp" />
+				<forward name="cancelled"
+				path="/transaction/DossierCancelled.jsp" />
+				<forward name="viewIssue"
+				path="/transaction/view_Dossier_IssueRequestTrans.jsp" />
+				<forward name="viewReturn"
+				path="/transaction/view_Dossier_ReturnRequestTrans.jsp" />
+
+		</action>
+		
+		
+		<action path="/transaction/MmsCNT"
+			type="dossier.global.controller.MmsCNT" name="mmsBean" scope="request"
+			validate="false" parameter="hmode">
+
+			<forward name="mmslist" path="/transaction/search_mms_dtls.jsp" />
+			<forward name="CIMSDATAPOPUP" path="/../hisglobal/cims/cimsDataPopup.jsp" />
+
+		</action>
+
+		<action path="/transaction/LPIssueDeskTransCNT"
+			type="dossier.transaction.controller.action.LPIssueDeskTransCNT"
+			name="lpIssueDeskTransBean" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="issue"
+				path="/transaction/add_LpIssueDtlTrans.jsp" />
+			<forward name="return"
+				path="/transaction/add_Dossier_ReturnDtlTrans.jsp" />
+			<forward name="viewIssue"
+				path="/transaction/view_LpIssueDtlTrans.jsp" />
+			<forward name="viewReturn"
+				path="/transaction/view_LpReturnDtlTrans.jsp" />
+
+		</action>
+		
+		<!-- Dossier Master Page -->
+			<action path="/masters/DossierMstCNT"
+					type="dossier.masters.controller.action.DossierMstCNT"
+					name="DossierMasterBean" scope="request" validate="false"
+					parameter="hmode">
+					<forward name="add" path="/masters/add_DossierMaster.jsp" />
+					<forward name="modify" path="/masters/modify_DossierMaster.jsp" />
+					<forward name="view" path="/masters/view_DossierMaster.jsp" />
+			</action>
+		
+		<!-- Dossier Item Master Page -->
+			<action path="/masters/DossierItemMstCNT"
+					type="dossier.masters.controller.action.DossierItemMstCNT"
+					name="DossierItemMasterBean" scope="request" validate="false"
+					parameter="hmode">
+					<forward name="add" path="/masters/add_DossierItem_dossier.jsp" />
+					<forward name="modify" path="/masters/modify_DossierItem_dossier.jsp" />
+					<forward name="view" path="/masters/view_DossierItem_dossier.jsp" />					
+			</action>
+		
+		<!--  Dossier Item Brand Master(Miscellaneous Item Kit Master) Mapping -->
+
+			<action path="/masters/DossierItemBrandMstCNT"
+				type="dossier.masters.controller.action.DossierItemBrandMstCNT" 
+				name="DossierItemBrandMasterBean" scope="request" validate="false" 
+				parameter="hmode">
+				<forward name="add" path="/masters/add_DossierItemBrand_dossier.jsp" />
+				<forward name="modify" path="/masters/modify_DossierItemBrand_dossier.jsp" />
+				<forward name="view" path="/masters/view_DossierItemBrand_dossier.jsp" />
+			</action>
+		
+	<action path="/transactions/IpdCNT" type="ipd.IpdCNT" name="ipdBean" scope="request" validate="false" parameter="hmode">
+		  <forward name="patlist" path="/transaction/searchpatientdtls.jsp" />		   
+		</action>
+		
+		
+	</action-mappings>
+	<!-- Transaction Action Mappings End -->
+	<plug-in className="org.apache.struts.tiles.TilesPlugin">
+		<set-property property="definitions-config"
+			value="/WEB-INF/struts-transtemplate_tiles_def.xml" />
+		<set-property property="definitions-validate-parser"
+			value="true" />
+		<set-property property="moduleAware" value="true" />
+	</plug-in>
+
+
+
+	
+</struts-config>

@@ -1,0 +1,1317 @@
+/* button css */
+
+div.ctoolbar div.fbutton span div #Payment{
+	color:#000;
+	text-decoration: none;	
+	width:60px;
+	padding:0px 10px 0px 25px;
+	font:13px 'Georgia';
+	font-weight:bold;
+	background:url(../images/edit.png) 5px top no-repeat;
+}
+
+div.ctoolbar div.fbutton span div #Paymentdis {
+	color:#808080;
+	text-decoration: none;
+	width:60px;
+	padding:0px 10px 0px 25px;
+	font:13px 'Georgia';
+	font-weight:bold;
+	background:url(../images/edit.png) 5px TOP no-repeat;
+}
+
+div.ctoolbar div.fbutton span div #Delivery{
+	color:#000;
+	text-decoration: none;	
+	width:60px;
+	padding:0px 10px 0px 25px;
+	font:13px 'Georgia';
+	font-weight:bold;
+	background:url(../images/Delivery_ok.png) 5px top no-repeat;
+}
+
+div.ctoolbar div.fbutton span div #Deliverydis {
+	color:#808080;
+	text-decoration: none;
+	width:60px;
+	padding:0px 10px 0px 25px;
+	font:13px 'Georgia';
+	font-weight:bold;
+	background:url(../images/Delivery_ok.png) 5px TOP no-repeat;
+}
+
+div.ctoolbar div.fbutton span div #Acceptancedis {
+	color:#808080;
+	text-decoration: none;
+	width:60px;
+	padding:0px 10px 0px 25px;
+	font:13px 'Georgia';
+	font-weight:bold;
+	margin-right:20px;
+	background:url(../images/acceptance.png) 5px TOP no-repeat;
+}
+
+
+
+div.ctoolbar div.fbutton span div #Acceptance {
+	color:#000;
+	text-decoration: none;	
+	width:80px;
+	padding:0px 10px 0px 25px;
+	font:13px 'Georgia';
+	font-weight:bold;
+	background:url(../images/acceptance.png) 5px top no-repeat;
+}
+
+
+div.ctoolbar div.fbutton span div #Performance {
+	color:#000;
+	text-decoration: none;	
+	width:80px;
+	padding:0px 10px 0px 25px;
+	font:13px 'Georgia';
+	font-weight:bold;
+	background:url(../images/performance.png) 5px top no-repeat;
+}
+div.ctoolbar div.fbutton span div #Performancedis {
+	color:#808080;
+	text-decoration: none;
+	width:80px;
+	padding:0px 10px 0px 25px;
+	font:13px 'Georgia';
+	font-weight:bold;
+	background:url(../images/performance.png) 5px TOP no-repeat;
+}
+
+a.button{
+     background:#335058;
+     display:block;
+     color:#fff;
+     font-weight:bold;
+     height:25px;
+     line-height:25px;
+     margin-right:5px;
+     text-decoration:none;
+     width:100px;
+     border-radius:3px;
+     float:left;
+}
+a.button1{
+     background:#335058;
+     display:block;
+     color:#fff;
+     font-weight:bold;
+     height:25px;
+     line-height:20px;
+     margin-right:0px;
+     text-decoration:none;
+     width:180px;
+     border-radius:3px;
+     float:right;
+}
+
+
+a:hover.button{     
+     background:#3399ff;
+}
+
+a:active.button{     
+     background:#3399ff;
+}
+
+a:focus.button{
+	  background:#3399ff;
+}
+
+.find{
+background:url(../images/zoom.png) no-repeat 10px 5px;
+text-indent:40px;
+display:block;
+}
+.upload{
+background:url(../images/upload.png) no-repeat 10px 5px;
+text-indent:20px;
+display:block;
+}
+.compile{
+background:url(../images/compile.png) no-repeat 10px 5px;
+text-indent:25px;
+display:block;
+}
+.save{
+background:url(../images/save.png) no-repeat 10px 5px;
+text-indent:15px;
+display:block;
+}
+
+.refresh{
+background:url(../images/renew.png) no-repeat 10px 5px;
+text-indent:15px;
+display:block;
+}
+
+.finalsave{
+background:url(../images/save.png) no-repeat 10px 5px;
+text-indent:26px;
+display:block;
+}
+
+.save1
+{
+background:url(../images/save.png) no-repeat 10px 5px;
+text-indent:15px;
+display:block;
+margin-right:35px;
+}
+.draftsave{
+background:url(../images/draft_save.png) no-repeat 10px 5px;
+text-indent:15px;
+display:block;
+}
+.preview{
+background:url(../images/zoom.png) no-repeat 10px 5px;
+text-indent:15px;
+display:block;
+}
+
+.clear{
+background:url(../images/clear.png) no-repeat 10px 5px;
+text-indent:15px;
+display:block;
+}
+.cancel{
+background:url(../images/FrStopAutoHide.png) no-repeat 10px 5px;
+text-indent:15px;
+display:block;
+}
+
+.add{
+background:url(../images/add.gif) no-repeat 10px 5px;
+text-indent:15px;
+display:block;
+}
+.modify{
+background:url(../images/edit.png) no-repeat 10px 5px;
+text-indent:15px;
+display:block;
+}
+.delete{
+background:url(../images/trash.gif) no-repeat 10px 5px;
+text-indent:20px;
+display:block;
+}
+
+
+.view{
+background:url(../images/view.png) no-repeat 10px 5px;
+text-indent:15px;
+display:block;
+}
+.reports{
+background:url(../images/report.png) no-repeat 10px 5px;
+text-indent:25px;
+display:block;
+}
+.print{
+background:url(../images/print.gif) no-repeat 10px 5px;
+text-indent:25px;
+display:block;
+}
+.generate{
+background:url(../images/generate.png) no-repeat 10px 5px;
+text-indent:30px;
+display:block;
+}
+.back{
+background:url(../images/return.png) no-repeat 10px 5px;
+text-indent:30px;
+display:block;
+}
+.verify{
+background:url(../images/ok_approve.png) no-repeat 10px 5px;
+text-indent:15px;
+display:block;
+}
+.ok{
+background:url(../images/ok.png) no-repeat 10px 5px;
+text-indent:15px;
+display:block;
+}
+.next{
+background:url(../images/return.png) no-repeat 10px 5px;
+text-indent:30px;
+display:block;
+}
+
+.line {
+  display: table;
+  white-space: nowrap;
+  width: 95%; margin-left: 3%;
+  font-size:20px;
+  color:#0e507c;
+}
+
+.line td
+{
+font-weight:bold;	
+}
+.line:before
+{
+  /* green 1px image repeated in browsers without linear-gradient */
+  background: url(data:image/gif;base64,R0lGODdhAQABAIgAAEqMMQAAACwAAAAAAQABAAACAkQBADs=) repeat-x center;
+  background: linear-gradient(to bottom, #1271aa, #0e517d) no-repeat center / 98% .15em;
+  content: '';
+  display: table-cell;
+  width: 2%;
+}
+.line:after {
+  /* green 1px image repeated in browsers without linear-gradient */
+  background: url(data:image/gif;base64,R0lGODdhAQABAIgAAEqMMQAAACwAAAAAAQABAAACAkQBADs=) repeat-x center;
+  background: linear-gradient(to bottom, #1271aa, #0e517d) no-repeat center / 98% .15em;
+  content: '';
+  display: table-cell;
+  width: 98%;
+}
+
+.linenew {
+  display: table;
+  white-space: nowrap;
+  width: 100%; 
+  font-size:20px;
+  color:#0e507c;
+}
+
+.linenew td
+{
+font-weight:bold;	
+}
+.linenew:before
+{
+  /* green 1px image repeated in browsers without linear-gradient */
+  background: url(data:image/gif;base64,R0lGODdhAQABAIgAAEqMMQAAACwAAAAAAQABAAACAkQBADs=) repeat-x center;
+  background: linear-gradient(to bottom, #1271aa, #0e517d) no-repeat center / 98% .15em;
+  content: '';
+  display: table-cell;
+  width: 2%;
+}
+.linenew:after {
+  /* green 1px image repeated in browsers without linear-gradient */
+  background: url(data:image/gif;base64,R0lGODdhAQABAIgAAEqMMQAAACwAAAAAAQABAAACAkQBADs=) repeat-x center;
+  background: linear-gradient(to bottom, #1271aa, #0e517d) no-repeat center / 100% .15em;
+  content: '';
+  display: table-cell;
+  width: 98%;
+}
+.desk_header {
+    border-bottom: 1px solid #0066A7;
+    height: 16px;
+    line-height: 20px;
+    overflow: hidden;
+    padding-bottom: 6px;
+    position: relative;
+    width: 100%;
+    color:#fff;    
+    padding-top: 2px;
+    background:url(../images/selected.png);
+    font-size:14px;
+    font-weight:bold;
+}
+div.filterbar {
+    background: url(../images/table-items-header.png) center repeat-x;
+    border-right: 1px solid #99BBE8;
+    border-top: 1px solid #99BBE8;    
+    overflow: hidden;
+    padding: 4px 5px 4px 15px;
+    position: relative;
+}
+div.ctoolbar {
+    background: #a9c4e9;
+    border-right: 0px solid #99BBE8;
+    border-top: 0px solid #99BBE8;    
+    overflow: hidden;
+    padding: 0px 5px 0px 15px;
+    position: relative;
+}
+select {
+     -moz-appearance: menulist;
+    -moz-box-sizing: border-box;
+    -moz-user-select: none;    
+    border-color: threedface;
+    border-style: inset;
+    border-width: 2px;
+    color: -moz-comboboxtext;
+    cursor: pointer;
+    background: #FFFFCC;   
+}
+div.ctoolbar div.fbutton {
+    cursor: pointer;
+    display: block;
+    float: left;
+    height: 23px;
+    margin-left: 1px;
+    padding-top: 5px;
+}
+div.ctoolbar div.fbutton div {
+    float: left;
+    padding: 0px 0px;
+}
+div.ctoolbar div.fbutton span {
+    display: block;
+    float: left;
+    height: 22px;
+    padding:1px;
+}
+.space
+{
+	width:49%;
+	float:left;
+	text-align:right;
+	font-size: 12px;
+	font-weight: bold;
+	font-family:arial;
+	color:#013157;
+}
+div.ctoolbar div.fbutton.fcurrent {
+    background-color: #EDF1D5;
+    border: 1px solid #555555;
+    cursor: pointer;
+    padding: 0;
+}
+div.ctoolbar div.fbutton.fcurrent div {
+    border-color: #FFFFFF #EEEEEE #EEEEEE #FFFFFF;
+    border-left: 1px solid #FFFFFF;
+    border-style: solid;
+    border-width: 1px;
+    padding: 1px 2px;
+}
+div.ctoolbar div.btnseparator {
+    border-right: 1px solid #FFFFFF;
+    float: left;
+    height: 16px;
+    margin: 1px;
+}
+.fbutton div span {
+    margin-top: 0px;
+}
+.fbutton div span a {
+    color: #000000;
+    padding-left: 18px;
+    padding-top: 3px;
+    text-decoration: none;
+}
+#pnl_Grid {
+    border-top: 1px solid #99BBE8;
+}
+#pnl_Grid table {
+    border-color: #A0A0A4;
+    border-spacing: 0;
+    border-style: solid;
+    border-width: 1px 1px 1px;
+    background-color: #FFF;
+}
+
+#pnl_Grid table tr th {
+	background-color: #ccdcee;
+    border-color: #A0A0A4;
+    border-spacing: 0;
+    border-style: solid;
+    border-width: 0 1px 0 0;
+    color: Black;
+    font-size: 9pt;
+    font-variant: normal;
+    font-weight: bold;
+    height: 24px;
+    padding: 2px 4px 1px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    word-wrap: break-word;
+    z-index: 99;
+    font-family:Georgia;
+    text-align:left;
+}
+#pnl_Grid table tr td {
+    border-color: #A0A0A4;
+    border-spacing: 0;
+    border-style: solid;
+    border-width: 0px 1px 1px 0;
+    color: black;
+    cursor: pointer;
+    font-size: 10pt;
+    height: 15px;
+    padding: 5px 3px 1px;
+    text-overflow: ellipsis;
+    vertical-align: top;
+    word-wrap: break-word;    
+    font-family: Arial,Helvetica,'sans-serif';
+}
+
+.search_button {
+	color:#000;
+	text-decoration: none;
+	border: 1px solid #000;
+	width:80px;
+	padding:0px 10px 0px 25px;
+	font:13px 'Georgia';
+	font-weight:bold;
+	background:#fff url(../images/zoom.png) 5px no-repeat;
+}
+div.ctoolbar div.fbutton span div #Add {
+	color:#000;
+	text-decoration: none;	
+	width:40px;
+	padding:0px 10px 0px 25px;
+	font:13px 'Georgia';
+	font-weight:bold;
+	background:url(../images/new.gif) 5px top no-repeat;
+}
+div.ctoolbar div.fbutton span div #Adddis {
+	color:#808080;
+	text-decoration: none;	
+	width:40px;
+	padding:0px 10px 0px 25px;
+	font:13px 'Georgia';
+	font-weight:bold;
+	background:url(../images/new.gif) 5px top no-repeat;
+}
+
+div.ctoolbar div.fbutton span div #Generate {
+	color:#000;
+	text-decoration: none;	
+	width:60px;
+	padding:0px 10px 0px 25px;
+	font:13px 'Georgia';
+	font-weight:bold;
+	background:url(../images/new.gif) 5px top no-repeat;
+}
+div.ctoolbar div.fbutton span div #Generatedis {
+	color:#808080;
+	text-decoration: none;	
+	width:60px;
+	padding:0px 10px 0px 25px;
+	font:13px 'Georgia';
+	font-weight:bold;
+	background:url(../images/new.gif) 5px top no-repeat;
+}
+
+
+div.ctoolbar div.fbutton span div #Print_Treasure_Copy {
+	color:#000;
+	text-decoration: none;	
+	width:150px;
+	padding:0px 10px 0px 25px;
+	font:13px 'Georgia';
+	font-weight:bold;
+	background:url(../images/print.gif) 5px top no-repeat;
+}
+
+div.ctoolbar div.fbutton span div #Print_Treasure_Copydis {
+	color:#808080;
+	text-decoration: none;	
+	width:35px;
+	padding:0px 10px 0px 25px;
+	font:13px 'Georgia';
+	font-weight:bold;
+	background:url(../images/print.gif) 5px top no-repeat;
+}
+
+div.ctoolbar div.fbutton span div #Print_Office_Copy {
+	color:#000;
+	text-decoration: none;	
+	width:150px;
+	padding:0px 10px 0px 25px;
+	font:13px 'Georgia';
+	font-weight:bold;
+	background:url(../images/print.gif) 5px top no-repeat;
+}
+
+div.ctoolbar div.fbutton span div #Print_Office_Copydis {
+	color:#808080;
+	text-decoration: none;	
+	width:35px;
+	padding:0px 10px 0px 25px;
+	font:13px 'Georgia';
+	font-weight:bold;
+	background:url(../images/print.gif) 5px top no-repeat;
+}
+
+
+div.ctoolbar div.fbutton span div #Certificate {
+	color:#000;
+	text-decoration: none;	
+	width:60px;
+	padding:0px 10px 0px 25px;
+	font:13px 'Georgia';
+	font-weight:bold;
+	background:url(../images/certificate.png) 5px top no-repeat;
+}
+div.ctoolbar div.fbutton span div #Certificatedis {
+	color:#808080;
+	text-decoration: none;	
+	width:60px;
+	padding:0px 10px 0px 25px;
+	font:13px 'Georgia';
+	font-weight:bold;
+	background:url(../images/certificate.png) 5px top no-repeat;
+}
+
+div.ctoolbar div.fbutton span div #Modify {
+	color:#000;
+	text-decoration: none;	
+	width:60px;
+	padding:0px 10px 0px 25px;
+	font:13px 'Georgia';
+	font-weight:bold;
+	background:url(../images/edit.png) 5px top no-repeat;
+}
+
+div.ctoolbar div.fbutton span div #Modifydis {
+	color:#808080;
+	text-decoration: none;	
+	width:60px;
+	padding:0px 10px 0px 25px;
+	font:13px 'Georgia';
+	font-weight:bold;
+	background:url(../images/edit.png) 5px top no-repeat;
+}
+
+div.ctoolbar div.fbutton span div #Cancel {
+	color:#000;
+	text-decoration: none;	
+	width:50px;
+	padding:0px 10px 0px 25px;
+	font:13px 'Georgia';
+	font-weight:bold;
+	background:url(../images/cancel.png) 5px top no-repeat;
+}
+
+div.ctoolbar div.fbutton span div #Canceldis {
+	color:#808080;
+	text-decoration: none;	
+	width:50px;
+	padding:0px 10px 0px 25px;
+	font:13px 'Georgia';
+	font-weight:bold;
+	background:url(../images/cancel.png) 5px top no-repeat;
+}
+div.ctoolbar div.fbutton span div #CancelForm {
+	color:#000;
+	text-decoration: none;	
+	width:50px;
+	padding:0px 10px 0px 25px;
+	font:13px 'Georgia';
+	font-weight:bold;
+	background:url(../images/cancel.png) 5px top no-repeat;
+}
+
+div.ctoolbar div.fbutton span div #CancelFormdis {
+	color:#808080;
+	text-decoration: none;	
+	width:50px;
+	padding:0px 10px 0px 25px;
+	font:13px 'Georgia';
+	font-weight:bold;
+	background:url(../images/cancel.png) 5px top no-repeat;
+}
+
+div.ctoolbar div.fbutton span div #Delete {
+	color:#000;
+	text-decoration: none;	
+	width:50px;
+	padding:0px 10px 0px 25px;
+	font:13px 'Georgia';
+	font-weight:bold;
+	background:url(../images/trash.gif) 5px top no-repeat;
+}
+
+div.ctoolbar div.fbutton span div #Deletedis {
+	color:#808080;
+	text-decoration: none;	
+	width:50px;
+	padding:0px 10px 0px 25px;
+	font:13px 'Georgia';
+	font-weight:bold;
+	background:url(../images/trash.gif) 5px top no-repeat;
+}
+
+div.ctoolbar div.fbutton span div #Return {
+	color:#000;
+	text-decoration: none;
+	width:60px;
+	padding:0px 10px 0px 25px;
+	font:13px 'Georgia';
+	font-weight:bold;
+	background:url(../images/return.png) 5px top no-repeat;
+}
+
+
+div.ctoolbar div.fbutton span div #Returndis {
+	color:#808080;
+	text-decoration: none;
+	width:60px;
+	padding:0px 10px 0px 25px;
+	font:13px 'Georgia';
+	font-weight:bold;
+	background:url(../images/return.png) 5px top no-repeat;
+}
+
+div.ctoolbar div.fbutton span div #View {
+	color:#000;
+	text-decoration: none;	
+	width:35px;
+	padding:0px 10px 0px 25px;
+	font:13px 'Georgia';
+	font-weight:bold;
+	background:url(../images/view.png) 5px top no-repeat;
+}
+
+div.ctoolbar div.fbutton span div #Viewdis {
+	color:#808080;
+	text-decoration: none;
+	width:35px;
+	padding:0px 10px 0px 25px;
+	font:13px 'Georgia';
+	font-weight:bold;
+	background:url(../images/view.png) 5px top no-repeat;
+}
+
+
+div.ctoolbar div.fbutton span div #CartonDetails {
+	color:#000;
+	text-decoration: none;	
+	width:100px;
+	padding:0px 10px 0px 25px;
+	font:13px 'Georgia';
+	font-weight:bold;
+	background:url(../images/view.png) 5px top no-repeat;
+}
+
+div.ctoolbar div.fbutton span div #CartonDetailsdis {
+	color:#808080;
+	text-decoration: none;
+	width:100px;
+	padding:0px 10px 0px 25px;
+	font:13px 'Georgia';
+	font-weight:bold;
+	background:url(../images/view.png) 5px top no-repeat;
+}
+
+
+
+div.ctoolbar div.fbutton span div #Print {
+	color:#000;
+	text-decoration: none;	
+	width:35px;
+	padding:0px 10px 0px 25px;
+	font:13px 'Georgia';
+	font-weight:bold;
+	background:url(../images/print.gif) 5px top no-repeat;
+}
+
+div.ctoolbar div.fbutton span div #Printdis {
+	color:#808080;
+	text-decoration: none;	
+	width:35px;
+	padding:0px 10px 0px 25px;
+	font:13px 'Georgia';
+	font-weight:bold;
+	background:url(../images/new.gif) 5px top no-repeat;
+}
+
+div.ctoolbar div.fbutton span div #Approval {
+	color:#000;
+	text-decoration: none;	
+	width:60px;
+	padding:0px 10px 0px 25px;
+	font:13px 'Georgia';
+	font-weight:bold;
+	background:url(../images/ok_approve.png) 5px top no-repeat;
+}
+
+div.ctoolbar div.fbutton span div #Approvaldis {
+	color:#808080;
+	text-decoration: none;
+	width:60px;
+	padding:0px 10px 0px 25px;
+	font:13px 'Georgia';
+	font-weight:bold;
+	background:url(../images/ok_approve.png) 5px TOP no-repeat;
+}
+
+div.ctoolbar div.fbutton span div #Rejected {
+	color:#000;
+	text-decoration: none;	
+	width:60px;
+	padding:0px 10px 0px 25px;
+	font:13px 'Georgia';
+	font-weight:bold;
+	background:url(../images/reject.png) 5px top no-repeat;
+}
+
+div.ctoolbar div.fbutton span div #Rejecteddis {
+	color:#808080;
+	text-decoration: none;	
+	width:60px;
+	padding:0px 10px 0px 25px;
+	font:13px 'Georgia';
+	font-weight:bold;
+	background:url(../images/reject.png) 5px top no-repeat;
+}
+
+div.ctoolbar div.fbutton span div #Reject {
+	color:#000;
+	text-decoration: none;	
+	width:60px;
+	padding:0px 10px 0px 25px;
+	font:13px 'Georgia';
+	font-weight:bold;
+	background:url(../images/reject.png) 5px top no-repeat;
+}
+
+div.ctoolbar div.fbutton span div #Rejectdis {
+	color:#808080;
+	text-decoration: none;	
+	width:60px;
+	padding:0px 10px 0px 25px;
+	font:13px 'Georgia';
+	font-weight:bold;
+	background:url(../images/reject.png) 5px top no-repeat;
+}
+
+div.ctoolbar div.fbutton span div #Issue {
+	color:#000;
+	text-decoration: none;	
+	width:50px;
+	padding:0px 10px 0px 25px;
+	font:13px 'Georgia';
+	font-weight:bold;
+	background:url(../images/issue.png) 5px top no-repeat;
+}
+
+div.ctoolbar div.fbutton span div #Issuedis {
+	color:#808080;
+	text-decoration: none;
+	width:50px;
+	padding:0px 10px 0px 25px;
+	font:13px 'Georgia';
+	font-weight:bold;
+	background:url(../images/issue.png) 5px top no-repeat;
+}
+
+div.ctoolbar div.fbutton span div #Receive {
+	color:#000;
+	text-decoration: none;
+	width:60px;
+	padding:0px 10px 0px 25px;
+	font:13px 'Georgia';
+	font-weight:bold;
+	background:url(../images/issue.png) 5px top no-repeat;
+}
+
+div.ctoolbar div.fbutton span div #Receive:hover {
+	font:15px 'Georgia';
+	font-weight:bold;
+	border-color: #0088EA;
+    box-shadow: 0 0 10px #a92131;
+   -moz-box-shadow: 0 0 10px #a92131;
+   -webkit-box-shadow: 0 0 10px #a92131;
+}
+
+div.ctoolbar div.fbutton span div #Recievedis {
+	color:#808080;
+	text-decoration: none;
+	width:60px;
+	padding:0px 10px 0px 25px;
+	font:13px 'Georgia';
+	font-weight:bold;
+	background:url(../images/issue.png) 5px top no-repeat;
+}
+
+div.ctoolbar div.fbutton span div #Receivedis {
+	color:#808080;
+	text-decoration: none;
+	width:60px;
+	padding:0px 10px 0px 25px;
+	font:13px 'Georgia';
+	font-weight:bold;
+	background:url(../images/issue.png) 5px top no-repeat;
+}
+
+div.ctoolbar div.fbutton span div #Dispose {
+	color:#000;
+	text-decoration: none;
+	width:60px;
+	padding:0px 10px 0px 25px;
+	font:13px 'Georgia';
+	font-weight:bold;
+	background:url(../images/trash.gif) 5px top no-repeat;
+}
+
+div.ctoolbar div.fbutton span div #Disposedis {
+	color:#808080;
+	text-decoration: none;
+	width:60px;
+	padding:0px 10px 0px 25px;
+	font:13px 'Georgia';
+	font-weight:bold;
+	background:url(../images/trash.gif) 5px top no-repeat;
+}
+
+
+div.ctoolbar div.fbutton span div #Verify {
+	color:#000;
+	text-decoration: none;
+	width:50px;
+	padding:0px 10px 0px 25px;
+	font:13px 'Georgia';
+	font-weight:bold;
+	background:url(../images/issue.png) 5px top no-repeat;
+}
+
+div.ctoolbar div.fbutton span div #Verifydis {
+	color:#808080;
+	text-decoration: none;	
+	width:50px;
+	padding:0px 10px 0px 25px;
+	font:13px 'Georgia';
+	font-weight:bold;
+	background:url(../images/issue.png) 5px top no-repeat;
+}
+
+div.ctoolbar div.fbutton span div #Freeze {
+	color:#000;
+	text-decoration: none;
+	width:50px;
+	padding:0px 10px 0px 25px;
+	font:13px 'Georgia';
+	font-weight:bold;
+	background:url(../images/freeze.png) 5px top no-repeat;
+}
+
+div.ctoolbar div.fbutton span div #Freezedis {
+	color:#808080;
+	text-decoration: none;	
+	width:50px;
+	padding:0px 10px 0px 25px;
+	font:13px 'Georgia';
+	font-weight:bold;
+	background:url(../images/freeze.png) 5px top no-repeat;
+}
+
+div.ctoolbar div.fbutton span div #Barcode {
+	color:#000;
+	text-decoration: none;	
+	width:35px;
+	padding:0px 10px 0px 25px;
+	font:13px 'Georgia';
+	font-weight:bold;
+	background:url(../images/print.gif) 5px top no-repeat;
+}
+
+div.ctoolbar div.fbutton span div #Barcodedis {
+	color:#808080;
+	text-decoration: none;	
+	width:35px;
+	padding:0px 10px 0px 25px;
+	font:13px 'Georgia';
+	font-weight:bold;
+	background:url(../images/new.gif) 5px top no-repeat;
+}
+
+
+div.ctoolbar div.fbutton span div #Renew {
+	color:#000;
+	text-decoration: none;
+	width:50px;
+	padding:0px 10px 0px 25px;
+	font:13px 'Georgia';
+	font-weight:bold;
+	background:url(../images/renew.png) 5px top no-repeat;
+}
+
+div.ctoolbar div.fbutton span div #Renewdis {
+	color:#808080;
+	text-decoration: none;	
+	width:50px;
+	padding:0px 10px 0px 25px;
+	font:13px 'Georgia';
+	font-weight:bold;
+	background:url(../images/renew.png) 5px top no-repeat;
+}
+
+div.ctoolbar div.fbutton span div #Acknowledge {
+	color:#000;
+	text-decoration: none;
+	width:90px;
+	padding:0px 10px 0px 25px;
+	font:13px 'Georgia';
+	font-weight:bold;
+	background:url(../images/acknoledge.png) 5px top no-repeat;
+}
+
+div.ctoolbar div.fbutton span div #Acknowledgedis {
+	color:#808080;
+	text-decoration: none;	
+	width:90px;
+	padding:0px 10px 0px 25px;
+	font:13px 'Georgia';
+	font-weight:bold;
+	background:url(../images/acknoledge.png) 5px top no-repeat;
+}
+
+div.ctoolbar div.fbutton span div #Modify\/Schedule {
+	color:#000;
+	text-decoration: none;
+	width:115px;
+	padding:0px 10px 0px 25px;
+	font:13px 'Georgia';
+	font-weight:bold;
+	background:url(../images/edit.png) 5px top no-repeat;
+}
+
+div.ctoolbar div.fbutton span div #Modify\/Scheduledis {
+	color:#808080;
+	text-decoration: none;
+	width:115px;
+	padding:0px 10px 0px 25px;
+	font:13px 'Georgia';
+	font-weight:bold;
+	background:url(../images/edit.png) 5px top no-repeat;
+}
+
+div.ctoolbar div.fbutton span div #FinalSave {
+	color:#000;
+	text-decoration: none;	
+	width:80px;
+	padding:0px 10px 0px 25px;
+	font:13px 'Georgia';
+	font-weight:bold;
+	background:url(../images/save.png) 5px top no-repeat;
+}
+div.ctoolbar div.fbutton span div #FinalSavedis {
+	color:#808080;
+	text-decoration: none;	
+	width:80px;
+	padding:0px 10px 0px 25px;
+	font:13px 'Georgia';
+	font-weight:bold;
+	background:url(../images/save.png) 5px top no-repeat;
+}
+
+div.ctoolbar div.fbutton span div #CurrentStock {
+	color:#000;
+	text-decoration: none;	
+	width:102px;
+	padding:0px 10px 0px 25px;
+	font:13px 'Georgia';
+	font-weight:bold;
+	background:url(../images/current.png) 5px top no-repeat;
+}
+div.ctoolbar div.fbutton span div #CurrentStockdis {
+	color:#808080;
+	text-decoration: none;	
+	width:102px;
+	padding:0px 10px 0px 25px;
+	font:13px 'Georgia';
+	font-weight:bold;
+	background:url(../images/current.png) 5px top no-repeat;
+}
+div.ctoolbar div.fbutton span div #classification {
+	color:#000;
+	text-decoration: none;	
+	width:110px;
+	padding:0px 10px 0px 25px;
+	font:13px 'Georgia';
+	font-weight:bold;
+	background:url(../images/list-go.png) 5px top no-repeat;
+}
+div.ctoolbar div.fbutton span div #classificationdis {
+	color:#808080;
+	text-decoration: none;	
+	width:110px;
+	padding:0px 10px 0px 25px;
+	font:13px 'Georgia';
+	font-weight:bold;
+	background:url(../images/list-go.png) 5px top no-repeat;
+}
+div.ctoolbar div.fbutton span div #grant\/fund {
+	color:#000;
+	text-decoration: none;	
+	width:85px;
+	padding:0px 10px 0px 25px;
+	font:13px 'Georgia';
+	font-weight:bold;
+	background:url(../images/list-go.png) 5px top no-repeat;
+}
+div.ctoolbar div.fbutton span div #grant\/funddis {
+	color:#808080;
+	text-decoration: none;	
+	width:85px;
+	padding:0px 10px 0px 25px;
+	font:13px 'Georgia';
+	font-weight:bold;
+	background:url(../images/list-go.png) 5px top no-repeat;
+}
+div.ctoolbar div.fbutton span div #budget {
+	color:#000;
+	text-decoration: none;	
+	width:55px;
+	padding:0px 10px 0px 25px;
+	font:13px 'Georgia';
+	font-weight:bold;
+	background:url(../images/list-go.png) 5px top no-repeat;
+}
+div.ctoolbar div.fbutton span div #budgetdis {
+	color:#808080;
+	text-decoration: none;	
+	width:55px;
+	padding:0px 10px 0px 25px;
+	font:13px 'Georgia';
+	font-weight:bold;
+	background:url(../images/list-go.png) 5px top no-repeat;
+}
+div.ctoolbar div.fbutton span div #scheme {
+	color:#000;
+	text-decoration: none;	
+	width:55px;
+	padding:0px 10px 0px 25px;
+	font:13px 'Georgia';
+	font-weight:bold;
+	background:url(../images/list-go.png) 5px top no-repeat;
+}
+div.ctoolbar div.fbutton span div #schemedis {
+	color:#808080;
+	text-decoration: none;	
+	width:55px;
+	padding:0px 10px 0px 25px;
+	font:13px 'Georgia';
+	font-weight:bold;
+	background:url(../images/list-go.png) 5px top no-repeat;
+}
+div.ctoolbar div.fbutton span div #project {
+	color:#000;
+	text-decoration: none;	
+	width:55px;
+	padding:0px 10px 0px 25px;
+	font:13px 'Georgia';
+	font-weight:bold;
+	background:url(../images/list-go.png) 5px top no-repeat;
+}
+div.ctoolbar div.fbutton span div #projectdis {
+	color:#808080;
+	text-decoration: none;	
+	width:55px;
+	padding:0px 10px 0px 25px;
+	font:13px 'Georgia';
+	font-weight:bold;
+	background:url(../images/list-go.png) 5px top no-repeat;
+}
+div.ctoolbar div.fbutton span div #major {
+	color:#000;
+	text-decoration: none;	
+	width:50px;
+	padding:0px 10px 0px 25px;
+	font:13px 'Georgia';
+	font-weight:bold;
+	background:url(../images/list-go.png) 5px top no-repeat;
+}
+div.ctoolbar div.fbutton span div #majordis {
+	color:#808080;
+	text-decoration: none;	
+	width:50px;
+	padding:0px 10px 0px 25px;
+	font:13px 'Georgia';
+	font-weight:bold;
+	background:url(../images/list-go.png) 5px top no-repeat;
+}
+div.ctoolbar div.fbutton span div #minor {
+	color:#000;
+	text-decoration: none;	
+	width:45px;
+	padding:0px 10px 0px 25px;
+	font:13px 'Georgia';
+	font-weight:bold;
+	background:url(../images/list-go.png) 5px top no-repeat;
+}
+div.ctoolbar div.fbutton span div #minordis {
+	color:#808080;
+	text-decoration: none;	
+	width:45px;
+	padding:0px 10px 0px 25px;
+	font:13px 'Georgia';
+	font-weight:bold;
+	background:url(../images/list-go.png) 5px top no-repeat;
+}
+div.ctoolbar div.fbutton span div #sub-head {
+	color:#000;
+	text-decoration: none;	
+	width:65px;
+	padding:0px 10px 0px 25px;
+	font:13px 'Georgia';
+	font-weight:bold;
+	background:url(../images/list-go.png) 5px top no-repeat;
+}
+div.ctoolbar div.fbutton span div #sub-headdis {
+	color:#808080;
+	text-decoration: none;	
+	width:70px;
+	padding:0px 10px 0px 25px;
+	font:13px 'Georgia';
+	font-weight:bold;
+	background:url(../images/list-go.png) 5px top no-repeat;
+}
+div.ctoolbar div.fbutton span div #detail-head {
+	color:#000;
+	text-decoration: none;	
+	width:70px;
+	padding:0px 10px 0px 25px;
+	font:13px 'Georgia';
+	font-weight:bold;
+	background:url(../images/list-go.png) 5px top no-repeat;
+}
+div.ctoolbar div.fbutton span div #detail-headdis {
+	color:#808080;
+	text-decoration: none;	
+	width:70px;
+	padding:0px 10px 0px 25px;
+	font:13px 'Georgia';
+	font-weight:bold;
+	background:url(../images/list-go.png) 5px top no-repeat;
+}
+div.ctoolbar div.fbutton span div #head-config {
+	color:#000;
+	text-decoration: none;	
+	width:70px;
+	padding:0px 10px 0px 25px;
+	font:13px 'Georgia';
+	font-weight:bold;
+	background:url(../images/list-go.png) 5px top no-repeat;
+}
+div.ctoolbar div.fbutton span div #head-configdis {
+	color:#808080;
+	text-decoration: none;	
+	width:70px;
+	padding:0px 10px 0px 25px;
+	font:13px 'Georgia';
+	font-weight:bold;
+	background:url(../images/list-go.png) 5px top no-repeat;
+}
+div.ctoolbar div.fbutton span div #Request {
+	color:#000;
+	text-decoration: none;	
+	width:70px;
+	padding:0px 10px 0px 25px;
+	font:13px 'Georgia';
+	font-weight:bold;
+	background:url(../images/new.gif) 5px top no-repeat;
+}
+div.ctoolbar div.fbutton span div #Requestdis {
+	color:#808080;
+	text-decoration: none;	
+	width:70px;
+	padding:0px 10px 0px 25px;
+	font:13px 'Georgia';
+	font-weight:bold;
+	background:url(../images/new.gif) 5px top no-repeat;
+}
+div.ctoolbar div.fbutton span div #Condemn {
+	color:#000;
+	text-decoration: none;	
+	width:70px;
+	padding:0px 10px 0px 25px;
+	margin: 0 10px 0 0;
+	font:13px 'Georgia';
+	font-weight:bold;
+	background:url(../images/trash.gif) 5px top no-repeat;
+}
+
+div.ctoolbar div.fbutton span div #Condemndis {
+	color:#808080;
+	text-decoration: none;	
+	width:50px;
+	padding:0px 10px 0px 25px;
+	margin: 0 10px 0 0;
+	font:13px 'Georgia';
+	font-weight:bold;
+	background:url(../images/trash.gif) 5px top no-repeat;
+}
+div.ctoolbar div.fbutton span div #Re-Approval {
+	color:#000;
+	text-decoration: none;	
+	width:85px;
+	padding:0px 10px 0px 25px;
+	font:13px 'Georgia';
+	font-weight:bold;
+	background:url(../images/Re-Approval1.png) 5px top no-repeat;
+}
+
+div.ctoolbar div.fbutton span div #Re-Approvaldis {
+	color:#808080;
+	text-decoration: none;
+	width:85px;
+	padding:0px 10px 0px 25px;
+	font:13px 'Georgia';
+	font-weight:bold;
+	background:url(../images/Re-Approval1.png) 5px TOP no-repeat;
+}	
+div.ctoolbar div.fbutton span div #Modify_Schedule {
+	color:#000;
+	text-decoration: none;	
+	width:110px;
+	padding:0px 10px 0px 25px;
+	font:13px 'Georgia';
+	font-weight:bold;
+	background:url(../images/edit.png) 5px top no-repeat;
+}
+
+div.ctoolbar div.fbutton span div #Modify_Scheduledis {
+	color:#808080;
+	text-decoration: none;	
+	width:110px;
+	padding:0px 10px 0px 25px;
+	font:13px 'Georgia';
+	font-weight:bold;
+	background:url(../images/edit.png) 5px top no-repeat;
+}
+
+iv.ctoolbar div.fbutton span div #Performance {
+	color:#000;
+	text-decoration: none;	
+	width:60px;
+	padding:0px 10px 0px 25px;
+	font:13px 'Georgia';
+	font-weight:bold;
+	background:url(../images/edit.png) 5px top no-repeat;
+}
+
+
+
+
+
+div.ctoolbar div.fbutton span div #Current_stock {
+	color:#808080;
+	text-decoration: none;	
+	width:60px;
+	padding:0px 10px 0px 25px;
+	font:13px 'Georgia';
+	font-weight:bold;
+	background:url(../images/edit.png) 5px top no-repeat;
+}	
+div.ctoolbar div.fbutton span div #Current_stockdis {
+	color:#808080;
+	text-decoration: none;	
+	width:60px;
+	padding:0px 10px 0px 25px;
+	font:13px 'Georgia';
+	font-weight:bold;
+	background:url(../images/edit.png) 5px top no-repeat;
+}	
+
+div.ctoolbar div.fbutton span div #Delivery_challan_acknowledge {
+	color:#000;
+	text-decoration: none;
+	width:60px;
+	padding:0px 154px 0px 25px;
+	font:13px 'Georgia';
+	font-weight:bold;
+	background:url(../images/issue.png) 5px top no-repeat;
+}

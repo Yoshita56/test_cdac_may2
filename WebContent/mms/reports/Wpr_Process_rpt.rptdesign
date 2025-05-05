@@ -1,0 +1,1026 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<report xmlns="http://www.eclipse.org/birt/2005/design" version="3.2.15" id="1">
+    <property name="createdBy">Eclipse BIRT Designer Version 2.2.1.r22a_v20071101 Build &lt;2.2.1.v20071101-1439></property>
+    <property name="units">in</property>
+    <property name="comments">Copyright (c) 2007 &lt;&lt;Your Company Name here>></property>
+    <list-property name="userProperties">
+        <structure>
+            <property name="name">Data Cube.Data Set.x</property>
+            <property name="type">integer</property>
+            <property name="isVisible">false</property>
+        </structure>
+        <structure>
+            <property name="name">Data Cube.Data Set.y</property>
+            <property name="type">integer</property>
+            <property name="isVisible">false</property>
+        </structure>
+    </list-property>
+    <property name="Data Cube.Data Set.x">135</property>
+    <property name="Data Cube.Data Set.y">80</property>
+    <list-property name="propertyBindings">
+        <structure>
+            <property name="name">odaDriverClass</property>
+            <property name="id">63</property>
+        </structure>
+        <structure>
+            <property name="name">odaURL</property>
+            <property name="id">63</property>
+        </structure>
+        <structure>
+            <property name="name">odaUser</property>
+            <property name="id">63</property>
+        </structure>
+        <structure>
+            <property name="name">odaPassword</property>
+            <property name="id">63</property>
+        </structure>
+        <structure>
+            <property name="name">odaJndiName</property>
+            <property name="id">63</property>
+            <expression name="value">params["jndi_ds_conn"]</expression>
+        </structure>
+        <structure>
+            <property name="name">OdaConnProfileName</property>
+            <property name="id">63</property>
+        </structure>
+        <structure>
+            <property name="name">OdaConnProfileStorePath</property>
+            <property name="id">63</property>
+        </structure>
+    </list-property>
+    <text-property name="displayName">Test</text-property>
+    <parameters>
+        <scalar-parameter name="jndi_ds_conn" id="22">
+            <property name="valueType">static</property>
+            <property name="dataType">string</property>
+            <property name="paramType">simple</property>
+            <property name="controlType">text-box</property>
+            <property name="defaultValue">java:comp/env/DWH</property>
+            <property name="distinct">true</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="report_Header" id="23">
+            <property name="valueType">static</property>
+            <property name="dataType">string</property>
+            <property name="paramType">simple</property>
+            <property name="controlType">text-box</property>
+            <property name="distinct">true</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="report_Footer" id="24">
+            <property name="valueType">static</property>
+            <property name="dataType">string</property>
+            <property name="paramType">simple</property>
+            <property name="controlType">text-box</property>
+            <property name="defaultValue">Computer Generated Report</property>
+            <property name="distinct">true</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="report_Name" id="26">
+            <property name="valueType">static</property>
+            <property name="dataType">string</property>
+            <property name="paramType">simple</property>
+            <property name="controlType">text-box</property>
+            <property name="distinct">true</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="report_Footer_Visible" id="75">
+            <property name="valueType">static</property>
+            <property name="dataType">boolean</property>
+            <property name="paramType">simple</property>
+            <property name="isRequired">false</property>
+            <property name="controlType">check-box</property>
+            <property name="defaultValue">true</property>
+            <property name="distinct">true</property>
+            <structure name="format"/>
+        </scalar-parameter>
+        <scalar-parameter name="report_user_Remarks" id="191">
+            <property name="valueType">static</property>
+            <property name="dataType">string</property>
+            <property name="paramType">simple</property>
+            <property name="isRequired">false</property>
+            <property name="controlType">text-box</property>
+            <property name="distinct">true</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="report_Address" id="249">
+            <property name="valueType">static</property>
+            <property name="dataType">string</property>
+            <property name="paramType">simple</property>
+            <property name="isRequired">true</property>
+            <property name="controlType">text-box</property>
+            <property name="distinct">true</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="report_Contact" id="255">
+            <property name="valueType">static</property>
+            <property name="dataType">string</property>
+            <property name="paramType">simple</property>
+            <property name="controlType">text-box</property>
+            <property name="distinct">true</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="report_Format" id="762">
+            <property name="valueType">static</property>
+            <property name="dataType">string</property>
+            <property name="paramType">simple</property>
+            <property name="controlType">text-box</property>
+            <property name="distinct">true</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+    </parameters>
+    <data-sources>
+        <oda-data-source extensionID="org.eclipse.birt.report.data.oda.jdbc" name="Data Source" id="63">
+            <property name="odaDriverClass">oracle.jdbc.driver.OracleDriver</property>
+            <property name="odaURL">jdbc:oracle:thin:@localhost:1521:DWH</property>
+            <property name="odaUser">DWH</property>
+            <encrypted-property name="odaPassword" encryptionID="base64">ZHdo</encrypted-property>
+            <property name="odaJndiName">java:comp/env/AHIS</property>
+        </oda-data-source>
+    </data-sources>
+    <data-sets>
+        <oda-data-set extensionID="org.eclipse.birt.report.data.oda.jdbc.SPSelectDataSet" name="Data Set" id="766">
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">STORENAME</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">2</property>
+                        <property name="name">ITEMNAME</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">3</property>
+                        <property name="name">ACTIVE_QTY</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">4</property>
+                        <property name="name">SHORT_QTY</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">5</property>
+                        <property name="name">EXCESS_QTY</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">Data Source</property>
+            <list-property name="parameters">
+                <structure>
+                    <property name="name">P_MODE</property>
+                    <property name="nativeName">P_MODE</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                    <property name="position">1</property>
+                    <expression name="defaultValue">1</expression>
+                    <property name="isOptional">false</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+                <structure>
+                    <property name="name">ERR</property>
+                    <property name="nativeName">ERR</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                    <property name="position">2</property>
+                    <property name="isOptional">false</property>
+                    <property name="isOutput">true</property>
+                </structure>
+                <structure>
+                    <property name="name">RESULTSET</property>
+                    <property name="nativeName">RESULTSET</property>
+                    <property name="dataType">any</property>
+                    <property name="nativeDataType">-10</property>
+                    <property name="position">3</property>
+                    <property name="isOptional">false</property>
+                    <property name="isOutput">true</property>
+                </structure>
+            </list-property>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">STORENAME</property>
+                    <property name="nativeName">STORENAME</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">2</property>
+                    <property name="name">ITEMNAME</property>
+                    <property name="nativeName">ITEMNAME</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">3</property>
+                    <property name="name">ACTIVE_QTY</property>
+                    <property name="nativeName">ACTIVE_QTY</property>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="position">4</property>
+                    <property name="name">SHORT_QTY</property>
+                    <property name="nativeName">SHORT_QTY</property>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="position">5</property>
+                    <property name="name">EXCESS_QTY</property>
+                    <property name="nativeName">EXCESS_QTY</property>
+                    <property name="dataType">decimal</property>
+                </structure>
+            </list-property>
+            <property name="queryText">{call DWH.PKG_MMS_RPT.RPTM_WPR_DRUGS(?,?,?)}</property>
+            <xml-property name="designerValues"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<model:DesignValues xmlns:design="http://www.eclipse.org/datatools/connectivity/oda/design" xmlns:model="http://www.eclipse.org/birt/report/model/adapter/odaModel">
+  <Version>1.0</Version>
+  <design:DataSetParameters>
+    <design:parameterDefinitions>
+      <design:inOutMode>In</design:inOutMode>
+      <design:attributes>
+        <design:name>P_MODE</design:name>
+        <design:position>1</design:position>
+        <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+        <design:nullability>Unknown</design:nullability>
+      </design:attributes>
+      <design:inputAttributes>
+        <design:elementAttributes>
+          <design:defaultScalarValue>JS_EXPR</design:defaultScalarValue>
+          <design:optional>false</design:optional>
+        </design:elementAttributes>
+      </design:inputAttributes>
+    </design:parameterDefinitions>
+    <design:parameterDefinitions>
+      <design:inOutMode>Out</design:inOutMode>
+      <design:attributes>
+        <design:name>ERR</design:name>
+        <design:position>2</design:position>
+        <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+        <design:nullability>Unknown</design:nullability>
+      </design:attributes>
+      <design:inputAttributes>
+        <design:elementAttributes>
+          <design:defaultScalarValue>JS_EXPR</design:defaultScalarValue>
+          <design:optional>false</design:optional>
+        </design:elementAttributes>
+      </design:inputAttributes>
+    </design:parameterDefinitions>
+    <design:parameterDefinitions>
+      <design:inOutMode>Out</design:inOutMode>
+      <design:attributes>
+        <design:name>RESULTSET</design:name>
+        <design:position>3</design:position>
+        <design:nativeDataTypeCode>-10</design:nativeDataTypeCode>
+        <design:nullability>Unknown</design:nullability>
+      </design:attributes>
+      <design:inputAttributes>
+        <design:elementAttributes>
+          <design:defaultScalarValue>JS_EXPR</design:defaultScalarValue>
+          <design:optional>false</design:optional>
+        </design:elementAttributes>
+      </design:inputAttributes>
+    </design:parameterDefinitions>
+  </design:DataSetParameters>
+</model:DesignValues>]]></xml-property>
+        </oda-data-set>
+    </data-sets>
+    <cubes>
+        <tabular-cube name="Data Cube" id="767">
+            <property name="defaultMeasureGroup">Summary Field</property>
+            <property name="dimensions">
+                <tabular-dimension name="Group" id="768">
+                    <property name="defaultHierarchy">NewTabularHierarchy</property>
+                    <property name="hierarchies">
+                        <tabular-hierarchy name="NewTabularHierarchy" id="769">
+                            <property name="levels">
+                                <tabular-level name="STORENAME" id="770">
+                                    <property name="dataType">string</property>
+                                    <property name="columnName">STORENAME</property>
+                                </tabular-level>
+                            </property>
+                        </tabular-hierarchy>
+                    </property>
+                </tabular-dimension>
+                <tabular-dimension name="Group1" id="771">
+                    <property name="defaultHierarchy">NewTabularHierarchy1</property>
+                    <property name="hierarchies">
+                        <tabular-hierarchy name="NewTabularHierarchy1" id="772">
+                            <property name="levels">
+                                <tabular-level name="ITEMNAME" id="773">
+                                    <property name="dataType">string</property>
+                                    <property name="columnName">ITEMNAME</property>
+                                </tabular-level>
+                            </property>
+                        </tabular-hierarchy>
+                    </property>
+                </tabular-dimension>
+            </property>
+            <property name="measureGroups">
+                <tabular-measure-group name="Summary Field" id="774">
+                    <property name="measures">
+                        <tabular-measure name="ACTIVE_QTY" id="775">
+                            <expression name="measureExpression">dataSetRow["ACTIVE_QTY"]</expression>
+                            <property name="dataType">decimal</property>
+                        </tabular-measure>
+                        <tabular-measure name="SHORT_QTY" id="776">
+                            <expression name="measureExpression">dataSetRow["SHORT_QTY"]</expression>
+                            <property name="dataType">decimal</property>
+                        </tabular-measure>
+                        <tabular-measure name="EXCESS_QTY" id="778">
+                            <expression name="measureExpression">dataSetRow["EXCESS_QTY"]</expression>
+                            <property name="dataType">decimal</property>
+                        </tabular-measure>
+                    </property>
+                </tabular-measure-group>
+            </property>
+            <property name="dataSet">Data Set</property>
+        </tabular-cube>
+    </cubes>
+    <styles>
+        <style name="crosstab" id="4">
+            <property name="borderBottomColor">#CCCCCC</property>
+            <property name="borderBottomStyle">solid</property>
+            <property name="borderBottomWidth">1pt</property>
+            <property name="borderLeftColor">#CCCCCC</property>
+            <property name="borderLeftStyle">solid</property>
+            <property name="borderLeftWidth">1pt</property>
+            <property name="borderRightColor">#CCCCCC</property>
+            <property name="borderRightStyle">solid</property>
+            <property name="borderRightWidth">1pt</property>
+            <property name="borderTopColor">#CCCCCC</property>
+            <property name="borderTopStyle">solid</property>
+            <property name="borderTopWidth">1pt</property>
+        </style>
+        <style name="crosstab-cell" id="5">
+            <property name="borderBottomColor">#CCCCCC</property>
+            <property name="borderBottomStyle">solid</property>
+            <property name="borderBottomWidth">1pt</property>
+            <property name="borderLeftColor">#CCCCCC</property>
+            <property name="borderLeftStyle">solid</property>
+            <property name="borderLeftWidth">1pt</property>
+            <property name="borderRightColor">#CCCCCC</property>
+            <property name="borderRightStyle">solid</property>
+            <property name="borderRightWidth">1pt</property>
+            <property name="borderTopColor">#CCCCCC</property>
+            <property name="borderTopStyle">solid</property>
+            <property name="borderTopWidth">1pt</property>
+        </style>
+    </styles>
+    <page-setup>
+        <simple-master-page name="Simple MasterPage" id="2">
+            <property name="topMargin">0.75in</property>
+            <property name="leftMargin">0.75in</property>
+            <property name="bottomMargin">0.5in</property>
+            <property name="rightMargin">1in</property>
+            <property name="headerHeight">0in</property>
+            <property name="footerHeight">0.2in</property>
+        </simple-master-page>
+    </page-setup>
+    <body>
+        <grid id="226">
+            <property name="textAlign">center</property>
+            <property name="width">100%</property>
+            <column id="227"/>
+            <column id="228"/>
+            <column id="229"/>
+            <row id="386">
+                <property name="textAlign">right</property>
+                <list-property name="visibility">
+                    <structure>
+                        <property name="format">all</property>
+                        <expression name="valueExpr">if(params["report_Format"]=="xls")
+{
+true
+}
+else
+{
+false
+}</expression>
+                    </structure>
+                </list-property>
+                <cell id="387">
+                    <property name="colSpan">3</property>
+                    <property name="rowSpan">1</property>
+                    <text id="390">
+                        <property name="fontFamily">"Arial"</property>
+                        <property name="fontSize">10pt</property>
+                        <property name="textAlign">right</property>
+                        <property name="contentType">html</property>
+                        <text-property name="content"><![CDATA[<script language="javascript">
+
+function printContent(){
+
+newwin=window.open('','printwin','left=100,top=100,width=700,height=700,scrollbars=yes');
+newwin.document.write('<HTML><HEAD>');
+newwin.document.write((document.getElementsByTagName("head")[0]).innerHTML);
+newwin.document.write('<style type="text/css"> .hidecontrol { display: none; } </style>\n')
+newwin.document.write('<script>\n');
+newwin.document.write('function chkstate(){ \n');
+//newwin.document.write('if(document.readystate=="complete" || document.readystate=="undefined"){\n');
+newwin.document.write('window.close();\n');
+//newwin.document.write('}\n');
+//newwin.document.write('else{\n');
+//newwin.document.write('setTimeout("chkstate()",2000)\n');
+//newwin.document.write('}\n');
+newwin.document.write('}\n');
+newwin.document.write('function print_win(){\n');
+newwin.document.write('window.print();\n');
+newwin.document.write('chkstate();\n');
+newwin.document.write('}\n');
+
+newwin.document.write('<\/script>\n');
+newwin.document.write('</HEAD>\n');
+newwin.document.write('<BODY onload="print_win()">\n');
+newwin.document.write((document.getElementsByTagName("body" )[0]).innerHTML);
+newwin.document.write('</BODY>\n');
+newwin.document.write('</HTML>\n');
+newwin.document.close();
+
+}
+
+</script>
+
+<div id='printAreaDivId' class='hidecontrol'>
+<img  src='../../hisglobal/images/btn-pnt.png' style="cursor: hand;cursor: pointer" onclick='printContent();'>
+<img src='../../hisglobal/images/btn-ccl.png' style="cursor: hand;cursor: pointer" onclick='javascript:history.back(-1);'>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+</div>
+<CODE>
+
+</CODE>]]></text-property>
+                    </text>
+                </cell>
+            </row>
+            <row id="230">
+                <cell id="231">
+                    <property name="colSpan">3</property>
+                    <property name="rowSpan">1</property>
+                    <grid id="344">
+                        <property name="width">100%</property>
+                        <column id="345">
+                            <property name="width">60%</property>
+                        </column>
+                        <column id="346">
+                            <property name="width">40%</property>
+                            <property name="textAlign">right</property>
+                        </column>
+                        <row id="384">
+                            <property name="verticalAlign">middle</property>
+                            <cell id="385">
+                                <property name="colSpan">2</property>
+                                <property name="rowSpan">1</property>
+                                <property name="textAlign">right</property>
+                                <grid id="54">
+                                    <property name="textAlign">right</property>
+                                    <property name="width">100%</property>
+                                    <column id="55">
+                                        <property name="width">80%</property>
+                                        <property name="verticalAlign">middle</property>
+                                    </column>
+                                    <column id="56">
+                                        <property name="width">24%</property>
+                                        <property name="verticalAlign">middle</property>
+                                    </column>
+                                    <row id="57">
+                                        <property name="verticalAlign">middle</property>
+                                        <cell id="58">
+                                            <label id="60">
+                                                <property name="fontFamily">"Arial"</property>
+                                                <property name="fontSize">10pt</property>
+                                                <property name="fontWeight">normal</property>
+                                                <property name="textAlign">right</property>
+                                                <text-property name="text">Report Date &amp; Time :</text-property>
+                                            </label>
+                                        </cell>
+                                        <cell id="59">
+                                            <property name="verticalAlign">middle</property>
+                                            <data id="62">
+                                                <property name="fontFamily">"Arial"</property>
+                                                <property name="fontSize">10pt</property>
+                                                <structure name="dateTimeFormat">
+                                                    <property name="category">Custom</property>
+                                                    <property name="pattern">dd/MM/yyyy kk:mm:ss</property>
+                                                </structure>
+                                                <property name="textAlign">left</property>
+                                                <list-property name="boundDataColumns">
+                                                    <structure>
+                                                        <property name="name">Column Binding</property>
+                                                        <property name="displayName">RunDateTime</property>
+                                                        <expression name="expression">new Date()</expression>
+                                                        <property name="dataType">date-time</property>
+                                                    </structure>
+                                                </list-property>
+                                                <property name="resultSetColumn">Column Binding</property>
+                                            </data>
+                                        </cell>
+                                    </row>
+                                </grid>
+                            </cell>
+                        </row>
+                        <row id="347">
+                            <property name="textAlign">center</property>
+                            <property name="verticalAlign">middle</property>
+                            <cell id="348">
+                                <property name="colSpan">2</property>
+                                <property name="rowSpan">1</property>
+                                <property name="textAlign">center</property>
+                                <text-data id="243">
+                                    <property name="fontFamily">"Arial"</property>
+                                    <property name="fontSize">12pt</property>
+                                    <property name="fontWeight">bold</property>
+                                    <property name="textAlign">center</property>
+                                    <expression name="valueExpr">params["report_Header"]</expression>
+                                    <property name="contentType">html</property>
+                                </text-data>
+                            </cell>
+                        </row>
+                    </grid>
+                </cell>
+            </row>
+            <row id="234">
+                <property name="textAlign">center</property>
+                <cell id="235">
+                    <property name="colSpan">3</property>
+                    <property name="rowSpan">1</property>
+                    <text-data id="248">
+                        <property name="fontFamily">"Arial"</property>
+                        <property name="fontSize">10pt</property>
+                        <property name="fontWeight">bold</property>
+                        <property name="textAlign">center</property>
+                        <expression name="valueExpr">params["report_Address"]</expression>
+                        <property name="contentType">html</property>
+                    </text-data>
+                </cell>
+            </row>
+            <row id="250">
+                <property name="textAlign">center</property>
+                <cell id="251">
+                    <property name="colSpan">3</property>
+                    <property name="rowSpan">1</property>
+                    <text-data id="254">
+                        <property name="fontFamily">"Arial"</property>
+                        <property name="fontSize">10pt</property>
+                        <property name="fontWeight">bold</property>
+                        <property name="textAlign">center</property>
+                        <expression name="valueExpr">params["report_Contact"]</expression>
+                        <property name="contentType">html</property>
+                    </text-data>
+                </cell>
+            </row>
+            <row id="238">
+                <property name="textAlign">center</property>
+                <cell id="239">
+                    <property name="colSpan">3</property>
+                    <property name="rowSpan">1</property>
+                    <text-data id="268">
+                        <property name="fontFamily">"Arial"</property>
+                        <property name="fontSize">12pt</property>
+                        <property name="fontWeight">bold</property>
+                        <property name="textAlign">center</property>
+                        <expression name="valueExpr">params["report_Name"]</expression>
+                        <property name="contentType">html</property>
+                    </text-data>
+                </cell>
+            </row>
+            <row id="380">
+                <list-property name="visibility">
+                    <structure>
+                        <property name="format">all</property>
+                        <expression name="valueExpr">if(params["report_Format"]=="xls")
+{
+true
+}
+else
+{
+false
+}</expression>
+                    </structure>
+                </list-property>
+                <cell id="381">
+                    <property name="colSpan">3</property>
+                    <property name="rowSpan">1</property>
+                </cell>
+            </row>
+            <row id="822">
+                <property name="textAlign">center</property>
+                <cell id="823">
+                    <property name="colSpan">3</property>
+                    <property name="rowSpan">1</property>
+                    <table id="716">
+                        <property name="fontFamily">"Arial"</property>
+                        <property name="fontSize">5pt</property>
+                        <property name="widows">2</property>
+                        <property name="canShrink">true</property>
+                        <property name="width">90%</property>
+                        <column id="723"/>
+                        <header>
+                            <row id="717">
+                                <list-property name="visibility">
+                                    <structure>
+                                        <property name="format">all</property>
+                                        <expression name="valueExpr">if(params["report_Format"]=="xls")
+{
+true
+}
+else
+{
+false
+}</expression>
+                                    </structure>
+                                </list-property>
+                                <cell id="718"/>
+                            </row>
+                        </header>
+                        <detail>
+                            <row id="719">
+                                <property name="height">0.5in</property>
+                                <cell id="720">
+                                    <extended-item extensionName="Crosstab" id="671">
+                                        <property name="measureDirection">horizontal</property>
+                                        <property name="measures">
+                                            <extended-item extensionName="MeasureView" id="803">
+                                                <property name="measure">ACTIVE_QTY</property>
+                                                <property name="detail">
+                                                    <extended-item extensionName="CrosstabCell" id="804">
+                                                        <property name="content">
+                                                            <data name="ACTIVE_QTY" id="806">
+                                                                <property name="resultSetColumn">ACTIVE_QTY</property>
+                                                            </data>
+                                                        </property>
+                                                        <property name="backgroundColor">#DCE2BC</property>
+                                                        <property name="borderTopStyle">solid</property>
+                                                        <property name="borderTopWidth">thin</property>
+                                                        <property name="borderTopColor">#000000</property>
+                                                        <property name="borderLeftStyle">solid</property>
+                                                        <property name="borderLeftWidth">thin</property>
+                                                        <property name="borderLeftColor">#000000</property>
+                                                        <property name="borderBottomStyle">solid</property>
+                                                        <property name="borderBottomWidth">thin</property>
+                                                        <property name="borderBottomColor">#000000</property>
+                                                        <property name="borderRightStyle">solid</property>
+                                                        <property name="borderRightWidth">thin</property>
+                                                        <property name="borderRightColor">#000000</property>
+                                                        <property name="height">26px</property>
+                                                    </extended-item>
+                                                </property>
+                                                <property name="header">
+                                                    <extended-item extensionName="CrosstabCell" id="805">
+                                                        <property name="content">
+                                                            <label id="755">
+                                                                <property name="fontWeight">bold</property>
+                                                                <text-property name="text">Ready For Issue</text-property>
+                                                            </label>
+                                                        </property>
+                                                        <property name="backgroundColor">#DCE2BC</property>
+                                                        <property name="borderTopStyle">solid</property>
+                                                        <property name="borderTopWidth">thin</property>
+                                                        <property name="borderTopColor">#000000</property>
+                                                        <property name="borderLeftStyle">solid</property>
+                                                        <property name="borderLeftWidth">thin</property>
+                                                        <property name="borderLeftColor">#000000</property>
+                                                        <property name="borderBottomStyle">solid</property>
+                                                        <property name="borderBottomWidth">thin</property>
+                                                        <property name="borderBottomColor">#000000</property>
+                                                        <property name="borderRightStyle">solid</property>
+                                                        <property name="borderRightWidth">thin</property>
+                                                        <property name="borderRightColor">#000000</property>
+                                                    </extended-item>
+                                                </property>
+                                            </extended-item>
+                                            <extended-item extensionName="MeasureView" id="808">
+                                                <property name="measure">SHORT_QTY</property>
+                                                <property name="detail">
+                                                    <extended-item extensionName="CrosstabCell" id="809">
+                                                        <property name="content">
+                                                            <data name="SHORT_QTY" id="811">
+                                                                <property name="resultSetColumn">SHORT_QTY</property>
+                                                            </data>
+                                                        </property>
+                                                        <property name="backgroundColor">#D99795</property>
+                                                        <property name="borderTopStyle">solid</property>
+                                                        <property name="borderTopWidth">thin</property>
+                                                        <property name="borderTopColor">#000000</property>
+                                                        <property name="borderLeftStyle">solid</property>
+                                                        <property name="borderLeftWidth">thin</property>
+                                                        <property name="borderLeftColor">#000000</property>
+                                                        <property name="borderBottomStyle">solid</property>
+                                                        <property name="borderBottomWidth">thin</property>
+                                                        <property name="borderBottomColor">#000000</property>
+                                                        <property name="borderRightStyle">solid</property>
+                                                        <property name="borderRightWidth">thin</property>
+                                                        <property name="borderRightColor">#000000</property>
+                                                    </extended-item>
+                                                </property>
+                                                <property name="header">
+                                                    <extended-item extensionName="CrosstabCell" id="810">
+                                                        <property name="content">
+                                                            <label id="744">
+                                                                <property name="fontWeight">bold</property>
+                                                                <text-property name="text">Shortage Qty</text-property>
+                                                            </label>
+                                                        </property>
+                                                        <property name="backgroundColor">#D99795</property>
+                                                        <property name="borderTopStyle">solid</property>
+                                                        <property name="borderTopWidth">thin</property>
+                                                        <property name="borderTopColor">#000000</property>
+                                                        <property name="borderLeftStyle">solid</property>
+                                                        <property name="borderLeftWidth">thin</property>
+                                                        <property name="borderLeftColor">#000000</property>
+                                                        <property name="borderBottomStyle">solid</property>
+                                                        <property name="borderBottomWidth">thin</property>
+                                                        <property name="borderBottomColor">#000000</property>
+                                                        <property name="borderRightStyle">solid</property>
+                                                        <property name="borderRightWidth">thin</property>
+                                                        <property name="borderRightColor">#000000</property>
+                                                    </extended-item>
+                                                </property>
+                                            </extended-item>
+                                            <extended-item extensionName="MeasureView" id="813">
+                                                <property name="measure">EXCESS_QTY</property>
+                                                <property name="detail">
+                                                    <extended-item extensionName="CrosstabCell" id="814">
+                                                        <property name="content">
+                                                            <data name="EXCESS_QTY" id="816">
+                                                                <property name="resultSetColumn">EXCESS_QTY</property>
+                                                            </data>
+                                                        </property>
+                                                        <property name="backgroundColor">#95B3D7</property>
+                                                        <property name="borderTopStyle">solid</property>
+                                                        <property name="borderTopWidth">thin</property>
+                                                        <property name="borderTopColor">#000000</property>
+                                                        <property name="borderLeftStyle">solid</property>
+                                                        <property name="borderLeftWidth">thin</property>
+                                                        <property name="borderLeftColor">#000000</property>
+                                                        <property name="borderBottomStyle">solid</property>
+                                                        <property name="borderBottomWidth">thin</property>
+                                                        <property name="borderBottomColor">#000000</property>
+                                                        <property name="borderRightStyle">solid</property>
+                                                        <property name="borderRightWidth">thin</property>
+                                                        <property name="borderRightColor">#000000</property>
+                                                    </extended-item>
+                                                </property>
+                                                <property name="header">
+                                                    <extended-item extensionName="CrosstabCell" id="815">
+                                                        <property name="content">
+                                                            <label id="749">
+                                                                <property name="fontWeight">bold</property>
+                                                                <text-property name="text">Excess Qty</text-property>
+                                                            </label>
+                                                        </property>
+                                                        <property name="backgroundColor">#95B3D7</property>
+                                                        <property name="borderTopStyle">solid</property>
+                                                        <property name="borderTopWidth">thin</property>
+                                                        <property name="borderTopColor">#000000</property>
+                                                        <property name="borderLeftStyle">solid</property>
+                                                        <property name="borderLeftWidth">thin</property>
+                                                        <property name="borderLeftColor">#000000</property>
+                                                        <property name="borderBottomStyle">solid</property>
+                                                        <property name="borderBottomWidth">thin</property>
+                                                        <property name="borderBottomColor">#000000</property>
+                                                        <property name="borderRightStyle">solid</property>
+                                                        <property name="borderRightWidth">thin</property>
+                                                        <property name="borderRightColor">#000000</property>
+                                                        <property name="drop">none</property>
+                                                    </extended-item>
+                                                </property>
+                                            </extended-item>
+                                        </property>
+                                        <property name="rows">
+                                            <extended-item extensionName="CrosstabView" id="687">
+                                                <property name="views">
+                                                    <extended-item extensionName="DimensionView" id="818">
+                                                        <property name="dimension">Group1</property>
+                                                        <property name="levels">
+                                                            <extended-item extensionName="LevelView" name="NewLevel View" id="819">
+                                                                <property name="level">Group1/ITEMNAME</property>
+                                                                <property name="member">
+                                                                    <extended-item extensionName="CrosstabCell" id="820">
+                                                                        <property name="content">
+                                                                            <data name="ITEMNAME" id="821">
+                                                                                <property name="fontWeight">bold</property>
+                                                                                <property name="textAlign">left</property>
+                                                                                <property name="resultSetColumn">ITEMNAME</property>
+                                                                            </data>
+                                                                        </property>
+                                                                        <property name="borderTopStyle">solid</property>
+                                                                        <property name="borderTopWidth">thin</property>
+                                                                        <property name="borderTopColor">#000000</property>
+                                                                        <property name="borderLeftStyle">solid</property>
+                                                                        <property name="borderLeftWidth">thin</property>
+                                                                        <property name="borderLeftColor">#000000</property>
+                                                                        <property name="borderBottomStyle">solid</property>
+                                                                        <property name="borderBottomWidth">thin</property>
+                                                                        <property name="borderBottomColor">#000000</property>
+                                                                        <property name="borderRightStyle">solid</property>
+                                                                        <property name="borderRightWidth">thin</property>
+                                                                        <property name="borderRightColor">#000000</property>
+                                                                    </extended-item>
+                                                                </property>
+                                                            </extended-item>
+                                                        </property>
+                                                    </extended-item>
+                                                </property>
+                                            </extended-item>
+                                        </property>
+                                        <property name="columns">
+                                            <extended-item extensionName="CrosstabView" id="697">
+                                                <property name="views">
+                                                    <extended-item extensionName="DimensionView" id="799">
+                                                        <property name="dimension">Group</property>
+                                                        <property name="levels">
+                                                            <extended-item extensionName="LevelView" name="NewLevel View1" id="800">
+                                                                <property name="level">Group/STORENAME</property>
+                                                                <property name="member">
+                                                                    <extended-item extensionName="CrosstabCell" id="801">
+                                                                        <property name="content">
+                                                                            <data name="STORENAME" id="802">
+                                                                                <property name="fontWeight">bold</property>
+                                                                                <property name="resultSetColumn">STORENAME</property>
+                                                                            </data>
+                                                                        </property>
+                                                                        <property name="backgroundColor">#F2AA7E</property>
+                                                                        <property name="borderTopStyle">solid</property>
+                                                                        <property name="borderTopWidth">thin</property>
+                                                                        <property name="borderTopColor">#000000</property>
+                                                                        <property name="borderLeftStyle">solid</property>
+                                                                        <property name="borderLeftWidth">thin</property>
+                                                                        <property name="borderLeftColor">#000000</property>
+                                                                        <property name="borderBottomStyle">solid</property>
+                                                                        <property name="borderBottomWidth">thin</property>
+                                                                        <property name="borderBottomColor">#000000</property>
+                                                                        <property name="borderRightStyle">solid</property>
+                                                                        <property name="borderRightWidth">thin</property>
+                                                                        <property name="borderRightColor">#000000</property>
+                                                                    </extended-item>
+                                                                </property>
+                                                            </extended-item>
+                                                        </property>
+                                                    </extended-item>
+                                                </property>
+                                            </extended-item>
+                                        </property>
+                                        <property name="fontFamily">"Arial"</property>
+                                        <property name="fontSize">9pt</property>
+                                        <property name="borderTopStyle">solid</property>
+                                        <property name="borderTopWidth">thin</property>
+                                        <property name="borderTopColor">#000000</property>
+                                        <property name="borderLeftStyle">solid</property>
+                                        <property name="borderLeftWidth">thin</property>
+                                        <property name="borderLeftColor">#000000</property>
+                                        <property name="borderBottomStyle">solid</property>
+                                        <property name="borderBottomWidth">thin</property>
+                                        <property name="borderBottomColor">#000000</property>
+                                        <property name="borderRightStyle">solid</property>
+                                        <property name="borderRightWidth">thin</property>
+                                        <property name="borderRightColor">#000000</property>
+                                        <property name="marginTop">0pt</property>
+                                        <property name="cube">Data Cube</property>
+                                        <property name="width">602px</property>
+                                        <list-property name="boundDataColumns">
+                                            <structure>
+                                                <property name="name">Column Binding</property>
+                                                <expression name="expression">row.__rownum+1;</expression>
+                                                <property name="dataType">any</property>
+                                            </structure>
+                                            <structure>
+                                                <property name="name">STORENAME</property>
+                                                <expression name="expression">dimension["Group"]["STORENAME"]</expression>
+                                                <property name="dataType">string</property>
+                                            </structure>
+                                            <structure>
+                                                <property name="name">ACTIVE_QTY</property>
+                                                <expression name="expression">if(measure["ACTIVE_QTY"]==null)
+{
+0;
+}
+else
+{
+measure["ACTIVE_QTY"];
+}</expression>
+                                                <property name="dataType">decimal</property>
+                                            </structure>
+                                            <structure>
+                                                <property name="name">SHORT_QTY</property>
+                                                <expression name="expression">if(measure["SHORT_QTY"]==null)
+{
+0;
+}
+else
+{
+measure["SHORT_QTY"];
+}</expression>
+                                                <property name="dataType">decimal</property>
+                                            </structure>
+                                            <structure>
+                                                <property name="name">EXCESS_QTY</property>
+                                                <expression name="expression">if(measure["EXCESS_QTY"]==null)
+{
+0;
+}
+else
+{
+measure["EXCESS_QTY"];
+}</expression>
+                                                <property name="dataType">decimal</property>
+                                            </structure>
+                                            <structure>
+                                                <property name="name">ITEMNAME</property>
+                                                <expression name="expression">dimension["Group1"]["ITEMNAME"]</expression>
+                                                <property name="dataType">string</property>
+                                            </structure>
+                                        </list-property>
+                                    </extended-item>
+                                </cell>
+                            </row>
+                        </detail>
+                        <footer>
+                            <row id="721">
+                                <cell id="722"/>
+                            </row>
+                        </footer>
+                    </table>
+                </cell>
+            </row>
+            <row id="256">
+                <property name="textAlign">center</property>
+                <cell id="257">
+                    <property name="colSpan">3</property>
+                    <property name="rowSpan">1</property>
+                </cell>
+            </row>
+            <row id="279">
+                <cell id="280"/>
+                <cell id="281"/>
+                <cell id="282"/>
+            </row>
+            <row id="357">
+                <cell id="358">
+                    <property name="colSpan">3</property>
+                    <property name="rowSpan">1</property>
+                    <text-data id="365">
+                        <property name="fontFamily">"Arial"</property>
+                        <property name="fontSize">10pt</property>
+                        <property name="fontWeight">normal</property>
+                        <property name="textAlign">center</property>
+                        <expression name="valueExpr">params["report_user_Remarks"]</expression>
+                        <property name="contentType">html</property>
+                    </text-data>
+                </cell>
+            </row>
+            <row id="275">
+                <cell id="276">
+                    <property name="colSpan">3</property>
+                    <property name="rowSpan">1</property>
+                    <text id="304">
+                        <property name="fontFamily">"Arial"</property>
+                        <property name="fontSize">9pt</property>
+                        <property name="textAlign">center</property>
+                        <property name="contentType">auto</property>
+                        <text-property name="content"><![CDATA[****End of Report****]]></text-property>
+                    </text>
+                </cell>
+            </row>
+            <row id="361">
+                <cell id="362">
+                    <property name="colSpan">3</property>
+                    <property name="rowSpan">1</property>
+                    <text-data id="367">
+                        <property name="fontFamily">"Arial"</property>
+                        <property name="fontSize">10pt</property>
+                        <property name="fontWeight">bold</property>
+                        <property name="textAlign">center</property>
+                        <list-property name="visibility">
+                            <structure>
+                                <property name="format">all</property>
+                                <expression name="valueExpr">params["report_Footer_Visible"]</expression>
+                            </structure>
+                        </list-property>
+                        <expression name="valueExpr">params["report_Footer"]</expression>
+                        <property name="contentType">html</property>
+                    </text-data>
+                </cell>
+            </row>
+        </grid>
+    </body>
+</report>

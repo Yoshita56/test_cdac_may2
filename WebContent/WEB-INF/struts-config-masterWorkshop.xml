@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE struts-config PUBLIC
+          "-//Apache Software Foundation//DTD Struts Configuration 1.1//EN"
+          "http://jakarta.apache.org/struts/dtds/struts-config_1_1.dtd">
+
+<struts-config>
+    <form-beans>
+        <form-bean name="mstHandlerListForm" type="hisglobal.masterxml.masterworkshop.MstHandlerListFormBn"/>
+		<form-bean name="mstHandlerAddForm" type="hisglobal.masterxml.masterworkshop.MstHandlerAddFormBn"/>
+		<form-bean name="mstHandlerModifyForm" type="hisglobal.masterxml.masterworkshop.MstHandlerModifyFormBn"/>
+		<form-bean name="GenrateSequenceFB" type="registration.controller.fb.GenrateSequenceFB"/>
+		<form-bean name="GenerateRosterSequenceFB" type="registration.controller.fb.GenerateRosterSequenceFB"/>
+
+		
+    </form-beans>
+	    
+    <action-mappings>
+        <action path="/masterWorkshop/mstHandlerListAction"        
+            type="hisglobal.masterxml.masterworkshop.MstHandlerListAction"
+            name="mstHandlerListForm"
+            validate="false"
+            scope="request"
+            parameter= "hmode"                                                                                    						            
+            input="/hisglobal/masterxml/masterworkshopjsp/mstHandlerListView.jsp">
+           <forward name="list" path="/hisglobal/masterxml/masterworkshopjsp/mstHandlerListView.jsp"/>
+           <forward name="add" path="/masterWorkshop/mstHandlerAddAction.cnt"/>           
+		   <forward name="modify" path="/masterWorkshop/mstHandlerModifyAction.cnt"/>
+		   <forward name="report" path="/hisglobal/masterxml/masterworkshopjsp/mstReportFrameLayout.jsp"/>
+		   <forward name="SEQUENCE" path="/masterWorkshop/sequence.cnt"/>		   
+   		   <forward name="ROSTERSEQUENCE" path="/masterWorkshop/rosterSequence.cnt"/>		   		   
+		   <forward name="error" path="/hisglobal/masterxml/masterworkshopjsp/errorPage.jsp"/>
+       </action>
+ 
+ 
+<action  path="/masterWorkshop/rosterSequence"
+	    type="registration.controller.action.GenerateRosterSequenceACTION"
+	    name="GenerateRosterSequenceFB"
+	    validate="false"
+	    scope="request"
+	    parameter="sequenceMode"
+	    input="/MasterWorkshopJSP/mstRosterSequence.jsp">
+	  	<forward name="NEW" path="/hisglobal/masterxml/masterworkshopjsp/mstRosterSequence.jsp" />  	
+	  	<forward name="SAME" path="/hisglobal/masterxml/masterworkshopjsp/mstRosterSequence.jsp" /> 
+	  	<forward name="list" path="/hisglobal/masterxml/masterworkshopjsp/mstHandlerListAction.cnt"/> 	  		  	
+</action>
+       
+<action  path="/masterWorkshop/sequence"
+		 type="registration.controller.action.GenrateSequenceACTION"
+		 name="GenrateSequenceFB"
+		 validate="false"
+		 scope="request"
+		 parameter="sequenceMode"
+		 input="/hisglobal/masterxml/masterworkshopjsp/mstHandlerSequence.jsp">
+	  	<forward name="NEW" path="/hisglobal/masterxml/masterworkshopjsp/mstHandlerSequence.jsp" />  	
+	  	<forward name="SAME" path="/hisglobal/masterxml/masterworkshopjsp/mstHandlerSequence.jsp" /> 
+	  	<forward name="list" path="/masterWorkshop/mstHandlerListAction.cnt"/> 	  		  	
+</action>              
+<action path="/masterWorkshop/mstHandlerAddAction"        
+            type="hisglobal.masterxml.masterworkshop.MstHandlerAddAction"
+            name="mstHandlerAddForm"
+            validate="false"
+            scope="request"
+            parameter="hmode"
+			            
+            input="mstHandlerListView.jsp">
+           <forward name="add" path="/hisglobal/masterxml/masterworkshopjsp/mstHandlerAddView.jsp"/>
+		   <forward name="error" path="/hisglobal/masterxml/masterworkshopjsp/errorPage.jsp"/>
+		   <forward name="list" path="/masterWorkshop/mstHandlerListAction.cnt"/>		   
+</action>
+	  
+	   
+<action path="/masterWorkshop/mstHandlerModifyAction"        
+            type="hisglobal.masterxml.masterworkshop.MstHandlerModifyAction"
+            name="mstHandlerModifyForm"
+            validate="false"
+            scope="request"
+            parameter="hmode"			            
+            input="mstHandlerListView.jsp">
+           <forward name="modify" path="/hisglobal/masterxml/masterworkshopjsp/mstHandlerModView.jsp"/>
+		   <forward name="list" path="/masterWorkshop/mstHandlerListAction.cnt"/>
+		   <forward name="view" path="/hisglobal/masterxml/masterworkshopjsp/mstHandlerViewPage.jsp"/>
+		   <forward name="error" path="/hisglobal/masterxml/masterworkshopjsp/errorPage.jsp"/>
+       </action>  
+       
+        <action  path="/opd/master/icdMaster"
+	    type="opd.master.controller.action.IcdMasterACTION"
+	    name="IcdMasterFB"
+	    validate="false"
+	    scope="request"
+	    parameter="deskmode"
+	    input = "/icdTile">
+		<forward name ="GROUP" path="/icdTile"/>
+   		<forward name ="SUBGROUP" path="/icdTile"/>
+   		<forward name ="DISEASE" path="/icdTile"/>
+   		<forward name ="SUBDISEASE" path="/icdTile"/>
+	    <forward name="CANCEL" path="/startup/initPage.jsp" redirect="true"/>   
+    </action>    
+                  
+                           
+    </action-mappings>
+    
+   
+
+</struts-config>

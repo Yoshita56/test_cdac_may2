@@ -1,0 +1,90 @@
+
+<context>
+	<Resource 
+        name="AHIS_DEV_9.1"
+        auth="Container"
+        type="javax.sql.DataSource"
+		driverClassName="com.edb.Driver"
+		url="jdbc:edb://10.226.1.238:5444/nimsnew"
+		username="nimsnew"
+		password="nimsnew"
+		maxActive="4"
+		maxIdle="2"
+		maxWait="5000"/>
+		
+		<Resource 
+        name="AHIS"
+        auth="Container"
+        type="javax.sql.DataSource"
+		driverClassName="com.edb.Driver"
+		url="jdbc:edb://10.226.2.98:5444/nimsnew"
+		username="nimsnew"
+		password="nimsnew"
+		maxActive="4"
+		maxIdle="2"
+		maxWait="5000"/>
+		
+		
+		
+		<Resource 
+        name="AHIS_UAT"
+        auth="Container"
+        type="javax.sql.DataSource"
+		driverClassName="com.edb.Driver"
+		url="jdbc:edb://10.226.2.186:5444/nims_uat"
+		username="nims_uat"
+		password="nims_uat"
+		maxActive="4"
+		maxIdle="2"
+		maxWait="5000"/>
+		
+		<Resource 
+        name="AHIS_OldTest"
+        auth="Container"
+        type="javax.sql.DataSource"
+		driverClassName="com.edb.Driver"
+		url="jdbc:edb://10.226.1.60:5444/nimsnew"
+		username="nimsnew"
+		password="nimsnew"
+		maxActive="4"
+		maxIdle="2"
+		maxWait="5000"/>
+		
+		<Resource 
+        name="AHIS_TEST"
+        auth="Container"
+        type="javax.sql.DataSource"
+		driverClassName="com.edb.Driver"
+		url="jdbc:edb://10.226.2.96:5444/nimsnew"
+		username="nimsnew"
+		password="nimsnew"
+		maxActive="4"
+		maxIdle="2"
+		maxWait="5000"/>
+		
+		<Resource 
+        name="AHIS_TEST94"
+        auth="Container"
+        type="javax.sql.DataSource"
+		driverClassName="com.edb.Driver"
+		url="jdbc:edb://10.226.2.169:5444/nims94"
+		username="nims94"
+		password="nims94"
+		maxActive="4"
+		maxIdle="2"
+		maxWait="5000"/>
+		
+		<Resource 
+        name="AHIS_DEV_94"
+        auth="Container"
+        type="javax.sql.DataSource"
+		driverClassName="com.edb.Driver"
+		url="jdbc:edb://10.226.2.98:5444/nimsnew"
+		username="nimsnew"
+		password="nimsnew"
+		maxActive="4"
+		maxIdle="2"
+		maxWait="5000"/>
+		
+	<WatchedResource>WEB-INF/web.xml</WatchedResource>
+</context>

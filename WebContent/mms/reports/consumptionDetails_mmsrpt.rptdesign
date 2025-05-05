@@ -1,0 +1,1669 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<report xmlns="http://www.eclipse.org/birt/2005/design" version="3.2.23" id="1">
+    <property name="comments">Copyright (c) 2007 &lt;&lt;Your Company Name here>></property>
+    <property name="createdBy">Eclipse BIRT Designer Version 4.3.1.v201309091055 Build &lt;4.3.1.v20130918-1142></property>
+    <list-property name="propertyBindings">
+        <structure>
+            <property name="name">odaDriverClass</property>
+            <property name="id">63</property>
+        </structure>
+        <structure>
+            <property name="name">odaURL</property>
+            <property name="id">63</property>
+        </structure>
+        <structure>
+            <property name="name">odaUser</property>
+            <property name="id">63</property>
+        </structure>
+        <structure>
+            <property name="name">odaPassword</property>
+            <property name="id">63</property>
+        </structure>
+        <structure>
+            <property name="name">odaJndiName</property>
+            <property name="id">63</property>
+            <expression name="value">params["jndi_ds_conn"]</expression>
+        </structure>
+        <structure>
+            <property name="name">OdaConnProfileName</property>
+            <property name="id">63</property>
+        </structure>
+        <structure>
+            <property name="name">OdaConnProfileStorePath</property>
+            <property name="id">63</property>
+        </structure>
+    </list-property>
+    <property name="units">in</property>
+    <text-property name="displayName">hisReportTemplate</text-property>
+    <property name="layoutPreference">auto layout</property>
+    <parameters>
+        <scalar-parameter name="jndi_ds_conn" id="22">
+            <property name="valueType">static</property>
+            <property name="dataType">string</property>
+            <property name="distinct">true</property>
+            <simple-property-list name="defaultValue">
+                <value type="constant">java:comp/env/AHIS</value>
+            </simple-property-list>
+            <property name="paramType">simple</property>
+            <property name="controlType">text-box</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="report_Header" id="23">
+            <property name="valueType">static</property>
+            <property name="dataType">string</property>
+            <property name="distinct">true</property>
+            <property name="paramType">simple</property>
+            <property name="controlType">text-box</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="report_Footer" id="24">
+            <property name="valueType">static</property>
+            <property name="dataType">string</property>
+            <property name="distinct">true</property>
+            <simple-property-list name="defaultValue">
+                <value type="constant">Computer Generated Report</value>
+            </simple-property-list>
+            <property name="paramType">simple</property>
+            <property name="controlType">text-box</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="report_Name" id="26">
+            <property name="valueType">static</property>
+            <property name="dataType">string</property>
+            <property name="distinct">true</property>
+            <property name="paramType">simple</property>
+            <property name="controlType">text-box</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="report_Footer_Visible" id="75">
+            <property name="valueType">static</property>
+            <property name="isRequired">false</property>
+            <property name="dataType">boolean</property>
+            <property name="distinct">true</property>
+            <simple-property-list name="defaultValue">
+                <value type="constant">true</value>
+            </simple-property-list>
+            <property name="paramType">simple</property>
+            <property name="controlType">check-box</property>
+            <structure name="format"/>
+        </scalar-parameter>
+        <scalar-parameter name="report_user_Remarks" id="191">
+            <property name="valueType">static</property>
+            <property name="isRequired">false</property>
+            <property name="dataType">string</property>
+            <property name="distinct">true</property>
+            <property name="paramType">simple</property>
+            <property name="controlType">text-box</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="report_Address" id="249">
+            <property name="valueType">static</property>
+            <property name="isRequired">true</property>
+            <property name="dataType">string</property>
+            <property name="distinct">true</property>
+            <property name="paramType">simple</property>
+            <property name="controlType">text-box</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="report_Contact" id="255">
+            <property name="valueType">static</property>
+            <property name="dataType">string</property>
+            <property name="distinct">true</property>
+            <property name="paramType">simple</property>
+            <property name="controlType">text-box</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="rpt_format" id="391">
+            <property name="valueType">static</property>
+            <property name="dataType">boolean</property>
+            <property name="distinct">true</property>
+            <simple-property-list name="defaultValue">
+                <value type="constant">true</value>
+            </simple-property-list>
+            <property name="paramType">simple</property>
+            <property name="controlType">check-box</property>
+            <structure name="format"/>
+        </scalar-parameter>
+        <scalar-parameter name="hospCode" id="392">
+            <property name="valueType">static</property>
+            <property name="dataType">string</property>
+            <property name="distinct">true</property>
+            <simple-property-list name="defaultValue">
+                <value type="constant">108</value>
+            </simple-property-list>
+            <property name="paramType">simple</property>
+            <property name="controlType">text-box</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="storeId" id="393">
+            <property name="valueType">static</property>
+            <property name="dataType">string</property>
+            <property name="distinct">true</property>
+            <simple-property-list name="defaultValue">
+                <value type="constant">10002100</value>
+            </simple-property-list>
+            <property name="paramType">simple</property>
+            <property name="controlType">text-box</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="catCode" id="394">
+            <property name="valueType">static</property>
+            <property name="dataType">string</property>
+            <property name="distinct">true</property>
+            <simple-property-list name="defaultValue">
+                <value type="constant">1</value>
+            </simple-property-list>
+            <property name="paramType">simple</property>
+            <property name="controlType">text-box</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="fromDate" id="395">
+            <property name="valueType">static</property>
+            <property name="dataType">string</property>
+            <property name="distinct">true</property>
+            <simple-property-list name="defaultValue">
+                <value type="constant">'21-jul-2009'</value>
+            </simple-property-list>
+            <property name="paramType">simple</property>
+            <property name="controlType">text-box</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="toDate" id="396">
+            <property name="valueType">static</property>
+            <property name="dataType">string</property>
+            <property name="distinct">true</property>
+            <simple-property-list name="defaultValue">
+                <value type="constant">'30-jul-2009'</value>
+            </simple-property-list>
+            <property name="paramType">simple</property>
+            <property name="controlType">text-box</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="fromYear" id="397">
+            <property name="valueType">static</property>
+            <property name="dataType">string</property>
+            <property name="distinct">true</property>
+            <property name="paramType">simple</property>
+            <property name="controlType">text-box</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="toYear" id="398">
+            <property name="valueType">static</property>
+            <property name="dataType">string</property>
+            <property name="distinct">true</property>
+            <property name="paramType">simple</property>
+            <property name="controlType">text-box</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+    </parameters>
+    <data-sources>
+        <oda-data-source extensionID="org.eclipse.birt.report.data.oda.jdbc" name="Data Source" id="63">
+            <property name="odaDriverClass">com.edb.Driver</property>
+            <property name="odaURL">jdbc:edb://10.0.2.103:5444/mhmis</property>
+            <property name="odaUser">mhmis</property>
+            <encrypted-property name="odaPassword" encryptionID="base64">bWhtaXM=</encrypted-property>
+            <property name="odaJndiName">java:comp/env/AHIS</property>
+        </oda-data-source>
+    </data-sources>
+    <data-sets>
+        <oda-data-set extensionID="org.eclipse.birt.report.data.oda.jdbc.SPSelectDataSet" name="Data Set" id="399">
+            <list-property name="parameters">
+                <structure>
+                    <property name="name">MODEVAL</property>
+                    <property name="nativeName">MODEVAL</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                    <property name="position">1</property>
+                    <expression name="defaultValue">1</expression>
+                    <property name="isOptional">false</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+                <structure>
+                    <property name="name">HOSP_CODE</property>
+                    <property name="paramName">hospCode</property>
+                    <property name="nativeName">HOSP_CODE</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                    <property name="position">2</property>
+                    <property name="isOptional">false</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+                <structure>
+                    <property name="name">STRID</property>
+                    <property name="paramName">storeId</property>
+                    <property name="nativeName">STRID</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                    <property name="position">3</property>
+                    <property name="isOptional">false</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+                <structure>
+                    <property name="name">CATCODE</property>
+                    <property name="paramName">catCode</property>
+                    <property name="nativeName">CATCODE</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                    <property name="position">4</property>
+                    <property name="isOptional">false</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+                <structure>
+                    <property name="name">FRMDATE</property>
+                    <property name="paramName">fromDate</property>
+                    <property name="nativeName">FRMDATE</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                    <property name="position">5</property>
+                    <property name="isOptional">false</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+                <structure>
+                    <property name="name">TODATE</property>
+                    <property name="paramName">toDate</property>
+                    <property name="nativeName">TODATE</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                    <property name="position">6</property>
+                    <property name="isOptional">false</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+                <structure>
+                    <property name="name">FRMYEAR</property>
+                    <property name="paramName">fromYear</property>
+                    <property name="nativeName">FRMYEAR</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                    <property name="position">7</property>
+                    <property name="isOptional">false</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+                <structure>
+                    <property name="name">TOYEAR</property>
+                    <property name="paramName">toYear</property>
+                    <property name="nativeName">TOYEAR</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                    <property name="position">8</property>
+                    <property name="isOptional">false</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+                <structure>
+                    <property name="name">ERR</property>
+                    <property name="nativeName">ERR</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                    <property name="position">9</property>
+                    <property name="isOptional">false</property>
+                    <property name="isOutput">true</property>
+                </structure>
+                <structure>
+                    <property name="name">RESULTSET</property>
+                    <property name="nativeName">RESULTSET</property>
+                    <property name="dataType">any</property>
+                    <property name="nativeDataType">-10</property>
+                    <property name="position">10</property>
+                    <property name="isOptional">false</property>
+                    <property name="isOutput">true</property>
+                </structure>
+            </list-property>
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">STORE_NAME</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">2</property>
+                        <property name="name">ITEM_NAME</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">3</property>
+                        <property name="name">BATCH_NO</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">4</property>
+                        <property name="name">RATE_UNIT</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">5</property>
+                        <property name="name">ISSUE_QTY</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">6</property>
+                        <property name="name">ISSUE_DATE</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">7</property>
+                        <property name="name">COST_VAL</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">Data Source</property>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">STORE_NAME</property>
+                    <property name="nativeName">STORE_NAME</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">2</property>
+                    <property name="name">ITEM_NAME</property>
+                    <property name="nativeName">ITEM_NAME</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">3</property>
+                    <property name="name">BATCH_NO</property>
+                    <property name="nativeName">BATCH_NO</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">4</property>
+                    <property name="name">RATE_UNIT</property>
+                    <property name="nativeName">RATE_UNIT</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">5</property>
+                    <property name="name">ISSUE_QTY</property>
+                    <property name="nativeName">ISSUE_QTY</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">6</property>
+                    <property name="name">ISSUE_DATE</property>
+                    <property name="nativeName">ISSUE_DATE</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">7</property>
+                    <property name="name">COST_VAL</property>
+                    <property name="nativeName">COST_VAL</property>
+                    <property name="dataType">decimal</property>
+                </structure>
+            </list-property>
+            <xml-property name="queryText"><![CDATA[{call DWH.PKG_MMS_RPT.RPTM_CONSUMPTION_DTLS(?,?,?,?,?,?,?,?,?,?)} ]]></xml-property>
+            <xml-property name="designerValues"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<model:DesignValues xmlns:design="http://www.eclipse.org/datatools/connectivity/oda/design" xmlns:model="http://www.eclipse.org/birt/report/model/adapter/odaModel">
+  <Version>1.0</Version>
+  <design:DataSetParameters>
+    <design:parameterDefinitions>
+      <design:inOutMode>In</design:inOutMode>
+      <design:attributes>
+        <design:name>MODEVAL</design:name>
+        <design:position>1</design:position>
+        <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+        <design:nullability>Unknown</design:nullability>
+      </design:attributes>
+      <design:inputAttributes>
+        <design:elementAttributes>
+          <design:defaultScalarValue>JS_EXPR</design:defaultScalarValue>
+          <design:optional>false</design:optional>
+        </design:elementAttributes>
+      </design:inputAttributes>
+    </design:parameterDefinitions>
+    <design:parameterDefinitions>
+      <design:inOutMode>In</design:inOutMode>
+      <design:attributes>
+        <design:name>HOSP_CODE</design:name>
+        <design:position>2</design:position>
+        <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+        <design:nullability>Unknown</design:nullability>
+        <design:uiHints/>
+      </design:attributes>
+      <design:inputAttributes>
+        <design:elementAttributes>
+          <design:defaultScalarValue>108</design:defaultScalarValue>
+          <design:optional>false</design:optional>
+          <design:masksValue>false</design:masksValue>
+          <design:uiHints>
+            <design:promptStyle>TextField</design:promptStyle>
+          </design:uiHints>
+        </design:elementAttributes>
+      </design:inputAttributes>
+    </design:parameterDefinitions>
+    <design:parameterDefinitions>
+      <design:inOutMode>In</design:inOutMode>
+      <design:attributes>
+        <design:name>STRID</design:name>
+        <design:position>3</design:position>
+        <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+        <design:nullability>Unknown</design:nullability>
+        <design:uiHints/>
+      </design:attributes>
+      <design:inputAttributes>
+        <design:elementAttributes>
+          <design:defaultScalarValue>10002100</design:defaultScalarValue>
+          <design:optional>false</design:optional>
+          <design:masksValue>false</design:masksValue>
+          <design:uiHints>
+            <design:promptStyle>TextField</design:promptStyle>
+          </design:uiHints>
+        </design:elementAttributes>
+      </design:inputAttributes>
+    </design:parameterDefinitions>
+    <design:parameterDefinitions>
+      <design:inOutMode>In</design:inOutMode>
+      <design:attributes>
+        <design:name>CATCODE</design:name>
+        <design:position>4</design:position>
+        <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+        <design:nullability>Unknown</design:nullability>
+        <design:uiHints/>
+      </design:attributes>
+      <design:inputAttributes>
+        <design:elementAttributes>
+          <design:defaultScalarValue>1</design:defaultScalarValue>
+          <design:optional>false</design:optional>
+          <design:masksValue>false</design:masksValue>
+          <design:uiHints>
+            <design:promptStyle>TextField</design:promptStyle>
+          </design:uiHints>
+        </design:elementAttributes>
+      </design:inputAttributes>
+    </design:parameterDefinitions>
+    <design:parameterDefinitions>
+      <design:inOutMode>In</design:inOutMode>
+      <design:attributes>
+        <design:name>FRMDATE</design:name>
+        <design:position>5</design:position>
+        <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+        <design:nullability>Unknown</design:nullability>
+        <design:uiHints/>
+      </design:attributes>
+      <design:inputAttributes>
+        <design:elementAttributes>
+          <design:defaultScalarValue>'21-jul-2009'</design:defaultScalarValue>
+          <design:optional>false</design:optional>
+          <design:masksValue>false</design:masksValue>
+          <design:uiHints>
+            <design:promptStyle>TextField</design:promptStyle>
+          </design:uiHints>
+        </design:elementAttributes>
+      </design:inputAttributes>
+    </design:parameterDefinitions>
+    <design:parameterDefinitions>
+      <design:inOutMode>In</design:inOutMode>
+      <design:attributes>
+        <design:name>TODATE</design:name>
+        <design:position>6</design:position>
+        <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+        <design:nullability>Unknown</design:nullability>
+        <design:uiHints/>
+      </design:attributes>
+      <design:inputAttributes>
+        <design:elementAttributes>
+          <design:defaultScalarValue>'30-jul-2009'</design:defaultScalarValue>
+          <design:optional>false</design:optional>
+          <design:masksValue>false</design:masksValue>
+          <design:uiHints>
+            <design:promptStyle>TextField</design:promptStyle>
+          </design:uiHints>
+        </design:elementAttributes>
+      </design:inputAttributes>
+    </design:parameterDefinitions>
+    <design:parameterDefinitions>
+      <design:inOutMode>In</design:inOutMode>
+      <design:attributes>
+        <design:name>FRMYEAR</design:name>
+        <design:position>7</design:position>
+        <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+        <design:nullability>Unknown</design:nullability>
+        <design:uiHints/>
+      </design:attributes>
+      <design:inputAttributes>
+        <design:elementAttributes>
+          <design:optional>false</design:optional>
+          <design:masksValue>false</design:masksValue>
+          <design:uiHints>
+            <design:promptStyle>TextField</design:promptStyle>
+          </design:uiHints>
+        </design:elementAttributes>
+      </design:inputAttributes>
+    </design:parameterDefinitions>
+    <design:parameterDefinitions>
+      <design:inOutMode>In</design:inOutMode>
+      <design:attributes>
+        <design:name>TOYEAR</design:name>
+        <design:position>8</design:position>
+        <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+        <design:nullability>Unknown</design:nullability>
+        <design:uiHints/>
+      </design:attributes>
+      <design:inputAttributes>
+        <design:elementAttributes>
+          <design:optional>false</design:optional>
+          <design:masksValue>false</design:masksValue>
+          <design:uiHints>
+            <design:promptStyle>TextField</design:promptStyle>
+          </design:uiHints>
+        </design:elementAttributes>
+      </design:inputAttributes>
+    </design:parameterDefinitions>
+    <design:parameterDefinitions>
+      <design:inOutMode>Out</design:inOutMode>
+      <design:attributes>
+        <design:name>ERR</design:name>
+        <design:position>9</design:position>
+        <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+        <design:nullability>Unknown</design:nullability>
+      </design:attributes>
+      <design:inputAttributes>
+        <design:elementAttributes>
+          <design:defaultScalarValue>JS_EXPR</design:defaultScalarValue>
+          <design:optional>false</design:optional>
+        </design:elementAttributes>
+      </design:inputAttributes>
+    </design:parameterDefinitions>
+    <design:parameterDefinitions>
+      <design:inOutMode>Out</design:inOutMode>
+      <design:attributes>
+        <design:name>RESULTSET</design:name>
+        <design:position>10</design:position>
+        <design:nativeDataTypeCode>-10</design:nativeDataTypeCode>
+        <design:nullability>Unknown</design:nullability>
+      </design:attributes>
+      <design:inputAttributes>
+        <design:elementAttributes>
+          <design:defaultScalarValue>JS_EXPR</design:defaultScalarValue>
+          <design:optional>false</design:optional>
+        </design:elementAttributes>
+      </design:inputAttributes>
+    </design:parameterDefinitions>
+  </design:DataSetParameters>
+</model:DesignValues>]]></xml-property>
+        </oda-data-set>
+        <oda-data-set extensionID="org.eclipse.birt.report.data.oda.jdbc.JdbcSelectDataSet" name="Data Set1" id="668">
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">store_name</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">2</property>
+                        <property name="name">item_name</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">3</property>
+                        <property name="name">batch_no</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">4</property>
+                        <property name="name">rate_unit</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">5</property>
+                        <property name="name">issue_qty</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">6</property>
+                        <property name="name">issue_date</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">7</property>
+                        <property name="name">cost_val</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <method name="beforeOpen"><![CDATA[if(parseInt(params["catCode"]) == 10)
+{
+	this.queryText="SELECT MMS_MST.GET_STORE_DTL(1,A.GNUM_HOSPITAL_CODE,A.HSTNUM_STORE_ID) ";
+	this.queryText=this.queryText +" AS STORE_NAME, Mms_Mst.GET_ITEM_DTL(1,A.GNUM_HOSPITAL_CODE," ;
+	this.queryText=this.queryText +" A.HSTNUM_ITEMBRAND_ID) AS ITEM_NAME, NVL(A.HSTSTR_BATCH_SL_NO,'/') AS BATCH_NO, " ;
+	this.queryText=this.queryText +" NVL(A.HSTNUM_RATE,0) || '/' || Mms_Mst.GETUNITNAME(A.GNUM_HOSPITAL_CODE,A.HSTNUM_RATE_UNITID) AS RATE_UNIT, " ;
+	this.queryText=this.queryText +" NVL(HSTNUM_ISSUE_QTY,0) || ' ' || Mms_Mst.GETUNITNAME(A.GNUM_HOSPITAL_CODE,A.HSTNUM_ISSUE_QTY_UNITID) AS ISSUE_QTY,  ";
+	this.queryText=this.queryText +" TO_CHAR(HSTDT_TRANS_DATE,'DD-Mon-YYYY') AS ISSUE_DATE, ";
+	this.queryText=this.queryText +" (NVL(HSTNUM_ISSUE_QTY,0) * NVL(A.HSTNUM_RATE,0) *  Mms_Mst.GETUNIT_CONV_VALUE(A.HSTNUM_ISSUE_QTY_UNITID,A.HSTNUM_RATE_UNITID,A.GNUM_HOSPITAL_CODE)) AS COST_VAL ";
+	this.queryText=this.queryText +" FROM HSTT_DRUG_OPBALANCE_TRANS_DTL A WHERE A.GNUM_ISVALID = 1 ";
+	
+	this.queryText=this.queryText +" AND A.GNUM_HOSPITAL_CODE = '"+params["hospCode"]+"' ";
+	this.queryText=this.queryText +" AND A.HSTNUM_STORE_ID = '"+params["storeId"]+"' ";
+	
+	this.queryText=this.queryText +" AND A.HSTDT_TRANS_DATE >=to_date(to_char('" +params["fromDate"]+"'::timestamp,'dd-mm-yyyy'),'dd-mm-yyyy') ";
+	
+	this.queryText=this.queryText +" AND A.HSTDT_TRANS_DATE < to_date(to_char('" +params["toDate"]+"'::timestamp,'dd-mm-yyyy'),'dd-mm-yyyy') ";
+	
+	this.queryText=this.queryText +" ORDER BY STORE_NAME,ITEM_NAME";
+}
+else
+{
+
+this.queryText="SELECT MMS_MST.GET_STORE_DTL(1,A.GNUM_HOSPITAL_CODE,A.HSTNUM_STORE_ID)"; 
+
+this.queryText=this.queryText+" AS STORE_NAME,Mms_Mst.GET_ITEM_DTL(1,A.GNUM_HOSPITAL_CODE,A.HSTNUM_ITEMBRAND_ID) AS ITEM_NAME,NVL(A.HSTSTR_BATCH_SL_NO,'/') AS BATCH_NO,"; 
+this.queryText=this.queryText+" NVL(A.HSTNUM_RATE,0) || '/' || Mms_Mst.GETUNITNAME(A.GNUM_HOSPITAL_CODE,A.HSTNUM_RATE_UNITID) AS RATE_UNIT,";
+this.queryText=this.queryText+" NVL(HSTNUM_ISSUE_QTY,0) || ' ' || Mms_Mst.GETUNITNAME(A.GNUM_HOSPITAL_CODE,A.HSTNUM_ISSUE_QTY_UNITID) AS ISSUE_QTY,"; 
+this.queryText=this.queryText+" TO_CHAR(HSTDT_TRANS_DATE,'DD-Mon-YYYY') AS ISSUE_DATE, ";
+this.queryText=this.queryText+" (NVL(HSTNUM_ISSUE_QTY,0) * NVL(A.HSTNUM_RATE,0) *"; 
+this.queryText=this.queryText+" Mms_Mst.GETUNIT_CONV_VALUE(A.HSTNUM_ISSUE_QTY_UNITID,A.HSTNUM_RATE_UNITID,A.GNUM_HOSPITAL_CODE)) AS COST_VAL";
+this.queryText=this.queryText+" FROM HSTT_ITEM_OPBALANCE_TRANS_DTL A WHERE A.GNUM_ISVALID = 1";
+this.queryText=this.queryText +" AND A.GNUM_HOSPITAL_CODE = '"+params["hospCode"]+"' ";
+this.queryText=this.queryText +" AND A.HSTNUM_STORE_ID = '"+params["storeId"]+"' ";
+	
+this.queryText=this.queryText +" AND A.HSTDT_TRANS_DATE >=to_date(to_char('" +params["fromDate"]+"'::timestamp,'dd-mm-yyyy'),'dd-mm-yyyy') ";
+	
+this.queryText=this.queryText +" AND A.HSTDT_TRANS_DATE < to_date(to_char('" +params["toDate"]+"'::timestamp,'dd-mm-yyyy'),'dd-mm-yyyy') ";
+	
+this.queryText=this.queryText +" ORDER BY STORE_NAME,ITEM_NAME";
+}]]></method>
+            <property name="dataSource">Data Source</property>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">store_name</property>
+                    <property name="nativeName">store_name</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">2</property>
+                    <property name="name">item_name</property>
+                    <property name="nativeName">item_name</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">3</property>
+                    <property name="name">batch_no</property>
+                    <property name="nativeName">batch_no</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">4</property>
+                    <property name="name">rate_unit</property>
+                    <property name="nativeName">rate_unit</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">5</property>
+                    <property name="name">issue_qty</property>
+                    <property name="nativeName">issue_qty</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">6</property>
+                    <property name="name">issue_date</property>
+                    <property name="nativeName">issue_date</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">7</property>
+                    <property name="name">cost_val</property>
+                    <property name="nativeName">cost_val</property>
+                    <property name="dataType">decimal</property>
+                    <property name="nativeDataType">2</property>
+                </structure>
+            </list-property>
+            <xml-property name="queryText"><![CDATA[SELECT MMS_MST.GET_STORE_DTL(1,A.GNUM_HOSPITAL_CODE,A.HSTNUM_STORE_ID) AS STORE_NAME, 
+Mms_Mst.GET_ITEM_DTL(1,A.GNUM_HOSPITAL_CODE,A.HSTNUM_ITEMBRAND_ID) AS ITEM_NAME, 
+NVL(A.HSTSTR_BATCH_SL_NO,'/') AS BATCH_NO, 
+NVL(A.HSTNUM_RATE,0) || '/' || Mms_Mst.GETUNITNAME(A.GNUM_HOSPITAL_CODE,A.HSTNUM_RATE_UNITID) AS RATE_UNIT,
+ NVL(HSTNUM_ISSUE_QTY,0) || ' ' || Mms_Mst.GETUNITNAME(A.GNUM_HOSPITAL_CODE,A.HSTNUM_ISSUE_QTY_UNITID) AS ISSUE_QTY, 
+ TO_CHAR(HSTDT_TRANS_DATE,'DD-Mon-YYYY') AS ISSUE_DATE, 
+(NVL(HSTNUM_ISSUE_QTY,0) * NVL(A.HSTNUM_RATE,0) * 
+Mms_Mst.GETUNIT_CONV_VALUE(A.HSTNUM_ISSUE_QTY_UNITID,A.HSTNUM_RATE_UNITID,A.GNUM_HOSPITAL_CODE)) AS COST_VAL
+FROM HSTT_DRUG_OPBALANCE_TRANS_DTL A
+WHERE A.GNUM_ISVALID = 1]]></xml-property>
+            <xml-property name="designerValues"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<model:DesignValues xmlns:design="http://www.eclipse.org/datatools/connectivity/oda/design" xmlns:model="http://www.eclipse.org/birt/report/model/adapter/odaModel">
+  <Version>1.0</Version>
+  <design:ResultSets derivedMetaData="true">
+    <design:resultSetDefinitions>
+      <design:resultSetColumns>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:name>store_name</design:name>
+            <design:position>1</design:position>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>2147483647</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Unknown</design:nullability>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>store_name</design:label>
+            <design:formattingHints>
+              <design:displaySize>2147483647</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:name>item_name</design:name>
+            <design:position>2</design:position>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>2147483647</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Unknown</design:nullability>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>item_name</design:label>
+            <design:formattingHints>
+              <design:displaySize>2147483647</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:name>batch_no</design:name>
+            <design:position>3</design:position>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>2147483647</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Unknown</design:nullability>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>batch_no</design:label>
+            <design:formattingHints>
+              <design:displaySize>2147483647</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:name>rate_unit</design:name>
+            <design:position>4</design:position>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>2147483647</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Unknown</design:nullability>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>rate_unit</design:label>
+            <design:formattingHints>
+              <design:displaySize>2147483647</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:name>issue_qty</design:name>
+            <design:position>5</design:position>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>2147483647</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Unknown</design:nullability>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>issue_qty</design:label>
+            <design:formattingHints>
+              <design:displaySize>2147483647</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:name>issue_date</design:name>
+            <design:position>6</design:position>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>2147483647</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Unknown</design:nullability>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>issue_date</design:label>
+            <design:formattingHints>
+              <design:displaySize>2147483647</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:name>cost_val</design:name>
+            <design:position>7</design:position>
+            <design:nativeDataTypeCode>2</design:nativeDataTypeCode>
+            <design:precision>0</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Unknown</design:nullability>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>cost_val</design:label>
+            <design:formattingHints>
+              <design:displaySize>131089</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+      </design:resultSetColumns>
+    </design:resultSetDefinitions>
+  </design:ResultSets>
+</model:DesignValues>]]></xml-property>
+        </oda-data-set>
+    </data-sets>
+    <styles>
+        <style name="crosstab" id="4">
+            <property name="borderBottomColor">#CCCCCC</property>
+            <property name="borderBottomStyle">solid</property>
+            <property name="borderBottomWidth">1pt</property>
+            <property name="borderLeftColor">#CCCCCC</property>
+            <property name="borderLeftStyle">solid</property>
+            <property name="borderLeftWidth">1pt</property>
+            <property name="borderRightColor">#CCCCCC</property>
+            <property name="borderRightStyle">solid</property>
+            <property name="borderRightWidth">1pt</property>
+            <property name="borderTopColor">#CCCCCC</property>
+            <property name="borderTopStyle">solid</property>
+            <property name="borderTopWidth">1pt</property>
+        </style>
+        <style name="crosstab-cell" id="5">
+            <property name="borderBottomColor">#CCCCCC</property>
+            <property name="borderBottomStyle">solid</property>
+            <property name="borderBottomWidth">1pt</property>
+            <property name="borderLeftColor">#CCCCCC</property>
+            <property name="borderLeftStyle">solid</property>
+            <property name="borderLeftWidth">1pt</property>
+            <property name="borderRightColor">#CCCCCC</property>
+            <property name="borderRightStyle">solid</property>
+            <property name="borderRightWidth">1pt</property>
+            <property name="borderTopColor">#CCCCCC</property>
+            <property name="borderTopStyle">solid</property>
+            <property name="borderTopWidth">1pt</property>
+        </style>
+    </styles>
+    <page-setup>
+        <simple-master-page name="Simple MasterPage" id="2">
+            <property name="topMargin">0.75in</property>
+            <property name="leftMargin">0.75in</property>
+            <property name="bottomMargin">0.5in</property>
+            <property name="rightMargin">1in</property>
+            <property name="headerHeight">0in</property>
+            <property name="footerHeight">0.2in</property>
+        </simple-master-page>
+    </page-setup>
+    <body>
+        <grid id="226">
+            <property name="textAlign">center</property>
+            <property name="width">100%</property>
+            <column id="227"/>
+            <column id="228"/>
+            <column id="229"/>
+            <row id="386">
+                <property name="textAlign">right</property>
+                <list-property name="visibility">
+                    <structure>
+                        <property name="format">all</property>
+                        <expression name="valueExpr">params["rpt_format"]</expression>
+                    </structure>
+                </list-property>
+                <cell id="387">
+                    <property name="colSpan">3</property>
+                    <property name="rowSpan">1</property>
+                    <text id="390">
+                        <property name="fontFamily">"Arial"</property>
+                        <property name="fontSize">10pt</property>
+                        <property name="paddingTop">1pt</property>
+                        <property name="textAlign">center</property>
+                        <property name="contentType">html</property>
+                        <text-property name="content"><![CDATA[<script language="javascript">
+
+function printContent(){
+
+newwin=window.open('','printwin','left=100,top=100,width=700,height=700,scrollbars=yes');
+newwin.document.write('<HTML><HEAD>');
+newwin.document.write((document.getElementsByTagName("head")[0]).innerHTML);
+newwin.document.write('<style type="text/css"> .hidecontrol { display: none; } </style>\n')
+newwin.document.write('<script>\n');
+newwin.document.write('function chkstate(){ \n');
+//newwin.document.write('if(document.readystate=="complete" || document.readystate=="undefined"){\n');
+newwin.document.write('window.close();\n');
+//newwin.document.write('}\n');
+//newwin.document.write('else{\n');
+//newwin.document.write('setTimeout("chkstate()",2000)\n');
+//newwin.document.write('}\n');
+newwin.document.write('}\n');
+newwin.document.write('function print_win(){\n');
+newwin.document.write('window.print();\n');
+newwin.document.write('chkstate();\n');
+newwin.document.write('}\n');
+
+newwin.document.write('<\/script>\n');
+newwin.document.write('</HEAD>\n');
+newwin.document.write('<BODY onload="print_win()">\n');
+newwin.document.write((document.getElementsByTagName("body" )[0]).innerHTML);
+newwin.document.write('</BODY>\n');
+newwin.document.write('</HTML>\n');
+newwin.document.close();
+
+}
+
+function goBack()
+{
+    //alert("id::"+window.frameElement.src);
+    window.frameElement.src=window.frameElement.src;
+}
+</script>
+
+<div id='printAreaDivId' class='hidecontrol'>
+<img  src='../../hisglobal/images/print_tab.gif' style="cursor: pointer" onclick='printContent();'>
+<img src='../../hisglobal/images/btn-ccl.png' style="cursor: pointer" onclick='goBack();'>
+
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;
+
+</div>
+<CODE>
+
+</CODE>]]></text-property>
+                    </text>
+                </cell>
+            </row>
+            <row id="230">
+                <cell id="231">
+                    <property name="colSpan">3</property>
+                    <property name="rowSpan">1</property>
+                    <grid id="344">
+                        <property name="width">100%</property>
+                        <column id="345">
+                            <property name="width">60%</property>
+                        </column>
+                        <column id="346">
+                            <property name="textAlign">right</property>
+                            <property name="width">40%</property>
+                        </column>
+                        <row id="384">
+                            <property name="verticalAlign">middle</property>
+                            <cell id="385">
+                                <property name="colSpan">2</property>
+                                <property name="rowSpan">1</property>
+                                <property name="textAlign">right</property>
+                                <grid id="54">
+                                    <property name="textAlign">right</property>
+                                    <property name="width">100%</property>
+                                    <column id="55">
+                                        <property name="verticalAlign">middle</property>
+                                        <property name="width">80%</property>
+                                    </column>
+                                    <column id="56">
+                                        <property name="verticalAlign">middle</property>
+                                        <property name="width">24%</property>
+                                    </column>
+                                    <row id="57">
+                                        <property name="verticalAlign">middle</property>
+                                        <cell id="58">
+                                            <label id="60">
+                                                <property name="fontFamily">"Arial"</property>
+                                                <property name="fontSize">10pt</property>
+                                                <property name="fontWeight">normal</property>
+                                                <property name="textAlign">right</property>
+                                                <text-property name="text">Report Date &amp; Time :</text-property>
+                                            </label>
+                                        </cell>
+                                        <cell id="59">
+                                            <property name="verticalAlign">middle</property>
+                                            <data id="62">
+                                                <property name="fontFamily">"Arial"</property>
+                                                <property name="fontSize">10pt</property>
+                                                <structure name="dateTimeFormat">
+                                                    <property name="category">Custom</property>
+                                                    <property name="pattern">dd/MM/yyyy kk:mm:ss</property>
+                                                </structure>
+                                                <property name="textAlign">left</property>
+                                                <list-property name="boundDataColumns">
+                                                    <structure>
+                                                        <property name="name">Column Binding</property>
+                                                        <text-property name="displayName">RunDateTime</text-property>
+                                                        <expression name="expression">new Date()</expression>
+                                                        <property name="dataType">date-time</property>
+                                                    </structure>
+                                                </list-property>
+                                                <property name="resultSetColumn">Column Binding</property>
+                                            </data>
+                                        </cell>
+                                    </row>
+                                </grid>
+                            </cell>
+                        </row>
+                        <row id="347">
+                            <property name="textAlign">center</property>
+                            <property name="verticalAlign">middle</property>
+                            <cell id="348">
+                                <property name="colSpan">2</property>
+                                <property name="rowSpan">1</property>
+                                <property name="textAlign">center</property>
+                            </cell>
+                        </row>
+                    </grid>
+                </cell>
+            </row>
+            <row id="698">
+                <property name="textAlign">center</property>
+                <cell id="699">
+                    <property name="colSpan">3</property>
+                    <property name="rowSpan">1</property>
+                    <text-data id="243">
+                        <property name="fontFamily">"Arial"</property>
+                        <property name="fontSize">12pt</property>
+                        <property name="fontWeight">bold</property>
+                        <property name="textAlign">center</property>
+                        <expression name="valueExpr">params["report_Header"]</expression>
+                        <property name="contentType">html</property>
+                    </text-data>
+                </cell>
+            </row>
+            <row id="475">
+                <property name="textAlign">center</property>
+                <cell id="476">
+                    <property name="colSpan">3</property>
+                    <property name="rowSpan">1</property>
+                    <data id="675">
+                        <property name="fontFamily">"Arial"</property>
+                        <property name="fontSize">12pt</property>
+                        <property name="fontWeight">bold</property>
+                        <property name="dataSet">Data Set1</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">store_name</property>
+                                <expression name="expression">dataSetRow["store_name"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">store_name</property>
+                    </data>
+                </cell>
+            </row>
+            <row id="238">
+                <property name="textAlign">center</property>
+                <cell id="239">
+                    <property name="colSpan">3</property>
+                    <property name="rowSpan">1</property>
+                    <text-data id="268">
+                        <property name="fontFamily">"Arial"</property>
+                        <property name="fontSize">12pt</property>
+                        <property name="fontWeight">bold</property>
+                        <property name="textAlign">center</property>
+                        <expression name="valueExpr">params["report_Name"]</expression>
+                        <property name="contentType">html</property>
+                    </text-data>
+                </cell>
+            </row>
+            <row id="380">
+                <cell id="381">
+                    <property name="colSpan">3</property>
+                    <property name="rowSpan">1</property>
+                </cell>
+            </row>
+            <row id="256">
+                <property name="textAlign">center</property>
+                <cell id="257">
+                    <property name="colSpan">3</property>
+                    <property name="rowSpan">1</property>
+                    <table id="400">
+                        <property name="width">80%</property>
+                        <property name="dataSet">Data Set1</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">store_name</property>
+                                <expression name="expression">dataSetRow["store_name"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">item_name</property>
+                                <expression name="expression">dataSetRow["item_name"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">batch_no</property>
+                                <expression name="expression">dataSetRow["batch_no"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">rate_unit</property>
+                                <expression name="expression">dataSetRow["rate_unit"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">issue_qty</property>
+                                <expression name="expression">dataSetRow["issue_qty"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">issue_date</property>
+                                <expression name="expression">dataSetRow["issue_date"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">cost_val</property>
+                                <expression name="expression">dataSetRow["cost_val"]</expression>
+                                <property name="dataType">decimal</property>
+                            </structure>
+                            <structure>
+                                <property name="name">SLNO</property>
+                                <expression name="expression">row.__rownum+1;</expression>
+                                <property name="dataType">any</property>
+                            </structure>
+                            <structure>
+                                <property name="name">GT</property>
+                                <expression name="expression">dataSetRow["cost_val"]</expression>
+                                <property name="dataType">any</property>
+                                <property name="aggregateFunction">SUM</property>
+                            </structure>
+                        </list-property>
+                        <property name="pageBreakInterval">50</property>
+                        <column id="425">
+                            <property name="width">5%</property>
+                        </column>
+                        <column id="426">
+                            <property name="width">15%</property>
+                        </column>
+                        <column id="427">
+                            <property name="width">10%</property>
+                        </column>
+                        <column id="428">
+                            <property name="width">10%</property>
+                        </column>
+                        <column id="429">
+                            <property name="width">10%</property>
+                        </column>
+                        <column id="430">
+                            <property name="width">10%</property>
+                        </column>
+                        <header>
+                            <row id="401">
+                                <property name="borderBottomColor">#000000</property>
+                                <property name="borderBottomStyle">solid</property>
+                                <property name="borderBottomWidth">1px</property>
+                                <property name="borderLeftColor">#000000</property>
+                                <property name="borderLeftStyle">solid</property>
+                                <property name="borderLeftWidth">1px</property>
+                                <property name="borderRightColor">#000000</property>
+                                <property name="borderRightStyle">solid</property>
+                                <property name="borderRightWidth">1px</property>
+                                <property name="borderTopColor">#000000</property>
+                                <property name="borderTopStyle">solid</property>
+                                <property name="borderTopWidth">1px</property>
+                                <cell id="402">
+                                    <property name="borderBottomColor">#000000</property>
+                                    <property name="borderBottomStyle">solid</property>
+                                    <property name="borderBottomWidth">1px</property>
+                                    <property name="borderLeftColor">#000000</property>
+                                    <property name="borderLeftStyle">solid</property>
+                                    <property name="borderLeftWidth">1px</property>
+                                    <property name="borderRightColor">#000000</property>
+                                    <property name="borderRightStyle">solid</property>
+                                    <property name="borderRightWidth">1px</property>
+                                    <property name="borderTopColor">#000000</property>
+                                    <property name="borderTopStyle">solid</property>
+                                    <property name="borderTopWidth">1px</property>
+                                    <label id="462">
+                                        <property name="fontFamily">"Arial"</property>
+                                        <property name="fontSize">10pt</property>
+                                        <property name="fontWeight">bold</property>
+                                        <text-property name="text">S.No.</text-property>
+                                    </label>
+                                </cell>
+                                <cell id="403">
+                                    <property name="borderBottomColor">#000000</property>
+                                    <property name="borderBottomStyle">solid</property>
+                                    <property name="borderBottomWidth">1px</property>
+                                    <property name="borderLeftColor">#000000</property>
+                                    <property name="borderLeftStyle">solid</property>
+                                    <property name="borderLeftWidth">1px</property>
+                                    <property name="borderRightColor">#000000</property>
+                                    <property name="borderRightStyle">solid</property>
+                                    <property name="borderRightWidth">1px</property>
+                                    <property name="borderTopColor">#000000</property>
+                                    <property name="borderTopStyle">solid</property>
+                                    <property name="borderTopWidth">1px</property>
+                                    <label id="432">
+                                        <property name="fontFamily">"Arial"</property>
+                                        <property name="fontSize">10pt</property>
+                                        <property name="fontWeight">bold</property>
+                                        <text-property name="text">Item Name</text-property>
+                                    </label>
+                                </cell>
+                                <cell id="404">
+                                    <property name="borderBottomColor">#000000</property>
+                                    <property name="borderBottomStyle">solid</property>
+                                    <property name="borderBottomWidth">1px</property>
+                                    <property name="borderLeftColor">#000000</property>
+                                    <property name="borderLeftStyle">solid</property>
+                                    <property name="borderLeftWidth">1px</property>
+                                    <property name="borderRightColor">#000000</property>
+                                    <property name="borderRightStyle">solid</property>
+                                    <property name="borderRightWidth">1px</property>
+                                    <property name="borderTopColor">#000000</property>
+                                    <property name="borderTopStyle">solid</property>
+                                    <property name="borderTopWidth">1px</property>
+                                    <label id="434">
+                                        <property name="fontFamily">"Arial"</property>
+                                        <property name="fontSize">10pt</property>
+                                        <property name="fontWeight">bold</property>
+                                        <text-property name="text">Batch No.</text-property>
+                                    </label>
+                                </cell>
+                                <cell id="405">
+                                    <property name="borderBottomColor">#000000</property>
+                                    <property name="borderBottomStyle">solid</property>
+                                    <property name="borderBottomWidth">1px</property>
+                                    <property name="borderLeftColor">#000000</property>
+                                    <property name="borderLeftStyle">solid</property>
+                                    <property name="borderLeftWidth">1px</property>
+                                    <property name="borderRightColor">#000000</property>
+                                    <property name="borderRightStyle">solid</property>
+                                    <property name="borderRightWidth">1px</property>
+                                    <property name="borderTopColor">#000000</property>
+                                    <property name="borderTopStyle">solid</property>
+                                    <property name="borderTopWidth">1px</property>
+                                    <label id="436">
+                                        <property name="fontFamily">"Arial"</property>
+                                        <property name="fontSize">10pt</property>
+                                        <property name="fontWeight">bold</property>
+                                        <text-property name="text">Rate/Unit</text-property>
+                                    </label>
+                                </cell>
+                                <cell id="406">
+                                    <property name="borderBottomColor">#000000</property>
+                                    <property name="borderBottomStyle">solid</property>
+                                    <property name="borderBottomWidth">1px</property>
+                                    <property name="borderLeftColor">#000000</property>
+                                    <property name="borderLeftStyle">solid</property>
+                                    <property name="borderLeftWidth">1px</property>
+                                    <property name="borderRightColor">#000000</property>
+                                    <property name="borderRightStyle">solid</property>
+                                    <property name="borderRightWidth">1px</property>
+                                    <property name="borderTopColor">#000000</property>
+                                    <property name="borderTopStyle">solid</property>
+                                    <property name="borderTopWidth">1px</property>
+                                    <label id="438">
+                                        <property name="fontFamily">"Arial"</property>
+                                        <property name="fontSize">10pt</property>
+                                        <property name="fontWeight">bold</property>
+                                        <text-property name="text">Issue Qty.</text-property>
+                                    </label>
+                                </cell>
+                                <cell id="407">
+                                    <property name="borderBottomColor">#000000</property>
+                                    <property name="borderBottomStyle">solid</property>
+                                    <property name="borderBottomWidth">1px</property>
+                                    <property name="borderLeftColor">#000000</property>
+                                    <property name="borderLeftStyle">solid</property>
+                                    <property name="borderLeftWidth">1px</property>
+                                    <property name="borderRightColor">#000000</property>
+                                    <property name="borderRightStyle">solid</property>
+                                    <property name="borderRightWidth">1px</property>
+                                    <property name="borderTopColor">#000000</property>
+                                    <property name="borderTopStyle">solid</property>
+                                    <property name="borderTopWidth">1px</property>
+                                    <label id="440">
+                                        <property name="fontFamily">"Arial"</property>
+                                        <property name="fontSize">10pt</property>
+                                        <property name="fontWeight">bold</property>
+                                        <text-property name="text">Cost</text-property>
+                                    </label>
+                                </cell>
+                            </row>
+                        </header>
+                        <group id="678">
+                            <property name="groupName">ISSUE_DATE</property>
+                            <property name="interval">none</property>
+                            <property name="sortDirection">asc</property>
+                            <expression name="keyExpr">row["issue_date"]</expression>
+                            <structure name="toc">
+                                <expression name="expressionValue">row["issue_date"]</expression>
+                            </structure>
+                            <property name="repeatHeader">true</property>
+                            <property name="hideDetail">false</property>
+                            <property name="pageBreakAfter">auto</property>
+                            <property name="pageBreakBefore">auto</property>
+                            <property name="pageBreakInside">auto</property>
+                            <header>
+                                <row id="679">
+                                    <cell id="680">
+                                        <property name="colSpan">6</property>
+                                        <property name="rowSpan">1</property>
+                                        <data id="693">
+                                            <property name="fontFamily">"Arial"</property>
+                                            <property name="fontSize">9pt</property>
+                                            <property name="fontWeight">bold</property>
+                                            <property name="textAlign">left</property>
+                                            <property name="resultSetColumn">issue_date</property>
+                                        </data>
+                                    </cell>
+                                </row>
+                            </header>
+                            <footer>
+                                <row id="686">
+                                    <cell id="687"/>
+                                    <cell id="688"/>
+                                    <cell id="689"/>
+                                    <cell id="690"/>
+                                    <cell id="691"/>
+                                    <cell id="692"/>
+                                </row>
+                            </footer>
+                        </group>
+                        <detail>
+                            <row id="409">
+                                <cell id="410">
+                                    <data id="674">
+                                        <property name="fontFamily">"Arial"</property>
+                                        <property name="fontSize">9pt</property>
+                                        <property name="resultSetColumn">SLNO</property>
+                                    </data>
+                                </cell>
+                                <cell id="411">
+                                    <data id="669">
+                                        <property name="fontFamily">"Arial"</property>
+                                        <property name="fontSize">9pt</property>
+                                        <property name="resultSetColumn">item_name</property>
+                                    </data>
+                                </cell>
+                                <cell id="412">
+                                    <data id="670">
+                                        <property name="fontFamily">"Arial"</property>
+                                        <property name="fontSize">9pt</property>
+                                        <property name="resultSetColumn">batch_no</property>
+                                    </data>
+                                </cell>
+                                <cell id="413">
+                                    <data id="671">
+                                        <property name="fontFamily">"Arial"</property>
+                                        <property name="fontSize">9pt</property>
+                                        <property name="resultSetColumn">rate_unit</property>
+                                    </data>
+                                </cell>
+                                <cell id="414">
+                                    <data id="672">
+                                        <property name="fontFamily">"Arial"</property>
+                                        <property name="fontSize">9pt</property>
+                                        <property name="resultSetColumn">issue_qty</property>
+                                    </data>
+                                </cell>
+                                <cell id="415">
+                                    <data id="673">
+                                        <property name="fontFamily">"Arial"</property>
+                                        <property name="fontSize">9pt</property>
+                                        <property name="resultSetColumn">cost_val</property>
+                                    </data>
+                                </cell>
+                            </row>
+                        </detail>
+                        <footer>
+                            <row id="417">
+                                <property name="borderBottomColor">#000000</property>
+                                <property name="borderBottomStyle">solid</property>
+                                <property name="borderBottomWidth">1px</property>
+                                <property name="borderTopColor">#000000</property>
+                                <property name="borderTopStyle">solid</property>
+                                <property name="borderTopWidth">1px</property>
+                                <cell id="418"/>
+                                <cell id="419"/>
+                                <cell id="420"/>
+                                <cell id="421"/>
+                                <cell id="422">
+                                    <label id="465">
+                                        <property name="fontFamily">"Arial"</property>
+                                        <property name="fontSize">10pt</property>
+                                        <property name="fontWeight">bold</property>
+                                        <property name="textAlign">right</property>
+                                        <text-property name="text">Total : </text-property>
+                                    </label>
+                                </cell>
+                                <cell id="423">
+                                    <data id="677">
+                                        <property name="resultSetColumn">GT</property>
+                                    </data>
+                                </cell>
+                            </row>
+                        </footer>
+                    </table>
+                </cell>
+            </row>
+            <row id="279">
+                <cell id="280"/>
+                <cell id="281"/>
+                <cell id="282"/>
+            </row>
+            <row id="357">
+                <cell id="358">
+                    <property name="colSpan">3</property>
+                    <property name="rowSpan">1</property>
+                    <text-data id="365">
+                        <property name="fontFamily">"Arial"</property>
+                        <property name="fontSize">10pt</property>
+                        <property name="fontWeight">normal</property>
+                        <property name="textAlign">center</property>
+                        <expression name="valueExpr">params["report_user_Remarks"]</expression>
+                        <property name="contentType">html</property>
+                    </text-data>
+                </cell>
+            </row>
+            <row id="275">
+                <cell id="276">
+                    <property name="colSpan">3</property>
+                    <property name="rowSpan">1</property>
+                    <text id="304">
+                        <property name="fontFamily">"Arial"</property>
+                        <property name="fontSize">9pt</property>
+                        <property name="textAlign">center</property>
+                        <property name="contentType">auto</property>
+                        <text-property name="content"><![CDATA[****End of Report****]]></text-property>
+                    </text>
+                </cell>
+            </row>
+            <row id="361">
+                <cell id="362">
+                    <property name="colSpan">3</property>
+                    <property name="rowSpan">1</property>
+                    <text-data id="367">
+                        <property name="fontFamily">"Arial"</property>
+                        <property name="fontSize">10pt</property>
+                        <property name="fontWeight">bold</property>
+                        <property name="textAlign">center</property>
+                        <list-property name="visibility">
+                            <structure>
+                                <property name="format">all</property>
+                                <expression name="valueExpr">params["report_Footer_Visible"]</expression>
+                            </structure>
+                        </list-property>
+                        <expression name="valueExpr">params["report_Footer"]</expression>
+                        <property name="contentType">html</property>
+                    </text-data>
+                </cell>
+            </row>
+        </grid>
+    </body>
+    <list-property name="images">
+        <structure>
+            <property name="name">Rmsc_Logo.png</property>
+            <property name="data">
+                iVBORw0KGgoAAAANSUhEUgAAAFAAAABQCAYAAACOEfKtAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAe
+                wAAAHsABES62twAAIN5JREFUeF7VXAd4VMUWzqYQEmoINQmh95JIL9KbSO8qAqJ0QgrpBQJJIJQ0OqF3
+                CChdfAi8CNjlKSrPAgiKSBEpKggq58z7z97czaZsdhNQefN9++3unX7umZlT/jMGuycoRb3GVa7etWt+
+                8zfV+eINu/pXfrbzuv/Qzrmso90vnu52l6u52f23tKvhjedb2p3t0dD+5hM09L9/KCNWcYfqEbTWZQr9
+                6BiolHMAPlPoVqlp9EmtaHq1wUxahvzEahEUj/8L8D+9ehS9Xnwq/bf4FPrDEeWLo17ZALrgHUWJL2/m
+                en//LP7mHjvM4zGlA+h7e0y8tL+6U3cGJQ1dyU2UUk5FGQozlxqwmDt4htJ6Fz9iA4haPpg+GLScuxal
+                vSeyzrQMbugZQu/Yy+SmW5/ckJXcreQ0+hWcxm0TOUCf1LD1qrJ7MF0DRx5sPJsSnl+jBp7Kh/BdUnhU
+                KT/6Tji0ejRtzTjD5Z5Iwlgb1Ih13A5EuFp8MnGL2QyeUwa9ztJMVbJUAH1cM5x2mbeDMg6GKUo9u4zb
+                DV3KtauE0ftnzqhiUmbMelW8WwqPdJ5Ed8FtP7lOoxso7yh5Z8+yc+UwOrrpNJfQ20s/pVzrzaCljtOM
+                y/zDFUfZ09qYn4j80L3s4YoJFptEhCXbK79BtU9T3vYTlbLDZ/J2bqCXAUGK2YGAZbEPtpnHkWMzuEKe
+                +uOJ3II51Pw5yk50nESsP6sUQm+O38xV9P+NYjnQAEJWCqb3dKI/EcTKPQgvLC8HDPSZNH5Ozxu5ituU
+                C6Lr5mX7LeVG7kFKNZmNg2AS/Wqe1zmNh5T0o8tOIKQQs2sq987RD551n8/9zZ+V9qMrOHAOyrMpm7i2
+                3WSl3r3ELrnHV28WzbfH+FrEU8ITRcCpW7mtgx/2nHDak3tgGe+yi2GSUrK36XkvruKunuFKPfgTRBqn
+                1FMJtNCYh2U+dRu30MuVnEI3a+JENuNQeyFqcAbXyNEPCCaEKe1PNypOp09wkud4YeZlrzKXwF78FVbJ
+                r19cZvd/nJD1Z9Bmx6lKBe7iRpYG4x1Gb5TAstbzh63i4XYTQLyxSrkF0lU71D/5nXLbuVM5COe5TqH7
+                FYPpkgHPI/dxJb3eohPcULhrP/Y3/VnHZH7BAS9I/ndfwr3s8RtLNiz3WEpPo8uNZ2W9KGR2WKBeMvgr
+                1SVFTfhHiCiHQil/+tZ9On1m2mviOSa/weDQqCycM2oj1zVONI39qobSh3rZ8kH0eZPY7Ilg2Xd4Pp07
+                5W5r7hF2Lx2oIsyfl5lG59yC6ag8W5TJXtLPhJ2qjBnXOjpPpt9dsUIcZN81S0mZqjzk0LuQL1/7W4n4
+                ww/KFULv/VpRtFLvuFwwHRCuwmAfxO5X5fPhgOte4fRvef50Ekc1msXR5mWqz+DWLeNpQelAOl42kG47
+                g/vsMWmDfLA8XfEp40/X8dKOtJ/HM3yT2UevP38vl5LfDWbRRhDktv589xfs7jSBKGinUo1nKeUeRO/n
+                R6gKWNJu0+ji30LEjE8gDmByXZJ5vHmHA5er5m44GOrP1E5XWSJ6/vBVWFp4VjOKMvRn4XtU9RrRtLG4
+                cAZkNogl53ziaE3z2WpY4jH2uforV9RFHzk5L15XlaN2c6umcTy6XiztcJ0KDQZLEAfO/Xoz1Dz9pcXs
+                4SbSx4iVXMteDiIs6T0fa9zXOZn9cxPp/bNcWp5B5NnoOlXdMRe3HjtBD55RlUVOG5yuBubbODhQUn28
+                bdmroCHslXIycBE15He7+RwELvm9OF4C9s+kCRuV96MMdBJUOCzBrcXAoS5T6XafFTxI2pOX1SONB03d
+                wk2KT1F35KXm7ssjhE46QfwR+VPq1I+mFRjbX6Nji7Aqy2lwOg+xNOHKIXTaFVyBZXyv40Ie7CTlV3IX
+                Kd8IXCKbdgWoWuM25TpFH4WCZnWHLOEWENB/EImg2Vweo2f1XcwjHIQbzZJnGB2RA8sAQd/8OdTLlXgR
+                Pz+mIWnNCFtjz7vXNVnjoqdms59wGDr6M/O6Kql31jVZDZNy5p23X8CDhJAVp6u3PrmoyhZmYLJ0Kc4n
+                kUIqbVJRtTdQgm88z2w4nqJr7KVQj6t89n3j8sudgvdxjRIwMuA0/+3FtezTKYVbyEGll4NxYn3pqXS2
+                SZza6RZEV+S5dzjtG7lGM0ggf7d7IP23MGMtsGxZf/oaOuhGKfT0POx945X68FvsWyBM6wRaqleGGFJM
+                FHr9P0SRj0HQP0IzimYpIb+S13hx/9H85hIPfjPWQ60fU59XPDschC1O4VW/tTbBwcu5l6PIp1jietmG
+                EGVKTNNEKqiE12uEU1y9GFoDI8d35u3hdL9SF0vaWh9W89HhijIB9KUU7ImlIHvJ6e+1va78dLF+qFMT
+                N0M+y0p47Oq/i5uKbFh3Ji2x2oGFAiq1x0u8Y3wzS/U5sfVkmt/apvY9Quk49raHsgI6LORIvU2RH1vM
+                UQqCt5ELcycnrLIh6bk0ocJMKGwfNzKgEXP9sQr2MLuXlWoap5RXCB1yD6DLInvhDT6Qtnsv4xEifmDv
+                61iYvnKXpXAvo2xnkYDrXmii1o592tY+sJVMFY0ocJsm8A9O4zoGMIMcaJbaiNjNdUWYRyqSuc3OCW9t
+                1Jps1UrvqEIovS+EnbhdVZdn6RBI1SnlVG8Gxzji+WEzq4itE8xDwODylwuqS0EVzha27ee2cVMRwQYu
+                454j1qvOxTBWa200ilXzIH+alAVr5U359SCjCetbquARRoftMZh2qdxWyjScoSIgEvwGI6ezzZ1YKEhB
+                5b7ltB5BBbWjlvUdSOHVC73RLzrGtYyiWCFWCA7LX3ovsSx95BmnnKxCHCT7giZRLZKOpB1R3sOXqYGy
+                WYN4eSwghSUm753vwXNa5qsS5m6Lk7uFUlD5XyioTI4DwFqfyZmw2GB+fjaKU1Og54u8aK1dUz5O3fMt
+                5/J0WypMflXVlDf65Q1NnXqUxLv8m0I8MYkbtrbFC9tHUmjlS9g3P7W1DlwJbbOYxGiwtZaw9//bx8wY
+                YbF87D6u7ZhLuCyo8WKTibov5WetDaCgfPFtULDHWxTTcI2U4zr1MtjBgfP9ODoylSr10Lw9XZOg4Mrn
+                CzMO31kUDyvNJVvqXBd5F4xibVXalZhKXzZL4HG2NOoRzP+uFZEtY9lSJ3cZimu4kEIqfqRufWOyoFCt
+                Wtuwu8sOn++HXFx+y68v/mC3O4dWzSzMONz86VyrOTzTljpVQimzBjyAFstuhLnIMZfKY6lw/1Tu6DiR
+                yJaOLZWhqBpH1c4xvnmIWkQCSjvqk+3VKazSDQqt8q0tYxMRxQH7YcAe61rSnkxV1nEKW94La0bSTluF
+                X1HZXl6jncBFTRTueSa/ukXlQPO2KM43mea0sEnQhnYVBpPWF7bMo5w/Xei/RDNY5EnCfVN2Zuu2lhps
+                C6EUB03hZaOsBtXFzLIU6H6TM4Jq/1UEVGtGDFOxTd+y1TzlBKPrpCxduCBCtoWjrIQfm2yOprJj4Pwp
+                OZW+t+UtOExl9svtl7ClYlYZCvU8o2JjLYpIj4MDpSuKqPmBrcPqnsLDbZ2/nN555N3KwXSk43zr/oGh
+                y7gPHNdXbR1YvhwWUrnAiT0OAqr94d6w5CTr/XNGZAUK8TxBs5qm8obxtfJdgdBMNn+U7Q61NMeK0/m4
+                0ahinkR/tUXngwX4at+lKocOyiufa01Blc5TYPmfePu0fAcnffG81mPV9Ap3+Phmk8/2r1rCRg6c2dDo
+                JeTENkEUWO5bdeqUE3/5pgdF19nH72yqmLtvWLrnQr8/YI05+qRwB6AnLpjKTdrEFeGYtnqirnmbS+U+
+                pfnA/DoUXuOw3hhNr/gDL+g8gNO69YVKdgun4VXjJ6TyNU5sFgDRxIRQsDTQx8GBRgLOaLSUd73MvKTv
+                ECGeiRuTOkap2b4RnNJhAL+zpZr+/CLMZLZKIcJwpvHXjuJA4FesUr5FPEdBfdurVxQBlqa7/2hOCCEQ
+                z2jUnqNrtVOZmUboRWHT4yIgbxremE+fNsE9zMch4+No73YUWWMbJ7Tpp+fB0PojpAuTb9rS2IEQ++1F
+                XRX0DOOP+i/j0dYm6gbT1VAz5BOWxQ1bOMpau7nzHxcBbe0X87ill4WDahaMxzut1QVwaXeTuCyICawN
+                DydmWAffiMFAB/tAiX9fndqfx31prWNb8v92AkZ4mlyavVJVdQCi7lsb57OLeWKNSHrHWM4B2ClrFVa8
+                y57wMRiNphxTcwcvGWB0H1pLYoxVt26VwbFfWv/If/1Zft9Ut+6rymCALche+8hv+WSpduTqel/0Z/M2
+                5bd5P3n6vH7d5LvJw/HBFU22R5EbRUyxNq9eK1R1uAQ0Qhc382NYqtgijvuXCXh4Ui3v3/1hfLMQax3o
+                +Txs2PPQfZgNBtGBtI/5b/2Z2fMcxHNwyCakrhvjGbu6Wm4HBgd2ccnuD22Tp+d/LI0ZRohr5nnAzdw7
+                dBYohwKSGBechfHSjnIlbIhWWbZpHC3xTaT5FFyxULY3EHC4kXN27RLpM++nVy+Ns8zzKlfO+8zdXXt2
+                +bJWVpJ8X7igPRdObdhQKaKcbc2bZ8wnL693LRIw0P2GeV5J/4enWiVr7tiCknHlwmPWCeYrq+ZxyD3H
+                mizkodBfC2UyMhFw2zZtch99pJSPj1Jr1mhEuAMwgDkB5Vk4oFtOTlr+gwfat5sbNH4sFUkZGdqSvgjB
+                4/59pfr1A7KwmEY46WPLFqVGjtTKSmrUyCIBOalztHp9pqJI72QVVOEOTS93sWYsrekM+Ik1AhbDcOyS
+                M8VnSyesFQZe5cILG7gjRdZO5yV9cuDzCqqbg4AywY+Bs2jXTqm9e7XJ6Rwkeb//rtR33yl1/rxGFEmv
+                v659lysHPEkX7beUvX1bqdWrMXggQOQFPPOMlnfvnvZfCOzhAa+RS4EcSH4uD9UOqCAJLV+SeeBw/Lzl
+                Ao72jaNV1mgisBS7QABvqkbQIWuFAZO9GrufjW5GXvD0NHT0PVSjrzmtr0WkgrGsvoSFA/WlpxNh//7s
+                w0HyHj5U0JE1Qpw8qdQvv0C32qz9Fw4UwnTurNTXX2vP9HaGDVNqPJzVkq5cySagmT3R0hLmxX1786rB
+                vTip3UgVUlZRTL1VreYBPRZJu63RBJC93+2mbFWqWpR1IRq+4R8XHIJXyyxhCRWnEA+wjGXfSQ4CygSP
+                HVOqd+/syVevnr2EZflVqZJNHFmK27dr/8uW1Ygr/1u00Ai/caP2UiBbGfc/naA64fbt0wgKohe0B0IV
+                bUGBbl/pMm2nJJ5cOVRDvBaUYHy+bxe2GyAgeNisFcYS/iHiNW6ZuxwFlM1xguXOz0PA48c1gn3xhTZ5
+                ORT0PVAIKL/lW1KrVtp+pxMwNFT7/ccfSsXHK3XzpvZ/gqA1Ue/SJa3NPwF9/T7L+y/5zs4FHyLTK13h
+                ZUN66mPvPJ+Da8fQDms0EWiL3Qbs6bDtfWStMAj4VZ+0nL4PXjS4Cy/qNarAPXDo0OeMk0tO1vY2Wcry
+                Xzjqm2+0Z9jk1dmz2kfyDh1S6ltgR+T3kiXabykv/8PCNOII8eQQGQuYq7npf+lSpQBgVD/9pKD/gjs8
+                jdxKHh555siBpVkwNjSnuQYxzkrtFlBS63mUYo0mxYEIs3Mdz1UcJplZFizUAhR3H6A9r5hn0yzf9Wp7
+                cOeCOsKyK8sDB7biDh1acfPmrbhNm1bG//Lx8dGe9eyZ/XvQoJZUufIx00GQj18EVo8HXKtWM27YsBX3
+                7dvS1J787t69BTdr1saYZ9YXuLS+cU9eO3IQhXn8SBHVr/Li3vkG5HiF0v6nc+Ef85ujE9Bmdj/9xKXB
+                inns/Jve4YqdFvIkwS5L5Q4LeAYCXDbkWcKhlR7JNpjfwKhOna05uCoXEaGJ5OtUssYxFF3rIEV577NW
+                DivyHKKd2kg5QPY+rxREX9WKpNSei1RzbAhGjUb2fUcASo1tSVSPfAtaE26+KwgboI4pOPiClWo/n1+W
+                vLqzuSVUua/zEDDc47z67KAbp/Ruj0aLZH3J0+YjOJUsEYdn1F3PYV6x1ogn+TDvQzPMBgnIb8Tq7Re3
+                ZsUgOiVlBF9t0uBEIEQqrjWuDJFbVX1nsCcguIB3aRFGkm+M3ciV+OjqShRTfRvHNoqhAPcbaukzNgN+
+                LE3mrzAmwAO4jpeMshrWkJzBLhLronMZnEifOcATVzeaF5y6lQ1eH7NaNQenauEUgv3om66Me0SlUDop
+                sAcgNTe2TGD/Uat5sD7RYnieeFBb0vkliqj6H2FtW95yQWX+CgLK6oCocg0HjClEIr8xwGXRqRxkXsnL
+                vKiKlwvmE+6B/DOe3fAOpe3xB7ma5DWO49iaCPEwtlEt8uGrLUzOZWWQeA0pOHwVKAwhfeFhLQYNAvdb
+                wNf5WSRgWNXTvLxf3yeRgDIm3hfWiILLPaCIavspsuZhnu0bQlE136CYOqZgnhoRtL3ZHIrT59B2Lvft
+                msQ95H+/1VwpFiBSIy3C6NO+afyCsVy3ZB6COLJz8ntxJjjRn7kY1BTAZF9vO4e7AR9thNL2W8J9AX21
+                aEwQQVQFlIToMXTYoxDxr+BAfTx89qwzFqjYxgxAgDWWMVOQu+kgBKTvTx3xD//PxX7LlKonkQfjmWNf
+                Y5MfxQkHb7gej7LoEDvby5FsSsogXniEWS2xG09/lAskowEBy8AgAG4kI6o9v8Qbx3biRT2f+bsIyOuG
+                dgW4aExR++PF/YLJ390Yr/fiaq4NzOAdva0S2tlgTB/C6IPAbqNw/eWXXEq2sxx9usCxvOI9DTBZMZTe
+                doTvtyQ20/PXEeUI2VXf27wQVtoiIRsmm3vgnNRlGt95tBhdWzmQZjdOoxCvXSrKS1FY1bvygm0lJE13
+                +xn+6avkX/o3XYXDCXu8mW6mR0Me4bxL4ltGwGZRB1w4ECtQ2kcUqh9CJN7M0VfT2ZTWYCavl4c9F3G7
+                QJjv3oS29dIGGD1OIEJyIRs1jlXvs1dB+BBO7hRDwRV+xGRsgo3lN2GrBMySA1VEeUXXL/zJi/pMVuEe
+                Rs7htRNNeG2Lq2Rpn2c5qcNI83yM10nEFP1ZhWBmr2jmINCh12L2H7dF+ep5EPV+eGU9t8/R/tZTqjzk
+                H5Nr0wUAckkXoBEJENswQTPnS4Jj/VKr+RpB80v89t5SFFXtU57XxrS09GVvC5dYJWAWOkud3OhN8b4H
+                OKXLcIqqv5xiG+7kOc0nwsBRIOyE07pP4jjfAPOxY7ta653lTALw0qfBbFrZD8J0+UD6xAlijA46uCji
+                niVoMCzTvz+3TLO4xP6LawuQ3G6UUilHlIqA0WHECtVZ8oIyuLaDDcgsjgZUabrbfQpyuwun+x78vkZB
+                Ff9FIW7H4Cf+NwwR+Qa0UN0C4G0GWJddNE2EAkrfoGDPI7y4hyn8Feb5c+pgokVRSycaPHFX9ZcpMA0B
+                ieovGRCPS41iaZ5eVhxp845oMmD1MJ7hEZRr+eoFAVfwR7T3x/J/8lblVgZcqJvwJsGy1GputghTaTq9
+                12QWmaATlrgxxzIxc6obT8IzZ4rR9Ao3Kdz7MkSLy+BaYwQnOPC1glQ5VRxGUmMQTpNNOdrHMuTQKsdh
+                q/ydD8TVyXd1vBpcDYE7X3NS+6l6fqXp/JHvbI1g/RZxG2DDjyFEd6doaA1iKFXiX/SyiML6LfpVTRbM
+                k+SNSEjUpSw1RuLNGoELvaPAt6goFWCBN75dUW+yQgAsertsJapR/BGH/HdvewCpekIIKwJvQR8joYHU
+                F0Ka90OR1Q6r9GEW4+84Y0ptCvM6rXNfwDZuXcws1CEFoR16ezDmONWEWWv8Oi2AcShCcOWalgLnheic
+                JThpTSiFQencEiFeMMwpR5i0LsKwagqcbp/Mo7Hsf7GFULaWIb8S9zgj1OodMLxswAjeMj6P4wdIiduc
+                3NVkNeIAN1aB5RTFNljKK2F+WzmkG2/z60NxrVNlTgbsb3F7tUiqZ9LUMGOE50RmRIPe8Qym1W0XcmN9
+                7HBj3usSb+VKFdkHhLP4qqZ9ZKITmHc2SsNhr1Fa2wTuM3JdtmG1Sgh9hM3XqvnbVgLyij6e8PydgJ1x
+                eEF1eNOLFYVbc5fJEow/V3tiy2KP/ZG/fLsUH15Yguc+NQoHx2hOwGdeM+Phhtjj801m0iLzNhBT/Ok7
+                MFGWxfblHckzhy7WAiNHrVVPO4OANs0D6z65QhAdk8LBm7gETqh0Ix4OQjQ48HMEnnzUKiEbCgKg+R9t
+                EjjQpsZtKCTLC3qrVU8hL+k9hJM7GAMg9aR2TvCm2PrLOb5JFEBFmqqVT4IVfg/mYUKlAp27DGG5Rs51
+                GEd3cY9DDiw05OQH45fltchbnI6INEGItdULIKTrm4FL+Xn5L3ewIG7iBz3vEm7IkFOsZxJi6R5TorAq
+                xuh2S4nXTa4KYNDe3PmyglRCq2Gc/lI7S3Xh456Pvcy0FcF8v20m/FvZAANlgMPoT71+23kqAjePfFOo
+                qeGSmz6w0pgc7tCBT4MLjbcA9Ujl1m2TcgZdiwFWoGEw+5uuPClUh7kKU2zjHZzapz8Ikq/1BIJwCB9L
+                sXjRhaW+fWNpges0lkPeqLVMwI0jJaDGSnKB5uUcAIyIP53WMUAiYAvUY/W7RdCuJDga9yIYYzdwE5AT
+                lu9NHDDGpVV3BgJxJoCiWXqyPBOUv5zirRNy3odQVELy/HZdKLzmAUQi3eWUHianj7THKZ2C+PVEm/A5
+                ev9A4e4FUwCFoBEPuMjGCEIcPXod9oxXjC8f8S7K0C9LFpYy4MRzT8U9wnzsIXUjjL6VPojqMQ9j7aEn
+                L38L973AMdYtVbNY60lMYcCW3JaYiqISLs+yFItJqPcZjvedrOfxgg6BfGhODjerpf7ktMWBcaHcNAm6
+                1og3eBl38ZnLPBLEkzmGb+OnZAU1j+NwvZ2ncDEGQmFNW1WR5iMR30IwXW4as0E1jwbAvCTY3mmitk80
+                jqXlOIlPZnegDABsHnWaxJz4hmageNRkPF1n+SzjBZ1eNHJgUscAPhRrlYCj1wDjgvHjQoscQj8CbLak
+                w8MqKew1uKND6D0h7incSCLt++/gxiKNZGY+BjdFs9kcAta/a06E4oj2ngIFG1braCjXpg3ZvAxuK+op
+                gdd1ovLeaFRUgnJKtwHAr1wHbPicOpzga6kd7GElsWQ/xWHxx+Lj2Xc0dISPp9hEuhOxCyBKLNv34Fm9
+                BngOsD8XTdwNEc7gx/zCqmwDQlHHa6pXJ5pfLROYfe9AiziKRwhoX9FQZNla7kAZ5JQzTGOuj7urHnkg
+                WQ3w8oG91an0PIHQIm7BWrxFMMw+CTxbX7JSzSucd8Cqos4ArGA/gX6V1VVsMv8MieL2mKW4HAhJVprz
+                RHr4zOKcLtzHMu7K0H+hK5uEVyyLRAieOYTZWARhO042nmQYZrZ97gzwdBVD6F92WPrQo9/A7UKPdN1J
+                7gn1X8NPAYJ8Sm4G8Y4U92t23+M2s9ezqcoXtr7YurFAlsBX3yqR841Hdp3CtxtEW3eqF5mg7hA+EWxt
+                IlqnBTweirjp4okWiZQMb97upCNct6wfHR28IqfdDPAW+yazeDaux2NnLBP4IHYOXcE9GNeqFGZQMLu7
+                9lrEw+HoySwG0QPt3cR2MsmccNIesMyb4SRnQRG8uIJ9EMbwDjg0D1ZQXjaW+8+4sWNZYcZRpLLYWz5w
+                89PM/OYJIs8BEWTlWqhuSQyDpTKILQ2+BW6TmPPOP8mLxV2DT8VzHLj4mhNUJ0cs85L+9BOuYcrEZRcb
+                W86llKcTKbFlIqXKNoC99mQJf/rZHgQTSwk2/q+A4ws49U22u1HGk3hE1cT1UIG4m7CnWJQlNcRVe5EH
+                NL0W286Dgcs167IkLPsSWMZUZwalFYkgRamECW1wmUR/6jqztNF0Fs/A85W9U3gSlut/feM4GMZXYwB1
+                OxB0aDodBTH/IzHJefsEQcGdQTvYp/kcNbDDfI4RAvok0PI2cympU5KKaJLAveHQri/ov9ycprc3BdaV
+                qpHM8W9As4BzrAegMoYx9OdTc3ii+Hvl7kBdSJY6E9Gf7M+9F+eKPCoKUQpbB0QZJyJCjxQ2xVngzQ8G
+                eh24MlXcHtwHd+lUCOBGjQZmoxvvQlF/OoW53VzaXyeGctjzCtu/Xh6X6hwTYsFadLZGNEcF7dC4zhdy
+                ao9U9ZIjbusYZ7w5Di/poHZYSILRdJaIKsPXabjHfyTJJWJyUwdC4l83H0BbcJE875aqWbED5PId/H8F
+                eMkBy3Ftyiy6ZhivYXJw8U36lG10pH4MHZW9CM6dXdi7Vkve2K2qpk8cN3J5mQEKVA64PPFtAJ3+hDFj
+                gOSnvMGNqsFeKZLq9g+V+uwas75sce2ewjV7S59bzU2xPE2+XrRTDCvhCoTky2Lz+0cIl7NTZfBCBJMT
+                uLF3WvbeIm+8dhRtaDGblovlo91c7o+I7+0NZtBcqS8GiHdxwyUU9fO+8PTVCFezIG/eGo77uXqn8ngI
+                4ydwODycDI6KB+Jt/A7mlgn6PqWdsnGvcxO5mU3Sr4BTD1oGLoyhFYKcEoPIXoSnmY+15RyOkTvAWsbn
+                vIfwCSCinZ14roDa/B1w4G/ST+YUU7pmGRmQ92b7rCUvd89UDadfD73PpcEpH/hncA+ZnEwG9LAPPswV
+                5ea1YGAsAwBM/e4W8gRL+Qp2fdziq08ae/G9WBxfMfjAir5FnmsaRLYo8wIuQRP5Dsv9TO5D54kgnvkg
+                cC3naNFAgPK6GLlfw9zoCQ4pz5c2a3uOOPNhAU+T39gfH8p1KzoBp+E6KdysMQI+iJvbAAL9BOBTIKjV
+                iXMat8mFZrLPau0qQz3cdN4udwgqcgbgWlDnKUyw5/0ydEO2Tv/EES3vgJShURyPwy29Mvi7DWfy2Nxl
+                zDUYeP2NDqV6M3ma6Nki+sQiihT69q2nAW7tkIrluZRH4lT/1H4i3fSZnfeeVL190UbkCnkRoVD++jPJ
+                ea8T/T8goD5EZRiFm3ndpuM6OQSmAC52DoLtc+ZaSn7EN1lN1qqawfCCbfuMKxUkbH8HZxfQ9SEg/E+i
+                jcAadCjogPX4v/8jQmpLrXsq98c+9KEIwmK8xL2qcClyFDxfzbZ+Zhk6Z3odsjcC5DN2repecwbPBZr+
+                vFETwZYBi9AhqG1AltoO8fg/I6D5cJVh7Fqu0H0Rj8PGvwdgxRtiEXYCbNYegq0cFHDe30cU1T0o/g+M
+                /0H0YuBiF+x/0F6+rR5Jq+U60nSj0/ufIdr/AJeUAr3nE+S+AAAAAElFTkSuQmCC
+</property>
+        </structure>
+    </list-property>
+</report>

@@ -1,0 +1,1721 @@
+/* to show header. It contains font type, font color, font size and background color */
+
+
+/* to center align control field. It contains font type, font color, font size and background color */
+.multiCTLTotal {
+	background-Color:#F1ECE2;
+	height:12px;
+	color:#000000;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	font-style: normal;
+	line-height: normal;
+	font-weight: normal;
+	font-variant: normal;	
+	background-image:url('../../hisglobal/images/img_total.JPG');
+	background-repeat: repeat-x;
+}
+
+.multiRPTTotal {
+	background-Color:white;
+	height:12px;
+	color:#000000;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	font-style: normal;
+	line-height: normal;
+	font-weight: normal;
+	font-variant: normal;	
+	background-image:url('../../hisglobal/images/img_total.JPG');
+	background-repeat: repeat-x;
+}
+TR.HEADER {
+	/*background-image: url('../../hisglobal/images/LightStrip.png');
+	background-Color:#FFB365;*/
+	background: #1277b5; /* Old browsers */
+	background: -moz-linear-gradient(top,  #135d8c 0%, #1277b5 0%, #1277b5 32%, #135d8c 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#135d8c), color-stop(0%,#1277b5), color-stop(32%,#1277b5), color-stop(100%,#135d8c)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  #135d8c 0%,#1277b5 0%,#1277b5 32%,#135d8c 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  #135d8c 0%,#1277b5 0%,#1277b5 32%,#135d8c 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  #135d8c 0%,#1277b5 0%,#1277b5 32%,#135d8c 100%); /* IE10+ */
+	background: linear-gradient(to bottom,  #135d8c 0%,#1277b5 0%,#1277b5 32%,#135d8c 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1277b5', endColorstr='#135d8c',GradientType=0 ); /* IE6-9 */
+	
+	height:23px;
+	/*color: #005B88;*/
+	color: white;
+	text-transform: capitalize;
+	font-family: Trebuchet MS;
+	font-size: 13px;
+	font-style: normal;
+	line-height: 14pt;
+	font-weight: bold;
+	font-variant: normal;
+}
+.Approved 
+   {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-style: normal;
+	font-weight: normal;
+	color: #151AFB;
+	background-color: #D3D5C9;
+	height: 16px;
+	text-align:center;
+    }
+    
+ .NotApproved 
+   {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-style: normal;
+	font-weight: normal;
+	color: red;
+	background-color: #F1ECE2;
+	height: 16px;
+	text-align:center;
+    }
+
+/* to show footer. It contains font type, font color, font size and background color */
+TR.FOOTER {
+	/*background-image: url('../../hisglobal/images/LightStrip.png');
+	background-Color:#FFB365;*/
+	
+	background: #1277b5; /* Old browsers */
+	background: -moz-linear-gradient(top,  #135d8c 0%, #1277b5 0%, #1277b5 32%, #135d8c 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#135d8c), color-stop(0%,#1277b5), color-stop(32%,#1277b5), color-stop(100%,#135d8c)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  #135d8c 0%,#1277b5 0%,#1277b5 32%,#135d8c 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  #135d8c 0%,#1277b5 0%,#1277b5 32%,#135d8c 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  #135d8c 0%,#1277b5 0%,#1277b5 32%,#135d8c 100%); /* IE10+ */
+	background: linear-gradient(to bottom,  #135d8c 0%,#1277b5 0%,#1277b5 32%,#135d8c 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1277b5', endColorstr='#135d8c',GradientType=0 ); /* IE6-9 */
+	
+	height:23px;
+	/*color: #005B88;*/
+	color: white;
+	text-transform: capitalize;
+	text-align:right;
+	font-family: Trebuchet MS;
+	font-size: 13px;
+	font-style: normal;
+	line-height: 14pt;
+	font-weight: bold;
+	font-variant: normal;
+}
+
+/* for label field of table's TD. It contains font type, font color, font size and background color */
+TD.LABEL {
+	/*background-color:#FFEBD5;*/
+	/*background-color:#e0ebeb; */
+	background-Color:#f1f6f6;
+	height:16;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size:11px;
+	/*color:#333333;*/
+	color:#013157;
+	text-align:right;
+	font-weight: bold;
+	background-image: url('none');
+}
+
+/* for control field of table's TD. It contains font type, font color, font size and background color */
+TD.CONTROL {
+	/*background-Color:#F1ECE2;*/
+	background-Color:#f1f6f6;
+	height:16;
+	/*color:#333333;*/
+	color:#013157;
+	text-align:left;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-style: normal;
+}
+/* to show font type to be used. It contains font type, font color, font size */
+.FONT {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-style: normal;
+	font-weight: normal;
+	color: #653232;
+}
+
+/* fot textfield of minimum size. It contains font type, font color, font size, width of the field */
+.txtFldMin {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 13px;
+	font-style: normal;
+	font-weight: normal;
+	color: #000000;
+	height: 18px;
+	width: 50px;
+	/*border: 1px solid #BCB8B8;*/
+	background-color: #F8F6F3;
+	/*border-width: 1px 1px 1px 1px;
+	border-style: solid;
+	border-color: #666;
+	-moz-border-top-colors: none;
+	-moz-border-right-colors: none;
+	-moz-border-bottom-colors: none;
+	-moz-border-left-colors: none;
+	border-image: none;
+	box-shadow: 0px 2px 3px #666;*/
+
+}
+
+
+/* fot textfield of normal size. It contains font type, font color, font size, width of the field */
+.txtFldNormal {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 13px;
+	font-style: normal;
+	font-weight: normal;
+	color: #000000;
+	height: 18px;
+	width: 75px;
+	/*border: 1px solid #BCB8B8;*/
+	background-color: #F8F6F3;
+	/*border: 1px inset #F8F6F3; 
+    outline:0;*/ 
+	/*border-width: 1px 1px 1px 1px;
+	border-style: solid;
+	border-color: #666;
+	-moz-border-top-colors: none;
+	-moz-border-right-colors: none;
+	-moz-border-bottom-colors: none;
+	-moz-border-left-colors: none;
+	border-image: none;
+	box-shadow: 0px 2px 3px #666;*/
+	focus:background-color: yellow;
+}
+
+/* fot textfield of maximum size. It contains font type, font color, font size, width of the field */
+.txtFldMax {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 13px;
+	font-style: normal;
+	font-weight: normal;
+	color: #000000;
+	height: 18px;
+	width: 135px;
+	/*border: 1px solid #BCB8B8;*/
+	background-color: #F8F6F3;
+	/*border: 1px inset #F8F6F3; 
+    outline:0;*/ 
+	/*border-width: 1px 1px 1px 1px;
+	border-style: solid;
+	border-color: #666;
+	-moz-border-top-colors: none;
+	-moz-border-right-colors: none;
+	-moz-border-bottom-colors: none;
+	-moz-border-left-colors: none;
+	border-image: none;
+	box-shadow: 0px 2px 3px #666;*/
+}
+
+
+/* fot textfield of small size. It contains font type, font color, font size, width of the field */
+.txtFldDate {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 13px;
+	font-style: normal;
+	font-weight: normal;
+	color: #000000;
+	height: 16px;
+	width: 85px;	
+}
+
+/* fot textfield of small size. It contains font type, font color, font size, width of the field */
+.txtFldSmall {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 13px;
+	font-style: normal;
+	font-weight: normal;
+	color: #000000;
+	height: 18px;
+	width: 35px;
+	/*border: 1px solid #BCB8B8;*/
+	background-color: #F8F6F3;
+	/*border: 1px inset #F8F6F3; 
+    outline:0;*/ 
+	/*border-width: 1px 1px 1px 1px;
+	border-style: solid;
+	border-color: #666;
+	-moz-border-top-colors: none;
+	-moz-border-right-colors: none;
+	-moz-border-bottom-colors: none;
+	-moz-border-left-colors: none;
+	border-image: none;
+	box-shadow: 0px 2px 3px #666;*/
+}
+/* fot textfield of small size and have red font. It contains font type, font color, font size, width of the field */
+.txtFldSmall_Red {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 13px;
+	font-style: normal;
+	font-weight: normal;
+	color: #990000;
+	height: 18px;
+	width: 35px;
+}
+
+/* fot combo of small size. It contains font type, font color, font size, width of the field */
+.comboSmall {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-style: normal;
+	font-weight: normal;
+	color: #000000;
+	height: 20px;
+	width: 50px;
+	/*border: 1px solid #BCB8B8;*/
+	/*border: 1px inset #848484;*/	
+	-moz-appearance: menulist;
+    box-sizing: border-box;
+    -moz-user-select: none;
+    border-color: #F0F0F0;
+    border-style: inset;
+    border-width: 2px;
+    color: #000;
+    cursor: pointer;
+    /*background: none repeat scroll 0% 0% #FFC;*/
+}
+
+/* fot combo of minimum size. It contains font type, font color, font size, width of the field */
+.comboMin {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-style: normal;
+	font-weight: normal;
+	color: #000000;
+	height: 20px;
+	width: 90px;
+	/*border: 1px solid #BCB8B8;*/
+	/*border: 1px inset #848484;*/	
+	-moz-appearance: menulist;
+    box-sizing: border-box;
+    -moz-user-select: none;
+    border-color: #F0F0F0;
+    border-style: inset;
+    border-width: 2px;
+    color: #000;
+    cursor: pointer;
+    /*background: none repeat scroll 0% 0% #FFC;*/
+}
+
+/* fot combo of normal size. It contains font type, font color, font size, width of the field */
+.comboNormal {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-style: normal;
+	font-weight: normal;
+	color: #000000;
+	height: 20px;
+	width: 125px;
+	/*border: 1px solid #BCB8B8;*/
+	/*border: 1px inset #848484;*/	
+	-moz-appearance: menulist;
+    box-sizing: border-box;
+    -moz-user-select: none;
+    border-color: #F0F0F0;
+    border-style: inset;
+    border-width: 2px;
+    color: #000;
+    cursor: pointer;
+    /*background: none repeat scroll 0% 0% #FFC;*/
+}
+
+/* fot combo of maximum size. It contains font type, font color, font size, width of the field */
+.comboMax {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-style: normal;
+	font-weight: normal;
+	color: #000000;
+	height: 20px;
+	width: 175px;
+	/*border: 1px solid #BCB8B8;*/
+	/*border: 1px inset #848484;*/	
+	-moz-appearance: menulist;
+    box-sizing: border-box;
+    -moz-user-select: none;
+    border-color: #F0F0F0;
+    border-style: inset;
+    border-width: 2px;
+    color: #000;
+    cursor: pointer;
+    /*background: none repeat scroll 0% 0% #FFC;*/
+}
+
+/* fot combo of maximum size. It contains font type, font color, font size, width of the field */
+.comboHalfMax {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 13px;
+	font-style: normal;
+	font-weight: normal;
+	color: #000000;
+	height: 20px;
+	width: 525px;
+}
+
+/* fot combo of maximum size. It contains font type, font color, font size, width of the field */
+.comboTooMax {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 13px;
+	font-style: normal;
+	font-weight: normal;
+	color: #000000;
+	height: 20px;
+	width: 825px;
+}
+
+/* table width is defined for add and modify pages. */
+.TABLEWIDTH {	
+	width: 95%;	
+}
+
+
+
+/* for the title field. It contains font type, font color, font size and background color */
+.TITLE {
+	/*background-Color:#FFB365;*/
+	background: #1277b5; /* Old browsers */
+	background: -moz-linear-gradient(top,  #135d8c 0%, #1277b5 0%, #1277b5 32%, #135d8c 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#135d8c), color-stop(0%,#1277b5), color-stop(32%,#1277b5), color-stop(100%,#135d8c)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  #135d8c 0%,#1277b5 0%,#1277b5 32%,#135d8c 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  #135d8c 0%,#1277b5 0%,#1277b5 32%,#135d8c 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  #135d8c 0%,#1277b5 0%,#1277b5 32%,#135d8c 100%); /* IE10+ */
+	background: linear-gradient(to bottom,  #135d8c 0%,#1277b5 0%,#1277b5 32%,#135d8c 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1277b5', endColorstr='#135d8c',GradientType=0 ); /* IE6-9 */
+	
+	font-family: Trebuchet MS;
+	font-style: normal;
+	font-size: 12px;
+	font-weight: bold;
+	/*color: #653232;*/
+	color: white;
+	height: 16px;
+	text-align:left;
+}
+
+/* to center align label field. It contains font type, font color, font size and background color */
+.multiPOLabel {
+	background-color:#bdd9f0;	
+	height: 10px;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size:10px;
+	font-weight: bold;
+	color: #653232;
+	text-align:center;
+}
+
+/* to center align label field. It contains font type, font color, font size and background color */
+.multiCLRLabel {
+	background-color:#87CEFA;	
+	height: 10px;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size:10px;
+	font-weight: bold;
+	color: #653232;
+	text-align:center;
+}
+
+/* to center align control field. It contains font type, font color, font size and background color */
+.multiPOControl {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	font-style: normal;
+	font-weight: normal;
+	color: #000000;
+	background-color:#e0ebeb;
+	height: 8px;
+	text-align:center;
+}
+
+
+/* to center align label field. It contains font type, font color, font size and background color */
+.multiLabel {
+	/*background-color:#FFEBD5;*/
+	/*background-color:#e0ebeb;*/	
+	background-Color:#f1f6f6;		
+	height: 16px;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	/*font-size: 12px;*/
+	font-size: 11px;
+	font-weight: bold;
+	/*color: #653232;*/
+	/*color:black;*/
+	color:#013157;
+	text-align:center;
+}
+
+
+/* to center align control field. It contains font type, font color, font size and background color */
+.multiControl {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-style: normal;
+	font-weight: normal;
+	/*color: #000000;*/
+	color:#013157;
+	/*background-color: #F1ECE2;*/
+	background-Color:#f1f6f6;
+	height: 16px;
+	text-align:center;
+}
+
+/* to center align label field. It contains font type, font color, font size and background color */
+.multiRPTLabel {
+	background-color:#bdd9f0;	
+	height: 12px;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	font-weight: bold;
+	color: #653232;
+	text-align:center;
+}
+
+
+/* to center align control field. It contains font type, font color, font size and background color */
+.multiRPTControl {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	font-style: normal;
+	font-weight: normal;
+	color: #000000;
+	background-color: #E0EBEB;
+	height: 12px;
+	text-align:center;
+}
+	
+/* to center align control field. It contains font type, font color, font size and background color */
+.multiRPTControl1 {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	font-style: normal;
+	font-weight: normal;
+	color: #000000;
+	background-color: #D8D8D8;
+	height: 12px;
+	text-align:center;
+}	
+
+/* to center align control field. It contains font type, font color, font size and background color */
+.multiControlSmallLeft {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	font-style: normal;
+	font-weight: normal;
+	/*color: #000000;*/
+	color:#013157;
+	/*background-color: #F1ECE2;*/
+	background-Color:#f1f6f6;
+	height: 16px;
+	text-align:left;
+}
+	
+/* to show error messages. */
+.errMsg {
+	font-family: Trebuchet MS;
+	font-size: 12px;
+	font-style: normal;
+	font-weight: bold;
+	color: red;	
+	text-align:center;
+}
+
+/* to show normal messages. */
+.normalMsg {
+	font-family: Trebuchet MS;
+	font-size: 12px;
+	font-style: normal;
+	font-weight: bold;
+	color: #653232;	
+	text-align:center;
+}
+
+/* to show error messages. */
+.warningMsg {
+	font-family: Trebuchet MS;
+	font-size: 12px;
+	font-style: normal;
+	font-weight: bold;
+	color: #FF9900;	
+	text-align:center;
+}
+
+/* fot combo of Big size. It contains font type, font color, font size, width of the field */
+.comboBig {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 13px;
+	font-style: normal;
+	font-weight: normal;
+	color: #000000;
+	height: 20px;
+	width: 350px;
+}
+
+/* for label highliter field of table's TD. It contains font type, font color, font size and background color */
+TD.LABELHIGHLITER {
+	background-color:#FFEBD5;
+	height:16px;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size:11px;
+	color:blue;
+	text-align:right;
+	font-weight: bold;
+	background-image: url('none');
+}
+/* for label highliter field of table's TD. It contains font type, font color, font size and background color */
+TD.CLASSSNONELECTED {
+	background-color:lightgrey;
+	height:16px;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size:11px;
+	color:blue;
+	text-align:center;
+	font-weight: bold;
+	background-image: url('none');
+}
+/* for label highliter field of table's TD. It contains font type, font color, font size and background color */
+TD.CLASSSSELECTED {
+	background-color:lightyellow;
+	height:16px;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size:11px;
+	color:black;
+	text-align:center;
+	font-weight: bold;
+	background-image: url('none');
+}
+.multiPOLabelNew {
+	background-color:#146AA0;	
+	height: 20px;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size:10px;
+	font-weight: bold;
+	color: #fff;
+	text-align:center;
+	border:1px solid black;
+	padding: 0px 3px;
+}
+.multiControlSmall {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	font-style: normal;
+	font-weight: normal;
+	/*color: #000000;*/
+	color:#013157;
+	/*background-color: #F1ECE2;*/
+	background-Color:#f1f6f6;
+	height: 12px;
+	text-align:center;
+}
+/* to center align control field. It contains font type, font color, font size and background color */
+.multiControlWithoutFont {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	font-style: normal;
+	font-weight: normal;
+	/*color: #000000;*/
+	color:#013157;
+	/*background-color: #F1ECE2;*/
+	background-Color:#f1f6f6;
+	height: 16px;
+	text-align:center;
+}
+
+
+
+
+
+/*******************************************************************************************************************/
+/* Changes for Item Finder */
+
+
+.ItemFinderMain .formbg {
+	background: url('../../hisglobal/images/form_bg.png') center repeat-x;
+	background-size: auto 100%;
+}
+
+.ItemFinderMain .formbgnew {
+	background: url('../../hisglobal/images/form_bg.png') center repeat-x;
+	background-size: auto 100%;
+	width: 100%;
+	/* margin-left:2.3%; */
+}
+
+.ItemFinderMain .background {
+	background: url('../../hisglobal/images/background.png') repeat-x scroll 0 1px
+		#FFFFFF;
+}
+
+/* table width is defined for add and modify pages. */
+.ItemFinderMain .TABLEWIDTH {
+	width: 95%;
+	border-collapse: collapse;
+}
+
+.ItemFinderMain TR.HEADER {
+	height: 23px;
+	color: white;
+	text-transform: capitalize;
+	font-family: Georgia;
+	font-size: 12px;
+	font-style: normal;
+	line-height: 14pt;
+	font-weight: bold;
+	font-variant: normal;
+	/* background: url('../../hisglobal/images/selected.png'); */
+	background: #35414f url('../../hisglobal/images/ui-bg_dots-small_35_35414f_2x2.png') 50% 50% repeat;
+}
+/* to show footer. It contains font type, font color, font size and background color */
+.ItemFinderMain TR.FOOTER {
+	/* background: url('../../hisglobal/images/selected.png'); */
+	background: #35414f url('../../hisglobal/images/ui-bg_dots-small_35_35414f_2x2.png') 50% 50% repeat;
+	height: 12px;
+	color: #FFFFFF;
+	text-transform: capitalize;
+	text-align: right;
+	font-family: Georgia;
+	font-size: 12px;
+	font-style: normal;
+	line-height: 14pt;
+	font-weight: bold;
+	font-variant: normal;
+}
+
+.ItemFinderMain TR.HIGHLIGHT {
+	background-color: lightgreen;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	font-style: normal;
+	font-weight: normal;
+	color: #4b68f6;
+	height: 8px;
+	text-align: center;
+}
+
+.ItemFinderMain TD.TDSEARCH {
+	/* background: url('../../hisglobal/images/selected.png'); */
+	height: 16px;
+	font-family: georgia;
+	font-size: 14px;
+	font-weight: bold;
+	color: #fff;
+	padding: 2px;
+	background-color:#2a2a2a;
+}
+
+.ItemFinderMain .all-four-rounded-corners {
+	background-color: #0e5584;
+	-webkit-border-radius: 10px;
+	-khtml-border-radius: 10px;
+	-moz-border-radius: 10px;
+	border-radius: 10px 0px 0px 10px;
+	padding-left: 10px;
+	-moz-box-shadow: inset 0 0 10px 0 #222;
+	-webkit-box-shadow: inset 0 0 10px 0 #222;
+	box-shadow: inset 0 0 10px 0 #222;
+}
+
+/* for label field of table's TD. It contains font type, font color, font size and background color */
+.ItemFinderMain TD.LABEL {
+	background-image: url("none");
+	color: #013157;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	font-weight: bold;
+	height: 16px;
+	text-align: right;
+}
+
+/* for control field of table's TD. It contains font type, font color, font size and background color */
+.ItemFinderMain TD.CONTROL {
+	height: 16px;
+	color: #333333;
+	text-align: left;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-style: normal;
+	padding-left: 3px;
+}
+/* fot combo of maximum size. It contains font type, font color, font size, width of the field */
+.ItemFinderMain .comboMax {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 13px;
+	font-style: normal;
+	font-weight: normal;
+	color: #000000;
+	height: 20px;
+	width: 90%;
+}
+
+.ItemFinderMain .combo1Max {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 13px;
+	font-style: normal;
+	font-weight: normal;
+	color: #000000;
+	height: 20px;
+	width: 330px;
+}
+/* fot combo of normal size. It contains font type, font color, font size, width of the field */
+.ItemFinderMain .comboNormal {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 13px;
+	font-style: normal;
+	font-weight: normal;
+	color: #000000;
+	height: 20px;
+	width: 65%;
+}
+.ItemFinderMain .comboMin {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 13px;
+	font-style: normal;
+	font-weight: normal;
+	color: #000000;
+	height: 20px;
+	width: 60%;
+}
+
+.ItemFinderMain .comboTooMax {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 13px;
+	font-style: normal;
+	font-weight: normal;
+	color: #000000;
+	height: 20px;
+	width: 100%;
+}
+
+.ItemFinderMain TD {
+	font-size: 13px;
+	font-family: Arial;
+}
+
+.ItemFinderMain .pg-normal {
+	color: blue;
+	font-weight: normal;
+	text-decoration: none;
+	cursor: pointer;
+}
+
+.ItemFinderMain .pg-selected {
+	color: red;
+	font-weight: bold;
+	text-decoration: underline;
+	cursor: pointer;
+}
+
+.ItemFinderMain .pg-qualified {
+	color: green;
+	font-weight: bold;
+	text-decoration: underline;
+	cursor: pointer;
+}
+
+.ItemFinderMain .pg-highlight {
+	color: white;
+	font-weight: normal;
+	text-decoration: none;
+	cursor: pointer;
+	font-size: 14px;
+	font-style: normal;
+	line-height: 15pt;
+	font-weight: bold;
+	font-variant: normal;
+}
+
+.ItemFinderMain div.ex {
+	width: 190px;
+	padding: 8px;
+	border: 2px solid gray;
+	margin: 0px;
+}
+
+.ItemFinderMain .class3 {
+	A: link{text-decoration:  none
+}
+
+.ItemFinderMain A:visited {
+	text-decoration: none
+}
+
+.ItemFinderMain A:active {
+	text-decoration: none
+}
+
+.ItemFinderMain A:hover {
+	font-size: 30;
+	font-weight: bold;
+	color: red;
+}
+
+}
+
+/* to center align label field. It contains font type, font color, font size and background color */
+.ItemFinderMain .multiRPTLabel {
+	background-color: #EFEFF7;
+	height: 12px;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	font-weight: bold;
+	color: #000;
+	text-align: center;
+	border: 1px solid black;
+}
+
+
+.ItemFinderMain .multiRPTLabel1 {
+	background-color: #ccdcee;
+	height: 12px;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	font-weight: bold;
+	color: #000;
+	text-align: center;
+	border: 1px solid black;
+}
+
+.ItemFinderMain .multiRPTLabel2 {
+	background-color: #a9c4e9;
+	height: 12px;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	font-weight: bold;
+	color: #000;
+	text-align: center;
+	border: 1px solid black;
+}
+
+.ItemFinderMain .multiRPTLabel3 {
+	background-color: #EFEFF7;
+	height: 12px;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	font-weight: bold;
+	color: #000;
+	text-align: center;	
+}
+.ItemFinderMain .multiRPTLabel4 {
+	background-color: #EFEFF7;
+	height: 20px;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-weight: bold;
+	color: #000;
+	text-align: center;
+	border: 1px solid black;
+}
+
+/* to center align control field. It contains font type, font color, font size and background color */
+.ItemFinderMain .multiRPTControl {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-style: normal;
+	font-weight: normal;
+	color: #000000;
+	background-color: #FFFFFF;
+	height: 11px;
+	text-align: center;
+	border: 1px solid black;
+}
+
+
+/* to center align control field. It contains font type, font color, font size and background color */
+.ItemFinderMain .multiRPTControl2 {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	font-style: normal;
+	font-weight: normal;
+	color: #000000;
+	background-color: #D8D8D8;
+	height: 12px;
+	text-align: center;
+}
+
+.ItemFinderMain .multiRPTControl1 {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	font-style: normal;
+	font-weight: normal;
+	color: #000000;
+	background-color: #FFFFFF;
+	height: 12px;
+	text-align: center;
+}
+
+.ItemFinderMain .multiRPTControl3 {
+	background-color: #FFF;
+	color: #000000;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	font-style: normal;
+	font-weight: normal;
+	height: 12px;
+	text-align: center;
+}
+
+.ItemFinderMain .multiRPTControl4 {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	font-style: normal;
+	font-weight: normal;
+	color: #000000;
+	background-color: #FFFFFF;
+	height: 13px;
+	text-align: left;
+	border: 1px solid black;
+	
+}
+.ItemFinderMain .multiRPTControl5 {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	font-style: normal;
+	font-weight: normal;
+	color: #000000;
+	background-color: #FFFFFF;
+	height: 13px;
+	text-align: left;
+	border: 1px solid black;
+	font-weight: bold;
+}
+
+.ItemFinderMain .multiRPTControlHighlight {
+    background-color: #FFFFCC;
+    border: 1px solid black;
+    color: #000000;
+    font-family: Verdana,Arial,Helvetica,sans-serif;
+    font-size: 11px;
+    font-style: normal;
+    font-weight: normal;
+    height: 13px;
+    text-align: left;
+}
+
+/* to center align label field. It contains font type, font color, font size and background color */
+.ItemFinderMain .multiLabel {
+	background-color: #EFEFF7;
+	height: 16px;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-weight: bold;
+	color: #000000;
+	text-align: center;
+	border: 1px solid black;
+}
+
+.ItemFinderMain .multiLabelReport {
+	background-color: #3399FF;
+	height: 16px;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-weight: bold;
+	color: #FFFFFF;
+	text-align: center;
+	border: 1px solid black;
+}
+
+/* to center align control field. It contains font type, font color, font size and background color */
+.ItemFinderMain .multiControl {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-style: normal;
+	font-weight: normal;
+	color: #000000;
+	background-color: #FFFFFF;
+	height: 16px;
+	text-align: center;
+	border: 1px solid black;
+}
+
+/* to center align label field. It contains font type, font color, font size and background color */
+.ItemFinderMain .multiPOLabel {
+	background-color: #EFEFF7;
+	height: 10px;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	font-weight: bold;
+	color: #000000;
+	text-align: center;
+	border: 1px solid black;
+}
+.ItemFinderMain .multiPOLabelNew {
+	background-color:#146AA0;		
+	height: 20px;	
+	font-family: Verdana, Arial, Helvetica, sans-serif;	
+	font-size:10px;	
+	font-weight: bold;	
+	color: #fff;	
+	text-align:center;	
+	border:1px solid black;	
+	padding: 0px 3px;}
+
+/* to center align control field. It contains font type, font color, font size and background color */
+/* to center align label field. It contains font type, font color, font size and background color */
+.ItemFinderMain .multiRPTGreenLabel {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	font-style: normal;
+	font-weight: normal;
+	color: #000000;
+	background-color: LIGHTGREEN;
+	height: 8px;
+	text-align: center;
+	border: 1px solid black;
+}
+
+.ItemFinderMain .multiRPTYellowLabel 
+{
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	font-style: normal;
+	font-weight: normal;
+	color: #000000;
+	background-color: LIGHTYELLOW;
+	height: 8px;
+	text-align: center;
+	border: 1px solid black;
+}
+
+
+.ItemFinderMain .multiPOControl {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	font-style: normal;
+	font-weight: normal;
+	color: #000000;
+	background-color: #FFFFFF;
+	height: 8px;
+	text-align: center;
+	border: 1px solid black;
+}
+
+.ItemFinderMain .Approved {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	font-style: normal;
+	font-weight: normal;
+	color: #151AFB;
+	background-color: #D3D5C9;
+	height: 10px;
+	text-align: center;
+	border: 1px solid black;
+}
+
+
+.ItemFinderMain .NotMapped {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	font-style: normal;
+	font-weight: normal;
+	color: RED;
+	background-color: #D3D5C9;
+	height: 10px;
+	text-align: center;
+	border: 1px solid black;
+}
+ 
+
+.ItemFinderMain .Excess{
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	font-style: normal;
+	font-weight: normal;
+	color: RED;	
+	background-color: LIGHTYELLOW;
+	height: 10px;
+	text-align: center;
+	border: 1px solid black;
+}
+
+
+.ItemFinderMain .NotApproved {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	font-style: normal;
+	font-weight: normal;
+	color: #000000;
+	background-color: #FFFFFF;
+	height: 8px;
+	text-align: center;
+	border: 1px solid black;
+}
+
+/* for tborder:1px solid black;ains font type, font color, font size and background color */
+.ItemFinderMain .TITLE {
+	background-Color: #EFEFF7;
+	font-family: Arial;
+	font-style: normal;
+	font-size: 12px;
+	font-weight: bold;
+	color: FFFFFF;
+	height: 16px;
+	text-align: left;
+	border: 1px solid black;
+}
+
+/* table width is defined for add and modify pages. */
+.ItemFinderMain .NEWTABLEWIDTH {
+	width: 100%;
+	border-collapse: collapse;
+}
+
+/* for menu */
+.ItemFinderMain #menu {
+	background: url('../../hisglobal/images/menu.png') repeat-x scroll 0 0 transparent;
+	clear: both;
+	height: 34px;
+	min-width: 900px;
+	padding: 0 0px;
+	position: relative;
+	z-index: 1;
+}
+
+.ItemFinderMain #menu>ul.left {
+	float: left;
+}
+
+.ItemFinderMain #menu>ul.right {
+	float: right;
+}
+
+.ItemFinderMain #menu>ul {
+	margin: 0;
+	padding: 0;
+	position: relative;
+}
+
+.ItemFinderMain #menu>ul ul {
+	background: url('.../DWH_UP//hisglobal/images/transparent.png') repeat scroll 0 0
+		transparent;
+	list-style: none outside none;
+	margin: 0;
+	padding: 0;
+}
+
+.ItemFinderMain #menu>ul a {
+	display: block;
+	text-decoration: none;
+}
+
+.ItemFinderMain #menu>ul li {
+	float: left;
+	list-style: none outside none;
+}
+
+.ItemFinderMain #menu>ul>li+li {
+	background: url('.../DWH_UP//hisglobal/images/split.png') no-repeat scroll left center
+		transparent;
+}
+
+.ItemFinderMain #menu>ul .top {
+	color: #FFFFFF;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	padding: 10px 15px 9px 17px;
+	text-align: center;
+}
+
+.ItemFinderMain .CB1 {
+	border: 1px solid #7B9EBD;
+	font-family: tahoma;
+	font-size: 10pt;
+	height: 19px;
+	margin-top: 3px;
+	width: 65%;
+	margin-left: 1%;
+}
+
+/* to show error messages. */
+.ItemFinderMain .errMsg {
+	font-family: Trebuchet MS;
+	font-size: 12px;
+	font-style: normal;
+	font-weight: bold;
+	color: red;
+	text-align: center;
+}
+
+/* to show normal messages. */
+.ItemFinderMain .normalMsg {
+	font-family: Trebuchet MS;
+	font-size: 12px;
+	font-style: normal;
+	font-weight: bold;
+	color: #653232;
+	text-align: center;
+}
+
+/* to show error messages. */
+.ItemFinderMain .warningMsg {
+	font-family: Trebuchet MS;
+	font-size: 12px;
+	font-style: normal;
+	font-weight: bold;
+	color: #FF9900;
+	text-align: center;
+}
+/* to show legends below footer*/
+.ItemFinderMain .legends {
+	float: left;
+	width: 40%;
+	margin-left: 3%;
+	font-style: italic;
+}
+
+.ItemFinderMain .legends ul {
+	list-style-image: url('../../hisglobal/images/rounded.png');
+	padding-left: 20px;
+}
+
+.ItemFinderMain .legends ul li {
+	
+	}
+	
+.ItemFinderMain .legendsnew {
+	float: left;
+	width: 20%;	
+	font-style: italic;
+}
+
+.ItemFinderMain .legendsnew ul {
+	list-style-image: url('../../hisglobal/images/rounded.png');
+	padding-left: 20px;
+}
+
+.ItemFinderMain .legends ul li {
+	
+	}	
+/* to position control button*/
+.ItemFinderMain .control_button {
+	margin-left: 35%;
+	width: 65%;
+}
+
+.ItemFinderMain #table_hrader {
+	border-top: 1px solid #99BBE8;
+}
+
+.ItemFinderMain #table_hrader table {
+	background-color: #fff;
+	border-color: #A0A0A4;
+	border-spacing: 0;
+	border-style: solid;
+	border-width: 0 0px 1px;
+}
+
+.ItemFinderMain #table_hrader table tr th {
+	background-color: #ccdcee;
+	border-color: #A0A0A4;
+	border-spacing: 0;
+	border-style: solid;
+	border-width: 0 1px 0 0;
+	color: Black;
+	font-size: 9pt;
+	font-variant: normal;
+	font-weight: bold;
+	height: 24px;
+	padding: 2px 1px 1px 0px;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	word-wrap: break-word;
+	z-index: 99;
+	font-family: Georgia;
+	text-align: center;
+}
+
+.ItemFinderMain #table_hrader table tr td {
+	border-color: #A0A0A4;
+	border-spacing: 0;
+	border-style: inset;
+	border-width: 0px 1px 1px 0;
+	color: black;
+	cursor: pointer;
+	font-size: 10pt;
+	height: 15px;
+	padding: 5px 3px 1px 0px;
+	text-overflow: ellipsis;
+	vertical-align: top;
+	word-wrap: break-word;
+	font-family: Arial, Helvetica, 'sans-serif';
+}
+
+/* fot textfield of minimum size. It contains font type, font color, font size, width of the field */
+.ItemFinderMain .txtFldMin {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 13px;
+	font-style: normal;
+	font-weight: normal;
+	color: #000000;
+	height: 14px;
+	width: 50px;
+	background-color: #FAEBD7;
+}
+
+/* fot textfield of normal size. It contains font type, font color, font size, width of the field */
+.ItemFinderMain .txtFldNormal {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 13px;
+	font-style: normal;
+	font-weight: normal;
+	color: #000000;
+	height: 14px;
+	width: 75px;
+	background-color: #FAEBD7;
+}
+
+/* fot textfield of normal size. It contains font type, font color, font size, width of the field */
+.ItemFinderMain .txtFldDatePickerNormal {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-style: normal;
+	font-weight: normal;
+	color: #000000;
+	height: 16px;
+	width: 105px;
+}
+
+/* fot textfield of maximum size. It contains font type, font color, font size, width of the field */
+.ItemFinderMain .txtFldMax {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 13px;
+	font-style: normal;
+	font-weight: normal;
+	color: #000000;
+	height: 19px;
+	width: 145px;
+	background-color: #FAEBD7;
+}
+
+/* fot textfield of Big size. It contains font type, font color, font size, width of the field */
+.ItemFinderMain .txtFldBig {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 13px;
+	font-style: normal;
+	font-weight: normal;
+	color: #000000;
+	height: 14px;
+	width: 250px;
+}
+
+/* fot textfield of small size. It contains font type, font color, font size, width of the field */
+.ItemFinderMain .txtFldSmall {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 13px;
+	font-style: normal;
+	font-weight: normal;
+	color: #000000;
+	height: 14px;
+	width: 35px;
+}
+
+/* fot textfield of small size and have red font. It contains font type, font color, font size, width of the field */
+.ItemFinderMain .txtFldSmall_Red {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 13px;
+	font-style: normal;
+	font-weight: normal;
+	color: #990000;
+	height: 14px;
+	width: 35px;
+}
+
+.ItemFinderMain .Approved {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-style: normal;
+	font-weight: normal;
+	color: #151AFB;
+	background-color: #D3D5C9;
+	height: 16px;
+	text-align: center;
+}
+
+.ItemFinderMain .NotApproved {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-style: normal;
+	font-weight: normal;
+	color: #000000;
+	background-color: #F1ECE2;
+	height: 16px;
+	text-align: center;
+}
+
+@page {
+	size: letter landscape;
+}
+
+.ItemFinderMain a.class4:link {
+	color: #800080;
+	size: 2px;
+}
+
+.ItemFinderMain a.class4:hover {
+	color: red;
+}
+
+.ItemFinderMain a.class4:active {
+	color: black;
+	size: 10px;
+}
+
+.ItemFinderMain a.class4:visited {
+	color: #800080;
+	size: 10px;
+}
+
+.ItemFinderMain #mask {
+	display: none;
+	background: #000;
+	position: fixed;
+	left: 0;
+	top: 0;
+	z-index: 10;
+	width: 100%;
+	height: 100%;
+	opacity: 0.8;
+	z-index: 999;
+}
+
+.ItemFinderMain #dvLoading {
+	display: none;
+	background: url('../../hisglobal/images/demo_wait.gif') no-repeat center center;
+	height: 130px;
+	width: 130px;
+	position: fixed;
+	left: 50%;
+	top: 50%;
+	margin: -25px 0 0 -25px;
+	z-index: 1000;
+}
+
+/* for fixed header table in report start */
+.ItemFinderMain #boundary {
+	margin-right: -2px;
+	border: solid 1px #000;
+}
+
+.ItemFinderMain table#headerTable th {
+	border-right: solid 1px #555;
+	background-image: -moz-linear-gradient(bottom, #FFFFFF -50%, #999999 100%);
+	word-wrap: break-word;
+	text-align: center;
+	font-family: Helvetica;
+    font-size: 12px;
+}
+
+.ItemFinderMain table#headerTableTrans th,.ItemFinderMain table#mainTableRptId th, .ItemFinderMain table#mainTableDrugFinder th  {
+	border-right: solid 1px #555;
+	background-color:#a9c4e9;
+	word-wrap: break-word;
+	text-align: center;
+	font-family: Helvetica;
+    font-size: 11px;
+}
+.ItemFinderMain table#headerTableTrans1 th,.ItemFinderMain table#mainTableRptId th,.ItemFinderMain table#mainTableDrugFinder th  {
+	border-right: solid 1px #555;
+	background-color:#a9c4e9;
+	word-wrap: break-word;
+	text-align: center;
+	font-family: Helvetica;
+    font-size: 12px;
+}
+
+.ItemFinderMain thead#tbl-header {
+	border: solid 1px #555;
+	background-image: -moz-linear-gradient(bottom, #FFFFFF -50%, #999999 100%);
+	word-wrap: break-word;
+	text-align: center;
+}
+
+.ItemFinderMain table#headerTable th#right-border {
+	padding: 0 22px 0 3px;
+	border-right: none;
+	word-wrap: break-word;
+}
+
+.ItemFinderMain table#headerTableTrans th#right-border {
+	padding: 0 22px 0 3px;
+	border-right: none;
+	word-wrap: break-word;
+}
+
+.ItemFinderMain table#mainTableDrugFinder th#right-border {
+	padding: 0 14px 0 3px;
+	border-right: none;
+	word-wrap: break-word;
+}
+
+.ItemFinderMain #boxHeaderFixed , .ItemFinderMain #boxHeaderFixedNew {
+	width: 100%;
+	height: 350px;
+	overflow-y: auto;
+	border: solid 0px #BBBBBB;
+	border-top: none;
+	overflow-x: hidden;
+}
+
+.ItemFinderMain #boxHeaderFixedDrpt {
+	width: 100%;	
+	overflow-y: auto;
+	border: solid 0px #BBBBBB;
+	border-top: none;
+	overflow-x: hidden;
+}
+
+.ItemFinderMain #boxHeaderFixed2 {
+	width: 100%;
+	height: 180px;
+	overflow-y: auto;
+	border: solid 0px #BBBBBB;
+	border-top: none;
+	overflow-x: hidden;
+}
+
+.ItemFinderMain #boxHeaderNoScroll {
+	width: 100%;
+	overflow-y: auto;
+	border: solid 0px #BBBBBB;
+	border-top: none;
+	overflow-x: hidden;
+}
+
+
+
+
+.ItemFinderMain table#tbl-content tr:nth-child(even), .ItemFinderMain table#mainTableRptId tr:nth-child(even), .ItemFinderMain table#tbl-content-annualDemand tr:nth-child(even) table#tbl-content1 tr:nth-child(even),.ItemFinderMain table#tbl-content11 tr:nth-child(even){
+	background-color: #eeeeee;
+}
+
+.ItemFinderMain table#reportTableId tr:nth-child(even){
+	background-color: #dddddd;
+}
+
+
+
+
+.ItemFinderMain tbody#tbl-body tr:nth-child(even) {
+	background-color: #eeeeee;
+}
+
+.ItemFinderMain table#tbl-content td ,.ItemFinderMain table#mainTableRptId td,.ItemFinderMain table#tbl-content-annualDemand td,.ItemFinderMain table#tbl-content1 td,.ItemFinderMain table#tbl-content11 td{
+	border-bottom: solid 1px #bbb;
+	border-right: solid 1px #bbb;
+	border-left: solid 1px #bbb;
+	word-wrap: break-word;
+	font-family: Helvetica;
+    font-size: 12px;
+}
+
+.ItemFinderMain table#tbl-content th,.ItemFinderMain table#tbl-content-annualDemand th,.ItemFinderMain table#tbl-content1 th,.ItemFinderMain table#tbl-content1 th,.ItemFinderMain table#tbl-content11 th{
+	border-bottom: solid 1px #bbb;
+	border-right: solid 1px #bbb;
+	border-left: solid 1px #bbb;
+	word-wrap: break-word;
+	font-family: Helvetica;
+    font-size: 12px;
+    color:#fff;
+}
+
+
+.ItemFinderMain table#tbl-content tr#bottom td,.ItemFinderMain table#tbl-content-annualDemand tr#bottom td ,.ItemFinderMain table#tbl-content1 tr#bottom td,.ItemFinderMain table#tbl-content11 tr#bottom td{
+	border-bottom: none;
+}
+
+.ItemFinderMain #reportHeaderName {
+	float: left;
+	padding: 5px;
+	font-weight: bold;
+	background-color: #3a9ad1;
+	width: 99.6%;
+	text-align: left;
+	color: #FFF;
+	border-radius: 0 9px 9px 0;
+}
+.ItemFinderMain .tdNoBottomBorder
+{			
+	border-top: 1px solid #000000;
+	border-left: 1px solid #000000;
+	border-right: 1px solid #000000;	
+}
+
+.ItemFinderMain .tdBorderRight
+{		
+	border-right: 1px solid #000000;	
+}
+/* for fixed header table in report start */
+.ItemFinderMain .LightCoral {
+    background-color: LightCoral;
+    border: 1px solid #faad07;
+    border-radius: 8px;
+    height: 15px;
+    width: 15px;
+}
+.ItemFinderMain .PeachPuff {
+    background-color: PeachPuff;
+    border: 1px solid #faad07;
+    border-radius: 8px;
+    height: 15px;
+    width: 15px;
+}
+/* to center align label field. It contains font type, font color, font size and background color of royal blue */
+.ItemFinderMain .multiPOLabelBlue {
+	background-color:#146AA0;	
+	height: 20px;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size:10px;
+	font-weight: bold;
+	color: #fff;
+	text-align:center;
+	border:1px solid black;
+	padding: 0px 3px;
+}
+
+@media print {
+   .ItemFinderMain  #backgroundprint{
+    opacity:0.4;
+    left:50%;
+    filter:alpha(opacity=40); /* For IE8 and earlier */
+}
+
+
+  }
+
+.ItemFinderMain #backgroundprint{
+    position:absolute;
+    z-index:0;    
+    display:block;
+    min-height:100%; 
+    min-width:100%;
+    color:#CCCCCC;
+    font-size:200px;
+    left:10%;
+  -webkit-transform: rotate(300deg);
+    -moz-transform: rotate(300deg);
+    -o-transform: rotate(300deg);
+    -ms-transform: rotate(300deg);
+    transform: rotate(300deg);
+}
+
+.ItemFinderMain #contentprint{
+    position:absolute;
+    z-index:1;
+}
+
+.ItemFinderMain .drag {
+	cursor: move;
+	position: relative;
+	display: block;
+}
+
+.ItemFinderMain .dragDiv {
+	background-Color: #FFFF00;
+	color: black;
+	text-align: right;
+	cursor: move;
+	font-weight: bold;
+	position: absolute;
+}

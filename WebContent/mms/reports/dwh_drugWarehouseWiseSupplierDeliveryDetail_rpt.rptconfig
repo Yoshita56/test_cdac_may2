@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<report xmlns="http://www.eclipse.org/birt/2005/design" version="3.2.15" id="1">
+    <list-property name="configVars">
+        <structure>
+            <property name="name">__isdisplay__jndi_ds_conn_22_0</property>
+            <property name="value">java:comp/env/DWH</property>
+        </structure>
+        <structure>
+            <property name="name">__isdisplay__report_Header_23_1</property>
+            <property name="value">FDJKLS</property>
+        </structure>
+        <structure>
+            <property name="name">__isdisplay__report_Footer_24_2</property>
+            <property name="value">Computer Generated Report</property>
+        </structure>
+        <structure>
+            <property name="name">__isdisplay__report_Name_26_3</property>
+            <property name="value">KJK</property>
+        </structure>
+        <structure>
+            <property name="name">__isnull_191_4</property>
+            <property name="value">report_user_Remarks_191</property>
+        </structure>
+        <structure>
+            <property name="name">report_user_Remarks_191_type_</property>
+            <property name="value">string</property>
+        </structure>
+        <structure>
+            <property name="name">__isdisplay__report_Address_249_5</property>
+            <property name="value">KKK</property>
+        </structure>
+        <structure>
+            <property name="name">__isdisplay__report_Contact_255_6</property>
+            <property name="value">888</property>
+        </structure>
+        <structure>
+            <property name="name">__isdisplay__hospCode_391_7</property>
+            <property name="value">999</property>
+        </structure>
+        <structure>
+            <property name="name">__isdisplay__storeId_392_8</property>
+            <property name="value">0</property>
+        </structure>
+        <structure>
+            <property name="name">__isdisplay__catCode_393_9</property>
+            <property name="value">10</property>
+        </structure>
+        <structure>
+            <property name="name">__isdisplay__fromDate_394_10</property>
+            <property name="value">"14-Nov-2011"</property>
+        </structure>
+        <structure>
+            <property name="name">__isdisplay__toDate_395_11</property>
+            <property name="value">"14-Nov-2011"</property>
+        </structure>
+        <structure>
+            <property name="name">__isdisplay__storeName_453_12</property>
+            <property name="value">HHH</property>
+        </structure>
+        <structure>
+            <property name="name">__isdisplay__mode_669_13</property>
+            <property name="value">1</property>
+        </structure>
+        <structure>
+            <property name="name">storeName_453_14</property>
+            <property name="value">HHH</property>
+        </structure>
+        <structure>
+            <property name="name">storeName_453_type_</property>
+            <property name="value">string</property>
+        </structure>
+        <structure>
+            <property name="name">report_Header_23_15</property>
+            <property name="value">FDJKLS</property>
+        </structure>
+        <structure>
+            <property name="name">report_Header_23_type_</property>
+            <property name="value">string</property>
+        </structure>
+        <structure>
+            <property name="name">report_Footer_Visible_75_16</property>
+            <property name="value">true</property>
+        </structure>
+        <structure>
+            <property name="name">report_Footer_Visible_75_type_</property>
+            <property name="value">boolean</property>
+        </structure>
+        <structure>
+            <property name="name">report_Address_249_17</property>
+            <property name="value">KKK</property>
+        </structure>
+        <structure>
+            <property name="name">report_Address_249_type_</property>
+            <property name="value">string</property>
+        </structure>
+        <structure>
+            <property name="name">toDate_395_18</property>
+            <property name="value">"14-Nov-2011"</property>
+        </structure>
+        <structure>
+            <property name="name">toDate_395_type_</property>
+            <property name="value">string</property>
+        </structure>
+        <structure>
+            <property name="name">mode_669_19</property>
+            <property name="value">1</property>
+        </structure>
+        <structure>
+            <property name="name">mode_669_type_</property>
+            <property name="value">string</property>
+        </structure>
+        <structure>
+            <property name="name">report_Contact_255_20</property>
+            <property name="value">888</property>
+        </structure>
+        <structure>
+            <property name="name">report_Contact_255_type_</property>
+            <property name="value">string</property>
+        </structure>
+        <structure>
+            <property name="name">jndi_ds_conn_22_21</property>
+            <property name="value">java:comp/env/DWH</property>
+        </structure>
+        <structure>
+            <property name="name">jndi_ds_conn_22_type_</property>
+            <property name="value">string</property>
+        </structure>
+        <structure>
+            <property name="name">batchNo_746_22</property>
+            <property name="value">true</property>
+        </structure>
+        <structure>
+            <property name="name">batchNo_746_type_</property>
+            <property name="value">boolean</property>
+        </structure>
+        <structure>
+            <property name="name">fromDate_394_23</property>
+            <property name="value">"14-Nov-2011"</property>
+        </structure>
+        <structure>
+            <property name="name">fromDate_394_type_</property>
+            <property name="value">string</property>
+        </structure>
+        <structure>
+            <property name="name">hospCode_391_24</property>
+            <property name="value">999</property>
+        </structure>
+        <structure>
+            <property name="name">hospCode_391_type_</property>
+            <property name="value">string</property>
+        </structure>
+        <structure>
+            <property name="name">report_Footer_24_25</property>
+            <property name="value">Computer Generated Report</property>
+        </structure>
+        <structure>
+            <property name="name">report_Footer_24_type_</property>
+            <property name="value">string</property>
+        </structure>
+        <structure>
+            <property name="name">rpt_format_468_26</property>
+            <property name="value">true</property>
+        </structure>
+        <structure>
+            <property name="name">rpt_format_468_type_</property>
+            <property name="value">boolean</property>
+        </structure>
+        <structure>
+            <property name="name">catCode_393_27</property>
+            <property name="value">10</property>
+        </structure>
+        <structure>
+            <property name="name">catCode_393_type_</property>
+            <property name="value">string</property>
+        </structure>
+        <structure>
+            <property name="name">storeId_392_28</property>
+            <property name="value">0</property>
+        </structure>
+        <structure>
+            <property name="name">storeId_392_type_</property>
+            <property name="value">string</property>
+        </structure>
+        <structure>
+            <property name="name">report_Name_26_29</property>
+            <property name="value">KJK</property>
+        </structure>
+        <structure>
+            <property name="name">report_Name_26_type_</property>
+            <property name="value">string</property>
+        </structure>
+    </list-property>
+    <styles>
+        <style name="crosstab-cell" id="2">
+            <property name="borderBottomColor">#CCCCCC</property>
+            <property name="borderBottomStyle">solid</property>
+            <property name="borderBottomWidth">1pt</property>
+            <property name="borderLeftColor">#CCCCCC</property>
+            <property name="borderLeftStyle">solid</property>
+            <property name="borderLeftWidth">1pt</property>
+            <property name="borderRightColor">#CCCCCC</property>
+            <property name="borderRightStyle">solid</property>
+            <property name="borderRightWidth">1pt</property>
+            <property name="borderTopColor">#CCCCCC</property>
+            <property name="borderTopStyle">solid</property>
+            <property name="borderTopWidth">1pt</property>
+        </style>
+        <style name="crosstab" id="3">
+            <property name="borderBottomColor">#CCCCCC</property>
+            <property name="borderBottomStyle">solid</property>
+            <property name="borderBottomWidth">1pt</property>
+            <property name="borderLeftColor">#CCCCCC</property>
+            <property name="borderLeftStyle">solid</property>
+            <property name="borderLeftWidth">1pt</property>
+            <property name="borderRightColor">#CCCCCC</property>
+            <property name="borderRightStyle">solid</property>
+            <property name="borderRightWidth">1pt</property>
+            <property name="borderTopColor">#CCCCCC</property>
+            <property name="borderTopStyle">solid</property>
+            <property name="borderTopWidth">1pt</property>
+        </style>
+    </styles>
+</report>

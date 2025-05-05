@@ -1,0 +1,68 @@
+
+.MasterXMLHeader {
+    color: #0e537c;
+    font-family: "MS Sans Serif";
+    font-size: 14px;
+    font-weight: normal;
+    text-align: left;
+}
+td.MasterXMLDataLabel {
+    background-color: #E7EBEF;
+  /*  background-image: none;*/
+   /* border-color: #ffffff; */
+    color: #004573;
+    font-family: Trebuchet MS;
+    font-size: 13px;
+    font-weight: bold;
+    height: 16px;
+    text-align: left;
+}
+td.MasterXMLDataValue {
+    background-color: #F1F6F6;
+    color: #004573;
+    font-family: Verdana,Arial,Helvetica,sans-serif;
+    font-size: 13px;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: normal;
+    height: 15px;
+    line-height: normal;
+    text-align: left;
+    text-transform: capitalize;
+}
+td.MasterXMLButtonBar {
+    background-color: #ffffff;
+    border-top: 2px outset #653232;
+    height: 23px;
+    text-align: center;
+}
+.addheader {
+    background-color: #dee1f2;
+    font-family: Verdana;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: bold;
+    height: 20px;
+}
+.addSubheader {
+    background-color: #b6c2d0;
+    font-family: Verdana;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: bold;
+    height: 20px;
+}
+.addtoolbar {
+    background-color: #ffffff;
+    height: 23px;
+    text-align: center;
+}
+.pagetitle {
+    background-color: #ffffff;
+    color: #000066;
+    font-family: Verdana;
+    font-size: 13px;
+    font-weight: bold;
+    height: 25px;
+    text-align: left;
+}

@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<report xmlns="http://www.eclipse.org/birt/2005/design" version="3.2.23" id="1">
+    <list-property name="configVars">
+        <structure>
+            <property name="name">__isdisplay__jndi_ds_conn_22_0</property>
+            <property name="value">java:comp/env/AHIS</property>
+        </structure>
+        <structure>
+            <property name="name">__isdisplay__report_Header_23_1</property>
+            <property name="value">bjkbkjbb</property>
+        </structure>
+        <structure>
+            <property name="name">__isdisplay__report_Footer_24_2</property>
+            <property name="value">Computer Generated Report</property>
+        </structure>
+        <structure>
+            <property name="name">__isdisplay__report_Name_26_3</property>
+            <property name="value">nkjnknkjnk</property>
+        </structure>
+        <structure>
+            <property name="name">__isnull_191_4</property>
+            <property name="value">report_user_Remarks_191</property>
+        </structure>
+        <structure>
+            <property name="name">report_user_Remarks_191_type_</property>
+            <property name="value">string</property>
+        </structure>
+        <structure>
+            <property name="name">__isdisplay__report_Address_249_5</property>
+            <property name="value">nknnkl</property>
+        </structure>
+        <structure>
+            <property name="name">__isdisplay__report_Contact_255_6</property>
+            <property name="value">llk,lk</property>
+        </structure>
+        <structure>
+            <property name="name">__isdisplay__po_Header_391_7</property>
+            <property name="value">klmklml</property>
+        </structure>
+        <structure>
+            <property name="name">__isdisplay__poTypeId_392_8</property>
+            <property name="value">22</property>
+        </structure>
+        <structure>
+            <property name="name">__isdisplay__storeId_393_9</property>
+            <property name="value">12401119</property>
+        </structure>
+        <structure>
+            <property name="name">__isdisplay__hospCode_394_10</property>
+            <property name="value">101</property>
+        </structure>
+        <structure>
+            <property name="name">__isdisplay__itemCategory_395_11</property>
+            <property name="value">10</property>
+        </structure>
+        <structure>
+            <property name="name">__isdisplay__poNo_396_12</property>
+            <property name="value">10221400003</property>
+        </structure>
+        <structure>
+            <property name="name">po_Header_391_13</property>
+            <property name="value">klmklml</property>
+        </structure>
+        <structure>
+            <property name="name">po_Header_391_type_</property>
+            <property name="value">string</property>
+        </structure>
+        <structure>
+            <property name="name">report_Header_23_14</property>
+            <property name="value">bjkbkjbb</property>
+        </structure>
+        <structure>
+            <property name="name">report_Header_23_type_</property>
+            <property name="value">string</property>
+        </structure>
+        <structure>
+            <property name="name">report_Footer_Visible_75_15</property>
+            <property name="value">true</property>
+        </structure>
+        <structure>
+            <property name="name">report_Footer_Visible_75_type_</property>
+            <property name="value">boolean</property>
+        </structure>
+        <structure>
+            <property name="name">report_Address_249_16</property>
+            <property name="value">nknnkl</property>
+        </structure>
+        <structure>
+            <property name="name">report_Address_249_type_</property>
+            <property name="value">string</property>
+        </structure>
+        <structure>
+            <property name="name">report_Contact_255_17</property>
+            <property name="value">llk,lk</property>
+        </structure>
+        <structure>
+            <property name="name">report_Contact_255_type_</property>
+            <property name="value">string</property>
+        </structure>
+        <structure>
+            <property name="name">poNo_396_18</property>
+            <property name="value">10221400003</property>
+        </structure>
+        <structure>
+            <property name="name">poNo_396_type_</property>
+            <property name="value">string</property>
+        </structure>
+        <structure>
+            <property name="name">jndi_ds_conn_22_19</property>
+            <property name="value">java:comp/env/AHIS</property>
+        </structure>
+        <structure>
+            <property name="name">jndi_ds_conn_22_type_</property>
+            <property name="value">string</property>
+        </structure>
+        <structure>
+            <property name="name">poTypeId_392_20</property>
+            <property name="value">22</property>
+        </structure>
+        <structure>
+            <property name="name">poTypeId_392_type_</property>
+            <property name="value">string</property>
+        </structure>
+        <structure>
+            <property name="name">hospCode_394_21</property>
+            <property name="value">101</property>
+        </structure>
+        <structure>
+            <property name="name">hospCode_394_type_</property>
+            <property name="value">string</property>
+        </structure>
+        <structure>
+            <property name="name">report_Footer_24_22</property>
+            <property name="value">Computer Generated Report</property>
+        </structure>
+        <structure>
+            <property name="name">report_Footer_24_type_</property>
+            <property name="value">string</property>
+        </structure>
+        <structure>
+            <property name="name">storeId_393_23</property>
+            <property name="value">12401119</property>
+        </structure>
+        <structure>
+            <property name="name">storeId_393_type_</property>
+            <property name="value">string</property>
+        </structure>
+        <structure>
+            <property name="name">report_Name_26_24</property>
+            <property name="value">nkjnknkjnk</property>
+        </structure>
+        <structure>
+            <property name="name">report_Name_26_type_</property>
+            <property name="value">string</property>
+        </structure>
+        <structure>
+            <property name="name">itemCategory_395_25</property>
+            <property name="value">10</property>
+        </structure>
+        <structure>
+            <property name="name">itemCategory_395_type_</property>
+            <property name="value">string</property>
+        </structure>
+    </list-property>
+</report>

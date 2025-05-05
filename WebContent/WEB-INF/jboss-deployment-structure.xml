@@ -1,0 +1,36 @@
+    <jboss-deployment-structure>  
+        <deployment>  
+            <!--  <exclusions>  
+                  <module name="org.jboss.resteasy.*" />  
+                 <module name="javax.ws.*" />  
+            </exclusions>  -->
+            <!-- <exclusions>
+      <module name="org.jboss.resteasy.resteasy-jettison-provider" />
+    </exclusions> -->
+             <dependencies>
+        <module name="com.hmis" >
+            <imports>
+                <include path="META-INF**"/>
+                <include path="org**"/>
+            </imports>
+        </module>
+         <module name="org.jboss.log4j.logmanager" >
+            <imports>
+                <include path="META-INF**"/>
+                <include path="org**"/>
+            </imports>
+        </module> 
+       
+       
+       
+       
+       
+       
+       <module name="org.apache.xerces" />
+       
+    
+            
+        
+    </dependencies>
+        </deployment>  
+    </jboss-deployment-structure>  

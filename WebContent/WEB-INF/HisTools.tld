@@ -1,0 +1,699 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE taglib
+        PUBLIC "-//Sun Microsystems, Inc.//DTD JSP Tag Library 1.1//EN"
+        "http://java.sun.com/j2ee/dtds/web-jsptaglibrary_1_1.dtd">
+<!--His Global TLD-->
+<taglib>
+
+<tlibversion>1.0</tlibversion>
+<jspversion>2.0</jspversion>
+<shortname>HisGlobalTags</shortname>
+<info>His Global TLD</info>
+<tag>
+	<name>date</name>
+	<tagclass>hisglobal.tools.tag.DatePicker</tagclass>
+	<bodycontent>JSP</bodycontent>
+	<info>
+		Creates Date Picker
+	</info>
+	<attribute>
+		<name>name</name>
+		<required>true</required>
+		<rtexprvalue>true</rtexprvalue>
+	</attribute>
+	<attribute>
+		<name>value</name>
+		<required>false</required>
+		<rtexprvalue>true</rtexprvalue>
+	</attribute>
+	<attribute>
+		<name>dateFormate</name>
+		<required>false</required>
+		<rtexprvalue>true</rtexprvalue>
+	</attribute>
+	<attribute>
+		<name>onchange</name>
+		<required>false</required>
+		<rtexprvalue>true</rtexprvalue>
+	</attribute>
+	<attribute>
+		<name>id</name>
+		<required>false</required>
+		<rtexprvalue>true</rtexprvalue>
+	</attribute>
+</tag>
+<tag>
+	<name>opdDeskButtonTag</name>
+	<tagclass>hisglobal.tools.tag.OpdDeskTabTag</tagclass>
+	<bodycontent>JSP</bodycontent>
+	<info>
+		Creates Button For Menu 
+	</info>
+	<attribute>
+		<name>name</name>
+		<required>true</required>
+		<rtexprvalue>true</rtexprvalue>
+	</attribute>
+	<attribute> 
+		<name>bean</name>
+		<required>false</required>
+		<rtexprvalue>true</rtexprvalue>
+	</attribute>
+</tag>
+
+<tag>
+	<name>DynamicDeskButtonTag</name>
+	<tagclass>hisglobal.tools.tag.DynamicDeskButtonTag</tagclass>
+	<bodycontent>JSP</bodycontent>
+	<info>
+		Creates Button For Menu in Dynamic Desk
+	</info>
+	<attribute>
+		<name>name</name>
+		<required>true</required>
+		<rtexprvalue>true</rtexprvalue>
+	</attribute>
+	<attribute> 
+		<name>bean</name>
+		<required>false</required>
+		<rtexprvalue>true</rtexprvalue>
+	</attribute>
+</tag>
+<!--
+<tag>
+	<name>OpdTemplateTag</name>
+	<tagclass>hisglobal.tools.tag.OpdTemplateTag</tagclass>
+	<bodycontent>JSP</bodycontent>
+	<info>
+		Creates Template 
+	</info>
+	<attribute>
+		<name>name</name>
+		<required>true</required>
+		<rtexprvalue>true</rtexprvalue>
+	</attribute>
+	<attribute> 
+		<name>bean</name>
+		<required>false</required>
+		<rtexprvalue>true</rtexprvalue>
+	</attribute>
+</tag>
+-->
+<tag>
+	<name>GenericTemplateTag</name>
+	<tagclass>hisglobal.tools.tag.GenericTemplateTag</tagclass>
+	<bodycontent>JSP</bodycontent>
+	<info>
+		Creates and Show Template 
+	</info>
+	<attribute>
+		<name>templateId</name>
+		<required>true</required>
+		<rtexprvalue>true</rtexprvalue>
+	</attribute>
+	<attribute>
+		<name>mode</name>
+		<required>false</required>
+		<rtexprvalue>true</rtexprvalue>
+	</attribute>
+</tag>
+<!--
+<tag>
+	<name>GenericChartTag</name>
+	<tagclass>hisglobal.tools.tag.GenericChartTag</tagclass>
+	<bodycontent>JSP</bodycontent>
+	<info>
+		Creates and Show Template 
+	</info>
+	<attribute>
+		<name>mode</name>
+		<required>false</required>
+		<rtexprvalue>true</rtexprvalue>
+	</attribute>
+</tag>
+
+<tag>
+	<name>OpdTempReportTag</name>
+	<tagclass>hisglobal.tools.tag.OpdTempReportTag</tagclass>
+	<bodycontent>JSP</bodycontent>
+	<info>
+		Creating Template Reports 
+	</info>
+	<attribute>
+		<name>name</name>
+		<required>true</required>
+		<rtexprvalue>true</rtexprvalue>
+	</attribute>
+	<attribute> 
+		<name>bean</name>
+		<required>false</required>
+		<rtexprvalue>true</rtexprvalue>
+	</attribute>
+</tag>
+-->
+<tag>
+	<name>javascript</name>
+	<tagclass>hisglobal.tools.tag.JavaScriptTag</tagclass>
+	<bodycontent>empty</bodycontent>
+	<info>	
+		This tag provides the Java Script Tag with source relative to context 	
+	</info>
+	<attribute>
+		<name>src</name>
+		<required>true</required>
+		<rtexprvalue>true</rtexprvalue>
+	</attribute>
+</tag>
+
+<tag>
+	<name>css</name>
+	<tagclass>hisglobal.tools.tag.CSSTag</tagclass>
+	<bodycontent>empty</bodycontent>
+	<info>	
+		This tag provides the CSS Tag with source relative to context 	
+	</info>
+	<attribute>
+		<name>src</name>
+		<required>true</required>
+		<rtexprvalue>true</rtexprvalue>
+	</attribute>
+</tag>
+
+<tag>
+	<name>path</name>
+	<tagclass>hisglobal.tools.tag.PathTag</tagclass>
+	<bodycontent>empty</bodycontent>
+	<info>	
+		This tag provides the Path with relative to context 	
+	</info>
+	<attribute>
+		<name>src</name>
+		<required>true</required>
+		<rtexprvalue>true</rtexprvalue>
+	</attribute>
+</tag>
+<tag>
+	<name>status</name>
+	<tagclass>hisglobal.tools.tag.StatusTag</tagclass>
+	<bodycontent>empty</bodycontent>
+	<info>	
+		This tag prints the messages in ths statuslist
+	</info>	
+</tag>
+<tag>
+	<name>insertDateTag</name>
+	<tagclass>hisglobal.tools.tag.InsertDatabaseDateTag</tagclass>
+	<bodycontent>empty</bodycontent>
+	<info>	
+		This tag prints the Date from the Database 
+	</info>
+		
+</tag>
+<tag>
+	<name>statusInProcess</name>
+	<tagclass>hisglobal.tools.tag.StatusInProcessTag</tagclass>
+	<bodycontent>scriptless</bodycontent>
+	<info>	
+		This tag prints body content if it has status inprocess
+	</info>	
+</tag>
+
+
+<tag>
+	<name>statusTransactionInProcess</name>
+	<tagclass>hisglobal.tools.tag.TransactionInProcessTag</tagclass>
+	<bodycontent>JSP</bodycontent>
+	<info>	
+		 This tag prints body content if it has status transaction in process
+	</info>	
+</tag>
+
+
+<tag>
+	<name>statusNew</name>
+	<tagclass>hisglobal.tools.tag.StatusNewTag</tagclass>
+	<bodycontent>JSP</bodycontent>
+	<info>	
+		This tag prints  content if it has status new with JSP
+	</info>	
+</tag>
+
+<tag>
+	<name>statusRecordFound</name>
+	<tagclass>hisglobal.tools.tag.StatusRecordFoundTag</tagclass>
+	<bodycontent>JSP</bodycontent>
+	<info>	
+		This tag prints  content if it has status Record found with JSP
+	</info>	
+</tag>
+
+<tag>
+	<name>statusList</name>
+	<tagclass>hisglobal.tools.tag.StatusListTag</tagclass>
+	<bodycontent>JSP</bodycontent>
+	<info>	
+		This tag prints  content if it has status List with JSP
+	</info>	
+</tag>
+<tag>
+	<name>statusDone</name>
+	<tagclass>hisglobal.tools.tag.StatusDoneTag</tagclass>
+	<bodycontent>JSP</bodycontent>
+	<info>	
+		This tag prints  content if it has status DONE with JSP contents allowed in body
+	</info>	
+</tag>
+<tag>
+	<name>statusUnsuccessfull</name>
+	<tagclass>hisglobal.tools.tag.StatusUnsuccessfullTag</tagclass>
+	<bodycontent>JSP</bodycontent>
+	<info>	
+		This tag prints  content if it has status Unsuccessfull
+	</info>	
+</tag>
+<tag>
+	<name>statusInProcessWithJsp</name>
+	<tagclass>hisglobal.tools.tag.StatusInProcessJspTag</tagclass>
+	<bodycontent>JSP</bodycontent>
+	<info>	
+		This tag prints body content if it has status inprocess
+	</info>	
+</tag>
+<!--
+<tag>
+	<name>tree</name>
+	<tagclass>hisglobal.tools.tag.TreeTag</tagclass>
+	<bodycontent>JSP</bodycontent>
+	<info>
+	This tag renders tree	
+	</info>	
+</tag>
+
+<tag>
+	<name>patientStatus</name>
+	<tagclass>hisglobal.tools.tag.PatientstatusTag</tagclass>
+	<bodycontent>JSP</bodycontent>
+	<info>
+				
+	</info>
+	<attribute>
+		<name>emergency</name>
+		<required>true</required>
+		<rtexprvalue>true</rtexprvalue>
+	</attribute>
+	<attribute>
+		<name>opd</name>
+		<required>true</required>
+		<rtexprvalue>true</rtexprvalue>
+	</attribute>
+	
+</tag>
+-->
+<tag>
+	<name>selectTree</name>
+	<tagclass>hisglobal.tools.tag.SelectTree</tagclass>
+	<bodycontent>JSP</bodycontent>
+	<info>
+        for providing name and property to checkBox controls for tree		  				
+	</info>
+	<attribute>
+		<name>beanName</name>
+		<required>true</required>
+		<rtexprvalue>true</rtexprvalue>
+	</attribute>
+	<attribute>
+		<name>propertyName</name>
+		<required>true</required>
+		<rtexprvalue>true</rtexprvalue>
+	</attribute>	
+</tag>
+<tag>
+	<name>renderTree</name>
+	<tagclass>hisglobal.tools.tag.RenderTree</tagclass>
+	<bodycontent>empty</bodycontent>
+	<info>
+	This tag renders tree.Shoukd have a parent Tag select tree				
+	</info>
+</tag>
+<!--
+<tag>
+	<name>openEpisodes</name>
+	<tagclass>hisglobal.tools.tag.RetrieveOpenEpisodesTag</tagclass>
+	<bodycontent>JSP</bodycontent>
+	<info>
+      The tag retrieves open episodes .Works in tandem with PatientStatus Tag.			
+	</info>	
+		<attribute>
+		  <name>isMlcEligible</name>
+		  <required>false</required>
+		  <rtexprvalue>true</rtexprvalue>
+	    </attribute>	
+	    
+	    <attribute>
+		  <name>isEmg</name>
+		  <required>false</required>
+		  <rtexprvalue>true</rtexprvalue>
+	    </attribute>	
+	    <attribute>
+		  <name>isOpd</name>
+		  <required>false</required>
+		  <rtexprvalue>true</rtexprvalue>
+	    </attribute>	
+</tag>
+-->
+<tag>
+	<name>roundedBox</name>
+	<tagclass>hisglobal.tools.tag.RoundedBoxTag</tagclass>
+	<bodycontent>JSP</bodycontent>
+	<info>The Tag put the enclosed text in the rounded box</info>
+	<attribute>
+		<name>foreground</name>
+		<required>true</required>
+		<rtexprvalue>true</rtexprvalue>
+	</attribute>
+	<attribute>
+		<name>background</name>
+		<required>true</required>
+		<rtexprvalue>true</rtexprvalue>
+	</attribute>
+	<attribute>
+		<name>textColor</name>
+		<required>false</required>
+		<rtexprvalue>true</rtexprvalue>
+	</attribute>
+	<attribute>
+		<name>png</name>
+		<required>false</required>
+		<rtexprvalue>true</rtexprvalue>
+	</attribute>
+	<attribute>
+		<name>gif</name>
+		<required>false</required>
+		<rtexprvalue>true</rtexprvalue>
+	</attribute>
+	<attribute>
+		<name>jpg</name>
+		<required>false</required>
+		<rtexprvalue>true</rtexprvalue>
+	</attribute>
+	<attribute>
+		<name>bmp</name>
+		<required>false</required>
+		<rtexprvalue>true</rtexprvalue>
+	</attribute>
+</tag>
+<tag>
+	<name>TransactionContainer</name>
+	<tagclass>hisglobal.tools.tag.TransactionTag</tagclass>
+	<bodycontent>JSP</bodycontent>
+	<info>The Tag provides a Container to hold the View</info>
+	<attribute>
+		<name>width</name>
+		<required>false</required>
+		<rtexprvalue>true</rtexprvalue>
+	</attribute>
+</tag>
+<tag>
+	<name>SubTitleTag</name>
+	<tagclass>hisglobal.tools.tag.SubTitleTag</tagclass>
+	<bodycontent>JSP</bodycontent>
+	<info>The Tag provides Sub Title</info>
+	<attribute>
+		<name>width</name>
+		<required>false</required>
+		<rtexprvalue>true</rtexprvalue>
+	</attribute>
+	<attribute>
+		<name>name</name>
+		<required>false</required>
+		<rtexprvalue>true</rtexprvalue>
+	</attribute>
+	<attribute>
+		<name>key</name>
+		<required>false</required>
+		<rtexprvalue>true</rtexprvalue>
+	</attribute>
+</tag>
+<tag>
+	<name>SubTitleTagBroad</name>
+	<tagclass>hisglobal.tools.tag.BroadSubTitleTag</tagclass>
+	<bodycontent>JSP</bodycontent>
+	<info>The Tag provides Sub Title</info>
+	<attribute>
+		<name>width</name>
+		<required>false</required>
+		<rtexprvalue>true</rtexprvalue>
+	</attribute>
+	<attribute>
+		<name>name</name>
+		<required>false</required>
+		<rtexprvalue>true</rtexprvalue>
+	</attribute>
+</tag>
+<tag>
+	<name>ButtonToolBarTag</name>
+	<tagclass>hisglobal.tools.tag.ButtonToolBarTag</tagclass>
+	<bodycontent>JSP</bodycontent>
+	<info>The Tag provides Sub Title</info>
+	<attribute>
+		<name>width</name>
+		<required>false</required>
+		<rtexprvalue>true</rtexprvalue>
+	</attribute>
+	<attribute>
+		<name>name</name>
+		<required>false</required>
+		<rtexprvalue>true</rtexprvalue>
+	</attribute>
+</tag>
+<tag>
+	<name>TitleTag</name>
+	<tagclass>hisglobal.tools.tag.TitleTag</tagclass>
+	<bodycontent>JSP</bodycontent>
+	<info>The Tag provides Title</info>
+	<attribute>
+		<name>width</name>
+		<required>false</required>
+		<rtexprvalue>true</rtexprvalue>
+	</attribute>
+	<attribute>
+		<name>name</name>
+		<required>false</required>
+		<rtexprvalue>true</rtexprvalue>
+	</attribute>
+	<attribute>
+		<name>key</name>
+		<required>false</required>
+		<rtexprvalue>true</rtexprvalue>
+	</attribute>
+</tag>
+<tag>
+	<name>ContentTag</name>
+	<tagclass>hisglobal.tools.tag.ContentTag</tagclass>
+	<bodycontent>JSP</bodycontent>
+	<info>The Tag provides Title</info>
+	<attribute>
+		<name>width</name>
+		<required>false</required>
+		<rtexprvalue>true</rtexprvalue>
+	</attribute>
+	<attribute>
+		<name>name</name>
+		<required>false</required>
+		<rtexprvalue>true</rtexprvalue>
+	</attribute>
+</tag>
+<tag>
+	<name>PaginationTag</name>
+	<tagclass>hisglobal.tools.tag.PaginationTag</tagclass>
+	<bodycontent>JSP</bodycontent>
+	<info>The Tag provides Pagination</info>
+	<attribute>
+		<name>name</name>
+		<required>true</required>
+		<rtexprvalue>true</rtexprvalue>
+	</attribute>
+	<attribute> 
+		<name>bean</name>
+		<required>false</required>
+		<rtexprvalue>true</rtexprvalue>
+	</attribute>
+	<attribute>
+		<name>width</name>
+		<required>false</required>
+		<rtexprvalue>true</rtexprvalue>
+	</attribute>
+</tag>
+<tag>
+	<name>InputCrNoTag</name>
+	<tagclass>hisglobal.tools.tag.InputCrNoTag</tagclass>
+	<bodycontent>JSP</bodycontent>
+	<info>The Tag provides Title</info>
+	<attribute>
+		<name>name</name>
+		<required>false</required>
+		<rtexprvalue>true</rtexprvalue>
+	</attribute>
+	
+</tag>
+
+<tag>
+	<name>checkbox</name>
+	<tagclass>hisglobal.tools.tag.CheckBoxTag</tagclass>
+	<bodycontent>JSP</bodycontent>
+	<info>The Tag provides Title</info>
+	<attribute>
+		<name>name</name>
+		<required>true</required>
+		<rtexprvalue>true</rtexprvalue>
+	</attribute>	
+	<attribute>
+		<name>property</name>
+		<required>true</required>
+		<rtexprvalue>true</rtexprvalue>
+	</attribute>
+	
+	<attribute>
+		<name>value</name>
+		<required>true</required>
+		<rtexprvalue>true</rtexprvalue>
+	</attribute>
+		
+	<attribute>
+		<name>onClick</name>
+		<required>false</required>
+		<rtexprvalue>true</rtexprvalue>
+	</attribute>
+	<attribute>
+		<name>readonly</name>
+		<required>false</required>
+		<rtexprvalue>true</rtexprvalue>
+	</attribute>
+	
+	<attribute>
+		<name>disabled</name>
+		<required>false</required>
+		<rtexprvalue>true</rtexprvalue>
+	</attribute>
+	
+</tag>
+<tag>
+	<name>name</name>
+	<tagclass>hisglobal.tools.tag.NameTag</tagclass>
+	<bodycontent>JSP</bodycontent>
+	<info>This is a Sub Tag which provides name in the Title and SubTitle</info>
+	
+</tag>
+
+<tag>
+	<name>madatory</name>
+	<tagclass>hisglobal.tools.tag.RegistrationMadatory</tagclass>
+	<bodycontent>empty</bodycontent>
+	<info>This Tag lookup the property file for madatory conrols in registration and department code must be set in session or request either by using Entry List or only code List, Entry getValue willl be used to get department code in the Tag &amp; genrate javascript text for same</info>
+	<attribute>
+		<name>property</name>
+		<required>true</required>
+		<rtexprvalue>true</rtexprvalue>
+	</attribute>	
+</tag>
+
+<tag>
+	<name>referMandatory</name>
+	<tagclass>hisglobal.tools.tag.ReferMandatoryTag</tagclass>
+	<bodycontent>empty</bodycontent>
+	<info>This Tag lookup the property file for refer mandatory in registration and department code must be set in session or request either by using Entry List or only code List, Entry getValue will be used to get department code in the Tag &amp; genrate javascript text for same</info>
+	<attribute>
+		<name>property</name>
+		<required>true</required>
+		<rtexprvalue>true</rtexprvalue>
+	</attribute>	
+	<attribute>
+		<name>isUnitBased</name>
+		<required>false</required>
+	</attribute>	
+</tag>
+<tag>
+<name>ConfirmYesNoTag</name>
+<tagclass>hisglobal.tools.tag.ConfirmYesNoTag</tagclass>
+<bodycontent>JSP</bodycontent>
+<info>This Tag Provides Customized Yes No Alert Message ,User has to pass message1(mandatory) and  message2(not mandatory) into hisConfirm(msg1,msg2) to call this alert and has to implement function confirmYesNo(),they return true/false respectively in case of Yes /No Button is clicked,in order to close the hisConfirm box use function closehisConfirm()</info>
+</tag>
+<!--
+<tag>
+<name>AlertTag</name>
+<tagclass>hisglobal.tools.tag.AlertTag</tagclass>
+<bodycontent>JSP</bodycontent>
+<info>This Tag Lets The User Knows about the new Alerts </info>
+</tag>
+-->
+<tag>
+<name>PrintTag</name>
+<tagclass>hisglobal.tools.tag.PrintTag</tagclass>
+<bodycontent>JSP</bodycontent>
+<info>This Tag create the print Button and capture html Code</info>
+<attribute>
+	<name>copies</name>
+	<required>true</required>
+</attribute>
+<attribute>
+	<name>isCopiesEditable</name>
+	<required>true</required>
+</attribute>
+</tag>
+<!--
+<tag>
+	<name>hisdate</name>
+	<tagclass>hisglobal.backutil.NewHISDatePicker</tagclass>
+	<bodycontent>JSP</bodycontent>
+	<info>
+		Creates Date 
+	</info>
+	<attribute>
+		<name>beanName</name>
+		<required>true</required>
+		<rtexprvalue>false</rtexprvalue>
+	</attribute>
+	<attribute>
+		<name>property</name>
+		<required>true</required>
+		<rtexprvalue>false</rtexprvalue>
+	</attribute>
+	<attribute>
+		<name>onClick</name>
+		<required>false</required>
+		<rtexprvalue>false</rtexprvalue>
+	</attribute>
+	<attribute>
+		<name>onChange</name>
+		<required>false</required>
+		<rtexprvalue>true</rtexprvalue>
+	</attribute>
+	<attribute>
+		<name>dateFormate</name>
+		<required>false</required>
+		<rtexprvalue>false</rtexprvalue>
+	</attribute>
+	<attribute>
+		<name>id</name>
+		<required>false</required>
+		<rtexprvalue>true</rtexprvalue>
+	</attribute>
+	<attribute>
+		<name>idIconPicDate</name>
+		<required>false</required>
+		<rtexprvalue>true</rtexprvalue>
+	</attribute>
+	<attribute>
+		<name>readOnly</name>
+		<required>false</required>
+		<rtexprvalue>false</rtexprvalue>
+	</attribute>
+	<attribute>
+		<name>size</name>
+		<required>false</required>
+		<rtexprvalue>false</rtexprvalue>
+	</attribute>
+</tag>
+-->
+</taglib>

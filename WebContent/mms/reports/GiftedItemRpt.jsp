@@ -1,0 +1,265 @@
+<%@ page language="java" contentType="text/html;"	pageEncoding="UTF-8"%>
+    
+<%@ taglib uri="/WEB-INF/struts-html.tld" prefix="html"%>
+<%@ taglib uri="/WEB-INF/struts-bean.tld" prefix="bean"%>
+<%@ taglib uri="/WEB-INF/dateTag.tld" prefix="dateTag"%>
+<%@ taglib uri="/WEB-INF/hisTab.tld" prefix="tag"%>
+    
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset=UTF-8">
+<title>Gifted Item Report</title>
+
+<link href="../../hisglobal/bootstrap4.0_newgui/css/bootstrap.css" rel="stylesheet" />
+<link href="../../hisglobal/bootstrap4.0_newgui/font-awesome/css/all.css" rel="stylesheet">
+<link href="../../hisglobal/bootstrap4.0_newgui/datetimepicker/css/gijgo.min.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="../../hisglobal/jquery/3.6.0.min.js"></script>
+<script type="text/javascript" src="../../hisglobal/bootstrap4.0_newgui/datetimepicker/js/gijgo.min.js"></script>
+<link href="../css/master.css" rel="stylesheet" type="text/css">
+<link href="../../hisglobal/css/tab.css" rel="stylesheet" type="text/css">
+<script language="Javascript" src="../../hisglobal/js/validation.js"></script>
+<script language="Javascript" src="../../hisglobal/js/util.js"></script>
+<script language="JavaScript" src="../js/GiftedItemRpt.js"></script>
+
+<style type="text/css">
+body {
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-size: 14px;
+	line-height: 1.42857143;
+	color: rgba(75, 75, 75, 0.7);
+	font-weight: 501;
+}
+.container{
+	max-width:1395px;
+}
+.table th, .table td {
+	padding: 0.05rem;
+}
+
+.form-control {
+	color: rgba(75, 75, 75, 0.7);
+}
+
+.table {
+	width: 100%;
+	margin-bottom: 1rem;
+	color: rgba(75, 75, 75, 0.7);
+}
+
+.prescriptionTile {
+	margin: 0.5% 0;
+	border-bottom: 1px solid #d7d7d7;
+	padding-bottom: 10px;
+	padding: 1% 2% 0.5% 2%;
+	background-color: #fff;
+	transition: 0.5s;
+	box-shadow: 0 0.5px 10px 2px #b0acac;
+	border-radius: .25rem;
+	color: rgba(75, 75, 75, 0.7);
+}
+
+.subHeaders {
+	font-weight: 500 !important;
+	font-family: "Helvetica Neue", "Helvetica";
+	font-size: 19px !important;
+	padding-bottom: 0px !important;
+	color: rgba(75, 75, 75, 0.7);
+}
+
+.row {
+	padding-bottom: 5px;
+}
+
+.legend2 {
+	position: absolute;
+	top: -2.5em;
+	right: 44px;
+	line-height: 1.2em;
+}
+
+.cancelbtn {
+	padding: .175rem .35rem;
+	line-height: 0.8;
+	background-color: #d9534f;
+}
+
+.btn-circle {
+	width: 37px;
+	height: 34px;
+	text-align: center;
+	padding: 6px 0;
+	font-size: 12px;
+	line-height: 1.428571429;
+	border-radius: 17px;
+	color: white;
+	float: right;
+}
+
+.iround {
+	color: white;
+	font-size: 16px;
+}
+
+.btn-outline-success {
+	color: #28a745;
+	border-color: #28a745;
+	background-color: #28a745;
+}
+</style>
+
+
+</head>
+<body>
+<html:form action="/reports/GiftedItemRptCNT.cnt"  name="GiftedItemRptbean" type="mms.reports.controller.fb.GiftedItemRptFB" method="post">
+
+  	<div id="errMsg" class="errMsg"><bean:write name="GiftedItemRptbean" property="strErrMsg" /></div>
+	<div id="warningMsg" class="warningMsg"><bean:write name="GiftedItemRptbean" property="strWarningMsg" /></div>
+	<div id="normalMsg" class="normalMsg"><bean:write name="GiftedItemRptbean" property="strNormalMsg" /></div>
+<br>
+<br>    
+    <div class="container">
+    	<div class="row">
+    		<div class="prescriptionTile col-sm-12" align="center">
+    			<div class="row rowFlex reFlex">
+						<div class="col-sm-6" style="text-align: initial;">
+							<p class="subHeaders">
+
+								<i class="fas fa-file-alt iround"
+									style="font-size: 20px; color: #28a745" title="Cancel"></i>
+								&nbsp; Gifted Item Report
+							</p>
+						
+						</div>
+						
+						<div class="col-sm-6" id="viewCancelButtonDivId1">
+							<div class="legend2" id='nonPrintableLegend2'>
+								<button type="button" class="float-right btn btn-outline-danger mt-1 btn-circle cancelbtn" onclick="cancelFunc();">
+									<i class="fas fa-ban fa-spin iround" title="Cancel"></i>
+								</button>
+								<button type="button" class=" btn btn-secondary btn-circle" style="background: #b9b9b9; border-color: #b9b9b9; margin-top: 0.25rem !important;" onclick="onClearPage();">
+									<img src="/HIS/hisglobal/images/clear3.png" title="Clear" style="width: 23px; color: #fff;">
+								</button>
+								<button type="button" id="saveid" class="float-right btn btn-outline-success mt-1 btn-circle savebtn" tabindex='2' onclick='return getInventoryDtls();'>
+									<i class="fa fa-download fa-beat iround" title="Search"></i>
+								</button>
+							</div>
+						</div>
+					</div>
+					
+				<div class="row">
+					<div class="col-sm-3">
+							<label><font color="red">*</font>Store Name</label>
+					</div>
+					<div class="col-sm-3">
+						<select name="strStoreId" id="StoreId" class="browser-default custom-select">
+							<bean:write name="GiftedItemRptbean" property="strStoreNameCombo" filter="false" />
+						</select>
+					</div>
+				
+    		    <div class="col-sm-3">
+			   		<label><font color="red">*</font>Item Category</label>
+				</div>
+				<div class="col-sm-3">
+					<select name="strItemCategoryId" id="itemCategoryDivId" class="browser-default custom-select" onChange="itemNameCombo();">
+						<bean:write name="GiftedItemRptbean" property="strItemCategoryCombo" filter="false"/>
+					</select>
+				</div>
+    		  </div>
+    		  
+    		  <div class="row">
+			  		<div class="col-sm-3">
+						<label>Item Name</label>
+					</div>
+					<div class="col-sm-3">
+						<select name="strItemId" class="browser-default custom-select" id="ItemId">
+							<option value="0">All</option>
+				    	</select>
+					</div>
+				
+<!-- 	    		    <div class="col-sm-3"> -->
+<!-- 				   		<label>Purchase Through</label> -->
+<!-- 					</div> -->
+<!-- 					<div class="col-sm-3"> -->
+<!-- 						<select class="browser-default custom-select" name="strInstituteId" id="InstituteId" > -->
+<%-- 							<bean:write name="GiftedItemRptbean" property="strInstituteValues" filter="false"/> --%>
+<!-- 						</select> -->
+<!-- 					</div> -->
+    		  </div>
+<!--     		  <div class="row"> -->
+<!-- 			  		<div class="col-sm-3"> -->
+<!-- 						<label>Supplier Name</label> -->
+<!-- 					</div> -->
+<!-- 					<div class="col-sm-3"> -->
+<!-- 						<select name="strSupplierId" id="SupplierDivId" class="browser-default custom-select"> -->
+<%-- 							<bean:write name="GiftedItemRptbean" property="strSupplierCombo" filter="false" /> --%>
+<!-- 						</select> -->
+<!-- 					</div> -->
+				
+<!--     		  </div> -->
+    		  
+    		  <div class="row rowFlex reFlex">
+			  		<div class="col-sm-3">
+						<label>From Date</label>
+					</div>
+					<div class="col-sm-3">
+						<input name="strFromDate" class="form-control datepicker" value="${GiftedItemRptbean.strCurrentDate}" />
+					</div>
+				
+	    		    <div class="col-sm-3">
+				   		To Date
+					</div>
+					<div class="col-sm-3">
+						<input name="strToDate" class="form-control datepicker" value="${GiftedItemRptbean.strCurrentDate}" />
+					</div>
+    		  </div> 	
+		<hr id='hr4' style="display: none;"><hr>
+		<div class="col-sm-12" id="myDIV">
+    		<label><font color="red">We keep a record here for Gifted Item Report</font></label>
+    	</div>
+    	
+    	<div align="center" id="LocalPurchaseMRN"></div>
+    	
+    	
+ 		<hr id='hr4' style="display: none;"><hr>
+    	<div class="col-sm-12" align="right" id="myDIV1">
+    		<i class="fas fa-asterisk" style="color: red; font-size: smaller;margin-top: 5px;"></i>Fields Mandatory
+    	</div>
+
+
+<input type="hidden" name="hmode"/>
+
+<input type="hidden" name="hmode"/>
+<input type="hidden" name="strStoreName" value=""/>
+<input type="hidden" name="strSupplierName" value=""/>
+<input type="hidden" name="strItemCategoryName" value=""/>
+<input type="hidden" name="strItemCategoryCode" value=""/>
+<input type="hidden" name="strInstituteName" value=""/>
+<input type="hidden" name="strStatus" value=""/>
+<input type="hidden"  name="strHtmlCode"  value="">
+<input type="hidden" name="strCurrentDate" value="${GiftedItemRptbean.strCurrentDate}" />
+		</div>
+	</div>
+</div>
+
+
+
+</html:form>
+<script type="text/javascript">
+	
+	$('.datepicker').each(function()
+	{
+	    $(this).datepicker({ modal: true, header: true, footer: true ,format: 'dd-mmm-yyyy'});
+	});
+	var today=new Date();
+	var arr=["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+	var mmm=arr[today.getMonth()];
+	var hrs=today.getHours();
+	var dd=today.getDate()+"-"+mmm+"-"+today.getFullYear();
+	$('.datepicker').val(dd);
+	
+</script>
+  <tag:autoIndex></tag:autoIndex>
+</body>
+</html>	

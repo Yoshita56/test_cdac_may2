@@ -1,0 +1,155 @@
+td.tdfonthead  {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size:12;
+	text-align:right;
+
+}
+td.tdfont  {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size:12;
+	text-align:left;
+}
+
+#blanket {
+background-color:#111;
+opacity: 0.60;
+filter:alpha(opacity=60);
+position:absolute;
+z-index: 9001;
+top:0px;
+left:0px;
+width:100%;
+height: 100%;
+}
+
+
+.alertDeskButton
+{
+color :#993300;
+style :verdana;
+size:1;
+
+}
+
+td.reportNameHeader
+{
+color :black;
+font-family:Arial;
+font-size: 12.0pt;
+font-weight: bold;
+text-align: center;
+}
+
+td.reportDate
+{
+color :black;
+font-family:Arial;
+font-size: 10.0pt;
+text-align: right;
+}
+
+td.reportColumnHeader
+{
+color :black;
+font-family:Arial;
+font-size: 10.0pt;
+font-weight: bold;
+text-align: center;
+text-transform: capitalize;
+}
+
+td.reportData
+{
+color :black;
+font-family:Arial;
+font-size: 8.0pt;
+text-align: center;
+}
+
+/* for label field of table's TD. It contains font type, font color, font size and background color */
+TD.LABEL_TD {
+	background-color: #E0EBEB;
+	height: 16px;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	color: #333333;
+	text-align: right;
+	font-weight: bold;
+}
+
+/* for control field of table's TD. It contains font type, font color, font size and background color */
+TD.CONTROL_TD {
+	background-Color: #F1F6F6;
+	height: 16px;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #333333;
+	text-align: left;
+	font-weight: normal;
+}
+
+/* table style is defined for add and modify pages. */
+TABLE.TABLE_STYLE {
+	width: 100%;
+	border-spacing: 1px;
+	padding: 1px;
+}
+
+/* to show footer. It contains font type, font color, font size and background color */
+TR.FOOTER_TR {
+	/*background-image: url('../../hisglobal/images/LightStrip.png');
+	background-color: #CCCCCC;*/
+	
+	background: #1277b5; /* Old browsers */
+	background: -moz-linear-gradient(top,  #135d8c 0%, #1277b5 0%, #1277b5 32%, #135d8c 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#135d8c), color-stop(0%,#1277b5), color-stop(32%,#1277b5), color-stop(100%,#135d8c)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  #135d8c 0%,#1277b5 0%,#1277b5 32%,#135d8c 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  #135d8c 0%,#1277b5 0%,#1277b5 32%,#135d8c 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  #135d8c 0%,#1277b5 0%,#1277b5 32%,#135d8c 100%); /* IE10+ */
+	background: linear-gradient(to bottom,  #135d8c 0%,#1277b5 0%,#1277b5 32%,#135d8c 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1277b5', endColorstr='#135d8c',GradientType=0 ); /* IE6-9 */
+	height: 23px;
+	color: #FFFFFF;
+	text-transform: capitalize;
+	text-align: right;
+	font-family: Trebuchet MS;
+	font-size: 13px;
+	font-style: normal;
+	line-height: 14pt;
+	font-weight: bold;
+	font-variant: normal;
+}
+
+/* to show error messages. */
+div.ERR_DIV {
+	font-family: Trebuchet MS;
+	font-size: 12px;
+	font-style: normal;
+	font-weight: bold;
+	color: red;
+	text-align: center;
+}
+
+/* to show normal messages. */
+div.NORMAL_DIV {
+	font-family: Trebuchet MS;
+	font-size: 12px;
+	font-style: normal;
+	font-weight: bold;
+	color: #653232;
+	text-align: center;
+}
+
+/* to show warning messages. */
+div.WARNING_DIV {
+	font-family: Trebuchet MS;
+	font-size: 12px;
+	font-style: normal;
+	font-weight: bold;
+	color: #FF9900;
+	text-align: center;
+}
+
+option.SELECT_VALUE {
+	font-style: italic;	
+}

@@ -1,0 +1,25 @@
+/*Important style definition is 'position:absolute'. Means the element can
+be placed at an arbitrary position without affecting the flow of surrounding
+elements*/
+
+
+#blanket {
+background-color:#111;
+opacity: 0.60;
+filter:alpha(opacity=60);
+position:absolute;
+z-index: 9001;
+top:0px;
+left:0px;
+width:100%;
+}
+
+
+
+.popUpDiv {
+position:absolute;
+background-color:#eeeeee;
+width:px;
+height:0px;
+z-index: 9002;
+}

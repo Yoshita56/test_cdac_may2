@@ -1,0 +1,55 @@
+/* CSS Document */
+
+.tdFormat {color: white;
+	text-transform: capitalize;
+	font-family: Verdana;
+	font-size: 11px;
+	font-style: normal;
+	font-weight: bold;
+	font-variant: normal
+	}
+	
+td.tdblue  {
+	background-Color:#E6F2FF;
+	height:15;
+	color:#333333;
+	text-align:left;
+	text-transform: capitalize;
+	font-family: "Trebuchet MS";
+	font-size: 18px;
+	font-style: normal;
+	line-height: normal;
+	font-weight: normal;
+	font-variant: normal;
+
+}
+
+td.tdpink  {
+	background-Color:#FFCAFF; 
+	height:15;
+	color:#333333;
+	text-align:left;
+	text-transform: capitalize;
+	font-family: "Trebuchet MS";
+	font-size: 18px;
+	font-style: normal;
+	line-height: normal;
+	font-weight: normal;
+	font-variant: normal;
+
+}
+
+td.tdgreen {
+	background-Color:#E2FFC6;
+	height:15;
+	color:#333333;
+	text-align:left;
+	text-transform: capitalize;
+	font-family: "Trebuchet MS";
+	font-size: 18px;
+	font-style: normal;
+	line-height: normal;
+	font-weight: normal;
+	font-variant: normal;
+
+}

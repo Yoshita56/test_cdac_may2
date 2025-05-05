@@ -1,0 +1,2448 @@
+var gblMode 			= "0";
+var gblStockStatus 		= "0";
+var gblGenItemId 		= "0";
+var gblItemId 			= "0";
+var gblIssueQty 		= "0";
+var gblIssueQtyInBase 	= "0"; 
+var gblCountedQtyName 	= "" ;
+var gblVarianceQtyName  = "";
+var gblVarianceCostName = "";
+var gblStoreId 			= "0";
+var gblCatCode 			= "0";
+var gblReservedFlag		= "0";
+var gblUserHiddenFieldDivId 	= "";
+var gblIndexId = "";
+var gblUserDefinedFuncName = "";
+var gblUserDefinedArg = "";
+var gblUserDrugDtlDivId 	    = "";
+var gblUserExpDtlDivId = "";
+var gblUserMrpDtlDivId = "";
+
+var printflag=true;
+var retValue=true;
+
+function CallCustomFunc(val)
+{
+		 var reqQty = document.getElementsByName("strQtyText");
+			 reqQty[0].focus();
+			
+}	
+
+function getItemSelectPopup() 
+{
+	
+	document.getElementById("stockDtlsDivId").innerHTML="";
+	
+	var strFromStoreId=document.getElementsByName('strStoreId')[0].value;
+	var strItemCategory =document.getElementsByName('strItemCat')[0].value;
+	if(strFromStoreId !=0 && strItemCategory!=0){
+		var strRequestType = "32";
+		var strModeVal = "3";
+
+		var  strMultiRowCompArray = new Array('itemParamValue', 'itemCalcValue','itemUserValue', 'strCost','strReqQty','strTotalCost');
+		var  strMultiRowCompTypeArray = new Array('t', 't');
+		var  strMultiRowFetchDataArray = new Array('1', '11', '4','5');
+
+		var layerIndex = "1";
+				
+		var userFunctionName     = "CallCustomFunc";
+		var userFunctionArgument = "test";
+		var strUserInfo =""; 
+		var strUnitMode = "0"; // only base unit  1 Means Only Base Unit Show 0 Means All Unit Show in Unit Combo
+		searchItemsWithUserFunction(strModeVal, strItemCategory, strRequestType, strFromStoreId,strMultiRowCompArray,strMultiRowCompTypeArray,strMultiRowFetchDataArray, layerIndex,userFunctionName, userFunctionArgument ,strUserInfo , strUnitMode);		
+
+	}else{
+		alert("Please Select Store and Category");
+	}
+}
+
+function ftnTick(mode)
+{
+  if(mode=='1')
+  {
+  	document.forms[0].strOutOfStockFlag.value='1';
+  	document.forms[0].OutOfStockFlag[0].checked=false;
+  	document.forms[0].OutOfStockFlag[1].checked=true;
+  }
+  else
+  {
+  	document.forms[0].strOutOfStockFlag.value='0';
+  	document.forms[0].OutOfStockFlag[0].checked=true;
+  	document.forms[0].OutOfStockFlag[1].checked=false;
+  }
+	
+} 
+function getMultiRow(obj)
+{
+	 document.getElementById("hearderId").style.display = "block";
+     	var noOfRow = document.forms[0].strNoOfMultiRow.value;
+     	for(var i=0; i<noOfRow;i++)
+     	{     		
+     		addRows(new Array('strNotInListDrugName','strNotInListDrugQty'),new Array('t','t'),'2','1','R')
+     	}
+ 	
+}
+
+function totalCost()
+{	   
+       	    var costObj = document.getElementsByName("strCost");
+			var total = parseFloat("0.00");
+		   	if (costObj.length > 0) 
+			{
+		        
+				for ( var i = 1; i <costObj.length+1; i++)
+				{		        					
+					total = total + parseFloat(document.getElementById("strCost"+i).value);
+		 		}
+		
+			}
+
+	    total = roundValue(total, 2);
+	    document.getElementById("strTotalCostDivId").value = roundValue(total, 2);
+        document.forms[0].strApproxAmt.value=roundValue(total, 2);
+       
+}
+
+function totalQty()
+{
+       	    var costObj = document.getElementsByName("strAvailableQty");
+			var total = parseInt("0.00");
+			
+		   	if (costObj.length > 0) 
+			{
+		        
+				for ( var i = 0; i <costObj.length; i++)
+				{		        
+					if(costObj[i].disabled==false &&  costObj[i].value.length>0 )
+						total = total + parseInt(costObj[i].value);
+		 		}
+		
+			}
+
+	    total = roundValue(total, 2);
+	    document.getElementById("strTotalQtyDivId").innerHTML=total;       
+       
+}
+
+
+
+/**
+ * checkAvailQtyTwo - Qty validation.
+ * @param {String} unitName
+ * @param {String} qtyName  
+ */
+function checkAvailQtyIpdIssue(index,  qtyName, unitName,costDiv) 
+{      
+		
+	var drugBatchAvlQty   = document.getElementById("strDrugBatchAvlQty"+""+index).value;
+	var         rateObj   = document.getElementById("strPurchaseRate"+""+index).value;
+	var         qtyObj    = document.getElementById("strAvailableQty"+""+index).value;		
+	var avlQty   = parseInt(drugBatchAvlQty,10);				
+	var    qty   = parseInt(qtyObj,10);	
+	var   rate   = rateObj;
+	var  count   = 0;
+
+	if(isNaN(rate) || rate=="") rate = "0";
+	if(isNaN(qty)  || qty=="") qty = "0";
+
+	
+	if(avlQty >= qty)
+	{
+		var total = parseFloat("0.00");
+
+
+		 var costObj = document.getElementsByName("strAvailableQty");
+		 var total = parseFloat("0.00");
+		 
+		 //console.log("costObj.length:::"+costObj.length);	
+		 
+		 if (costObj.length > 0) 
+		 {		        
+				for ( var i = 1; i <costObj.length+1; i++)
+				{	
+					 //console.log("---"+i+"---::"+document.getElementById("strAvailableQty"+i).value);	
+					 //console.log("---"+i+"---::"+document.getElementById("strPurchaseRate"+i).value);	
+					
+					
+					
+					document.getElementById("strBatchCost"+i).value = parseFloat((document.getElementById("strAvailableQty"+i).value) *  (document.getElementById("strPurchaseRate"+i).value));
+					 
+					if(i==1)
+					{	
+					    total = parseFloat((document.getElementById("strAvailableQty"+i).value) *  (document.getElementById("strPurchaseRate"+i).value));
+					}
+					else
+					{
+						total = total + parseFloat((document.getElementById("strAvailableQty"+i).value) *  (document.getElementById("strPurchaseRate"+i).value));
+					}
+		 		}
+		
+		 }
+
+	     total = roundValue(total, 2);
+	    // alert("Total----"+total);
+         document.forms[0].strApproxAmt.value=roundValue(total, 2);
+		
+	}
+	else
+	{
+		alert("Issue Qty of Batch [ "+document.getElementById("strAvlDrugBatch"+""+index).value +" ] is Greater than Available Quantity!!!");
+		document.getElementById("strAvailableQty"+""+index).value = '';
+		totalQty();
+		totalCost();
+		return false;
+
+	}
+
+
+	return true;
+}
+function callIpdIssueStockDetails(obj,index)
+{
+		
+		//alert("index----"+index);
+	
+	    document.getElementById("searchItemsDtlsDivId").innerHTML="";
+		
+		if(document.getElementById("strIssueQty"+index).value=="")
+		{
+			alert("Please Enter Issue Quantity One");
+			document.getElementById("strIssueQty"+index).focus();		
+		}
+		else if(document.getElementById("strIssueUnitId"+index).value=="0")
+		{
+			alert("Please Select Issue Quantity Unit");
+			document.getElementById("strIssueUnitId"+index).focus();		
+		}
+		else
+		{
+			if(document.getElementById("strAvlQtyForChk"+index).value != "0")
+			{
+				
+				
+					var               hiddenVal =  document.getElementById("strItemDetailsChk"+index).value;
+					//alert("hiddenVal-"+hiddenVal); // item id^brandid^RESERVED FLAG^GROUPID^SUBGROUP ID^CONSUMABLE FLAG
+														// ^strItemCategory^strRaisingStoreId
+					var             	   temp = hiddenVal.split("^");
+					var         	    strMode = "1^0^"+index;
+					//alert("strMode----"+"1^"+document.forms[0].strBudgetFlg.value+"^"+index);
+					var     	 strStockStatus = "";
+					var      	   strGenItemId = temp[0];
+					var       	      strItemId = temp[1];				
+					var             strIssueQty = document.getElementById("strIssueQty"+index).value;
+					var       strIssueQtyUnitId = document.getElementById("strIssueUnitId"+index).value;
+					var              strUnitObj = document.getElementById("strIssueUnitId"+index);
+					var        	    strUnitName = "No";				 
+					var               	  temp2 = strIssueQtyUnitId.split("^");
+					var  strIssueQtyUnitBaseVal = parseFloat(temp2[1]);				
+					var              strCatCode = temp[6];
+					var                 storeId = document.forms[0].strStoreId.value;
+					var         strReservedFlag = temp[2];
+					
+					var strUserHiddenFieldDivId = "stockDtlsId"+index;
+					var     strUserDrugDtlDivId = "issueDrugDtl"+index;
+					var     strUserExpDtlDivId  = "expDrugDtl"+index;
+					var   strUserDrugExpRemarks = "strItemRemarks"+index; 	
+					
+					document.getElementById("strIssueQty"+index).disabled=true;
+					document.getElementById("strIssueUnitId"+index).disabled=true;		
+
+					
+				
+
+					//document.getElementById("strIssueQty"+index).readOnly = true;
+					//document.getElementById("strIssueUnitId"+index).readOnly = true;			
+					document.getElementById("issueDrugDtl"+index).innerHTML="";
+					document.getElementById("expDrugDtl"+index).innerHTML="";
+					
+					gblMode 					= strMode;
+					gblStockStatus 				= strStockStatus;
+					gblGenItemId 				= strGenItemId;
+					gblItemId 					= strItemId;
+					gblIssueQty 				= strIssueQty;
+					gblIssueQtyInBase 			= strIssueQtyUnitBaseVal; 
+					gblStoreId 					= storeId;
+					gblCatCode 					= strCatCode;
+					gblReservedFlag			    = strReservedFlag;	
+					gblUserHiddenFieldDivId     = strUserHiddenFieldDivId;
+					gblUserDrugDtlDivId         = strUserDrugDtlDivId;
+					gblUserExpDtlDivId          = strUserExpDtlDivId;
+					gblUserDrugExpDrugRemarksId = strUserDrugExpRemarks;
+					
+					// div id is a hardcoded value.
+							   var itemStockObj = document.getElementById("stockDtlsDivId");
+							   var        hmode = "STOCKDTLSINIT";
+								var      hidVal = document.getElementById("stockDtlsId"+index).value.replace(/#/g , "@");
+								var         url = "OPDIssueToPatAutoTransCNT.cnt?hmode=" + hmode + 
+								                  "&strMode="+strMode+
+								                  "&strStockStatus="+strStockStatus +
+								                  "&strGenItemId="+strGenItemId+
+								                  "&strItemId="+strItemId+
+												  "&strIssueQty="+strIssueQty+
+												  "&strIssueQtyInBase="+parseFloat(temp2[1])+
+												  "&strStoreId="+storeId+
+												  "&strCatCode="+strCatCode+
+												  "&strReservedFlag="+strReservedFlag+
+												  "&strHiddenFieldVal="+hidVal+
+												  "&strUnitName="+strUnitName;
+								
+								ajaxFunction(url,"20");
+			}
+			else
+			{
+				alert("No Batches to be Select!!");
+				return false;
+			}					
+							
+		}
+				
+}
+
+
+function getNAList()
+{
+								
+					document.getElementById("searchItemsDtlsDivId").innerHTML = "";
+					document.getElementById("stockDtlsDivId").innerHTML = "";
+					document.getElementById("NAItemDtlsDivId").innerHTML = "";					
+					
+					
+					var                 storeId = document.forms[0].strStoreId.value;
+					var                    crNo = document.forms[0].crNo.value;
+					var            itemCategory = document.forms[0].itemCategory.value;
+					var               storeName = document.forms[0].storeName.value;
+					var             itemCatName = document.forms[0].itemCatName.value;
+					var         strHiddenPatDtl = document.forms[0].strHiddenPatDtl.value; 	
+					/*
+					 * Amika Soni Kumar^
+					 * HARISH SONI/Suman Koni^
+					 * General^
+					 * 24 Yr/F^
+					 * HN4543,Venue2 24,Noida,Gautam Buddha Nagar,Uttar Pradesh-230230^
+					 * All India Institute of Medical Sciences, Mangalagiri^
+					 * null^
+					 * 9829234234
+					 * */
+					var   strAdmissionDtlHidVal = "";
+
+							   var        hmode = "NA_ITEM_LIST";
+								
+							   var          url = "OPDIssueToPatAutoTransCNT.cnt?hmode=" + hmode + 								                 					                 
+												  "&strStoreId="+storeId+
+												  "&strCatCode="+itemCategory+
+												  "&storeName="+storeName+
+												  "&itemCatName="+itemCatName+
+												  "&strHiddenPatDtl="+strHiddenPatDtl+
+												  "&strAdmissionDtlHidVal="+strAdmissionDtlHidVal+
+												  "&crNo="+crNo;
+
+								ajaxFunction(url,"21");
+							
+}
+
+/**
+* validate the stock details popup contents
+* @return true - if validation is success.
+* 		false - if validation failure.
+*/
+	function validateIssueStockPopUp() 
+	{
+		
+		var chkObj = document.getElementsByName("strStockDtlsChk");
+		var count = parseInt("0");
+		var qtyValue = parseInt("0");
+		var chkValue = "";
+		var costObj   ="";
+		var totalCost ="";
+		var total = parseFloat("0.00");
+		var index = document.forms[0].strIndex.value;
+		for ( var i = 0; i < chkObj.length; i++)
+        {
+			
+			if(chkObj[i].checked)
+			{
+				
+				count = count + 1;
+				
+				var qtyObj    = document.getElementById("strAvailableQty"+(i+1));
+				var unitObj   = document.getElementById("strAvailableQtyUnit"+(i+1));				
+				costObj   = "0";
+				totalCost = "0";
+				 				
+				 				
+				if(qtyObj.value.length < 1)
+				{
+					
+					alert("Please Enter the Quantity");
+					qtyObj.focus();					
+					
+					return false;
+				}
+				else
+				{
+					
+					
+					if(count == 1)
+					{
+						
+						chkValue = chkObj[i].value +"^"+qtyObj.value+"^"+unitObj.value+"^"+costObj+"^"+totalCost;
+						
+						qtyValue = parseInt(qtyObj.value);
+						
+						batchString = "[ "+document.getElementsByName("strDrugDtls")[i].value+" ]";
+						expString   = "[ "+document.getElementsByName("strExpDtls")[i].value+" ]";
+						
+						//total   = parseFloat(document.getElementsByName("strBatchCost")[i].value);
+						
+						
+																	
+					}
+					else
+					{
+						
+						chkValue = chkValue +"#" + chkObj[i].value +"^"+qtyObj.value+"^"+unitObj.value+"^"+costObj+"^"+totalCost;
+						
+						qtyValue = qtyValue + parseInt(qtyObj.value);
+						
+						batchString = batchString +"\n[ "+ document.getElementsByName("strDrugDtls")[i].value+" ]";
+						expString   = expString   +"\n[ "+ document.getElementsByName("strExpDtls")[i].value+" ]";
+						
+						//total   =  total + parseFloat(document.getElementsByName("strBatchCost")[i].value);
+						
+						
+						
+					}
+					
+					
+					
+				}
+				
+			}
+		}
+		
+
+		if(count > 0)
+		{
+			
+			var issueQty = parseInt(document.forms[0].strItemIssueQty.value);			
+		
+			var issueVal = issueQty;				
+		
+			
+			if(parseInt(qtyValue) != parseInt(issueVal))
+			{			
+				alert("Quantity Total [ "+qtyValue+"] should be Equal to Issue Quantity [ "+parseInt(issueVal)+" ]");
+
+				document.getElementById("strTotalCostDivId").value = '0.00';
+
+				return false;
+			}
+			
+		}
+		else
+		{
+			
+			alert("Please Select Atleast One Record");
+			if(document.forms[0].strBudgetFlg.value=='1')
+			{
+	 			document.getElementById("finalCostDivId"+index).value  ='0.00';	
+	 			document.getElementById("strFinalCost"+index).value    = '0.00';
+			}		
+			return false;
+		}
+		
+		
+		 var costObj = document.getElementsByName("strAvailableQty");
+		 var total = parseFloat("0.00");
+		 
+		 if (costObj.length > 0) 
+		 {		        
+				for ( var i = 1; i <costObj.length+1; i++)
+				{	
+					 //console.log("---"+i+"---::"+document.getElementById("strAvailableQty"+i).value);	
+					 //console.log("---"+i+"---::"+document.getElementById("strPurchaseRate"+i).value);	
+					
+					
+					
+					document.getElementById("strBatchCost"+i).value = parseFloat((document.getElementById("strAvailableQty"+i).value) *  (document.getElementById("strPurchaseRate"+i).value));
+					 
+					if(i==1)
+					{	
+					    total = parseFloat((document.getElementById("strAvailableQty"+i).value) *  (document.getElementById("strPurchaseRate"+i).value));
+					}
+					else
+					{
+						total = total + parseFloat((document.getElementById("strAvailableQty"+i).value) *  (document.getElementById("strPurchaseRate"+i).value));
+					}
+		 		}
+		
+		 }
+
+	     total = roundValue(total, 2);         
+		
+		
+		document.getElementById(gblUserHiddenFieldDivId).value = chkValue;
+		
+		
+		document.getElementById(gblUserDrugDtlDivId).innerHTML=batchString;
+		document.getElementById(gblUserExpDtlDivId).innerHTML=expString;
+		
+		document.getElementById("issueCostDiv"+index).innerHTML=roundValue(total, 2);
+		
+		hide_popup('popUpDiv');
+		
+		 		
+		return true;
+}
+
+	/**
+	 * cancelStockDetails 
+	 */
+	 function cancelStockIpdIssueDtls(obj, index) 
+	 {
+	 	
+	 	var conf = confirm("Are you Sure, The Data(s) will be Reset");
+	 	
+	 	if(conf)
+	 	{
+	 		
+	 		
+	 		   var parentIndex = document.getElementById("strIndex").value;	 			
+	 		   document.getElementById("issueCostDiv"+parentIndex).innerHTML="0.00";	 		
+	 		   document.getElementById(gblUserHiddenFieldDivId).value = ""; 
+	 		   var chkObj = document.getElementsByName("strIssueQty");
+               var chkObj1 = document.getElementsByName("strIssueUnitId");
+               var len = chkObj.length;              
+			   for(i=0;i<len;i++)
+			   {									
+					  	//chkObj[i].disabled = false;	
+					  	chkObj1[i].disabled = false;	
+					  	//chkObj[i].value = "";					  						
+			   }				
+	 		   hide_popup('popUpDiv');
+	 		
+	 	}
+	 	else
+	 	{
+	 		
+	 		//hide_popup('popUpDiv');
+	 		
+	 	}
+	}
+
+function getBrandDtls(obj,index)
+{		
+	/*
+	 * 0-   hstnum_itembrand_id
+	 * 1- ^ HSTSTR_BATCH_NO  
+	 * 2- ^ ROUND(HSTNUM_INHAND_QTY) 
+	 * 3- ^ ROUND(NVL(HSTNUM_RATE,0),2)
+	 * 4- ^ TO_CHAR(HSTDT_EXPIRY_DATE, 'Mon-yyyy')	
+	 * */
+	//alert(index+"----"+document.getElementById("strMultiRowBatch"+index).value);
+	var batchDtl     = (document.getElementById("strMultiRowBatch"+index).value).split("^");
+	var issueQty     =  document.getElementById("strRequredQty"+index).value; 
+	var avlQty       =  batchDtl[2]; 
+	
+	if(parseInt(avlQty)<parseInt(issueQty,10))
+	{
+		alert("Issue Quantity ["+issueQty+"] cannot be greater than Available Quantity [ "+avlQty+" ]");	
+		
+		return false;
+	}	
+	
+	 var TotalCost = issueQty *  batchDtl[3];
+	 
+	 document.getElementById("avlQtyId"+index).innerHTML = batchDtl[2]+" No.";	
+	 document.getElementById("rateId"+index).innerHTML   = batchDtl[3];		  
+	 document.getElementById("costId"+index).innerHTML   = parseFloat(TotalCost);	
+	
+	
+
+}
+
+function QtyValidation(index)
+{
+		if(document.getElementById("strIssueQty"+index).value!="")
+		{
+			   
+			    var issueQty     = document.getElementById("strIssueQty"+index).value;
+			    var   reqQty     = document.getElementById("strBalQtyBaseVal"+index).value;		
+			    var   avlQty     = document.getElementById("strAvlQtyForChk"+index).value;		
+			  
+			    if(parseInt(avlQty)<parseInt(issueQty,10))
+				{
+					alert("Issue Quantity ["+parseInt(issueQty,10)+"] cannot be greater than Avaliable Quantity["+parseInt(avlQty,10)+"]");					
+					document.getElementById("strIssueQty"+index).value=avlQty;
+					return false;
+				}	
+				if(parseInt(reqQty)<parseInt(issueQty,10))
+				{
+					alert("Issue Quantity ["+parseInt(issueQty,10)+"] cannot be greater than Req Quantity["+parseInt(reqQty,10)+"]");					
+					document.getElementById("strIssueQty"+index).value=reqQty;
+					return false;
+				}	
+				
+						
+					 
+							
+		}
+}
+function QtyValidation_ORG(index)
+{
+		if(document.getElementById("strQtyText"+index).value!="")
+		{
+			    var issueQty     = document.getElementById("strQtyText"+index).value;
+			    var   avlQty     = document.getElementById("itemUserValue"+index).value.split("^")[7];
+			     
+			  var cost =document.getElementById("itemCalcValue"+index).value.split("^")[1];
+			  // alert(cost);
+			    //var prescQty     = document.getElementById("strPrescQty"+index).value;
+				if(parseInt(avlQty)<parseInt(issueQty,10))
+				{
+					alert("Issue Quantity cannot be greater than Available Quantity");					
+					document.getElementById("strQtyText"+index).value="";
+					return false;
+				}	
+				/*if(parseInt(prescQty,10)<parseInt(issueQty,10) || prescQty.length=='0' )
+				{
+					alert("Issue Quantity cannot be greater than Prescribe Quantity");					
+					document.getElementById("strQtyText"+index).value="";
+					return false;
+				}	*/					
+				var TotalCost = cost *  document.getElementById("strQtyText"+index).value;
+				document.getElementById("strTotalCostText"+index).value = TotalCost.toFixed(2);
+				  var i=0;
+				  var Total=0;
+					while((i<document.getElementsByName("strTotalCostText").length) )// document.getElementsByName("strTotalCostText")[i].value!="")//!=null && document.getElementsByName("strTotalCostText")[i]!=null)
+				{
+				if( document.getElementsByName("strTotalCostText")[i].value!="")
+							{
+				Total=parseFloat(Total)+parseFloat(document.getElementsByName("strTotalCostText")[i].value);
+				
+						}
+				i++;
+					}
+					
+					
+					
+					
+						  var j=0;
+					  //var Total=0;
+					while((j<document.getElementsByName("strTotalTreatCostText").length) )// document.getElementsByName("strTotalCostText")[i].value!="")//!=null && document.getElementsByName("strTotalCostText")[i]!=null)
+					{
+						if( document.getElementsByName("strTotalTreatCostText")[j].value!="")
+						{
+						Total=parseFloat(Total)+parseFloat(document.getElementsByName("strTotalTreatCostText")[j].value);
+					
+						}	
+					  j++;
+					}
+						
+						
+						
+						
+                      document.getElementById("strNetCostDiv").innerHTML = "Rs. "+Total.toFixed(2);			
+					  document.getElementsByName("strNetCost")[0].value= Total;
+					  document.getElementsByName("strPayDtl")[0].value= Total;
+					  //alert( document.getElementsByName("strNetCost")[0].value);
+							
+		}
+}
+
+function QtyValidationBeforeDelete(index)
+{	
+	
+	deleteRow(index,'1','0');
+	
+	
+	  var i=0;
+	  var Total=0;
+	  
+		while((i<document.getElementsByName("strTotalCostText").length) )// document.getElementsByName("strTotalCostText")[i].value!="")//!=null && document.getElementsByName("strTotalCostText")[i]!=null)
+		{
+		  if( document.getElementsByName("strTotalCostText")[i].value!="")
+		  {
+		   Total=parseFloat(Total)+parseFloat(document.getElementsByName("strTotalCostText")[i].value);
+		
+		  }
+		  i++;
+	    }
+				
+      document.getElementById("strNetCostDiv").innerHTML = "Rs. "+Total.toFixed(2);			
+	  document.getElementsByName("strNetCost")[0].value= Total;
+	  
+	  document.getElementsByName("strPayDtl")[0].value= Total;
+	  
+	  
+
+}
+function QtyTreatValidation(index)
+{
+		if(document.getElementById("strQtyTreatText"+index).value!="")
+		{
+			    var issueQty     = document.getElementById("strQtyTreatText"+index).value;
+			    var   avlQty     = document.getElementById("itemUserValue"+index).value.split("^")[7];
+			     
+			  var cost =document.getElementById("itemCalcValue"+index).value.split("^")[1];
+			  // alert(cost);
+			    //var prescQty     = document.getElementById("strPrescQty"+index).value;
+				if(parseInt(avlQty)<parseInt(issueQty,10))
+				{
+					alert("Issue Quantity cannot be greater than Available Quantity");					
+					document.getElementById("strQtyTreatText"+index).value="";
+					return false;
+				}	
+				/*if(parseInt(prescQty,10)<parseInt(issueQty,10) || prescQty.length=='0' )
+				{
+					alert("Issue Quantity cannot be greater than Prescribe Quantity");					
+					document.getElementById("strQtyText"+index).value="";
+					return false;
+				}	*/					
+				var TotalCost = cost *  document.getElementById("strQtyTreatText"+index).value;
+				document.getElementById("strTotalTreatCostText"+index).value = TotalCost.toFixed(2);
+				  var i=0;
+				  var Total=0;
+					while((i<document.getElementsByName("strTotalTreatCostText").length) )// document.getElementsByName("strTotalCostText")[i].value!="")//!=null && document.getElementsByName("strTotalCostText")[i]!=null)
+				{
+				if( document.getElementsByName("strTotalTreatCostText")[i].value!="")
+							{
+				Total=parseFloat(Total)+parseFloat(document.getElementsByName("strTotalTreatCostText")[i].value);
+				
+						}
+				i++;
+					}
+					
+					  var j=0;
+					  //var Total=0;
+						while((j<document.getElementsByName("strTotalCostText").length) )// document.getElementsByName("strTotalCostText")[i].value!="")//!=null && document.getElementsByName("strTotalCostText")[i]!=null)
+					{
+					if( document.getElementsByName("strTotalCostText")[j].value!="")
+								{
+					Total=parseFloat(Total)+parseFloat(document.getElementsByName("strTotalCostText")[j].value);
+					
+							}
+					j++;
+						}
+						
+
+					
+                   // document.getElementById("strNetCostDiv1").innerHTML = "Rs. "+Total.toFixed(2);
+                    //document.getElementById("strNetCost1").innerHTML = "Rs. "+Total.toFixed(2);
+					
+					 document.getElementById("strNetCostDiv").innerHTML = "Rs. "+Total.toFixed(2);
+					  document.getElementById("strNetCost").innerHTML = "Rs. "+Total.toFixed(2);
+					
+					/*if(Total > document.getElementsByName(strLFBalanceAmount)[0].value)
+						{
+						 alert("Total amount is greater then LF Balance!");
+						 return false;
+						}*/
+
+					
+				
+				
+			
+		}
+}
+function checkPresQty(index)
+{
+	var prescQty     = document.getElementById("strPrescQty"+index).value;
+	if(parseInt(prescQty,10)=='0' ||parseInt(prescQty,10)==0 )
+	{
+	    alert("Prescribe Quantity cannot be equal to Zero");
+	     document.getElementById("strPrescQty"+index).value="";				
+		return false;
+	}
+}
+
+function printDataOne(mode) 
+{
+	newwin = window.open('', 'printwin',
+			'left=100,top=100,width=700,height=700,scrollbars=yes');
+	newwin.document.write('<HTML><HEAD>');
+	newwin.document.write((document.getElementsByTagName("head")[0]).innerHTML);
+	newwin.document.write('<style type="text/css"> .hidecontrol { display: none; } </style>\n')
+	newwin.document.write('<script>\n');
+	newwin.document.write('function chkstate(){ \n');
+	// newwin.document.write('if(document.readystate=="complete" ||
+	// document.readystate=="undefined"){\n');
+	newwin.document.write('window.close();\n');
+	// newwin.document.write('}\n');
+	// newwin.document.write('else{\n');
+	// newwin.document.write('setTimeout("chkstate()",2000)\n');
+	// newwin.document.write('}\n');
+	newwin.document.write('}\n');
+	newwin.document.write('function print_win(){\n');
+	//newwin.document.write('window.print();\n');
+	newwin.document.write('chkstate();\n');
+	newwin.document.write('}\n');
+
+	newwin.document.write('<\/script>\n');
+	newwin.document.write('</HEAD>\n');
+	newwin.document.write('<BODY onload="print_win()">\n');
+	if(mode=='1')
+	{
+		if(document.getElementById('issueDtlsDivId').innerHTML != "")
+			newwin.document.write(document.getElementById('issueDtlsDivId').innerHTML);	
+		else
+			newwin.document.write(document.getElementById('transferDtlsDivId').innerHTML);	
+		
+		 document.getElementById("strCrNo").focus();
+	}
+	if(mode=='2')
+	{		
+		newwin.document.write(document.getElementById('NAItemDtlsDivId').innerHTML);	
+	}
+	newwin.document.write('</BODY>\n');
+	newwin.document.write('</HTML>\n');
+	newwin.document.close();
+	
+
+}
+
+function printNAData() {
+    const contentToPrint = document.getElementById("NAItemDtlsDivId").cloneNode(true);
+    const newWin = window.open('', '', 'width=700,height=700,scrollbars=yes');
+    newWin.document.write('<html><head>');
+    newWin.document.write('<style type="text/css">');
+    newWin.document.write('.hidecontrol { display: none; }');
+    newWin.document.write('@media print {');
+//    newWin.document.write('  #toolbar { display: none; }');
+//    newWin.document.write('  body { margin: 0; padding: 0; }');
+    newWin.document.write('  @page { margin: 4mm 3mm; size: A4 portrait; }');
+//    newWin.document.write('  table { table-layout: fixed; width: 100%; }');
+//    newWin.document.write('  table td { word-wrap: break-word; font-size: 12px; }');
+    // Define page break rules for the repeat-table class
+//	 NewWin.document.write('.repeat-table { page-break-before: always; }');
+    newWin.document.write('}');
+    newWin.document.write('</style>');
+    newWin.document.write('</head><body>');
+    newWin.document.write(contentToPrint.outerHTML);
+    newWin.document.write('</body></html>');
+    newWin.document.close();
+    newWin.onload = function () {
+        newWin.print();
+        newWin.close();
+    };
+}
+
+
+function hideIssuePopupOne() 
+{
+	document.getElementById("transferDtlsDivId").innerHTML = "";
+	hide_popup('popUpDiv1');
+	//document.getElementById("strCrNo").focus();
+
+}
+function hideIssuePopupTwo() 
+{
+	document.getElementById("NAItemDtlsDivId").innerHTML = "";
+	hide_popup('popUpDiv');	
+
+}
+function transferToViewPage()
+{
+	if (document.getElementsByName("strViewChk")[0].checked) 
+	{
+		document.forms[0].hmode.value = "VIEWPAGE";
+		document.forms[0].submit();
+	}
+}
+
+function cancelIssue()
+{
+	//showMenuFrame();
+	document.forms[0].hmode.value = "RETURNTOMAINDESK";
+	document.forms[0].submit();
+	//window.parent.closeTab();
+}
+
+function clearIssue() {
+	/*document.forms[0].strIssueNum.value = "";
+	document.forms[0].strId.value = "";
+//	document.formas[0].strLFNo.value="";
+	var url;
+	printflag= false;
+	var mode = "unspecified";
+	document.forms[0].hmode.value = mode;
+	document.forms[0].submit();*/
+	
+	   document.forms[0].reset();
+}
+
+var gblObject = "";
+
+function getItemDetails() {
+
+	var url = "OPDIssueToPatAutoTransCNT.cnt?hmode=ITEMDETAILS&reqNo=" + gblObject
+			+ "&crNo=" + document.forms[0].crNo.value + "&strId="
+			+ document.forms[0].strId.value;
+
+	ajaxFunction(url, "7");
+
+}
+
+function getConsultantCombo() {
+
+	var url = "OPDIssueToPatAutoTransCNT.cnt?hmode=PRESCRIPEDBY&unitCode="
+			+ document.forms[0].strUnitCode.value;
+	ajaxFunction(url, "6");
+
+}
+
+function getUnitCombo() {
+
+	var url = "OPDIssueToPatAutoTransCNT.cnt?hmode=UNITCMB&deptCode="
+			+ document.forms[0].strDeptCode.value;
+	ajaxFunction(url,"5");
+
+}
+
+function getRequestDetail(obj) {
+
+	if (obj == null)
+		return false;
+
+	gblObject = obj.value;
+
+	var url = "OPDIssueToPatAutoTransCNT.cnt?hmode=REQUESTDTLS&reqNo=" + obj.value
+			+ "&crNo=" + document.forms[0].crNo.value;
+
+	ajaxFunction(url, "4");
+
+}
+
+function getPrevIssueDtl() {
+
+	var strFromStoreId=document.getElementsByName('strStoreId')[0].value;
+	var strItemCategory =document.getElementsByName('strItemCat')[0].value;
+	if(strFromStoreId !=0 && strItemCategory!=0){
+		var url = "OPDIssueToPatAutoTransCNT.cnt?hmode=PREVISSUEDTL&strId="
+			+ document.forms[0].strStoreId.value + "&itemCategory="
+			+ document.forms[0].strItemCat.value + "&crNo="
+			+ document.forms[0].crNo.value;
+		ajaxFunction(url, "2");
+	}else{
+		alert("Please Select Store and Category");
+	}
+
+}
+
+function getItemCat() {
+
+	var strStoreId = null;
+	if (document.forms[0].strStoreId != null) {
+		strStoreId = document.forms[0].strStoreId.value;
+	}
+	if (strStoreId != null && strStoreId != "0") {
+		var url = "OPDIssueToPatAutoTransCNT.cnt?hmode=ITEMCATCMB&storeId="
+				+ document.forms[0].strStoreId.value + "&modeVal="
+				+ document.forms[0].strMode.value;
+		//alert(url);
+		ajaxFunction(url, "1");
+	} else {
+		document.getElementById("itemcatDivId").innerHTML = "<select name ='strItemCat' class='comboNormal' ><option value='0'>Select Value</option></select>";
+	}
+}
+
+var objGlobal = "";
+
+function getIssuePopUp(these, index) 
+{
+	$(these).closest("#chunks").find("i").removeClass("activePrev");
+	
+	$(these).closest("#chunks").find(".fa-folder-open").each(function()
+	{
+		$(these).closest("#chunks").find("i").removeClass("fa-folder-open");
+		$(these).closest("#chunks").find("i").addClass("fa-folder");
+	
+	});
+	
+	$(these).closest("div").find("i").addClass("activePrev");
+	$(these).closest("div").find("i").removeClass("fa-folder");
+	$(these).closest("div").find("i").addClass("fa-folder-open");
+	
+		objGlobal = these;
+		var url = "OPDIssueToPatAutoTransCNT.cnt?hmode=ISSUEDTLPOPUP&strId="
+				+ document.getElementById("strIssueSoreID"+index).value + "&issueNo="
+				+ document.getElementById("strIssueNo" + index).value;
+		//alert(url);
+		ajaxFunction(url, "3");
+
+}
+
+function getAjaxResponse(res, mode) 
+{
+	//alert(res);
+	if (mode == "1") {
+		if (res == "") {
+			document.forms[0].strItemCat.innerHTML = "<select name ='strItemCat' class='browser-default custom-select' ><option value='0'>Select Value</option></select>";
+		} else {
+			var objVal = document.forms[0].strItemCat;
+			objVal.innerHTML = res;
+			//getReqType();
+		}
+	}
+
+	if (mode == "2") {
+
+		var objVal = document.getElementById("issueDtlDivId");
+
+		objVal.innerHTML = res;
+		//alert("=============TEST==============="+res);
+		$("#issueDtlModal").modal("show");
+	}
+
+	if (mode == "3") {
+		//alert("=============TEST==============="+res);
+		var objVal = document.getElementById("issueDtlsDivId");
+	//	objVal.innerHTML = res+"<p class='example'>.</p>"+res;
+		//alert(document.getElementById("issueDtlsDivId").innerHTML);
+		//display_popup_menu(objGlobal, "issueDtlsDivId", '60', '80');
+		//popup('popUpDiv1' , '250','250');
+		
+		objVal.innerHTML = res;
+	}
+
+	if (mode == "4") {
+
+		var objVal = document.getElementById("requestDivId");
+		objVal.innerHTML = res;
+
+		if (document.forms[0].strIssueMode.value != 0) {
+			document.getElementById("reqDtlDivId").style.display = "none";
+			document.getElementById("itemDtlOffDivId").style.display = "none";
+		}
+
+		document.getElementById("itemDtlDivId").style.display = "block";
+
+		getItemDetails();
+
+	}
+	if (mode == "5") {
+		if (res == "") {
+			document.getElementById("unitDivId").innerHTML = "<select name ='strUnitCode' id='unit' class='browser-default custom-select' ><option value='0'>Select Value</option></select>";
+		} else {
+			var objVal = document.getElementById("unitDivId");
+			//alert(res);
+			objVal.innerHTML = "<select name ='strUnitCode' id='unit' class='browser-default custom-select' onchange='getConsultantCombo();' >"
+					+ res + "</select>";
+		}
+		
+		if(document.getElementsByName("strPatientStatus")[0].value == '2')
+		{
+			document.forms[0].strUnitCode.value=document.getElementsByName("strAdmissionDtlHidVal")[0].value.split("^")[16];
+			document.getElementById("dep").disabled = true;
+			document.getElementById("unit").disabled = true;
+		}
+		else
+			if(document.forms[0].strDeptCode.value == document.getElementsByName("strEpisodeCode")[0].value.substr(0,3))
+				document.forms[0].strUnitCode.value = document.getElementsByName("strEpisodeCode")[0].value.substr(0,5);
+		
+		getConsultantCombo();
+	}
+
+	if (mode == "6") {
+		//alert('6');
+		//alert(res);
+		if (res == "") {
+			document.getElementById("consultantDivId").innerHTML = "<select name ='strPrescribedBy' class='browser-default custom-select' ><option value='0'>Select Value</option></select>";
+		} else {
+			var objVal = document.getElementById("consultantDivId");
+			objVal.innerHTML = "<select name ='strPrescribedBy' class='browser-default custom-select' >"
+					+ res + "</select>";
+		}
+		getEpisodeList(document.getElementById("dep"));
+	}
+	if (mode == "7") {
+
+		var objVal = document.getElementById("itemDtlDivId");
+		objVal.innerHTML = res;
+
+		getRequestDtl();
+
+	}
+	
+	
+	if (mode == "8") 
+	{	
+		var itemStockObj = document.getElementById("issueDtlsDivId");
+		itemStockObj.innerHTML = res;
+		document.getElementById("normalMsg").innerHTML = "Data Saved Successfully";
+		document.forms[0].strStoreId.disabled=false;
+		//popup('popUpDiv', '60', '80');	
+		//document.getElementById("strCrNo").focus(); 
+	}
+	
+	if (mode == "9") 
+	{	
+		var itemStockObj = document.getElementById("transferDtlsDivId");
+		//itemStockObj.innerHTML = res+"<p class='example'>.</p>"+res;
+		itemStockObj.innerHTML = res;
+		document.getElementById("normalMsg").innerHTML = "Data Saved Successfully";
+		document.forms[0].strStoreId.disabled=false;
+	//	popup('popUpDiv1', '60', '80');	
+	//	window.print();
+		
+	}
+	if(mode=="11")
+	{
+		         alert("Mode - 11");
+		 		 var retVal = false;
+		 		
+		 		
+		 		
+		 				if (document.getElementsByName("strQtyText").length <= 1) 
+		 				{
+		 					alert("Please Select Item from Search Utility!!!");
+		 				//	saveObj.style.display = ""; 
+		 					return false;
+		 				}
+		 				
+		 				var hisValidator = new HISValidator("issueBean");
+		 				
+		 				hisValidator.addValidation("strDeptCode", "dontselect=0",	 "Department is a Mandatory Field");
+		 				
+		 				hisValidator.addValidation("strUnitCode", "dontselect=0",	 "Unit is a Mandatory Field");
+
+		 				//hisValidator.addValidation("strPrescribedBy", "dontselect=0",	 "Prescribed By Doctor is a Mandatory Field");
+		 				hisValidator.addValidation("strPrescribedFor", "req",	 "Prescribed for  is a Mandatory Field");
+		 				//hisValidator.addValidation("strPrescriptionFrom", "dontselect=0",	 "Prescription from  is a Mandatory Field");
+
+		 				
+		 				
+		 				hisValidator.addValidation("strQtyText", "req",	 "Quantity is a Mandatory Field");
+		 				hisValidator.addValidation("strPrescriptionDate", "req","Issue Date is a Mandatory Field");
+		 		        hisValidator.addValidation("strPrescriptionDate", "dtltet="	+ document.forms[0].strCtDate.value,"Please Select Issue Date Less Than or Equal To Current Date");
+		 				hisValidator.addValidation("strPrescribedBy", "req","Prescribed By is Mandatory");
+		 				hisValidator.addValidation("strRemarks", "maxlen=100","Remarks should have less than or equal to 100 Characters");
+		 				
+		 				retVal = hisValidator.validate();
+		 				hisValidator.clearAllValidations();
+		 					
+		 				if (retVal) 
+		 				{
+		 			        var itemParVal     = document.getElementsByName("itemParamValue");
+		 				    var itemUserValue  = document.getElementsByName("itemUserValue");
+		 				    var reqQty         = document.getElementsByName("strQtyText");
+		 				    var count = 0;
+		 				    
+		 				   
+		 				    
+		 				    if(itemParVal.length>1)
+		 					{												
+		 						 for(var i=0;i<itemParVal.length-1;i++)
+		 						 {
+		 						 	itemUserValue[i].disabled=false;
+		 						 
+		 						 	if(reqQty[i].value > 0)
+		 						 	{
+		 						 		count = 1;
+		 						 		break;
+		 						 	}												 	
+		 						 }									  
+		 					}	
+		 															
+		 					if(count  == 0)
+		 					{
+		 						alert("Please enter one Quantity Greater than Zero!!!");
+		 						//saveObj.style.display = "";
+		 						return false;
+		 					}
+		 					
+		 					if(itemParVal.length>1)
+		 					{												
+		 						 for(var i=0;i<itemParVal.length-1;i++)
+		 						 {
+		 							for(var j=i+1;j<itemParVal.length-1;j++)
+			 						 {
+		 								//alert(itemUserValue[i].value);
+		 								//alert(itemUserValue[i].value.split('^')[1]);
+		 								//alert(itemUserValue[j].value.split('^')[1]);
+			 							if(itemUserValue[i].value.split('^')[1] == itemUserValue[j].value.split('^')[1])
+			 								{
+			 									alert('Kindly Remove Duplicate Drug '+itemParVal[i].value.split('^')[0]+' From List');
+			 									return false;
+			 								}
+			 						 	
+			 						 }	
+		 						 	//itemUserValue[i].disabled=false;
+		 						 }									  
+		 					}
+		 					
+		 					//alert(document.getElementsByName("strLFAccountNo")[0].value);
+		 					//return false;
+		 			          if(document.getElementsByName("strLFAccountNo")[0]==null || document.getElementsByName("strLFAccountNo")[0]=="")
+		 			        	 var conf = confirm("You are going to save Data.");
+		 			          else
+		 		              var conf = confirm("Net Amount will be Deducted From your LF Account Balance.");
+		 		              if(conf == true)
+		 		              {
+		 		            	 var test=document.forms[0].strDuplicateItem.value ; 
+				 					alert(test);
+				 					if(test!=''){
+				 					confirmBS(test);
+				 					}
+				 		                
+		 		                   var conf1 = confirm("Are you sure?");
+		 		                   if(conf1 == true)
+		 		                   { 
+		 		                 //  alert(printflag);
+		 		                	  // alert(document.getElementsByName('strCatGrp')[0].value);
+		 		                	  // alert(document.forms[0].strLFAccountNo.value);
+		 		                	   
+		 		                	 document.getElementById("dep").disabled = false;
+		 		         			document.getElementById("unit").disabled = false;
+		 		         			/*
+		 		         			 * hrgt_patient_dtl where hgnum_pat_status_code  = 2   - > IPD Patient
+		 		         			 * hrgt_patient_dtl where hgnum_pat_status_code  = 3   - > OPD Patient
+		 		         			 * 
+		 		         			 * */
+		 		         			
+		 		                	   if(document.getElementsByName("strPatientStatus")[0].value != 2)
+		 		                	   {
+		 		                		   if( (document.getElementsByName("strLFAccountNo")[0]==null || document.getElementsByName("strLFAccountNo")[0] == '') )	//document.getElementsByName('strCatGrp')[0].value != '1'  check removed to issue medicines to staff as car grp = 0 means paid and 1 means staff
+		 		                			   document.forms[0].hmode.value = "INSERTTEMP";
+		 		                		   else
+		 		                			   document.forms[0].hmode.value = "INSERT";
+		 		                	   }
+		 		                	   else
+		 		                	   {
+		 		                		  document.forms[0].hmode.value = "INSERTIPD";
+		 		                	   }
+		 		                		   document.forms[0].submit();
+		 		                   }
+		 		                  else
+		 		                   {
+		 		               //    	saveObj.style.display = "";
+		 		                     return false;
+		 		                   }
+		 		               }
+		 		              else
+		 		               {
+		 		             //  	saveObj.style.display = "";
+		 		                     return false;
+		 		               }    
+		 		
+		 				} else {
+		 				//	saveObj.style.display = "";
+		 					return false;
+		 				}
+		 	//}
+		 	
+	}
+	if (mode == "12") 
+	{	
+		//alert(res);
+		var reqType = document.forms[0].strRequestType;
+		reqType.innerHTML = res;
+		
+		getUnitCombo();  
+		
+	}
+	
+	if (mode == "119") 
+	{	
+		//alert(res);
+		 document.forms[0].strDuplicateItem.value=res ; 
+		 DirectIssue();
+		
+	}
+	if(mode=="15")
+	{
+		                console.log("Mode - 15");
+		
+		      		    var retVal = false;	
+		 		
+		 				if (document.getElementsByName("strQtyText").length <= 1) 
+		 				{
+		 					alert("Please Select Item from Search Utility!!!");
+		 					return false;
+		 				}
+		 				
+		 				var hisValidator = new HISValidator("issueBean");
+		 				
+		 				hisValidator.addValidation("strDeptCode", "dontselect=0",	 "Department is a Mandatory Field");		 				
+		 				hisValidator.addValidation("strUnitCode", "dontselect=0",	 "Unit is a Mandatory Field");		 				
+		 				hisValidator.addValidation("strQtyText", "req",	 "Quantity is a Mandatory Field");
+		 				hisValidator.addValidation("strPrescriptionDate", "req","Issue Date is a Mandatory Field");
+		 		        hisValidator.addValidation("strPrescriptionDate", "dtltet="	+ document.forms[0].strCtDate.value,"Please Select Issue Date Less Than or Equal To Current Date");
+		 				hisValidator.addValidation("strPrescribedBy", "req","Prescribed By is Mandatory");
+		 				hisValidator.addValidation("strRemarks", "maxlen=100","Remarks should have less than or equal to 100 Characters");
+		 				
+		 				retVal = hisValidator.validate();
+		 				hisValidator.clearAllValidations();
+		 					
+		 				if (retVal) 
+		 				{
+		 			        var itemParVal     = document.getElementsByName("itemParamValue");
+		 				    var itemUserValue  = document.getElementsByName("itemUserValue");
+		 				    var reqQty         = document.getElementsByName("strQtyText");
+		 				    var count = 0;
+		 				    
+		 				   
+		 				    
+		 				    if(itemParVal.length>1)
+		 					{												
+		 						 for(var i=0;i<itemParVal.length-1;i++)
+		 						 {
+		 						 	itemUserValue[i].disabled=false;
+		 						 
+		 						 	if(reqQty[i].value > 0)
+		 						 	{
+		 						 		count = 1;
+		 						 		break;
+		 						 	}												 	
+		 						 }									  
+		 					}	
+		 															
+		 					if(count  == 0)
+		 					{
+		 						alert("Please enter one Quantity Greater than Zero!!!");
+		 						return false;
+		 					}
+		 					
+		 					if(itemParVal.length>1)
+		 					{												
+		 						 for(var i=0;i<itemParVal.length-1;i++)
+		 						 {
+		 							for(var j=i+1;j<itemParVal.length-1;j++)
+			 						 {
+		 									if(itemUserValue[i].value.split('^')[1] == itemUserValue[j].value.split('^')[1])
+			 								{
+		 										if(reqQty[i].value > 0){
+			 									alert('Kindly Remove Duplicate Drug '+itemParVal[i].value.split('^')[0]+' From List');
+			 									return false;
+		 										}
+			 								}
+			 						 }	
+		 						 }									  
+		 					}
+		 					
+		 					var test=document.forms[0].strDuplicateItem.value ; 
+		 					//alert(test);
+		 					//console.log(test);
+		 					if(test!='')
+		 					{	
+		 					    confirmBS(test,"","1");
+		 					} 
+		 					else
+		 					{
+		 						confirmBS("Are you sure?","","1");
+		 					}
+		 		                  //// confirmBS("Are you sure?","","1");
+		 				} else 
+		 					return false;
+		 	//}
+		 	
+	}
+	printflag = false;
+	
+	if(mode == "16"){
+		if(res!="")
+		document.forms[0].strOffLineEpisode.innerHTML=res;
+		else
+			document.forms[0].strOffLineEpisode.innerHTML="<option value='0'>Select Value</option>";
+		
+		getPresForm();
+		
+	}
+	
+	if(mode == "17"){
+		if(res!="")
+			$('select[name="strPrescriptionFrom"] option[value="'+res+'"]').attr("selected","selected");
+		if(res=="0"){
+			if(document.getElementsByName("strPatientStatus")[0].value == '2')
+				$('select[name="strPrescriptionFrom"] option[value="2"]').attr("selected","selected");
+		}
+			
+		//alert(res);
+		//getReqType();
+		getPresData();
+	
+	}
+	
+	if (mode == "18") 
+	{	
+		//alert(res.split("##")[2]);
+		var reqType = document.getElementById("strPresData");
+		reqType.innerHTML = res.split('##')[0];
+		document.getElementsByName("rowIndex1")[0].value= res.split('##')[1];
+		document.getElementsByName("rowLength1")[0].value=res.split('##')[1];
+		document.forms[0].strRowCount.value=res.split('##')[1];
+		document.forms[0].strDuplicateItem.value=res.split("##")[2];
+		var Total=0.00;
+		
+		for(var t=1 ; t <= res.split('##')[1] ;  t++){
+			console.log(document.getElementById("strQtyTreatText1-1").value);
+			Total=parseFloat(Total)+parseFloat(document.getElementById("strTotalTreatCostText1-"+t).value);
+		}
+		
+		  var i=0;
+		 // var Total=0;
+			while((i<document.getElementsByName("strTotalCostText").length) )// document.getElementsByName("strTotalCostText")[i].value!="")//!=null && document.getElementsByName("strTotalCostText")[i]!=null)
+		{
+		if( document.getElementsByName("strTotalCostText")[i].value!="")
+					{
+		Total=parseFloat(Total)+parseFloat(document.getElementsByName("strTotalCostText")[i].value);
+		
+				}
+		i++;
+			}
+		
+		 document.getElementById("strNetCostDiv").innerHTML = "Rs. "+Total.toFixed(2);
+		  document.getElementById("strNetCost").innerHTML = "Rs. "+Total.toFixed(2);
+		//console.log('Total :::::::::::' +  Total);
+		//document.getElementById("strNetCostDiv").innerHTML = "Rs. "+Total.toFixed(2);
+		//alert(res);  getElementById
+		//getItemCat();
+		//getUnitCombo();
+		//getConsultantCombo() ;
+		
+		
+	
+	}
+	if (mode == "19") 
+	{
+		/*alert(res);
+		console.log('rish CHECK-------------------'+res);*/
+		if (res == "") 
+		{
+			  alert("No Billing Record Found For CR No [ "+document.forms[0].strCrNo.value+" ] \n No Issue Allowed " );
+			  return false;
+		} 
+		else 
+		{
+			 
+			/*
+	            0 -  Ac Balance
+	            1 -  Patient Catg Code
+	            2 -  ADMISSION_DATE
+	            3 -  DISCHARGE_DATE
+	            4 -  PATACCOUNT_STATUS in Text
+	            5 -  HBLNUM_PATACCOUNT_STATUS 
+	            6 -  GETCATGRP
+	            7 -  HBLNUM_ACCOUNT_TYPE
+	            8 -  hblnum_finalbill_flag
+	            -- 5: final settlement,--1,2,3 (Active hold),--0 closed,4 dormat,6 cancel
+	 		   --    hblnum_finalbill_flag : = 91 Bed Transfer
+	         */
+		      // alert(res);
+			   var accBalance     = res.split('@')[0]; //0 th index means first position of res array 
+			   var accStatusText  = res.split('@')[4]; //4 th index means fifth position of res array 
+			   var accStatusFlag  = res.split('@')[5]; //5 th index means sixth position of res array 
+			   
+			   //alert("--accStatusText--"+accStatusText+"-accStatusFlag---"+accStatusFlag);
+			   
+			   if(accStatusFlag == "5" || accStatusFlag == "0")
+			   {
+				   if(accStatusText != "0")
+				   {
+					   alert(" Billing Record \n For CR No [ "+document.forms[0].strCrNo.value+" ] has been "+accStatusText+"  \n   No Drug Dispensing Allowed  \n Page Going To Re-Set  !! " );
+				   }	
+				   else
+				   {
+				       alert(" Billing Record \n For CR No [ "+document.forms[0].strCrNo.value+" ] has been Final Settelment or Closed  \n   No Drug Dispensing Allowed \n Page Going To Re-Set  !! " );
+				   }
+				   
+				   document.forms[0].strCrNo.value = "";
+				   document.forms[0].hmode.value = "INITVAL";
+				   document.forms[0].submit();
+			   }
+			   else
+			   {
+				   onGoButton();
+			   }
+			  
+		}
+	}
+	
+	if(mode=="20")	
+	{
+		var itemStockObj = document.getElementById("stockDtlsDivId");
+
+		//alert(res);
+		
+		itemStockObj.innerHTML = res;
+
+		popup('popUpDiv', '150', '60');
+	}
+	if(mode=="21")	
+	{
+		var itemStockObj = document.getElementById("NAItemDtlsDivId");
+
+//		alert(res);
+		
+		itemStockObj.innerHTML = res;
+
+		popup('popUpDiv', '150', '60');
+	}
+	
+}
+
+function validateIssue() 
+{
+	validateTariff();
+		
+}
+
+function validateTariff()
+{
+	var itemTmp="";
+	var itemParVal     = document.getElementsByName("itemParamValue");
+	 if(itemParVal.length>1)
+		{												
+			 for(var i=0;i<itemParVal.length-1;i++)
+			 {
+				 if(i==0)
+					 itemTmp = itemParVal[i].value.split("^")[22];
+				 else
+					 itemTmp+= ","+itemParVal[i].value.split("^")[22];
+			 }
+		}
+	 
+	 var url = "OPDIssueToPatAutoTransCNT.cnt?hmode=TARIFFCHK&itemTmp="+ itemTmp;
+	ajaxFunction(url, "11");
+	 
+}
+function validateTariff2()
+{
+	retValue=false;
+	 
+}
+function hideIssueDetails(divId) {
+	//hide_popup_menu(divId);
+	 hide_popup(divId);
+}
+
+function initGoFunc(eve) {
+	var flag = validateData(eve, 5);
+	if (flag) {
+		if (eve.keyCode == 13) {
+			//onGoButton();
+			getPatientAccStatus();
+		}
+	} else {
+		return false;
+	}
+
+}
+
+function goFuncOnEnter(e) {
+	if (e.keyCode == 13) {
+		//onGoButton();
+		getPatientAccStatus();
+	} else {
+		return false;
+	}
+}
+
+function getPatientAccStatus() 
+{	
+	
+	//document.forms[0].crNo.value           = document.forms[0].strCrNo.value;
+	//document.forms[0].strId.value          = document.forms[0].strStoreId.value.split("^")[0];
+	//document.forms[0].itemCategory.value   = document.forms[0].strItemCat.value;
+
+	var url = "OPDIssueToPatAutoTransCNT.cnt?hmode=GET_PAT_ACC_STATUS&crNo="+document.forms[0].strCrNo.value+"&strId="+ document.forms[0].strStoreId.value.split("^")[0];
+	ajaxFunction(url, "19");
+
+}
+
+
+function onGoButtonOld() {
+
+	var hisValidator = new HISValidator("issueBean");
+
+	hisValidator.addValidation("strStoreId", "dontselect=0",
+			"Select Drug Warehouse Name from Drug Warehouse Combo ");
+	hisValidator.addValidation("strItemCat", "dontselect=0",
+			"Select Item Category from Item Category Combo");
+	if (document.getElementsByName('strCRorLFwise')[0].checked)
+	{	
+		hisValidator.addValidation("strCrNo", "req","Please enter CR No. ");
+		document.forms[0].strStoreId.disabled=true;
+		//return false;
+	}
+	else if (document.getElementsByName('strCRorLFwise')[1].checked)
+	{		
+		hisValidator.addValidation("strLFNo", "req","Please enter LF No. ");
+		document.forms[0].strStoreId.disabled=true;
+		//return false;
+	}	
+	else
+		document.forms[0].strStoreId.disabled=false;
+	var retVal = hisValidator.validate();
+	hisValidator.clearAllValidations();
+
+    
+    document.forms[0].strItemCat.disabled=false;
+	document.forms[0].storeName.value = document.forms[0].strStoreId[document.forms[0].strStoreId.selectedIndex].text;
+	document.forms[0].itemCatName.value = document.forms[0].strItemCat[document.forms[0].strItemCat.selectedIndex].text;
+	document.forms[0].crNo.value = document.forms[0].strCrNo.value;
+
+	document.forms[0].strId.value = document.forms[0].strStoreId.value.split("^")[0];
+	document.forms[0].itemCategory.value = document.forms[0].strItemCat.value;
+
+	if (retVal) 
+	{
+		document.forms[0].strStoreId.disabled=false;
+		document.forms[0].hmode.value = "issuetopatientcount";
+		document.forms[0].submit();
+
+	} else {
+		return false;
+	}
+}
+
+
+function onGoButton() {
+		
+		document.forms[0].storeName.value = document.forms[0].strStoreId[document.forms[0].strStoreId.selectedIndex].text;
+		document.forms[0].itemCatName.value = document.forms[0].strItemCat[document.forms[0].strItemCat.selectedIndex].text;
+		document.forms[0].crNo.value = document.forms[0].strCrNo.value;
+
+		document.forms[0].strId.value = document.forms[0].strStoreId.value.split("^")[0];
+		document.forms[0].itemCategory.value = document.forms[0].strItemCat.value;
+
+		var hisValidator = new HISValidator("issueBean");
+		hisValidator.addValidation("strStoreId", "dontselect=0",
+			"Select Store Name Combo ");
+		hisValidator.addValidation("strItemCat", "dontselect=0",
+			"Select Item Category Combo");
+	
+		var retVal = hisValidator.validate();
+		hisValidator.clearAllValidations();
+
+		document.forms[0].crNo.value = document.forms[0].strCrNo.value;
+		if (retVal) 
+		{
+			document.forms[0].hmode.value = "issuetopatientcount";
+			document.forms[0].submit();
+	
+		} else {
+			return false;
+		}
+	}
+
+function onCheckCategory() {
+
+	var patientDtlHidVal = document.forms[0].strPatientDtlHidVal.value;
+	var temp = patientDtlHidVal.split('^');
+
+	if (document.forms[0].strMode.value == '0') {
+
+		if (document.forms[0].strConfCatCode.value == temp[3]) {
+			document.getElementById("allDivId").style.display = "none";
+			alert("Go to Staff Counter....");
+			document.forms[0].hmode.value = "INITVAL";
+			document.forms[0].submit();
+			return false;
+
+		}
+
+	} else if (document.forms[0].strMode.value == '1') {
+
+		if (document.forms[0].strConfCatCode.value != temp[3]) {
+			document.getElementById("allDivId").style.display = "none";
+			alert("Go to Patient Counter....");
+			document.forms[0].hmode.value = "INITVAL";
+			document.forms[0].submit();
+			return false;
+
+		}
+	}
+	onCheckInBoth();
+
+}
+
+function onCheckInBoth() {
+	
+//	if(document.getElementsByName('strVisitType')[0].value != '2' && document.getElementsByName('strVisitType')[0].value != '3' && document.getElementsByName('strCatGrp')[0].value != '1' && (document.getElementsByName("strLFAccountNo")[0] == null || document.getElementsByName("strLFAccountNo")[0] == ''))
+	/*if(document.getElementsByName("strPatientStatus")[0].value == '2')
+	{
+		alert("Medicines can only be issued to OPD/EMG Patients Only");
+		controlToIssueToPatientPage();
+	}*/
+
+	if (document.forms[0].strIssueMode.value == '2') {
+
+		//document.getElementsByName('strRadioOnlineReqVal')[0].checked == false;
+		document.getElementById("requestDivId").style.display = "none";
+		document.getElementById("itemDtlDivId").style.display = "none";
+
+	} else if (document.forms[0].strIssueMode.value == '0') {
+
+		//document.getElementsByName('strRadioOnlineReqVal')[0].checked = true;
+		//getRequestDetail(document.getElementsByName('strRadioOnlineReqVal')[0]);
+	}
+}
+
+function getPatDtl() {
+
+	document.getElementById("patientDetailsDivId").style.display = "block";
+	document.getElementById("minus1").style.display = "block";
+	document.getElementById("plus1").style.display = "none";
+}
+function getPatDtl1() {
+
+	document.getElementById("patientDetailsDivId").style.display = "none";
+	document.getElementById("minus1").style.display = "none";
+	document.getElementById("plus1").style.display = "block";
+}
+// added by shefali on 26-aug-2014 for pateint treatment in issue to pateint
+function getPatTrtDtl() {
+
+	document.getElementById("patientTreatmentDetailsDivId").style.display = "block";
+	document.getElementById("minus3").style.display = "block";
+	document.getElementById("plus3").style.display = "none";
+}
+function getPatTrtDtl1() {
+
+	document.getElementById("patientTreatmentDetailsDivId").style.display = "none";
+	document.getElementById("minus3").style.display = "none";
+	document.getElementById("plus3").style.display = "block";
+}
+//added by shalini on 030feb-2016 for pateint diagnosis details in issue to pateint
+function getPatDiagDtl() {
+
+	document.getElementById("patientDiagDetailsDivId").style.display = "block";
+	document.getElementById("minus4").style.display = "block";
+	document.getElementById("plus4").style.display = "none";
+}
+function getPatDiagDtl1() {
+
+	document.getElementById("patientDiagDetailsDivId").style.display = "none";
+	document.getElementById("minus4").style.display = "none";
+	document.getElementById("plus4").style.display = "block";
+}
+
+function disPreviousIssueDtl() {
+
+	document.getElementById("issueDtlDivId").style.display = "block";
+	document.getElementById("minus2").style.display = "block";
+	document.getElementById("plus2").style.display = "none";
+
+}
+function disPreviousIssueDtl1() {
+
+	document.getElementById("issueDtlDivId").style.display = "none";
+	document.getElementById("minus2").style.display = "none";
+	document.getElementById("plus2").style.display = "block";
+
+}
+
+function getRequestDtl() {
+
+	document.getElementById("requestDivId").style.display = "block";
+	document.getElementById("itemDetailDivId").style.display = "block";
+	// document.getElementById("itemDtlOffDivId").style.display="none";
+	// document.getElementById("reqDtlDivId").style.display="none";
+
+}
+
+function balQtyDtl(obj, i) {
+
+	parentPopUp = obj;
+
+	var strBalQtyDetail = document.getElementById("strBalQtyDtl" + i).value;
+
+	myArray = strBalQtyDetail.split("^");
+
+	var objVal1 = document.getElementById("1");
+
+	if (myArray[0] != 'null' || myArray[0] != '') {
+		objVal1.innerHTML = myArray[0];
+	} else {
+		objVal1.innerHTML = "  ----";
+	}
+
+	var objVal2 = document.getElementById("2");
+
+	if (myArray[1] != 'null') {
+		objVal2.innerHTML = myArray[1];
+	} else {
+		objVal2.innerHTML = "  ----";
+	}
+
+	display_popup_menu(parentPopUp, 'balQtyDtlId', '300', '');
+
+}
+
+function hideBalQtyDetails(divId) {
+	hide_popup_menu(divId);
+}
+
+
+function getItemStockDtl(i) {
+
+	var storeId = document.forms[0].strId.value;
+	var itemCat = document.forms[0].itemCategory.value;
+	var strIssueQty = document.getElementsByName('strIssueQty')[i].value;
+
+	var hidVal = document.getElementById('strHidValue' + i).value;
+	var temp = hidVal.split('^');
+	var balQtyBaseVal = temp[0];
+	var genItemId = temp[1];
+	var itemBrandId = temp[2];
+
+	var strIssueQtyUnitId = document.getElementsByName('strIssueUnitId')[i].value;
+
+	var strIssueUnitName = document.getElementsByName('strIssueUnitId')[i][document
+			.getElementsByName('strIssueUnitId')[i].selectedIndex].text;
+
+	var temp2 = strIssueQtyUnitId.split("^");
+	var strIssueQtyUnitBaseVal = parseInt(temp2[1]);
+
+	if (strIssueQty == "") {
+
+		alert("Please Select Issue Qty");
+		document.getElementsByName('strIssueQty')[i].focus();
+		return false;
+
+	}
+	if (document.getElementsByName('strIssueUnitId')[i].value == '0') {
+
+		alert("Please Select Unit Name");
+		document.getElementsByName('strIssueUnitId')[i].focus();
+		return false;
+
+	}
+
+	getStockDtls('1', '', genItemId, itemBrandId, strIssueQty,
+			strIssueQtyUnitBaseVal, storeId, itemCat, '1', strIssueUnitName,
+			'strHidDivId' + i);
+
+}
+
+function invokeCheckQty(mode, index, unitObject) {
+
+	if (checkQty(index, 'strReqQty', 'strUnitName')) {
+
+		calculateCost(mode, 'strReqQty', 'strUnitName', 'strCostFinal', index,
+				'strApproxAmt', '1')
+
+	}
+
+}
+
+function goFuncOnEnterTwo(e) 
+{
+	  
+	
+	if (e.keyCode == 13) 
+	{
+		validateIssue();
+	} 
+	else 
+	{
+		return false;
+	}
+}
+
+var gblhisValidator = null
+
+
+function chkVisitDtl() {
+	
+	if(document.getElementsByName("strPatientStatus")[0].value == '2')
+	{
+		document.forms[0].strDeptCode.value = document.getElementsByName("strAdmissionDtlHidVal")[0].value.split("^")[5];
+	}
+	else
+		document.forms[0].strDeptCode.value = document.getElementsByName("strEpisodeCode")[0].value.substr(0,3);
+	getReqType();
+	
+	
+	
+	if (document.forms[0].strVisitDtl.value == '0') {
+		alert("Patient has not visited on this Prescription Date, \n So medicine cannot issued");
+		return false;
+
+	} else {
+		
+		
+
+	//getReport();
+
+	}
+}
+
+// function to show report after save data
+
+function hideIssuePopup() {
+	document.getElementById("issueDtlsDivId").innerHTML = "";
+	hide_popup('popUpDiv');
+
+}
+function goToCancelPage()
+{
+	
+	var mode = "GETCANCELPAGE";
+	document.forms[0].hmode.value = mode;
+	document.forms[0].submit();
+}
+
+
+function onQuantity(i) {
+
+	var totQty;
+	var frequency = document.getElementById('strFrequency' + i).value;
+	var itemparam = document.getElementById('itemParamValue' + i).value;
+	var temp = itemparam.split('#');
+	var temp1 = temp[1].split('^');
+	var dosage = document.getElementById('strDose' + i).value;
+	var frequencyVal = frequency.split('^')[1];
+	var dosageVal = dosage.split('^')[1];
+	var days = document.getElementById('strDays' + i).value;
+	if (dosage.split('^')[2] == 1) {
+		document.getElementById('strQuantity' + i).innerHTML = "0 No.";
+		document.getElementById('strQuantityText' + i).style.display = "none";
+		
+		document.getElementById('strQuantityTreatText' + i).style.display = "none";
+		document.getElementById('strQuantity' + i).style.display = "block";
+		totQty = frequencyVal * dosageVal * days;
+
+		if (isNaN(totQty)) {
+			totQty = 0;
+		}
+		/*
+		 * if(parseInt(totQty)>parseInt(temp1[1])){ alert("Quantity is Greater
+		 * than Available Quantity"); return false; }
+		 */
+		document.getElementById('strReqQty' + i).value = totQty;
+		document.getElementById('strQuantity' + i).innerHTML = totQty + " No.";
+		document.getElementById('strQtyText' + i).value = document
+				.getElementById('strReqQty' + i).value;
+	} else {
+		document.getElementById('strQtyText' + i).value = "";
+		document.getElementById('strQuantity' + i).innerHTML = "0 No.";
+		document.getElementById('strQuantityText' + i).style.display = "block";
+		document.getElementById('strQuantityTreatText' + i).style.display = "block";
+		document.getElementById('strQuantity' + i).style.display = "none";
+		totQty = dosageVal;
+		document.getElementById('strReqQty' + i).value = document.getElementById('strQtyText' + i).value;
+	}
+
+}
+
+function goToWithoutCrNoPage()
+{    
+    document.forms[0].strIssueNum.value = "";
+	document.forms[0].crNo.value = "";	
+	var mode = "INITVALWITHOUTCRNO";
+	document.forms[0].hmode.value = mode;
+	document.forms[0].submit();
+}
+
+
+function IsCrOrLFWise(val)
+{
+	if(val == '1')
+		{
+		document.getElementById("CrNOOrLf").innerHTML="<font color='red'>*</font>CR No.";
+		document.getElementById("CRWise").style.display ='block'; 
+		document.getElementById("LFWise").style.display ='none';
+		
+			
+		}
+	if(val == '2')
+	{
+			document.getElementById("CrNOOrLf").innerHTML="<font color='red'>*</font>LF No.";
+	//alert(document.getElementById("CRWise").innerHTML);
+	document.getElementById("CRWise").style.display ='none'; 
+	document.getElementById("LFWise").style.display ='block';
+	
+		}
+
+}
+function getPrintReport()
+{
+	//alert("Req type:::"+document.getElementsByName("strRequestTypeId")[0].value);
+         if(printflag == true)
+    	  getReport();
+	    
+    	
+	
+}
+// function to show report after save data
+function getReport()
+{
+	 var transferNo    = document.forms[0].strIssueNum.value;	                        
+	 var storeId       = document.forms[0].strStoreId.value;
+	 
+	// alert("transferNo"+transferNo);
+	// alert("storeId"+storeId);
+	 if(parseInt(transferNo)!=0 && document.forms[0].printReq.value == 1)
+	 { 
+	   var mode="ISSUEDTLSINITONE";
+	   var url="OPDIssueToPatAutoTransCNT.cnt?hmode="+mode+"&strIssueNo="+ transferNo+"&strStoreId="+storeId+"&strMode=1";
+	   ajaxFunction(url,"9");
+	 }
+}
+
+
+function getReport2()
+{
+	 var transferNo    = document.forms[0].strIssueNum.value;
+	 var storeId       = document.forms[0].strId.value;
+	 //alert(transferNo);
+	 if(parseInt(transferNo)!=0)
+	 { 
+	   var mode="ISSUEDTLPOPUP";
+	   var url="OPDIssueToPatAutoTransCNT.cnt?hmode="+mode+"&issueNo="+ transferNo+"&storeId="+storeId;
+	   ajaxFunction(url,"8");
+	 }
+    	
+	
+}
+/*function getAjaxResponse(res,mode)
+{
+      var err = document.getElementById("errMsg");
+      var temp = res.split("####");
+      if(temp[0] == "ERROR")
+	  {
+          	err.innerHTML = temp[1];
+          	return;
+      } 
+     
+     if(mode=="1")
+     {
+     	
+     	 var objVal2 = document.getElementById("issueDtlsDivId");
+     	 objVal2.innerHTML = res;
+     	 popup('popUpDiv1', '130', '200');
+     	 document.forms[0].strIssueNum.value ="0";
+     	
+     }
+}*/
+
+
+function checkMsg() {
+	var err=document.getElementById("errID");
+	var nor=document.getElementById("normalMsg");
+	var warn=document.getElementById("wrnID");
+	if (err.innerHTML != "") {
+		err.innerHTML="<i class='fas fa-exclamation-triangle'></i>"+"&nbsp;&nbsp;&nbsp;"+err.innerHTML+"<button type='button' class='close' data-dismiss='alert'>&times;</button>";
+		err.style.display = "";
+		
+	}
+	if (nor.innerHTML != "") {
+		nor.innerHTML="<i class='far fa-check-circle'></i>"+"&nbsp;&nbsp;&nbsp;<strong>Success!</strong>&nbsp;&nbsp;"+nor.innerHTML+"<button type='button' class='close' data-dismiss='alert'>&times;</button>";
+		nor.style.display = "";
+	}
+	if (warn.innerHTML != "") {
+		warn.innerHTML="<i class='fas fa-bell'></i>"+"&nbsp;&nbsp;&nbsp;<strong>Warning!</strong>&nbsp;&nbsp;"+warn.innerHTML+"<button type='button' class='close' data-dismiss='alert'>&times;</button>";
+		warn.style.display = "";
+	}
+
+}
+
+function getReqType(){
+	//alert('11');
+	var url = "OPDIssueToPatAutoTransCNT.cnt?hmode=GETREQTYPE&storeId=" + document.forms[0].strStoreId.value+"&itemCatId=" + document.forms[0].strItemCat.value+"&patStatus="+ document.forms[0].strPatStatus.value ;
+	//alert(url);
+	ajaxFunction(url,"12");
+}
+
+function getPresData(){
+	var url = "OPDIssueToPatAutoTransCNT.cnt?hmode=GETPRESCDATA&storeId=" + document.forms[0].strStoreId.value+"&strCrNum=" + document.forms[0].strCrNo.value+"&deptID=" + document.forms[0].strDeptCode.value+"&strDeptUnit=" + document.forms[0].strUnitCode.value+"&episodeDtl=" + document.forms[0].strOffLineEpisode.value;
+	//alert(url);
+	ajaxFunction(url,"18");
+}
+
+/*$(document).ready(function(){
+	//alert('1');
+	var today=new Date();
+	var dt=today.getDate();
+	var mth=today.getMonth();
+	mth=mth+1;
+	if(dt<10)
+		dt="0"+dt;
+	if(mth<10)
+		mth="0"+mth;
+	
+	$('#datepicker1').datepicker({ modal: true,footer: true,format: 'dd-mm-yyyy'});
+	//$('#datepicker').datepicker({ uiLibrary: 'bootstrap4',modal: true,footer: true,format: 'dd-mm-yyyy'});
+	//$('#datepicker').val(dt+"-"+mth+"-"+today.getFullYear());
+});*/
+
+$(document).ready(function(){
+$('.datepicker1').each(function(){
+    $(this).datepicker({ modal: true, header: true, footer: true ,format: 'dd-mmm-yyyy'});
+});
+/*var today=new Date();
+var arr=["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+var mmm=arr[today.getMonth()];
+var hrs=today.getHours();
+var dd=today.getDate()+"-"+mmm+"-"+today.getFullYear();
+$('.datepicker1').val(dd);*/
+
+});
+
+
+
+function DirectIssue()
+{
+	
+	 if(document.getElementsByName("strPatientStatus")[0].value == 2)
+	   {
+		 if(Math.abs(document.getElementById("bal").innerHTML)<=Math.abs(document.getElementById("strNetCostDiv").innerHTML)){
+			 alert("Account Blance Is Less Than Net Amount");
+			 return false;
+		   }
+	   }
+		
+
+	var itemTmp="";
+	var itemParVal     = document.getElementsByName("itemParamValue");
+	 if(itemParVal.length>1)
+		{												
+			 for(var i=0;i<itemParVal.length-1;i++)
+			 {
+				 if(i==0)
+					 itemTmp = itemParVal[i].value.split("^")[22];
+				 else
+					 itemTmp+= ","+itemParVal[i].value.split("^")[22];
+			 }
+		}
+	 
+	 	document.getElementById("dep").disabled = false;
+		document.getElementById("unit").disabled = false;
+		
+		
+	 var url = "OPDIssueToPatAutoTransCNT.cnt?hmode=TARIFFCHK&itemTmp="+ itemTmp;
+	ajaxFunction(url, "15");
+	 
+}
+function checkEpidoseData()
+{
+			
+	var itemTmp="";
+	var itemParVal     = document.getElementsByName("itemParamValue");
+	var strQtyTextval     = document.getElementsByName("strQtyText");
+	  var reqQty         = document.getElementsByName("strQtyText");
+	 if(itemParVal.length>1)
+		{												
+			 for(var i=0;i<itemParVal.length-1;i++)
+			 {
+				 console.log(reqQty[i].value);
+				 //alert(strQtyTextval);
+				 if(parseInt(reqQty[i].value) > 0 ) { 
+				// if(i==0)
+					 
+					 itemTmp += itemParVal[i].value.split("^")[22] + ",";
+				 /*else
+					 itemTmp+= ","+itemParVal[i].value.split("^")[22];
+				 */
+				 }
+			 }
+		}
+	//console.log('testtttttttttttttt');
+	var itemTmp1 = itemTmp.substring(0, itemTmp.length - 1) ; 
+	 console.log(itemTmp);
+	 	document.getElementById("dep").disabled = false;
+		document.getElementById("unit").disabled = false;
+		
+		
+	 var url = "OPDIssueToPatAutoTransCNT.cnt?hmode=ALREADYISSUEDRUG&itemTmp="+ itemTmp1+"&strCrNum="+document.forms[0].crNo.value+"&episodeDtl="+document.forms[0].strOffLineEpisode.value;
+	 ajaxFunction(url, "119");
+	 
+}
+
+
+function Backbtn()
+{
+	//var url = "OPDIssueToPatAutoTransCNT.cnt?hmode=TARIFFCHK&itemTmp="+ itemTmp;
+	
+	
+	document.forms[0].hmode.value="unspecified";
+	document.forms[0].submit();
+	
+}
+
+
+
+function getEpisodeList(obj){
+	
+	var hmode = "EPISODEDTLS"; 
+	var url = "OPDIssueToPatAutoTransCNT.cnt?hmode="+hmode+"&crNo="+document.forms[0].crNo.value+"&deptCode="+obj.value+"&unit="+document.forms[0].strUnitCode.value;
+	ajaxFunction(url,"16");
+
+}
+function getReport() 
+{    
+	document.getElementById("strCrNo").focus();
+	
+    var issueNo      = document.forms[0].strIssueNum.value;
+	var strId        = document.forms[0].strId.value;
+	//alert("Issue No:::"+issueNo+"::Store ID::"+strId);
+ 	if (issueNo != "") 
+	{	  
+		if (issueNo != "0") 
+		{		   
+		    var strMode = "1";
+			var hmode = "ISSUEDTLSINIT";
+		    var url = "OPDIssueToPatAutoTransCNT.cnt?hmode=" +hmode+ "&strMode=" +strMode+ "&strStoreId=" +strId+ "&strIssueNo=" + issueNo;
+		    ajaxFunction(url, "8");
+		}
+	}
+	document.forms[0].strIssueNum.value = "0";	
+	document.forms[0].strCrNo.focus();
+}
+
+function getPresForm(){
+	var hmode = "PRESFORMDTLS"; 
+	var url = "OPDIssueToPatAutoTransCNT.cnt?hmode="+hmode+"&crNo="+document.forms[0].crNo.value+"&episodeCode="+document.forms[0].strOffLineEpisode.value;
+	ajaxFunction(url,"17");
+	
+	}
+
+
+
+
+$().ready(function(){
+	$("#strPayMode").on("change",function(){
+		
+		document.forms[0].strPayDtl.value="";
+		
+		var paymode=$(this).val().split("#")[0];
+		
+		if(paymode=="2" || paymode=="3")
+		{
+			$("#payDtlCDDModal").modal("show");
+		}
+		
+		if(paymode=="4" || paymode=="5")
+			{
+				$("#payModeModal").modal("show");
+			}
+		 if(paymode=="7"){
+				$("#payDtlWalletMenu").modal("show");
+			}	
+		
+	});
+});
+
+
+
+function validateCreditDebit(){
+
+	
+	
+var hisValidator = new HISValidator("issueBean");  
+	
+	hisValidator.addValidation("strPayBankName", "req", "Bank Name is a Mandatory Field" );
+	hisValidator.addValidation("strCardNo","req", "Card No. is a Mandatory Field" );
+	hisValidator.addValidation("strCardNo","minlen=4", "Card No. must be 4 Digits" );
+	hisValidator.addValidation("strAuthNo","req", "Transaction  No. is a Mandatory Field" );
+	hisValidator.addValidation("strAuthDate", "req", "Transaction  Date is a Mandatory Field" );
+	hisValidator.addValidation("strAuthDate", "date", "Please Enter a Valid Transaction  Date" );
+	hisValidator.addValidation("strCardType", "dontselect=0", "Please Select a Card Type" );
+	
+	var retVal = hisValidator.validate(); 
+	
+	
+	
+	
+	var	orgDate=replaceAll(document.forms[0].strAuthDate.value,'-',' ');
+	orgDate=new Date(orgDate);
+	var currdate=new Date();
+	
+	if(orgDate>currdate){
+		alert("Transaction Date Can't be greater than current date");
+		return false;
+	}
+	
+	var validityOrgDate=new Date(orgDate.getTime() );
+	var validityBwdFrmNow=new Date(currdate.getTime() - (1*24*60*60*1000));
+	if(validityOrgDate<=validityBwdFrmNow){
+		alert("Transaction Date Can't be less than current date");
+		return false;
+	}
+	
+	
+	
+	
+	
+		
+	hisValidator.clearAllValidations();
+		if(retVal){
+			
+				var resultVal = document.forms[0].strPayBankName.value+","+document.forms[0].strCardNo.value+","+document.forms[0].strAuthNo.value+","+document.forms[0].strAuthDate.value+","+document.forms[0].strCardType[document.forms[0].strCardType.selectedIndex].text;
+				
+				
+				document.forms[0].strPayDtl.value=resultVal;
+				
+					$("#payModeModal").modal("hide");
+				
+				/*gblPayDtls.value = resultVal;
+				gblPayEdit.disabled = false;
+				
+				hide_popup('payDtlCDMenu');
+				
+				//alert(gblAmount.value)
+					gblAmount.focus();*/
+		}else{
+		
+		return false;
+		}
+
+}
+
+
+function validateCheckDD(){
+
+	var hisValidator = new HISValidator("issueBean");  
+			
+		hisValidator.addValidation("strPayCDDBankName", "req", "Bank Name is a Mandatory Field" );
+		hisValidator.addValidation("strChequeDDNo","req", "Cheque / DD No. is a Mandatory Field" );
+		hisValidator.addValidation("strChequeDDDate", "req", "Cheque / DD Date is a Mandatory Field" );
+		hisValidator.addValidation("strChequeDDDate", "date", "Please enter a valid Cheque / DD Date" );
+		var retVal = hisValidator.validate(); 
+		hisValidator.clearAllValidations();
+		
+		
+		
+		var	orgDate=replaceAll(document.forms[0].strChequeDDDate.value,'-',' ');
+		orgDate=new Date(orgDate);
+		var currdate=new Date();
+		
+		var validityOrgDate=new Date(orgDate.getTime());
+		var validityFwdFrmNow=new Date(currdate.getTime() + (90*24*60*60*1000));
+		var validityBwdFrmNow=new Date(currdate.getTime() - (90*24*60*60*1000));
+		
+		
+		if(validityOrgDate>validityFwdFrmNow){
+			alert("Issue Date can not be greater than 3 months");
+			return false;
+		}
+		
+		if(validityBwdFrmNow>validityOrgDate){
+			alert("Issue Date can not be less than 3 months");
+			return false;
+		}
+		
+/*		if(orgDate>currdate){
+			alert("Issue Date Can't be greater than current date");
+			return false;
+		}*/
+		
+		
+			if(retVal){
+					
+					var resultVal = document.forms[0].strPayCDDBankName.value+","+document.forms[0].strChequeDDNo.value+","+document.forms[0].strChequeDDDate.value;
+					
+					
+					document.forms[0].strPayDtl.value=resultVal;
+					/*gblPayDtls.value = resultVal;
+					gblPayEdit.disabled = false;*/
+					
+					$("#payDtlCDDModal").modal("hide");
+					
+			}else{
+			
+			return false;
+			}
+
+	}
+function modalSlipPrint()
+{
+	var printableSlip=document.getElementById("printableSlip")
+	
+	if(printableSlip.innerHTML!="")
+		{
+		printableSlip.style.display="";
+		printElement(printableSlip);
+		}
+		
+}
+function printElement1(elem) {
+    var domClone = elem.cloneNode(true);
+    
+    var $printSection = document.getElementById("printSection");
+    
+    if (!$printSection) {
+        var $printSection = document.createElement("div");
+        $printSection.id = "printSection";
+        document.body.appendChild($printSection);
+    }
+    
+    $printSection.innerHTML = "";
+    $printSection.appendChild(domClone);
+    $("#printModal").modal("show");
+   
+   window.print();
+	
+		
+}
+function printElement(elem)  
+{
+    const contentToPrint = document.getElementById("printableSlip").cloneNode(true);
+    const newWin = window.open('', '', 'width=700,height=700,scrollbars=yes');
+    newWin.document.write('<html><head>');
+    newWin.document.write('<style type="text/css">');
+    newWin.document.write('.hidecontrol { display: none; }');
+    newWin.document.write('@media print {');
+    newWin.document.write('  #toolbar { display: none; }');
+    newWin.document.write('  body { margin: 0; padding: 0; }');
+    newWin.document.write('  @page { margin: 2mm 1mm; size: A4 portrait; }');
+    newWin.document.write('  table { table-layout: fixed; width: 100%; }');
+    newWin.document.write('  table td { word-wrap: break-word; font-size: 12px; }');
+
+    // Define page break rules for the repeat-table class
+//     newWin.document.write('.repeat-table { page-break-before: always; }');
+
+    newWin.document.write('}');
+    newWin.document.write('</style>');
+    
+    newWin.document.write('</head><body>');
+    newWin.document.write(contentToPrint.outerHTML);
+    newWin.document.write('</body></html>');
+    newWin.document.close();
+    newWin.onload = function () {
+        newWin.print();
+        newWin.close();
+    };
+}
+/*window.onafterprint = function(){
+	
+		$("#printModal").modal('hide');
+
+
+		}   */
+function nxtChunk(val){
+	let id="",curid="";
+	$("#chunks .row").each(function(){
+		
+		//console.log($(this).css("display"));
+		
+		if($(this).css("display")!="none"){
+			curid=$(this).prop("id").split("-")[0];
+			if(val=="nxt")
+				id=Math.abs(curid)+1;
+			else
+				id=Math.abs(curid)-1;
+			//console.log(id);
+		}
+	
+	});
+	if($("#"+id+"-chunk").prop("id")!=undefined){
+		$("#"+curid+"-chunk").css("display","none");
+		$("#"+id+"-chunk").css("display","");
+	}
+}
+
+
+function confirmTrue(obj,val){
+	if(val=="1"){
+ 		document.forms[0].hmode.value = "INSERTDIRECTISSUE";
+		   document.forms[0].submit();
+	}
+	
+}
+function callIssuePop(these){
+	$(these).closest("div").find("a").trigger("click");
+}
+

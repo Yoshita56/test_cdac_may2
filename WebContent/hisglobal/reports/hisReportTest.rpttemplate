@@ -1,0 +1,320 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<report xmlns="http://www.eclipse.org/birt/2005/design" version="3.2.15" id="1">
+    <property name="createdBy">Eclipse BIRT Designer Version 2.2.1.r22a_v20071101 Build &lt;2.2.1.v20071101-1439></property>
+    <property name="units">in</property>
+    <property name="comments">Copyright (c) 2007 &lt;&lt;Your Company Name here>></property>
+    <text-property name="displayName">test</text-property>
+    <parameters>
+        <scalar-parameter name="report_Header" id="59">
+            <property name="valueType">static</property>
+            <property name="dataType">string</property>
+            <property name="paramType">simple</property>
+            <property name="controlType">text-box</property>
+            <property name="distinct">true</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="report_Address" id="60">
+            <property name="valueType">static</property>
+            <property name="dataType">string</property>
+            <property name="paramType">simple</property>
+            <property name="controlType">text-box</property>
+            <property name="distinct">true</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="report_Contact" id="61">
+            <property name="valueType">static</property>
+            <property name="dataType">string</property>
+            <property name="paramType">simple</property>
+            <property name="controlType">text-box</property>
+            <property name="distinct">true</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="report_Name" id="62">
+            <property name="valueType">static</property>
+            <property name="dataType">string</property>
+            <property name="paramType">simple</property>
+            <property name="controlType">text-box</property>
+            <property name="distinct">true</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="report_Footer" id="63">
+            <property name="valueType">static</property>
+            <property name="dataType">string</property>
+            <property name="paramType">simple</property>
+            <property name="controlType">text-box</property>
+            <property name="distinct">true</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="report_Footer_Visible" id="64">
+            <property name="valueType">static</property>
+            <property name="dataType">boolean</property>
+            <property name="paramType">simple</property>
+            <property name="controlType">check-box</property>
+            <property name="defaultValue">true</property>
+            <property name="distinct">true</property>
+            <structure name="format"/>
+        </scalar-parameter>
+        <scalar-parameter name="report_user_Remarks" id="65">
+            <property name="valueType">static</property>
+            <property name="dataType">string</property>
+            <property name="paramType">simple</property>
+            <property name="controlType">text-box</property>
+            <property name="distinct">true</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="jndi_ds_conn" id="66">
+            <property name="valueType">static</property>
+            <property name="dataType">string</property>
+            <property name="paramType">simple</property>
+            <property name="controlType">text-box</property>
+            <property name="defaultValue">java:comp/env/AHIS</property>
+            <property name="distinct">true</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="rpt_format" id="67">
+            <property name="valueType">static</property>
+            <property name="dataType">boolean</property>
+            <property name="paramType">simple</property>
+            <property name="controlType">check-box</property>
+            <property name="defaultValue">true</property>
+            <property name="distinct">true</property>
+            <structure name="format"/>
+        </scalar-parameter>
+    </parameters>
+    <data-sources>
+        <oda-data-source extensionID="org.eclipse.birt.report.data.oda.jdbc" name="Data Source" id="6">
+            <text-property name="displayName"></text-property>
+            <property name="odaDriverClass">oracle.jdbc.driver.OracleDriver</property>
+            <property name="odaURL">jdbc:oracle:thin:@10.0.5.165:1521:AHIS</property>
+            <property name="odaUser">ahis</property>
+            <encrypted-property name="odaPassword" encryptionID="base64">YWhpcw==</encrypted-property>
+            <property name="odaJndiName">java:comp/env/AHIS</property>
+        </oda-data-source>
+    </data-sources>
+    <styles>
+        <style name="crosstab" id="4">
+            <property name="borderBottomColor">#CCCCCC</property>
+            <property name="borderBottomStyle">solid</property>
+            <property name="borderBottomWidth">1pt</property>
+            <property name="borderLeftColor">#CCCCCC</property>
+            <property name="borderLeftStyle">solid</property>
+            <property name="borderLeftWidth">1pt</property>
+            <property name="borderRightColor">#CCCCCC</property>
+            <property name="borderRightStyle">solid</property>
+            <property name="borderRightWidth">1pt</property>
+            <property name="borderTopColor">#CCCCCC</property>
+            <property name="borderTopStyle">solid</property>
+            <property name="borderTopWidth">1pt</property>
+        </style>
+        <style name="crosstab-cell" id="5">
+            <property name="borderBottomColor">#CCCCCC</property>
+            <property name="borderBottomStyle">solid</property>
+            <property name="borderBottomWidth">1pt</property>
+            <property name="borderLeftColor">#CCCCCC</property>
+            <property name="borderLeftStyle">solid</property>
+            <property name="borderLeftWidth">1pt</property>
+            <property name="borderRightColor">#CCCCCC</property>
+            <property name="borderRightStyle">solid</property>
+            <property name="borderRightWidth">1pt</property>
+            <property name="borderTopColor">#CCCCCC</property>
+            <property name="borderTopStyle">solid</property>
+            <property name="borderTopWidth">1pt</property>
+        </style>
+    </styles>
+    <page-setup>
+        <simple-master-page name="Simple MasterPage" id="2"/>
+    </page-setup>
+    <body>
+        <grid id="7">
+            <property name="width">100%</property>
+            <column id="8"/>
+            <column id="9"/>
+            <column id="10"/>
+            <row id="11">
+                <cell id="12">
+                    <property name="colSpan">3</property>
+                    <property name="rowSpan">1</property>
+                    <text id="56">
+                        <property name="contentType">html</property>
+                        <text-property name="content"><![CDATA[<script language="javascript">
+
+function printContent(){
+
+newwin=window.open('','printwin','left=100,top=100,width=700,height=700,scrollbars=yes');
+newwin.document.write('<HTML><HEAD>');
+newwin.document.write((document.getElementsByTagName("head")[0]).innerHTML);
+newwin.document.write('<style type="text/css"> .hidecontrol { display: none; } </style>\n')
+newwin.document.write('<script>\n');
+newwin.document.write('function chkstate(){ \n');
+//newwin.document.write('if(document.readystate=="complete" || document.readystate=="undefined"){\n');
+newwin.document.write('window.close();\n');
+//newwin.document.write('}\n');
+//newwin.document.write('else{\n');
+//newwin.document.write('setTimeout("chkstate()",2000)\n');
+//newwin.document.write('}\n');
+newwin.document.write('}\n');
+newwin.document.write('function print_win(){\n');
+newwin.document.write('window.print();\n');
+newwin.document.write('chkstate();\n');
+newwin.document.write('}\n');
+
+newwin.document.write('<\/script>\n');
+newwin.document.write('</HEAD>\n');
+newwin.document.write('<BODY onload="print_win()">\n');
+newwin.document.write((document.getElementsByTagName("body" )[0]).innerHTML);
+newwin.document.write('</BODY>\n');
+newwin.document.write('</HTML>\n');
+newwin.document.close();
+
+}
+
+</script>
+
+<div id='printAreaDivId' class='hidecontrol'>
+<img  src='../../hisglobal/images/print_tab.gif' style="cursor: hand;cursor: pointer" onclick='printContent();'>
+<img src='../../hisglobal/images/btn-ccl.png' style="cursor: hand;cursor: pointer" onclick='javascript:history.back(-1);'>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+</div>
+<CODE>
+
+</CODE>]]></text-property>
+                    </text>
+                </cell>
+            </row>
+            <row id="15">
+                <cell id="16">
+                    <property name="colSpan">2</property>
+                    <property name="rowSpan">1</property>
+                    <label id="57">
+                        <text-property name="text">Report Date &amp; Time	</text-property>
+                    </label>
+                </cell>
+                <cell id="18">
+                    <data id="58">
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">Column Binding</property>
+                                <property name="displayName">runDateTime</property>
+                                <expression name="expression">new Date()</expression>
+                                <property name="dataType">date-time</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">Column Binding</property>
+                    </data>
+                </cell>
+            </row>
+            <row id="19">
+                <cell id="20">
+                    <property name="colSpan">3</property>
+                    <property name="rowSpan">1</property>
+                    <text-data id="69">
+                        <expression name="valueExpr">params["report_Header"]</expression>
+                        <property name="contentType">html</property>
+                    </text-data>
+                </cell>
+            </row>
+            <row id="23">
+                <cell id="24">
+                    <property name="colSpan">3</property>
+                    <property name="rowSpan">1</property>
+                    <text-data id="70">
+                        <expression name="valueExpr">params["report_Address"]</expression>
+                        <property name="contentType">html</property>
+                    </text-data>
+                </cell>
+            </row>
+            <row id="27">
+                <cell id="28">
+                    <property name="colSpan">3</property>
+                    <property name="rowSpan">1</property>
+                    <text-data id="71">
+                        <expression name="valueExpr">params["report_Contact"]</expression>
+                        <property name="contentType">html</property>
+                    </text-data>
+                </cell>
+            </row>
+            <row id="31">
+                <property name="height">3mm</property>
+                <cell id="32">
+                    <property name="colSpan">3</property>
+                    <property name="rowSpan">1</property>
+                </cell>
+            </row>
+            <row id="35">
+                <cell id="36">
+                    <property name="colSpan">3</property>
+                    <property name="rowSpan">1</property>
+                    <text-data id="72">
+                        <expression name="valueExpr">params["report_Name"]</expression>
+                        <property name="contentType">html</property>
+                    </text-data>
+                </cell>
+            </row>
+            <row id="39">
+                <cell id="40"/>
+                <cell id="41"/>
+                <cell id="42"/>
+            </row>
+            <row id="43">
+                <cell id="44"/>
+                <cell id="45"/>
+                <cell id="46"/>
+            </row>
+            <row id="47">
+                <cell id="48"/>
+                <cell id="49"/>
+                <cell id="50"/>
+            </row>
+            <row id="73">
+                <cell id="74"/>
+                <cell id="75"/>
+                <cell id="76"/>
+            </row>
+            <row id="77">
+                <cell id="78">
+                    <property name="colSpan">3</property>
+                    <property name="rowSpan">1</property>
+                    <text-data id="89">
+                        <expression name="valueExpr">params["report_user_Remarks"]</expression>
+                        <property name="contentType">html</property>
+                    </text-data>
+                </cell>
+            </row>
+            <row id="85">
+                <cell id="86">
+                    <property name="colSpan">3</property>
+                    <property name="rowSpan">1</property>
+                    <label id="90">
+                        <text-property name="text">*** End of Report ***</text-property>
+                    </label>
+                </cell>
+            </row>
+            <row id="81">
+                <cell id="82">
+                    <property name="colSpan">3</property>
+                    <property name="rowSpan">1</property>
+                    <text-data id="91">
+                        <expression name="valueExpr">params["report_Footer"]</expression>
+                        <property name="contentType">html</property>
+                    </text-data>
+                </cell>
+            </row>
+        </grid>
+    </body>
+</report>

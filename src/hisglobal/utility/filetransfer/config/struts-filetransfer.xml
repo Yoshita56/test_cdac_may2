@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+"http://struts.apache.org/dtds/struts-2.0.dtd">
+ 
+<struts>
+
+	<package name="hisglobal.filetransfer" namespace="/hisglobal/filetransfer" extends="struts-default">
+		<action name="*UploadFile" method="{1}" class="hisglobal.utility.filetransfer.action.UploadFileACT">
+			<interceptor-ref name="exception"/>
+            <interceptor-ref name="i18n"/>
+			<interceptor-ref name="fileUpload">
+				<param name="maximumSize">2097152</param>
+			</interceptor-ref>
+			<interceptor-ref name="defaultStack"></interceptor-ref>
+
+            <result name="file">/hisglobal/utility/filetransfer/hg_uploadFileTile.jsp</result>
+			<result name="audiovideo">/hisglobal/utility/filetransfer/hg_uploadFileTile.jsp</result>
+			<result name="image">/hisglobal/utility/filetransfer/hg_uploadFileTile.jsp</result>
+			<result name="success">/hisglobal/utility/filetransfer/hg_uploadFileTile.jsp</result>
+		</action>
+
+		<action name="DisplayUploadedFile" class="hisglobal.utility.filetransfer.action.DisplayUploadedFileACT">
+		</action>
+ 	</package> 
+	 
+</struts>

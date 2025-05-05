@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<tiles-definitions> 
+	<definition name="/display" path="/hisglobal/transactionutil/master/tilesDisplayMain.jsp"> 	
+		<put name="header" value="../../hisglobal/jsp/header.jsp"/> 		
+		<put name="menu" value="/hisglobal/transactionutil/master/tiles_buttonLayOut1.jsp"/> 		
+		<put name="ListPage" value="/hisglobal/transactionutil/master/lst_transTemp_gbl.jsp"/>
+		<put name="menu1" value="/hisglobal/transactionutil/master/tiles_buttonLayOut2.jsp"/>
+	</definition>
+</tiles-definitions>
+
+ 

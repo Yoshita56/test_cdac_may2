@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE taglib
+        PUBLIC "-//Sun Microsystems, Inc.//DTD JSP Tag Library 1.1//EN"
+        "http://java.sun.com/j2ee/dtds/web-jsptaglibrary_1_1.dtd">
+<taglib>
+<tlibversion>1.0</tlibversion>
+<jspversion>1.1</jspversion>
+<shortname>projsp</shortname>
+<uri></uri>
+<info>My First Tag </info>
+
+    
+<!--Simple Tag Library-->
+<tag>
+<name>tab</name>
+<tagclass>hisglobal.Tabs</tagclass>
+<bodycontent>JSP</bodycontent>
+    	<attribute>
+	    	<name>tabList</name>
+	    	<required>false</required>
+		<rtexprvalue>true</rtexprvalue>
+    	</attribute>
+    	<attribute>
+	    	<name>onlyTabIndexing</name>
+	    	<required>false</required>
+		<rtexprvalue>true</rtexprvalue>
+    	</attribute>
+	<attribute>
+		<name>selectedTab</name>
+		<required>false</required>
+		<rtexprvalue>true</rtexprvalue>
+    </attribute>
+	<attribute>
+		<name>tabLabel</name>
+		<required>false</required>
+		<rtexprvalue>true</rtexprvalue>
+    </attribute>
+	<attribute>
+		<name>onclick</name>
+		<required>false</required>
+		<rtexprvalue>true</rtexprvalue>
+	</attribute>
+	<attribute>
+		<name>width</name>
+		<required>false</required>
+		<rtexprvalue>true</rtexprvalue>
+	</attribute>
+	<attribute>
+		<name>align</name>
+		<required>false</required>
+		<rtexprvalue>true</rtexprvalue>
+    	</attribute>
+
+</tag>
+<tag>
+<name>tabNew</name>
+<tagclass>hisglobal.TabsNew</tagclass>
+<bodycontent>JSP</bodycontent>
+    	<attribute>
+	    	<name>tabList</name>
+	    	<required>false</required>
+		<rtexprvalue>true</rtexprvalue>
+    	</attribute>
+    	<attribute>
+	    	<name>onlyTabIndexing</name>
+	    	<required>false</required>
+		<rtexprvalue>true</rtexprvalue>
+    	</attribute>
+	<attribute>
+		<name>selectedTab</name>
+		<required>false</required>
+		<rtexprvalue>true</rtexprvalue>
+    </attribute>
+	<attribute>
+		<name>tabLabel</name>
+		<required>false</required>
+		<rtexprvalue>true</rtexprvalue>
+    </attribute>
+	<attribute>
+		<name>onclick</name>
+		<required>false</required>
+		<rtexprvalue>true</rtexprvalue>
+	</attribute>
+	<attribute>
+		<name>width</name>
+		<required>false</required>
+		<rtexprvalue>true</rtexprvalue>
+	</attribute>
+	<attribute>
+		<name>align</name>
+		<required>false</required>
+		<rtexprvalue>true</rtexprvalue>
+    	</attribute>
+
+</tag>
+
+
+<tag>
+<name>tabCash</name>
+<tagclass>hisglobal.TabCash</tagclass>
+<bodycontent>JSP</bodycontent>
+    	<attribute>
+	    	<name>tabList</name>
+	    	<required>false</required>
+		<rtexprvalue>true</rtexprvalue>
+    	</attribute>
+    	<attribute>
+	    	<name>onlyTabIndexing</name>
+	    	<required>false</required>
+		<rtexprvalue>true</rtexprvalue>
+    	</attribute>
+	<attribute>
+		<name>selectedTab</name>
+		<required>false</required>
+		<rtexprvalue>true</rtexprvalue>
+    </attribute>
+	<attribute>
+		<name>tabLabel</name>
+		<required>false</required>
+		<rtexprvalue>true</rtexprvalue>
+    </attribute>
+	<attribute>
+		<name>onclick</name>
+		<required>false</required>
+		<rtexprvalue>true</rtexprvalue>
+	</attribute>
+	<attribute>
+		<name>width</name>
+		<required>false</required>
+		<rtexprvalue>true</rtexprvalue>
+	</attribute>
+	<attribute>
+		<name>align</name>
+		<required>false</required>
+		<rtexprvalue>true</rtexprvalue>
+    	</attribute>
+
+</tag>
+<!--
+<tag>
+<name>singleTab</name>
+<tagclass>tlds.singleTabTag</tagclass>
+<bodycontent>JSP</bodycontent>
+    	<attribute>
+	    	<name>label</name>
+	    	<required>false</required>
+		<rtexprvalue>true</rtexprvalue>
+    	</attribute>
+	<attribute>
+	    	<name>width</name>
+	    	<required>false</required>
+		<rtexprvalue>true</rtexprvalue>
+    	</attribute>
+    	<attribute>
+	    	<name>align</name>
+	    	<required>false</required>
+		<rtexprvalue>true</rtexprvalue>
+    	</attribute>
+	
+</tag>
+-->
+<tag>
+	<name>autoIndex</name>
+	<tagclass>hisglobal.AutoIndexing</tagclass>
+	<bodycontent>JSP</bodycontent>
+</tag>
+</taglib>

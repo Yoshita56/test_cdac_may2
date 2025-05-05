@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE taglib
+        PUBLIC "-//Sun Microsystems, Inc.//DTD JSP Tag Library 1.1//EN"
+        "http://java.sun.com/j2ee/dtds/web-jsptaglibrary_1_1.dtd">
+<taglib>
+	<tlibversion>1.0</tlibversion>
+	<jspversion>1.1</jspversion>
+	<shortname>addDtl</shortname>
+	<uri></uri>
+	<info>Admission Details</info>
+
+
+	<!--Simple Tag Library-->
+	<tag>
+		<name>addDtl</name>
+		<tagclass>hisglobal.AdmissionDetail</tagclass>
+		<bodycontent>JSP</bodycontent>
+	
+		<attribute>
+			<name>crNo</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<attribute>
+			<name>admNo</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>	
+
+	</tag>
+	
+	<tag>
+		<name>addDtlNew</name>
+		<tagclass>hisglobal.AdmissionDetailNew</tagclass>
+		<bodycontent>JSP</bodycontent>
+	
+		<attribute>
+			<name>crNo</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<attribute>
+			<name>admNo</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>motherCrFlag</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+	</tag>
+</taglib>

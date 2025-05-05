@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+     <constant name="struts.devMode" value="false" />
+     <constant name="struts.action.extension" value=","/> 
+    
+    <package name="hissso" namespace="/hissso" extends="struts-default">
+		<global-results>
+	    	<result name="securityerror">/application/jsp/app_error_xss.jsp</result>
+		</global-results>
+ 
+		<global-exception-mappings>
+	  		<exception-mapping exception="java.lang.IllegalStateException" result="securityerror" />
+		</global-exception-mappings>
+
+	    <action name="Login" class="hissso.controller.action.LoginACT">
+	    	<interceptor-ref name="tokenSession" >
+	    		<param name="excludeMethods">*</param>
+	    	</interceptor-ref>
+			<interceptor-ref name="basicStack" />
+			<result name="invalid.token" type="redirectAction">
+    			<param name="actionName">/application/jsp/app_error_xss.jsp</param>
+			</result>
+	    	<result name="INITIAL">/hissso/jsp/sso_login.jsp</result>
+	    	<result name="ERROR">/hissso/jsp/sso_error_page.jsp</result>
+	    	<result name="MAIN">/hissso/jsp/sso_main_login.jsp</result>
+	    </action>
+
+	    <action name="*Login" method="{1}" class="hissso.controller.action.LoginACT">
+	    	<!-- <interceptor-ref name="tokenSession" >
+	    		<param name="excludeMethods">init,login,captcha,firstLogin,logout</param>
+	    	</interceptor-ref> -->
+	    	<interceptor-ref name="tokenSession" >
+	    		<param name="includeMethods">login</param>
+	    	</interceptor-ref>
+			<interceptor-ref name="basicStack" />
+			
+			<result name="invalid.token">/application/jsp/app_error_xss.jsp</result>
+			
+	    	<result name="INITIAL">/hissso/jsp/sso_login.jsp</result>
+	    	<result name="ERROR">/hissso/jsp/sso_error_page.jsp</result>
+	    	<result name="MAIN">/hissso/jsp/sso_main_login.jsp</result>
+	    	<!-- <result name="DESK">/hislogin/UserDesk.action</result> -->
+	    	<!-- Changed by Garima for extension chnage -->
+	    	<result name="DESK">/hislogin/UserDesk</result>
+	    	<!-- Chain to another namespace 
+	        <result name="DESK" type="chain">
+	            <param name="actionName">UserDesk</param>
+	            <param name="namespace">/hislogin</param>
+	        </result>-->
+	    	
+	    </action>
+    </package>
+</struts>

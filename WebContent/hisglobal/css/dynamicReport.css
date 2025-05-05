@@ -1,0 +1,1259 @@
+/* contain common css */
+.formbg
+{
+	background: url(../images/form_bg.png) center repeat-x;
+    background-size: auto 100%;
+}
+
+.formbgnew
+{
+	background: url(../images/form_bg.png) center repeat-x;
+    background-size: auto 100%;
+    width:96%;
+    margin-left: 2%;
+}
+
+.background
+ {
+    background: url("../images/background.png") repeat-x scroll 0 1px #FFFFFF;
+    margin-left: 0; 
+ } 
+
+/* table width is defined for add and modify pages. */
+.TABLEWIDTH {	
+	width: 95%;	
+	border-collapse: collapse;
+}
+TR.HEADER {
+	height:23px;
+	color: white;
+	text-transform: capitalize;
+	font-family: Georgia;
+	font-size: 12px;
+	font-style: normal;
+	line-height: 14pt;
+	font-weight: bold;
+	font-variant: normal;
+	background:url(../images/selected.png);
+}
+/* to show footer. It contains font type, font color, font size and background color */
+TR.FOOTER {
+	background:url(../images/selected.png);
+	height:12px;
+	color: #FFFFFF;
+	text-transform: capitalize;
+	text-align:right;
+	font-family: Georgia;
+	font-size: 12px;
+	font-style: normal;
+	line-height: 14pt;
+	font-weight: bold;
+	font-variant: normal;
+}
+
+TR.HIGHLIGHT {
+	background-color: lightgreen;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	font-style: normal;
+	font-weight: normal;
+	color: #4b68f6;
+	height: 8px;
+	text-align:center;	
+}
+
+TD.TDSEARCH {
+	background:url(../images/selected.png);
+	height: 16px;
+	font-family: georgia;
+	font-size: 14px;
+	font-weight: bold;
+	color: #fff;
+	padding:2px;
+}
+
+.all-four-rounded-corners {
+	/*background-color:#0e5584;
+	-webkit-border-radius: 10px;
+	-khtml-border-radius: 10px;	
+	-moz-border-radius: 10px;
+	 border-radius: 10px 0px 0px 10px;	 
+	 -moz-box-shadow:inset 0 0 10px 0 #222;
+    -webkit-box-shadow:inset 0 0 10px 0 #222;
+     box-shadow:inset 0 0 10px 0 #222;*/
+     padding-left:10px;
+	}
+
+/* for label field of table's TD. It contains font type, font color, font size and background color */
+TD.LABEL {    
+    background-image: url("none");
+    color: #013157;
+    font-family: Verdana,Arial,Helvetica,sans-serif;
+    font-size: 11px;
+    font-weight: bold;
+    height: 16px;
+    text-align: right;
+}
+
+/* for control field of table's TD. It contains font type, font color, font size and background color */
+TD.CONTROL {	
+	height:16px;
+	color:#333333;
+	text-align:left;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-style: normal;
+}
+/* fot combo of maximum size. It contains font type, font color, font size, width of the field */
+.comboMax {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 13px;
+	font-style: normal;
+	font-weight: normal;
+	color: #000000;	
+	width: 100%;
+}
+.combo1Max {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 13px;
+	font-style: normal;
+	font-weight: normal;
+	color: #000000;	
+	width: 330px;
+}
+/* fot combo of normal size. It contains font type, font color, font size, width of the field */
+.comboNormal {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 13px;
+	font-style: normal;
+	font-weight: normal;
+	color: #000000;	
+	width: 65%;
+}
+
+.comboTooMax {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 13px;
+	font-style: normal;
+	font-weight: normal;
+	color: #000000;	
+	width: 100%;
+}
+
+.comboMin {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 13px;
+	font-style: normal;
+	font-weight: normal;
+	color: #000000;	
+	width: 45%;
+}
+TD {
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size: 10.5px;
+}
+
+.pg-normal 
+{
+    color: blue;
+    font-weight: normal;
+    text-decoration: none;
+    cursor: pointer;    
+}
+.pg-selected 
+{
+    color: red;
+    font-weight: bold;
+    text-decoration: underline;
+    cursor: pointer;    
+}
+.pg-qualified 
+{
+    color: green;
+    font-weight: bold;
+    text-decoration: underline;
+    cursor: pointer;    
+}
+
+.pg-highlight 
+{
+    color: white;
+    font-weight: normal;
+    text-decoration: none;
+    cursor: pointer;
+    font-size: 14px;
+	font-style: normal;
+	line-height: 15pt;
+	font-weight: bold;
+	font-variant: normal;                
+}
+
+div.ex
+{
+	width:190px;
+	padding:8px;
+	border:2px solid gray;
+	margin:0px;	
+}
+
+.class3
+{ 
+  A:link {text-decoration: none}
+  A:visited {text-decoration: none}
+  A:active {text-decoration: none}
+  A:hover {font-size:30; font-weight:bold; color: red;}
+}
+
+
+/* to center align label field. It contains font type, font color, font size and background color and border */
+.multiRPTLabel {
+	background-color:#EFEFF7;	
+	height: 12px;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	font-weight: bold;
+	color: #000;
+	text-align:center;
+	border:1px solid black;
+}
+
+.multiRPTLabel1 {
+	background-color:#146aa0;	
+	height: 12px;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	font-weight: bold;
+	color: #fff;
+	text-align:center;
+	border:1px solid black;
+}
+/* to center align label field. It contains font type, font color, font size and background color */
+.multiHLPLabel {
+	background-color:#EFEFF7;	
+	height: 12px;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	font-weight: bold;
+	color: #000;
+	text-align:center;
+	
+}
+
+/* to center align control field. It contains font type, font color, font size and background color */
+.multiRPTControl {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	font-style: normal;
+	font-weight: normal;
+	color: #000000;
+	background-color: #FFFFFF;
+	height: 12px;
+	text-align:center;
+	border:1px solid black;
+	padding: 2px;
+}
+
+/* to center align control field. It contains font type, font color, font size and background color */
+.multiRPTControl1 {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	font-style: normal;
+	font-weight: normal;
+	color: #000000;
+	background-color: #D8D8D8;
+	height: 12px;
+	text-align:center;
+}	
+.multiRPTControl2 {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	font-style: normal;
+	font-weight: normal;
+	color: #000000;
+	background-color: #FFFFFF;
+	height: 12px;
+	text-align:center;
+	border:1px solid black;
+	padding: 2px;
+}
+
+/* to center align label field. It contains font type, font color, font size and background color */
+.multiLabel {
+	background-color:#EFEFF7;
+	height: 16px;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-weight: bold;
+	color: #000000;
+	text-align:center;
+	border:1px solid black;
+}
+
+/* to center align label field. It contains font type, font color, font size WITHOUT background color */
+.multiLabel1 {
+	height: 16px;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-weight: bold;
+	color: #000000;
+	text-align:center;
+	border:1px solid black;
+}
+
+/* to center align control field. It contains font type, font color, font size and background color */
+.multiControl {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-style: normal;
+	font-weight: normal;
+	color: #000000;
+	background-color: #FFFFFF;
+	height: 16px;
+	text-align:center;
+	border:1px solid black;
+}
+/* to center align control field. It contains font type, font color, font size  */
+.multiControlwithoutbg {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-style: normal;
+	font-weight: normal;
+	color: #000000;
+	height: 16px;
+	text-align:center;
+	border:1px solid black;
+}
+
+
+/* to center align label field. It contains font type, font color, font size and background color */
+.multiPOLabel {
+	background-color:#EFEFF7;	
+	height: 10px;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size:10px;
+	font-weight: bold;
+	color: #000000;
+	text-align:center;
+	border:1px solid black;
+}
+/* to center align label field. It contains font type, font color, font size  */
+.multiPOLabelNew {
+	background-color:#146AA0;	
+	height: 20px;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size:10px;
+	font-weight: bold;
+	color: #fff;
+	text-align:center;
+	border:1px solid black;
+	padding: 0px 3px;
+}
+
+/* to center align control field. It contains font type, font color, font size and background color */
+.multiPOControl {
+font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	font-style: normal;
+	font-weight: normal;
+	color: #000000;
+	background-color: #FFFFFF;
+	height: 8px;
+	text-align:center;
+	border:1px solid black;
+}
+
+.multiRPTLabel4 {
+	background-color: #EFEFF7;
+	height: 20px;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-weight: bold;
+	color: #000;
+	text-align: center;
+	border: 1px solid black;
+}
+
+.multiRPTControlHighlight {
+    background-color: #FFFFCC;
+    border: 1px solid black;
+    color: #000000;
+    font-family: Verdana,Arial,Helvetica,sans-serif;
+    font-size: 11px;
+    font-style: normal;
+    font-weight: normal;
+    height: 13px;
+    text-align: left;
+}
+
+.multiPOControlNew {
+font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	font-style: normal;
+	font-weight: normal;
+	color: #000000;	
+	height: 8px;
+	text-align:center;
+	border:1px solid black;
+}
+.Approved 
+   {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	font-style: normal;
+	font-weight: normal;
+	color: #151AFB;
+	background-color: #D3D5C9;
+	height: 10px;
+	text-align:center;
+	border:1px solid black;
+    }
+    
+.NotApproved 
+   {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	font-style: normal;
+	font-weight: normal;
+	color: #000000;
+	background-color: #FFFFFF;
+	height: 8px;
+	text-align:center;
+	border:1px solid black;   
+   }
+
+/* for tborder:1px solid black;ains font type, font color, font size and background color */
+.TITLE {
+	background-Color:#EFEFF7;
+	font-family: Arial;
+	font-style: normal;
+	font-size: 12px;
+	font-weight: bold;
+	color:FFFFFF;
+	height: 16px;
+	text-align:left;
+	border:1px solid black;
+}
+
+/* table width is defined for add and modify pages. */
+.NEWTABLEWIDTH {	
+	width: 100%;	
+	border-collapse: collapse;
+}
+
+/* for menu */
+#menu {
+    background: url("../images/menu.png") repeat-x scroll 0 0 transparent;
+    clear: both;
+    height: 34px;
+    min-width: 900px;
+    padding: 0 0px;
+    position: relative;
+    z-index: 1;
+}
+#menu > ul.left {
+    float: left;
+}
+#menu > ul.right {
+    float: right;
+}
+#menu > ul {
+    margin: 0;
+    padding: 0;
+    position: relative;
+}
+#menu > ul ul {
+    background: url("../images/transparent.png") repeat scroll 0 0 transparent;
+    list-style: none outside none;
+    margin: 0;
+    padding: 0;
+}
+#menu > ul a {
+    display: block;
+    text-decoration: none;    
+}
+#menu > ul li {
+    float: left;
+    list-style: none outside none;
+}
+#menu > ul > li + li {
+    background: url("../images/split.png") no-repeat scroll left center transparent;
+}
+#menu > ul .top {
+    color: #FFFFFF;
+    font-family: Arial,Helvetica,sans-serif;
+    font-size: 12px;
+    padding: 10px 15px 9px 17px;
+    text-align: center;	
+}
+.CB1 {
+	border: 1px solid #7B9EBD;
+    font-family: tahoma;
+    font-size: 10pt;
+    height: 19px;
+    margin-top: 3px;	
+	width: 65%;
+	margin-left:1%;
+}
+
+/* to show error messages. */
+.errMsg {
+	font-family: Georgia;
+	font-size: 16px;
+	font-style: normal;
+	font-weight: bold;
+	color: red;	
+	text-align:center;
+}
+
+/* to show normal messages. */
+.normalMsg {
+	font-family: Georgia;
+	font-size: 16px;
+	font-style: normal;
+	font-weight: bold;
+	color: #ff6600;	
+	text-align:center;
+}
+
+/* to show error messages. */
+.warningMsg {
+	font-family: Georgia;
+	font-size: 16px;
+	font-style: normal;
+	font-weight: bold;
+	color: #13A688;	
+	text-align:center;
+}
+/* to show legends below footer*/
+.legends {
+	float: left;
+	width: 40%;
+	margin-left: 3%;
+	font-style: italic;
+}
+
+.legends ul {
+	list-style-image: url('../images/rounded.png');
+	padding-left: 20px;
+}
+
+.legendsnew {
+	float: left;
+	width: 20%;	
+	font-style: italic;
+}
+
+.legendsnew ul {
+	list-style-image: url('../images/rounded.png');
+	padding-left: 20px;
+}
+
+.rowcolor
+{
+	background-Color:#FDC1B0;
+}
+
+/* to position control button*/
+.control_button
+{
+margin-left:35%;
+width:50%;
+}	
+#table_hrader {
+    border-top: 1px solid #99BBE8;
+}
+#table_hrader table {
+    border-color: #A0A0A4;
+    border-spacing: 0;
+    border-style: solid;
+    border-width: 0 0px 1px;
+}
+#table_hrader table tr {
+    background-color: #fff;
+}
+#table_hrader table tr th {
+	background-color: #EBEDF5;
+    border-color: #A0A0A4;
+    border-spacing: 0;
+    border-style: solid;
+    border-width: 0 1px 0 0;
+    color: Black;
+    font-size: 9pt;
+    font-variant: normal;
+    font-weight: bold;
+    height: 24px;
+    padding: 2px 1px 1px 0px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    word-wrap: break-word;
+    z-index: 99;
+    font-family:Georgia;
+    text-align:left;
+}
+#table_hrader table tr td {
+    border-color: #A0A0A4;
+    border-spacing: 0;
+    border-style: inset;
+    border-width: 0px 1px 1px 0;
+    color: black;
+    cursor: pointer;
+    font-size: 10pt;
+    height: 15px;
+    padding: 5px 3px 1px 0px;
+    text-overflow: ellipsis;
+    vertical-align: top;
+    word-wrap: break-word;    
+    font-family: Arial,Helvetica,'sans-serif';
+}
+
+/* fot textfield of minimum size. It contains font type, font color, font size, width of the field */
+.txtFldMin {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 13px;
+	font-style: normal;
+	font-weight: normal;
+	color: #000000;
+	width: 50px;
+}
+
+.txtFldMinNumber {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 13px;
+	font-style: normal;
+	font-weight: normal;
+	color: #000000;
+	width: 50px;
+	text-align: right;
+}
+
+/* fot textfield of minimum size. It contains font type, font color, font size, width of the field */
+.txtFldMinColor {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 13px;
+	font-style: normal;
+	font-weight: normal;
+	color: #000000;
+	width: 50px;
+	background-color: #faebd7;
+}
+
+/* fot textfield of normal size. It contains font type, font color, font size, width of the field */
+.txtFldNormal {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 13px;
+	font-style: normal;
+	font-weight: normal;
+	color: #000000;	
+	width: 75px;
+}
+
+.txtFldNormalNumber {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 13px;
+	font-style: normal;
+	font-weight: normal;
+	color: #000000;	
+	width: 75px;
+	text-align: right;
+}
+
+/* fot textfield of normal size. It contains font type, font color, font size, width of the field */
+.txtFldNormalColor {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 13px;
+	font-style: normal;
+	font-weight: normal;
+	color: #000000;	
+	width: 75px;
+	background-color: #faebd7;
+}
+
+
+
+/* fot textfield of normal size. It contains font type, font color, font size, width of the field */
+.txtFldDatePickerNormal {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-style: normal;
+	font-weight: normal;
+	color: #000000;	
+	width: 125px;
+}
+
+
+/* fot textfield of maximum size. It contains font type, font color, font size, width of the field */
+.txtFldMax {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 13px;
+	font-style: normal;
+	font-weight: normal;
+	color: #000000;	
+	width: 135px;
+}
+
+.txtFldLarge {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 13px;
+	font-style: normal;
+	font-weight: normal;
+	color: #000000;	
+	width: 200px;
+}
+
+/* fot textfield of maximum size. It contains font type, font color, font size, width of the field */
+.txtFldMaxColor {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 13px;
+	font-style: normal;
+	font-weight: normal;
+	color: #000000;	
+	width: 135px;
+	background-color: #faebd7;
+}
+
+/* fot textfield of small size. It contains font type, font color, font size, width of the field */
+.txtFldSmall {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 13px;
+	font-style: normal;
+	font-weight: normal;
+	color: #000000;	
+	width: 35px;	
+}
+
+/* fot textfield of small size and have red font. It contains font type, font color, font size, width of the field */
+.txtFldSmall_Red {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 13px;
+	font-style: normal;
+	font-weight: normal;
+	color: #990000;	
+	width: 35px;	
+}
+
+
+ .Approved 
+   {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-style: normal;
+	font-weight: normal;
+	color: #151AFB;
+	background-color: #D3D5C9;	
+	text-align:center;
+    }
+    
+   .NotApproved 
+   {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-style: normal;
+	font-weight: normal;
+	color: #000000;
+	background-color: #F4F4FF;	
+	text-align:center;
+    }
+  
+#mask {
+	display: none;
+	background: #000;
+	position: fixed;
+	left: 0;
+	top: 0;
+	z-index: 10;
+	width: 100%;
+	height: 100%;
+	opacity: 0.8;
+	z-index: 999;
+}
+
+#dvLoading {
+	display: none;
+	background: url(../images/demo_wait.gif) no-repeat center center;
+	height: 130px;
+	width: 130px;
+	position: fixed;
+	left: 50%;
+	top: 50%;
+	margin: -25px 0 0 -25px;
+	z-index: 1000;
+}
+
+/* for fixed header table in report start */
+#boundary {
+	margin-right: -2px;
+	border: solid 1px #000;
+}
+
+table#headerTable th {
+	border-right: solid 1px #555;
+	background-image: -moz-linear-gradient(bottom, #FFFFFF -50%, rgb(58,154,209) 25%);
+	word-wrap: break-word;
+	text-align: center;
+	font-family: Helvetica;
+    font-size: 12px;
+    color:white;
+}
+
+table#headerTableTrans th,table#mainTableRptId th,table#mainTableRptId1 th  {
+	border-right: solid 1px #555;
+	background-color:#146aa0;
+	word-wrap: break-word;
+	text-align: center;
+	font-family: Helvetica;
+    font-size: 12px;
+    color:#fff;
+}
+
+thead#tbl-header {
+	border: solid 1px #555;
+	background-image: -moz-linear-gradient(bottom, #FFFFFF -50%, #999999 100%);
+	word-wrap: break-word;
+	text-align: center;
+}
+
+table#headerTable th#right-border {
+	padding: 0 22px 0 3px;
+	border-right: none;
+	word-wrap: break-word;
+}
+
+table#headerTableTrans th#right-border {
+	padding: 0 22px 0 3px;
+	border-right: none;
+	word-wrap: break-word;
+}
+
+#boxHeaderFixed {
+	width: 100%;
+	height: 350px;
+	overflow-y: auto;
+	border: solid 0px #BBBBBB;
+	border-top: none;
+	overflow-x: hidden;
+}
+
+#boxHeaderFixedDrpt {
+	width: 100%;	
+	overflow-y: auto;
+	border: solid 0px #BBBBBB;
+	border-top: none;
+	overflow-x: hidden;
+}
+
+#boxHeaderFixed2 {
+	width: 100%;
+	height: 180px;
+	overflow-y: auto;
+	border: solid 0px #BBBBBB;
+	border-top: none;
+	overflow-x: hidden;
+}
+
+#boxHeaderNoScroll {
+	width: 100%;
+	overflow-y: auto;
+	border: solid 0px #BBBBBB;
+	border-top: none;
+}
+
+table#tbl-content tr:nth-child(even), table#mainTableRptId tr:nth-child(even), table#mainTableRptId1 tr:nth-child(even) {
+	background-color: #eeeeee;
+}
+
+
+tbody#tbl-body tr:nth-child(even) {
+	background-color: #eeeeee;
+}
+
+table#tbl-content td ,table#mainTableRptId td,table#mainTableRptId1 td{
+	border-bottom: solid 1px #bbb;
+	border-right: solid 1px #bbb;
+	border-left: solid 1px #bbb;
+	word-wrap: break-word;
+	font-family: Helvetica;
+    font-size: 12px;
+}
+
+table#tbl-content th{
+	border-bottom: solid 1px #bbb;
+	border-right: solid 1px #bbb;
+	border-left: solid 1px #bbb;
+	word-wrap: break-word;
+	font-family: Helvetica;
+    font-size: 12px;
+    color:#fff;
+}
+
+
+table#tbl-content tr#bottom td {
+	border-bottom: none;
+}
+
+#reportHeaderName {
+	/*float: left;
+	padding: 5px;
+	font-weight: bold;
+	background-color: #3a9ad1;
+	width: 100%;
+	text-align: left;
+	color: #FFF;
+	border-radius: 0 9px 9px 0;*/
+}
+.tdNoBottomBorder
+{			
+	border-top: 1px solid #000000;
+	border-left: 1px solid #000000;
+	border-right: 1px solid #000000;	
+}
+
+.tdBorderRight
+{		
+	border-right: 1px solid #000000;	
+}
+
+#voucherBudgetDtl th
+{
+	font-size: 10.5px;
+	font-family: verdana;
+	font-weight: bold;
+}
+
+#voucherBudgetDtl td
+{
+	font-size: 12px;
+	font-family: verdana;	
+}
+
+
+
+.report_tab {
+	-moz-box-shadow:inset 0px 1px 0px 0px #54a3f7;
+	-webkit-box-shadow:inset 0px 1px 0px 0px #54a3f7;
+	box-shadow:inset 0px 1px 0px 0px #54a3f7;
+	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #007dc1), color-stop(1, #0061a7));
+	background:-moz-linear-gradient(top, #007dc1 5%, #0061a7 100%);
+	background:-webkit-linear-gradient(top, #007dc1 5%, #0061a7 100%);
+	background:-o-linear-gradient(top, #007dc1 5%, #0061a7 100%);
+	background:-ms-linear-gradient(top, #007dc1 5%, #0061a7 100%);
+	background:linear-gradient(to bottom, #007dc1 5%, #0061a7 100%);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#007dc1', endColorstr='#0061a7',GradientType=0);
+	background-color:#007dc1;
+	-moz-border-radius:3px;
+	-webkit-border-radius:3px;
+	border-radius:3px;
+	border:1px solid #124d77;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:13px;
+	padding:19px 40px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #154682;
+	width: 80px;
+	font-weight: bold;
+	
+}
+.report_tab:hover {
+	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #0061a7), color-stop(1, #007dc1));
+	background:-moz-linear-gradient(top, #0061a7 5%, #007dc1 100%);
+	background:-webkit-linear-gradient(top, #0061a7 5%, #007dc1 100%);
+	background:-o-linear-gradient(top, #0061a7 5%, #007dc1 100%);
+	background:-ms-linear-gradient(top, #0061a7 5%, #007dc1 100%);
+	background:linear-gradient(to bottom, #0061a7 5%, #007dc1 100%);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#0061a7', endColorstr='#007dc1',GradientType=0);
+	color:yellow;
+	background-color:#0061a7;
+}
+.report_tab:active {
+	position:relative;
+	top:1px;
+}
+.report_div{
+		width: 90%;
+		margin-left: 20px;
+}
+.vouchersize{
+		width: 920px;
+		height: 550px;
+		overflow-y: scroll;
+}
+
+.voucherSizeSmall{
+		width: 920px;
+		height: 450px;
+		overflow-y: scroll;
+}
+
+
+/* override bootstrap css*/
+
+.table > tbody > tr > td, .table > tbody > tr > th, .table > tfoot > tr > td, .table > tfoot > tr > th, .table > thead > tr > td, .table > thead > tr > th {
+    padding: 6px;    
+}
+
+.table > thead {
+	background-color: #146aa0;
+}
+
+body {        
+    font-size: 12px;    
+}
+
+th {
+    text-align: center;
+}
+.circle1 {
+    background-color: yellow;
+    border: 1px solid #faad07;
+    border-radius: 8px;
+    height: 15px;
+    width: 15px;
+}
+
+
+.left-inner-addon {
+    position: relative;
+}
+.left-inner-addon input {
+    padding-left: 30px;    
+}
+.left-inner-addon span {
+    position: absolute;
+    padding: 10px 12px;
+    pointer-events: none;
+}
+
+.right-inner-addon {
+    position: relative;
+}
+.right-inner-addon input {
+    padding-right: 30px;    
+}
+.right-inner-addon span {
+    position: absolute;
+    right: 0px;
+    padding: 10px 12px;
+    pointer-events: none;
+}
+
+.dataTables_scrollBody
+{
+ overflow-x:hidden !important;
+ overflow-y:auto !important;
+}
+
+
+/*
+Fixed Header Scrollable table with bootstrap
+*/
+
+/*
+Force table width to 100%
+*/
+table.table-fixedheader {
+  width: 100%;
+}
+
+/*
+Set table elements to block mode.  (Normally they are inline).
+This allows a responsive table, such as one where columns can be stacked
+if the display is narrow.
+*/
+table.table-fixedheader,
+table.table-fixedheader>thead,
+table.table-fixedheader>tbody,
+table.table-fixedheader>thead>tr,
+table.table-fixedheader>tbody>tr,
+table.table-fixedheader>thead>tr>th,
+table.table-fixedheader>tbody>td {
+  display: block;
+}
+
+ 
+table.table-fixedheader > caption + thead > tr:first-child > th, 
+table.table-fixedheader > colgroup + thead > tr:first-child > th, 
+table.table-fixedheader > thead:first-child > tr:first-child > th {
+	border-top: 0px none;
+	border-bottom: 0px none;
+}
+
+
+table.table-fixedheader>thead>tr:after,
+table.table-fixedheader>tbody>tr:after {
+  content: ' ';
+  display: block;
+  visibility: hidden;
+  clear: both;
+}
+
+/*
+When scrolling the table, actually it is only the tbody portion of the
+table that scrolls (not the entire table: we want the thead to remain
+fixed).  We must specify an explicit height for the tbody.  We include
+100px as a default, but it can be overridden elsewhere.
+
+Also, we force the scrollbar to always be displayed so that the usable
+width for the table contents doesn't change (such as becoming narrower
+when a scrollbar is visible and wider when it is not).
+*/
+table.table-fixedheader>tbody {
+  overflow-y: scroll;
+  height: 100px;
+}
+
+/*
+We really don't want to scroll the thead contents, but we want to force
+a scrollbar to be displayed anyway so that the usable width of the thead
+will exactly match the tbody.
+*/
+table.table-fixedheader>thead {        
+  overflow-y: scroll;
+  border-bottom: 1px solid #ddd;
+  background: -moz-linear-gradient(top, rgba(252,255,244,1) 0%, rgba(233,233,206,1) 100%); /* FF3.6+ */
+}
+
+/*
+For browsers that support it (webkit), we set the background color of
+the unneeded scrollbar in the thead to make it invisible.  (Setting
+visiblity: hidden defeats the purpose, as this alters the usable width
+of the thead.)
+*/
+table.table-fixedheader>thead::-webkit-scrollbar{
+  background-color: inherit;
+}
+
+/*
+We want to set <th> and <td> elements to float left.
+We also must explicitly set the width for each column (both for the <th>
+and the <td>).  We set to 20% here a default placeholder, but it can be
+overridden elsewhere.
+*/
+table.table-fixedheader>thead>tr>th,
+table.table-fixedheader>tbody>tr>td {        
+        float: left;
+        text-align: center;
+}
+
+table.table-fixedheader > thead > tr > th, table.table-fixedheader > tbody > tr > td {
+    float: left;
+    text-align: center;
+}
+table.table-fixedheader > tbody > tr > td, 
+table.table-fixedheader > tbody > tr > th, 
+table.table-fixedheader > tfoot > tr > td, 
+table.table-fixedheader > tfoot > tr > th, 
+table.table-fixedheader > thead > tr > td, 
+table.table-fixedheader > thead > tr > th {
+    border-top: 1px solid #ddd;
+    line-height: 1.42857;
+    padding: 2px;
+    vertical-align: top;
+}
+
+table.table-fixedheader {   
+    font-size: 12px;    
+}
+/*
+end Fixed Header Scrollable table with bootstrap
+*/
+
+
+/* fixed header scrollable table with css only*/
+.table-fixedheader {
+    height: 16em;
+    font-size: 12px;  
+}
+div.table-fixedheader>table {
+    display: flex;
+    flex-flow: column;
+    height: 100%;
+    width: 100%;
+    word-wrap:break-word;
+}
+div.table-fixedheader>table thead {
+    /* head takes the height it requires, 
+    and it's not scaled when table is resized */
+    flex: 0 0 auto;
+    width: calc(100% - 17px);
+    /*background: -moz-linear-gradient(top, rgba(252,255,244,1) 0%, rgba(233,233,206,1) 100%);  FF3.6+ */
+}
+div.table-fixedheader>table tbody {
+    /* body takes all the remaining available space */
+    flex: 1 1 auto;
+    display: block;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+div.table-fixedheader>table tbody tr {
+    width: 100%;
+}
+div.table-fixedheader>table thead, 
+div.table-fixedheader>table tbody tr {
+    display: table;
+    table-layout: fixed;
+}
+div.table-fixedheader>table {
+    border: 1px solid lightgrey;
+    border-collapse:collapse;
+}
+div.table-fixedheader>table td, 
+div.table-fixedheader>table th {
+    padding: 0.3em;
+    border: 1px solid lightgrey;
+    vertical-align: top;    
+}
+div.table-fixedheader>table th {
+    border-right: none;
+    text-align: center;
+}
+
+.budgetRowColor{
+	background-color: #FAE7D3
+	}
+	
+.multiHeaderBlue {
+background-color:#C7EDFC;	
+height: 20px;
+font-family: Verdana, Arial, Helvetica, sans-serif;
+font-size:10px;
+font-weight: bold;
+color: #000;
+text-align:center;
+border:1px solid black;
+padding: 0px 3px;
+}
+
+.indentList
+{
+	color: white;
+	cursor: pointer;
+}
+
+.indentItemColor1 {
+    background-color: #449315;
+    border: 1px solid #449315;
+    border-radius: 8px;
+    height: 15px;
+    width: 15px;
+}
+.indentItemColor2 {
+    background-color: #0B74F4;
+    border: 1px solid #0B74F4;
+    border-radius: 8px;
+    height: 15px;
+    width: 15px;
+}
+.indentItemColor3 {
+    background-color: #F852DB;
+    border: 1px solid #F852DB;
+    border-radius: 8px;
+    height: 15px;
+    width: 15px;
+}
+
+.hyperDrillDown{
+color: blue;
+cursor: pointer;}
+/* end fixed header scrollable table with css only*/
