@@ -1,4 +1,7 @@
 /build/
 *.war
 .metadata/
+/.settings/
+/.classpath/
+
 
