@@ -14,7 +14,7 @@ import javax.servlet.ServletContext;
 public class HISApplicationConfig extends HISConfig
 {
 	private static Map<String, Object> mapURLWiseAllowedActionURIs;
-// git test
+// git test 2
 	public boolean setApplictaionInitials(ServletContext objContext)
 	{
 		boolean flg = true;
