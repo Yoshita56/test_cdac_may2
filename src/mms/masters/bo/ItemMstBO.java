@@ -143,4 +143,25 @@ public class ItemMstBO {
 		if (vo.getStrMsgType().equals("1"))
 			vo.setStrMsgString("DrugMstBO.consumeCombo---->" + vo.getStrMsgString());
 	}
+
+	public void chkDuplicateItem(ItemMstVO vo) {
+
+		ItemMstDAO.chkDuplicate(vo);
+
+		if (vo.getStrMsgType().equals("1")) {
+			String strErr = vo.getStrMsgString();
+			vo.setStrMsgString("ItemMstBO.chkDuplicateItem() --> " + strErr);
+		}
+	/*	if (vo.getBExistStatus() == true) {
+			//ItemMstDAO.insertQuery(vo);
+
+			if (vo.getStrMsgType().equals("1")) {
+
+				String strErr = vo.getStrMsgString();
+
+				vo.setStrMsgString("ItemMstBO.insertQuery() --> " + strErr);
+			}
+		} */
+	}
+
 }

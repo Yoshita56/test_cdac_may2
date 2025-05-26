@@ -10,6 +10,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import mms.masters.controller.data.ItemMstDATA;
+import mms.masters.controller.data.ItemMstDATA;
+import mms.masters.controller.fb.ItemMstFB;
 import mms.masters.controller.fb.ItemMstFB;
 import mms.masters.controller.utl.ItemMstBSUTL;
 
@@ -17,6 +19,8 @@ import org.apache.struts.action.ActionForm;
 import org.apache.struts.action.ActionForward;
 import org.apache.struts.action.ActionMapping;
 import org.apache.struts.upload.FormFile;
+
+import com.jscape.ftcl.a.fb;
 
 // TODO: Auto-generated Javadoc
 /**
@@ -201,6 +205,34 @@ public class ItemMstBSCNT extends GenericController {
 
 		return null;
 	}
+	
+	public ActionForward CHECKITEMDUPLICACY(ActionMapping mapping, ActionForm form,
+			HttpServletRequest request, HttpServletResponse response)
+			throws HisException 
+	{
+		//saveToken(request);
+	
+		System.out.println("CHECKITEMDUPLICACY() called");
+		ItemMstFB formBean = (ItemMstFB) form;
+		   formBean.setStrSeatId(request.getSession().getAttribute("SEATID").toString());
+		   formBean.setStrHospCode(request.getSession().getAttribute("HOSPITAL_CODE").toString());
+		ItemMstDATA.getDuplicateItemList(formBean, request, response);
+		return null;
+		//return mapping.findForward(strtarget);
+	}
+	
+/*	public ActionForward CHECKITEMDUPLICACY(ActionMapping mapping, ActionForm form,
+			HttpServletRequest request, HttpServletResponse response)
+			throws Exception {
+		validateToken(request, response);
+		// saveToken(request);
+		ItemMstFB formBean = (ItemMstFB) form;
+		ItemMstDATA.getDuplicateItemList(formBean, request, response);
+		return this.ADD(mapping, form, request, response);
+
+	}	*/
+	
+	
 	
 
 }

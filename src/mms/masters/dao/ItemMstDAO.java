@@ -11,6 +11,7 @@ import javax.sql.rowset.WebRowSet;
 import hisglobal.hisconfig.Config;
 import hisglobal.transactionmgnt.HisDAO;
 import mms.MmsConfigUtil;
+import mms.qryHandler_mms;
 import mms.dao.ItemDAO;
 import mms.masters.vo.DrugMstVO;
 import mms.masters.vo.ItemMstVO;
@@ -102,7 +103,8 @@ public class ItemMstDAO {
 	 * save
 	 * 
 	 * @throws Exception 	 */
-	public static void chkDuplicate(ItemMstVO vo) {
+
+/*	public static void chkDuplicate(ItemMstVO vo) {
 		HisDAO dao = null;
 		int nqryIndex;
 		int ncount = 0;
@@ -137,8 +139,57 @@ public class ItemMstDAO {
 				dao = null;
 			}
 		}
-	}
+	}	*/
 
+	 public static void chkDuplicate(ItemMstVO vo) {
+	      HisDAO dao = null;
+	      int ncount = 0;
+	      WebRowSet wb = null;
+	      new String();
+System.out.println("----------ItemMstDAO edited chkDuplicate()");
+	      try {
+	         dao = new HisDAO("mms", "ItemMstDAO");
+	         String strquery = qryHandler_mms.getQuery(1, "select.itemBrandMst.2");		//new sql query file imported
+	        System.out.println("Query for Duplicate value: "+strquery);	         
+	         int nqryIndex = dao.setQuery(strquery);
+	         dao.setQryValue(nqryIndex, 1, vo.getStrItemName());
+	         dao.setQryValue(nqryIndex, 2, vo.getStrItemCatNo());
+	         dao.setQryValue(nqryIndex, 3, vo.getStrHospCode());
+
+	        for(wb = dao.executeQry(nqryIndex); wb.next(); ncount = Integer.parseInt(wb.getString(1))) 
+	         {
+	         
+	         }
+
+	         if (ncount == 0) {
+	            vo.setBExistStatus(true);
+	         } else {
+	            vo.setBExistStatus(false);
+	         }
+	         
+	         String strqry2= qryHandler_mms.getQuery(1, "select.itemBrandMst.duplicateList");
+	         int yqryIndex= dao.setQuery(strqry2);
+	         dao.setQryValue(yqryIndex, 1, vo.getStrItemName());
+	         dao.setQryValue(yqryIndex, 2, vo.getStrItemCatNo());
+	         dao.setQryValue(yqryIndex, 3, vo.getStrHospCode());
+	         
+	         wb = dao.executeQry(yqryIndex);
+	         
+	         vo.setDuplicateItemsWS(wb);
+	         
+	         
+	      } catch (Exception var10) {
+	         vo.setStrMsgString("ItemMstDAO.chkDuplicate() --> " + var10.getMessage());
+	         vo.setStrMsgType("1");
+	      } finally {
+	         if (dao != null) {
+	            dao.free();
+	            dao = null;
+	         }
+
+	      }
+
+	   }
 	/**
 	 * to insert the data.
 	 * 

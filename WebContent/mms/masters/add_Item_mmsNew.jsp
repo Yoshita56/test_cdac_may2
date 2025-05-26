@@ -332,6 +332,24 @@
 		    document.getElementById("strConsumableType").value=res
 			document.getElementById("strConsumableType").disabled="true"; 
 		}
+	 if(mode=="2"){
+			console.log("response recorded: "+res);
+		}
+		if(mode=="4")		//from ConsLedg rpt
+		   {
+			  var container = document.getElementById("duplicateItemResultDiv");
+			    container.style.display = "block";
+			    container.innerHTML = res; 
+			    } 
+		   
+		   if(mode=="5")
+		   {
+			   var popupWindow = window.open("", "popupWindow", "width=auto,height=auto,top=auto,left=auto,scrollbars=yes");
+			    popupWindow.document.open();
+			    popupWindow.document.write(res);
+			    popupWindow.document.close();
+			  // window.open(res, "popupWindow",	"width=1200,height=600,top=100,left=50,scrollbars=yes");
+		   } 
 	}
 	
 	function setIsItemSachet()
@@ -360,6 +378,7 @@
 			document.forms[0].strIsMisc.value="0";
 		}
 	}
+	
 	function setIsQuantifiable()
 	{
 		if(document.forms[0].strIsQuantified.checked)
@@ -372,6 +391,119 @@
 			document.forms[0].strIsQuantified.value="0";
 		}
 	}
+	
+	function hideExistingDrugCodeBlock() {
+	    //var elements = ["existingdrugCodeId", "existingdrugNameId"];
+	    //elements.forEach(function(id) {	        }
+	//var id="existingItemTable";	
+	var id="duplicateItemResultDiv";
+	var obj = document.getElementById(id);
+    obj.style.display = "none"; 
+}  
+	  
+	
+	function duplicateList(){
+		
+		var strItemName = document.getElementById('strItemName').value.trim();
+		var errorSpan = document.getElementById('strInputError');
+		var strItemCatNo= document.getElementById('strItemCatNo').value.trim();
+        if (strItemName == "") {
+        	
+        
+           errorSpan.style.display = "inline";
+          
+        /*    var objVal = document.getElementById("existingdrugNameId"); 
+            objVal.style.display = "none"; // Set display to none	*/
+                         
+            return;
+        } else {
+            errorSpan.style.display = "none";   
+        }
+      
+        var mode = "CHECKITEMDUPLICACY";
+        var url = "ItemMstBSCNT.cnt?hmode=" + mode 
+        		+ "&strItemName=" + strItemName 
+        		+ "&strItemCatNo=" + strItemCatNo;
+
+		 
+		 alert(url);
+		// ajaxFunction(url,"4");
+		 ajaxFunction(url,"5");		//for window pop-up
+        
+	}
+/*	function checkDrugDuplicacy(mode){	//to be changed
+		if(mode == 1){
+			
+			var strNewCPACode = document.forms[0].strNewCPACode.value.trim();
+			var errorSpan = document.getElementById('strInputError');
+
+	        if (strNewCPACode == "") {
+	            errorSpan.style.display = "inline";  
+	            
+	            var objVal = document.getElementById("existingdrugCodeId"); 
+	            objVal.style.display = "none"; // Set display to none 
+	            
+	            return;
+	        } else {
+	            errorSpan.style.display = "none";   
+	        }
+			
+		    if (mode == 1 && strNewCPACode == "") return; // Exit if CPA Code is empty when mode is 1
+			
+		    var url ="ItemMstBSCNT.cnt?hmode=CHECKDRUGDUPLICACY&strNewCPACode="+document.forms[0].strNewCPACode.value
+			+"&mode="+mode;
+		/*	var url ="DrugMstCNT.cnt?hmode=CHECKDRUGDUPLICACY&strNewCPACode="+document.forms[0].strNewCPACode.value
+    				+"&mode="+mode; 
+			alert(url);
+
+	    	ajaxFunction(url,"2");
+		}else if(mode == 2){
+			
+			var strItemName = document.getElementById('strItemName').value.trim();
+			var errorSpan = document.getElementById('strInputError');
+
+	        if (strItemName == "") {
+	        	
+	        
+	           errorSpan.style.display = "inline";
+	            var objVal = document.getElementById("existingdrugNameId"); 
+	            objVal.style.display = "none"; // Set display to none
+	                         
+	            return;
+	        } else {
+	            errorSpan.style.display = "none";   
+	        }
+		        
+		    if (mode == 2 && strItemName == "") {
+		    	return;
+		    }
+		    
+		   /*  var strItemBrandId = document.querySelector("input[name='chk']");
+		    if (strItemBrandId) {
+		        var strItemBrandId = strItemBrandId.value.split("@")[0]; 
+		    } else if (mode == 2 && !strItemBrandId) {
+		    	return; // empty check
+			}    
+	       
+		    var strGenericItemId = document.querySelector("input[name='strGenericItemId']");
+		    if (strGenericItemId) {
+		        var strGenericItemId = strGenericItemId.value;
+		    }else  if (mode == 2 && !strGenericItemId) {
+		    	return; // empty check
+		    } 
+		    
+		    var url ="DrugMstCNT.cnt?hmode=CHECKDRUGDUPLICACY&strDrugName="+strDrugName
+		    	+"&strItemBrandId="+strItemBrandId+"&strGenericItemId="+strGenericItemId
+	    		+"&mode="+mode;
+				 
+				 alert(url);
+				   var url ="ItemMstBSCNT.cnt?hmode=CHECKDRUGDUPLICACY&strNewCPACode="+document.forms[0].strNewCPACode.value
+					+"&mode="+mode;
+				
+		    ajaxFunction(url,"3");
+	    	}
+		} */
+	
 </script>
 
 <style type="text/css">
@@ -495,11 +627,20 @@
 				<label><font color="red">*</font>Item Name</label>
 			</div>
 			<div class="col-sm-2">
-				<input type="text" name="strItemName" maxlength="250" class="form-control"
+				<input type="text" name="strItemName" id="strItemName"  maxlength="250" class="form-control"
 			onkeypress="return validateDataWithSpecialChars(event,18,'%.:;+-/*,½');" />
 			</div>
 			
-			<div class="col-sm-2">
+			 <button type="button" onclick="duplicateList();" class="btn btn-success" style="margin-left: 10px; font-size: 1rem;">
+                Duplicacy Check
+            </button>
+            <span id='strInputError' style='color: red; display: none;'>Please Enter Item Code</span>
+			
+			</div>
+		<div id="duplicateItemResultDiv" style="display:'none'; margin-top:'20px';"></div>
+		
+		<div class="row my-1">
+		<div class="col-sm-2">
 			<label><font color="red">*</font>Manufacturer</label>
 			</div>
 			<div class="col-sm-2">
@@ -507,9 +648,6 @@
 					<bean:write name="itemBean" property="strManufacturerCombo" filter="false" />
 				</select>
 			</div>
-		</div>
-		
-		<div class="row my-1">
 	   		<div class="col-sm-2">
 				<label><font color="red">*</font>HSN Code</label>
 			</div>
@@ -782,7 +920,7 @@
 			<input type="hidden" value="${itemBean.strGroupName}"
 				name="strGroupName" />
 			<input type="hidden" value="${itemBean.strItemCatNo}"
-				name="strItemCatNo" />
+				name="strItemCatNo" id="strItemCatNo" />
 			<input type="hidden" value="${itemBean.strGroupId}" name="strGroupId" />
 			<input type="hidden" value="${itemBean.strIsItemCodeRequired}"
 				name="strIsItemCodeRequired" />

@@ -131,6 +131,10 @@ public class ItemMstVO implements TransferObject {
 	
 	/** The rate unit ws. */
 	private WebRowSet rateUnitWS = null;
+	
+	private WebRowSet duplicateItemsWS=null;
+
+
 
 	/** The str item type combo. */
 	private String strItemTypeCombo = "";
@@ -1299,6 +1303,13 @@ public class ItemMstVO implements TransferObject {
 		this.strSerialNo = strSerialNo;
 	}
 	
+	public WebRowSet getDuplicateItemsWS() {
+		return duplicateItemsWS;
+	}
+
+	public void setDuplicateItemsWS(WebRowSet duplicateItemsWS) {
+		this.duplicateItemsWS = duplicateItemsWS;
+	}
 	
 	
 

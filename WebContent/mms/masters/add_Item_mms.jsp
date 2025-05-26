@@ -168,23 +168,13 @@
 			hisValidator.addValidation("strSpecification", "req","Specification Field is a Mandatory Field");
 		}
 		hisValidator.addValidation("strSpecification", "maxlen=4000","Specifications should have less than or equal to 4000 Characters");
-		
-        if(document.forms[0].strEclCat.checked){
-   		//alert('1');
-    	document.forms[0].strEclCat.value='1';
- 		}else{
- 		document.forms[0].strEclCat.value='0';
- 	 	}
-        
-        var retVal = hisValidator.validate();
+		var retVal = hisValidator.validate();
 		hisValidator.clearAllValidations();
 		if (retVal) {
 // 			document.forms[0].strCPACode.value=document.getElementsByName("TEMP_SENS_FLAG").value+""+document.getElementsByName("MIN_VALUE").value+""+document.getElementsByName("MAX_VALUE").value;
 			document.forms[0].MIN_VALUE = document.getElementsByName("MIN_VALUE").value;
 			document.forms[0].MAX_VALUE = document.getElementsByName("MAX_VALUE").value;
 			document.forms[0].TEMP_SENS_FLAG = document.getElementsByName("TEMP_SENS_FLAG").value;
-			document.forms[0].strEclCat = document.getElementsByName("strEclCat")[0].value;
-	   		//alert('---------------------------'+document.getElementsByName("strEclCat")[0].value);
 			document.forms[0].hmode.value = "INSERT";
 			document.forms[0].submit();
 		}
@@ -510,9 +500,9 @@
 			<table class="TABLEWIDTH" align="center" cellspacing="1px"	cellpadding="0px">
 				<tr>
 					<td class="LABEL" colspan="1" width="15%">Serial No.</td>
-					<td class="CONTROL" colspan="" width="15%">
-					<html:checkbox property="strBatchNo" onclick="setBatchNo();" name="itemBean" >
-					</html:checkbox>
+					<td class="CONTROL" colspan="" width="15%"><html:checkbox
+							property="strBatchNo" onclick="setBatchNo();" name="itemBean" ></html:checkbox>
+
 					</td>
 					
 					<td class="LABEL" width="15%">Manuf. Date</td>
@@ -591,25 +581,27 @@
 			
 		</tr>
 		<tr>
-			<td class="LABEL" width="25%" colspan="1">MAX</td>
-			<td class="CONTROL" width="25%" colspan="1">   
-				<input type="text"	name="MAX_VALUE" maxlength="10" value="0" class="txtFld" style="width: 100px" />
-			</td>
-			
-			<td class="LABEL" colspan="1" width="25%">Whether Item is ECL Category</td>
-			<td class="CONTROL" colspan="1" width="25%">
-				<input type="checkbox" name="strEclCat" value="0" onClick="">
-			</td>
+		<td class="LABEL" width="25%" colspan="1">MAX</td>
+		<td class="CONTROL" width="25%" colspan="1">   
+			<input type="text"	name="MAX_VALUE" maxlength="10" value="0" class="txtFld" style="width: 100px" />
+		</td>
+		
+		<td class="LABEL" colspan="1" width="25%"></td>
+		<td class="CONTROL" colspan="1" width="25%">
+		
+		</td>
+		
+		</td>
 		</tr>
 			<tr>
 				<td class="LABEL">Whether Item is Set-Sachet</td>
 				<td class="CONTROL">
-				<input type="checkbox" name="strSetSachetFlag"	 onclick="setIsItemSachet();">
+				<input name="strSetSachetFlag"	type="checkbox" onclick="setIsItemSachet();">
 				</td>
 
 				<td class="LABEL">Whether Item is Non Quantifiable</td>
 				<td class="CONTROL">
-				<input type="checkbox" name="strIsQuantified" type="checkbox" onclick="setIsQuantifiable();">
+				<input name="strIsQuantified" type="checkbox" onclick="setIsQuantifiable();">
 				</td>
 			</tr>
 			
@@ -714,13 +706,20 @@
 			</tr>
 		</table>
 		<input type="hidden" name="hmode" />
-		<input type="hidden" value="${itemBean.strCurrentDate}" name="strCurrentDate" />
-		<input type="hidden" value="${itemBean.strItemCatName}" name="strItemCatName" />
-		<input type="hidden" value="${itemBean.strGroupName}"   name="strGroupName" />
-		<input type="hidden" value="${itemBean.strItemCatNo}"   name="strItemCatNo" />
+		<input type="hidden" value="${itemBean.strCurrentDate}"
+			name="strCurrentDate" />
+		<input type="hidden" value="${itemBean.strItemCatName}"
+			name="strItemCatName" />
+		<input type="hidden" value="${itemBean.strGroupName}"
+			name="strGroupName" />
+		<input type="hidden" value="${itemBean.strItemCatNo}"
+			name="strItemCatNo" />
 		<input type="hidden" value="${itemBean.strGroupId}" name="strGroupId" />
-		<input type="hidden" value="${itemBean.strIsItemCodeRequired}" name="strIsItemCodeRequired" />
-		<input type="hidden" name="comboValue" value="${itemBean.strComboValues}" />
+		<input type="hidden" value="${itemBean.strIsItemCodeRequired}"
+			name="strIsItemCodeRequired" />
+		<input type="hidden" name="comboValue"
+			value="${itemBean.strComboValues}" />
+
 
 		<cmbPers:cmbPers />
 	</html:form>

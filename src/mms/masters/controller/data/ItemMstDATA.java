@@ -4,9 +4,13 @@
 package mms.masters.controller.data;
 import java.io.File;
 import java.io.FileInputStream;
+import java.sql.SQLException;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.sql.rowset.WebRowSet;
+
+import com.ibm.icu.text.SimpleDateFormat;
 
 import hisglobal.TransferObjectFactory;
 import hisglobal.exceptions.HisException;
@@ -14,7 +18,12 @@ import hisglobal.utility.HisUtil;
 import mms.AttachFileGlobal;
 import mms.MmsConfigUtil;
 import mms.masters.bo.ItemMstBO;
+import mms.masters.bo.ItemMstBO;
+import mms.masters.bo.ItemMstBO;
 import mms.masters.controller.fb.ItemMstFB;
+import mms.masters.controller.fb.ItemMstFB;
+import mms.masters.vo.ItemMstVO;
+import mms.masters.vo.ItemMstVO;
 import mms.masters.vo.ItemMstVO;
 
 // TODO: Auto-generated Javadoc
@@ -271,6 +280,8 @@ public class ItemMstDATA {
 	 *            the request
 	 */
 
+	
+	
 	public static void insert(ItemMstFB formBean, HttpServletRequest request) 
 	{
 		String strmsgText = "";
@@ -300,15 +311,15 @@ public class ItemMstDATA {
 			seatid = request.getSession().getAttribute("SEATID").toString();
 			strCurrentDate = hisutil.getDSDate("DD-Mon-YYYY HH24_MI_SS");
 			String hospiCode=request.getSession().getAttribute("HOSPITAL_CODE").toString();
-						
-			
+									
 			formBean.setStrHospCode(hosCode);
 			formBean.setStrSeatId(seatid);
 				
 				
 				vo = (ItemMstVO) TransferObjectFactory.populateData("mms.masters.vo.ItemMstVO",formBean);
 				////System.out.println("Value is"+vo.getStrConsumableType());
-				vo.setStrHospiCode(hospiCode);			vo.setStrHospiCode(hospiCode);
+				vo.setStrHospiCode(hospiCode);			
+				
 				String temp2[] = formBean.getStrGenItemId().replace('^', '#').split("#");
 	
 				if (formBean.getStrNewCPACode() != null
@@ -951,5 +962,121 @@ public class ItemMstDATA {
 		return strCsCmb;
 	}
 	
+	public static void getDuplicateItemList(ItemMstFB formBean, HttpServletRequest request, HttpServletResponse response) {
+		String getExistingDrugCodeTablePrint = "";
+
+	    try {
+	        ItemMstVO vo = new ItemMstVO();
+	        ItemMstBO bo = new ItemMstBO();
+
+	        //vo = (ItemMstVO) TransferObjectFactory.populateData("mms.masters.vo.ItemMstVO", fb);
+
+	        String newCPACode = request.getParameter("strNewCPACode");
+		     if (newCPACode == null || newCPACode.trim().isEmpty()) {
+		         newCPACode = "0";
+		     }
+			 System.out.println("strNewCPACode--->"+newCPACode);
+			 System.out.println("strItemName--->"+request.getParameter("strItemName"));
+			 System.out.println("strItemCatNo--->"+request.getParameter("strItemCatNo"));
+				/*System.out.println("strItemBrandId--->"+request.getParameter("strItemBrandId"));
+				System.out.println("strGenericItemId--->"+request.getParameter("strGenericItemId"));*/
+			 System.out.println("mode--->"+request.getParameter("mode"));
+
+		     String strNewCPACode = request.getParameter("strNewCPACode");
+			 
+		     vo.setStrNewCPACode(request.getParameter("strNewCPACode"));
+
+		     String hosCode = MmsConfigUtil.GLOBAL_HOSPITAL_CODE;
+		     vo.setStrHospCode(hosCode);
+		     
+		     
+		  //   vo.setStrModeVal(request.getParameter("mode"));
+		     vo.setStrItemName(request.getParameter("strItemName"));
+		     vo.setStrItemCatNo(request.getParameter("strItemCatNo"));
+				/*vo.setStrItemBrandId(request.getParameter("strItemBrandId"));
+				vo.setStrGenericItemId(request.getParameter("strGenericItemId"));*/
+
+		     bo.chkDuplicateItem(vo);
+		  
+
+		     System.out.println("DATA--CHECKDRUGDUPLICACY--SIZE-->" + vo.getDuplicateItemsWS().size());
+
+		     getExistingDrugCodeTablePrint = getExistingDrugCodeTablePrintHLP(vo.getDuplicateItemsWS());
+
+		     response.setHeader("Cache-Control", "no-cache");
+		     response.getWriter().print(getExistingDrugCodeTablePrint);
+	        
+	    } catch (Exception e) {
+	        e.printStackTrace();
+	    }
+				
+			}
+		
+		private static String getExistingDrugCodeTablePrintHLP(WebRowSet wrs) throws SQLException, Exception {
+
+			StringBuffer sb= new StringBuffer(100);
+
+			int i = 1;
+
+			new SimpleDateFormat("dd-MMM-yyyy");
+//			sb.append("<html><head>");
+//			sb.append("<title>Duplicate Items</title>");
+//			sb.append("<link rel='stylesheet' href='../../yourcss.css' />"); // optional
+//			sb.append("</head><body>");
+			sb.append("<table id='existingItemTable' class='TABLEWIDTH text-uppercase' style='text-align:center;'>");
+			sb.append("<tr class='TITLE'>");
+			sb.append("<td colspan='6' style='text-align:left;'>Existing Items For Entered Drug Code</td>");
+			
+			sb.append("<td colspan='6' style='text-align: right;'>");
+			sb.append("<div id='printImg' style='display: inline-block;'>");
+			sb.append("<img style='cursor: pointer;' title='Close Page' src='../../hisglobal/images/stop.png' onclick='hideExistingDrugCodeBlock();' />");
+			sb.append("</div>");
+			sb.append("</td>");
+			
+			sb.append("</tr>");
+			sb.append("</table>");
+
+			sb.append("<table class='TABLEWIDTH text-uppercase' style='text-align:center;text-transform:uppercase;background-color:#CBEFBE;border:1px solid black'>");
+			sb.append("<tr>");
+			sb.append("<thead>");
+			sb.append("<td width='20%'>SR NO</td>");
+			sb.append("<td width='40%'>ITEM NAME</td>");
+			sb.append("<td width='40%'>ITEM CODE</td>");
+			sb.append("</thead>");
+			sb.append("</tr>");
+			
+			sb.append("<tbody>");
+
+			if (wrs != null && wrs.size() > 0) {
+				while (wrs.next()) {
+					/*
+					1.HSTSTR_CPA_CODE
+					2. hststr_item_name
+					3. hstnum_default_rate
+					4. hstnum_item_id
+					5. hstnum_itembrand_id
+					6. hstnum_itemtype_id
+					*/
+					String itemCode = wrs.getString(2);
+					String itemName = wrs.getString(5);
+					//String defaultRate = wrs.getString(3);
+					
+					sb.append("<tr>");
+					sb.append("<td width='20%'>" +i+"</td>");
+					sb.append("<td width='40%' style='color:red;'>" + itemName + "</td>");
+					sb.append("<td width='40%' style='color:red;'>" + itemCode + "</td>");
+//					sb.append("<td width='30%'>" + defaultRate + "</td>");
+					sb.append("</tr>");
+					i++;
+				}
+			} else {
+				sb.append("<tr style='text-align:center; color:red;'><td colspan='4'>No records found for the entered Drug code/Drug Name</td></tr>");
+			}
+			sb.append("</tbody>");
+			sb.append("</table>");
+		//	sb.append("</body></html>");
+
+			return sb.toString();
+		}
 
 }
