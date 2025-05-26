@@ -344,7 +344,7 @@
 		   
 		   if(mode=="5")
 		   {
-			   var popupWindow = window.open("", "popupWindow", "width=auto,height=auto,top=auto,left=auto,scrollbars=yes");
+			   var popupWindow = window.open("", "popupWindow", "width=200,height=100,scrollbars=yes,resizable=yes");
 			    popupWindow.document.open();
 			    popupWindow.document.write(res);
 			    popupWindow.document.close();
@@ -426,83 +426,12 @@
         		+ "&strItemCatNo=" + strItemCatNo;
 
 		 
-		 alert(url);
-		// ajaxFunction(url,"4");
-		 ajaxFunction(url,"5");		//for window pop-up
+		//  alert(url);
+		 ajaxFunction(url,"4");
+		// ajaxFunction(url,"5");		//for window pop-up
         
 	}
-/*	function checkDrugDuplicacy(mode){	//to be changed
-		if(mode == 1){
-			
-			var strNewCPACode = document.forms[0].strNewCPACode.value.trim();
-			var errorSpan = document.getElementById('strInputError');
 
-	        if (strNewCPACode == "") {
-	            errorSpan.style.display = "inline";  
-	            
-	            var objVal = document.getElementById("existingdrugCodeId"); 
-	            objVal.style.display = "none"; // Set display to none 
-	            
-	            return;
-	        } else {
-	            errorSpan.style.display = "none";   
-	        }
-			
-		    if (mode == 1 && strNewCPACode == "") return; // Exit if CPA Code is empty when mode is 1
-			
-		    var url ="ItemMstBSCNT.cnt?hmode=CHECKDRUGDUPLICACY&strNewCPACode="+document.forms[0].strNewCPACode.value
-			+"&mode="+mode;
-		/*	var url ="DrugMstCNT.cnt?hmode=CHECKDRUGDUPLICACY&strNewCPACode="+document.forms[0].strNewCPACode.value
-    				+"&mode="+mode; 
-			alert(url);
-
-	    	ajaxFunction(url,"2");
-		}else if(mode == 2){
-			
-			var strItemName = document.getElementById('strItemName').value.trim();
-			var errorSpan = document.getElementById('strInputError');
-
-	        if (strItemName == "") {
-	        	
-	        
-	           errorSpan.style.display = "inline";
-	            var objVal = document.getElementById("existingdrugNameId"); 
-	            objVal.style.display = "none"; // Set display to none
-	                         
-	            return;
-	        } else {
-	            errorSpan.style.display = "none";   
-	        }
-		        
-		    if (mode == 2 && strItemName == "") {
-		    	return;
-		    }
-		    
-		   /*  var strItemBrandId = document.querySelector("input[name='chk']");
-		    if (strItemBrandId) {
-		        var strItemBrandId = strItemBrandId.value.split("@")[0]; 
-		    } else if (mode == 2 && !strItemBrandId) {
-		    	return; // empty check
-			}    
-	       
-		    var strGenericItemId = document.querySelector("input[name='strGenericItemId']");
-		    if (strGenericItemId) {
-		        var strGenericItemId = strGenericItemId.value;
-		    }else  if (mode == 2 && !strGenericItemId) {
-		    	return; // empty check
-		    } 
-		    
-		    var url ="DrugMstCNT.cnt?hmode=CHECKDRUGDUPLICACY&strDrugName="+strDrugName
-		    	+"&strItemBrandId="+strItemBrandId+"&strGenericItemId="+strGenericItemId
-	    		+"&mode="+mode;
-				 
-				 alert(url);
-				   var url ="ItemMstBSCNT.cnt?hmode=CHECKDRUGDUPLICACY&strNewCPACode="+document.forms[0].strNewCPACode.value
-					+"&mode="+mode;
-				
-		    ajaxFunction(url,"3");
-	    	}
-		} */
 	
 </script>
 
@@ -634,7 +563,7 @@
 			 <button type="button" onclick="duplicateList();" class="btn btn-success" style="margin-left: 10px; font-size: 1rem;">
                 Duplicacy Check
             </button>
-            <span id='strInputError' style='color: red; display: none;'>Please Enter Item Code</span>
+            <span id='strInputError' style="color: red; display: none; margin-left:10px;">Please Enter Item Code</span>
 			
 			</div>
 		<div id="duplicateItemResultDiv" style="display:'none'; margin-top:'20px';"></div>

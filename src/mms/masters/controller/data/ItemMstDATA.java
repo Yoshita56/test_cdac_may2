@@ -1019,10 +1019,10 @@ public class ItemMstDATA {
 			int i = 1;
 
 			new SimpleDateFormat("dd-MMM-yyyy");
-//			sb.append("<html><head>");
-//			sb.append("<title>Duplicate Items</title>");
-//			sb.append("<link rel='stylesheet' href='../../yourcss.css' />"); // optional
-//			sb.append("</head><body>");
+			sb.append("<html><head>");
+			sb.append("<title>Duplicate Items</title>");
+			sb.append("<link rel='stylesheet' href='../../yourcss.css' />"); // optional
+			sb.append("</head><body>");
 			sb.append("<table id='existingItemTable' class='TABLEWIDTH text-uppercase' style='text-align:center;'>");
 			sb.append("<tr class='TITLE'>");
 			sb.append("<td colspan='6' style='text-align:left;'>Existing Items For Entered Drug Code</td>");
@@ -1074,7 +1074,16 @@ public class ItemMstDATA {
 			}
 			sb.append("</tbody>");
 			sb.append("</table>");
-		//	sb.append("</body></html>");
+			sb.append("<script>");
+			sb.append("function resizeToContent() {");
+			sb.append("  var body = document.body;");
+			sb.append("  var height = body.scrollHeight;");
+			sb.append("  var width = body.scrollWidth;");
+			sb.append("  window.resizeTo(width + 40, height + 80);");
+			sb.append("}");
+			sb.append("window.onload = resizeToContent;");		//can disable it later
+			sb.append("</script>");
+			sb.append("</body></html>");
 
 			return sb.toString();
 		}
